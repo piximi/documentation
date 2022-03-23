@@ -1,8 +1,4 @@
 # Image Classification
-
-<!-- Find piximi icons:
-https://fonts.google.com/icons?icon.query=settings -->
-
 ### 1. Load images
 
 To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open example project` > `Open human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, press ![upload](./icons/cloud-upload-icon.svg) `Open image` in the top right.
