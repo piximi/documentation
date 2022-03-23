@@ -1,7 +1,7 @@
 # Piximi 
 ## Images to Discovery
 
-Piximi is an application that runs entirely from your browser and requires no installation and minimal setup. Our vision for Piximi is to provide an intuitive application for the annotation, segmentation, classification and measurement of images entirely from your browser. In this current release, Piximi allows users to annotate specific regions of your images, such as nuclei, and can also use deep learning to classify your images into distinct groups.
+Piximi is an application that runs entirely from your browser and requires no installation and minimal setup. Our vision for Piximi is to provide an intuitive application for the annotation, segmentation, classification and measurement of images. In this current release, Piximi allows users to annotate specific regions of your images, such as nuclei, and can also use deep learning to classify your images into distinct groups.
 
 <!-- ![piximi-workflow](./img/piximi-workflow.png) -->
 
