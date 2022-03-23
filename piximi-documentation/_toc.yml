@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+# expand_sections: true
+parts:
+- caption: User Guides
+  chapters:
+  - file: classify-example-eukaryotic-image
+  - file: classify-example-eukaryotic-object
+- caption: caption tbc
+  chapters:
+  - file: technical-faq
+  # chapters:
+  # - file: technical-faq
