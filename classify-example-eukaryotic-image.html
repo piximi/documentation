@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Classification &#8212; Piximi Documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Object Classification" href="classify-example-eukaryotic-object.html" />
+    <link rel="prev" title="Piximi" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Piximi Documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Piximi
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  User Guides
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classify-example-eukaryotic-object.html">
+   Object Classification
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  caption tbc
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="technical-faq.html">
+   Technical FAQ
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/classify-example-eukaryotic-image.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="piximi.github.io/documentation/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        <a class="edit-button" href="https://github.com/piximi.github.io/documentation/edit/main/classify-example-eukaryotic-image.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-images">
+   1. Load images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorize-images">
+   2. Categorize images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-model">
+   3. Train model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-data">
+   4. Predict classes for unlabelled data
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Image Classification</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-images">
+   1. Load images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorize-images">
+   2. Categorize images
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-model">
+   3. Train model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-data">
+   4. Predict classes for unlabelled data
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="image-classification">
+<h1>Image Classification<a class="headerlink" href="#image-classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="load-images">
+<h2>1. Load images<a class="headerlink" href="#load-images" title="Permalink to this headline">¶</a></h2>
+<p>To begin, we will load the images from an example dataset included in Piximi by pressing <img alt="open" src="_images/open-folder-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span></code> in the top left. Select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">example</span> <span class="pre">project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">human</span> <span class="pre">U2OS-cells</span> <span class="pre">example</span> <span class="pre">project</span></code> to get started. Alternatively, if you would like to load your own images, press <img alt="upload" src="_images/cloud-upload-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">image</span></code> in the top right.</p>
+<p><img alt="open-img" src="_images/user-guide-open-img.png" /></p>
+</div>
+<div class="section" id="categorize-images">
+<h2>2. Categorize images<a class="headerlink" href="#categorize-images" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the <img alt="label" src="_images/label-icon.svg" /> label to the left of these classes to turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) the display of these images. The classes are:</p>
+<ul class="simple">
+<li><p>Unknown</p>
+<ul>
+<li><p>This represents the uncategorized images. Piximi will predict which class these images belong to later</p></li>
+</ul>
+</li>
+<li><p>Negative Control</p></li>
+<li><p>Positive Control</p></li>
+</ul>
+<p><img alt="u2os-labels" src="_images/user-guide-u2os-label-highlight.png" /></p>
+<!-- ```{margin} 
+**Terminology**: We categorize into classes
+``` -->
+<p>Single-click to select a 2-3 images from the unknown category that best fit the <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span></code> category. Once selected, click <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> in the top right and select <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span></code>. Do the same for 2-3 <code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">Control</span></code> images.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">How many images should I categorise?</p>
+<p>Should this info be added? Something like:
+Click here for considerations when categorizing your images and deciding on how many images to add to each category.</p>
+</div>
+</div>
+<div class="section" id="train-model">
+<h2>3. Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">Classifier</span></code> button to open the sub-menu and then click on the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings <img alt="settings" src="_images/settings-icon.svg" /> icon. Within the menu that opens, you can select various parameters to adjust model training. Open the <code class="docutils literal notranslate"><span class="pre">Dataset</span> <span class="pre">Settings</span></code> menu to find the <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">percentage</span> <span class="pre">option</span></code>. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.</p>
+<p><img alt="u2os-fit-settings" src="_images/user-guide-u2os-fit-settings.png" /></p>
+<p>In the top right, press the <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training. Piximi will now look at the <strong>training</strong> subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the <strong>testing</strong> subset of images and compare the models answers to the image class.</p>
+<p><img alt="fit-settings" src="_images/user-guide-run-fit.png" /></p>
+<p>At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.</p>
+<p><img alt="epoch-accuracy-plot" src="_images/user-guide-accuracy-plot.png" /></p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">What is an epoch?</p>
+<p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve classification performance.</p>
+<p>However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Accuracy</span></code> is a measure of how well the model has performed and is calculated as the ratio between the number of correct predictions and the total number of predictions. In this case, <code class="docutils literal notranslate"><span class="pre">Accuracy</span></code> refers to the accuracy of the model at correctly determining the class of images in the <strong>training</strong> subset of images.</p>
+<!-- https://developers.google.com/machine-learning/crash-course/classification/accuracy -->
+<div class="math notranslate nohighlight">
+\[
+    Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
+\]</div>
+<p><code class="docutils literal notranslate"><span class="pre">Validation</span> <span class="pre">Accuracy</span></code> is the accuracy when the model examines the <strong>testing</strong> subset of the data.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Validation accuracy vs accuracy</p>
+<p>If you notice that your <code class="docutils literal notranslate"><span class="pre">Validation</span> <span class="pre">accuracy</span></code> value decreases as epochs increase but your <code class="docutils literal notranslate"><span class="pre">Accuracy</span></code> measurement continues to increase, this means that your model is fitting to the training subset of data better but your model is losing the ability to accurately predict on new data.</p>
+<p>This is a result of <strong>overfitting</strong> as your model begins to pick up features within your image, such as noise, that are not relevant to classification. In essence, overfitting is when the model memorizes the answer to a specific question, rather than determining the answer from scratch itself.</p>
+</div>
+<p>Loss is another metric that is calculated on the training and test subets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification.</p>
+<p>You can now exit the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings by clicking the <img alt="arrow-back" src="_images/arrow-back-icon.svg" /> in the top left.</p>
+<p><img alt="fit-exit" src="_images/user-guide-exit-fit.png" /></p>
+<!-- ```{margin} An optional title
+Diagnosing model underfitting and overfitting: https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
+
+Discussion about train, validation and test sets: https://github.com/piximi/prototype/discussions/217
+
+Piximi does not currently have a hold-out test-like set.
+``` -->
+</div>
+<div class="section" id="predict-classes-for-unlabelled-data">
+<h2>4. Predict classes for unlabelled data<a class="headerlink" href="#predict-classes-for-unlabelled-data" title="Permalink to this headline">¶</a></h2>
+<p>Once your model has been trained you can press <img alt="label" src="_images/label-icon.svg" /> Predict to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="_images/label-icon.svg" /> color on the image thumbnail update to that particular class.</p>
+<p><img alt="run-predict" src="_images/user-guide-u2os-run-predict.png" /></p>
+<p>Click <img alt="chart" src="_images/chart-icon.svg" /> Evaluate to see in-depth metrics for how the model performed on the data.</p>
+<div class="seealso admonition">
+<p class="admonition-title">See also</p>
+<p>Link to our on guide, or a guide somewhere else. eg:</p>
+<p>For further information on the evaluation metrics, see our evaluating a model guide.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Piximi</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="classify-example-eukaryotic-object.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Object Classification</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Imaging Platform<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
