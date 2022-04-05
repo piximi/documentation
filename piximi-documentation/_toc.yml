@@ -9,8 +9,9 @@ parts:
   chapters:
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
-- caption: caption tbc
+- caption: Technical information
   chapters:
+  - file: hyperparameters
   - file: technical-faq
   # chapters:
   # - file: technical-faq
