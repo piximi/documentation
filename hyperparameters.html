@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Piximi &#8212; Piximi Documentation</title>
+    <title>Hyperparameters &#8212; Piximi Documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Image Classification" href="classify-example-eukaryotic-image.html" />
+    <link rel="next" title="Technical FAQ" href="technical-faq.html" />
+    <link rel="prev" title="Object Classification" href="classify-example-eukaryotic-object.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,8 +88,8 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Piximi
   </a>
  </li>
@@ -115,9 +116,9 @@ const thebe_selector_output = ".output, .cell_output"
   Technical information
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="hyperparameters.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Hyperparameters
   </a>
  </li>
@@ -167,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/hyperparameters.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -187,10 +188,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fhyperparameters.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/piximi/documentation/edit/main/piximi-documentation/intro.md"><button
+        <a class="edit-button" href="https://github.com/piximi/documentation/edit/main/piximi-documentation/hyperparameters.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -216,26 +217,29 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images-to-discovery">
-   Images to Discovery
+  <a class="reference internal nav-link" href="#optimization-algorithms">
+   Optimization algorithms
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-annotator">
-     The Piximi Annotator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-classifier">
-     The Piximi Classifier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piximi-next-steps">
-     Piximi Next Steps
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-function">
+   Loss function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-rate">
+   Learning rate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#batch-size">
+   Batch size
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epochs">
+   Epochs
+  </a>
  </li>
 </ul>
 
@@ -247,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Piximi</h1>
+                <h1>Hyperparameters</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -258,26 +262,29 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images-to-discovery">
-   Images to Discovery
+  <a class="reference internal nav-link" href="#optimization-algorithms">
+   Optimization algorithms
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-annotator">
-     The Piximi Annotator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-classifier">
-     The Piximi Classifier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piximi-next-steps">
-     Piximi Next Steps
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loss-function">
+   Loss function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-rate">
+   Learning rate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#batch-size">
+   Batch size
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epochs">
+   Epochs
+  </a>
  </li>
 </ul>
 
@@ -288,37 +295,35 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="piximi">
-<h1>Piximi<a class="headerlink" href="#piximi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="images-to-discovery">
-<h2>Images to Discovery<a class="headerlink" href="#images-to-discovery" title="Permalink to this headline">¶</a></h2>
-<p>Piximi is an application that runs entirely from your browser and requires no installation and minimal setup. Our vision for Piximi is to provide an intuitive application for the annotation, segmentation, classification and measurement of images. In this current release, Piximi allows users to annotate specific regions of your images, such as nuclei, and can also use deep learning to classify your images into distinct groups.</p>
-<!-- ![piximi-workflow](./img/piximi-workflow.png) -->
-<blockquote class="epigraph">
-<div><p><a href="https://www.piximi.app/" target="_blank">Launch Piximi here</a></p>
-</div></blockquote>
-<div class="section" id="the-piximi-annotator">
-<h3>The Piximi Annotator<a class="headerlink" href="#the-piximi-annotator" title="Permalink to this headline">¶</a></h3>
-<p><img alt="intro-annotator" src="_images/intro-annotator.png" /></p>
-<p>The annotator within Piximi allows you to intuitively create annotations on your image of choice using a variety of tools. These tools include manual pen annotations in addition to more automatic methods with quick annotation. The Piximi annotator also works with <strong>multichannel</strong> and <strong>multiplane</strong> images, both of which can be easily selected to make sure that annotations are placed where they need to be. In future releases, we aim to also include z-plane interpolation to make annotating in 3D even easier.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="hyperparameters">
+<h1>Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permalink to this headline">¶</a></h1>
+<p>A hyperparameter are configuration variables that control the learning process for deep learning models in Piximi. When a model is trained on your data, the neural network can internally learn and update its <strong>own</strong> parameters to yield the desired output. However, hyperparameters cannot be estimated by the model itself from the training data and requires user intuition to set.</p>
+<p>Determining the best hyperparameter for a given problem can be difficult to define as every problem is different. Below, we introduce hyperparameters in Piximi and some considerations in selecting a value. Ultimately, the goal of hyperparameter selection is to tune the hyperparameters that result in the best performing predictions.</p>
+<div class="section" id="optimization-algorithms">
+<h2>Optimization algorithms<a class="headerlink" href="#optimization-algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Optimization algorithms are what update the internal parameters of the model automatically in response to its own performance. These algorithms will compare a prediction made by the model to the expected output and adjust model parameters to bring the predictions closer to the expected output.</p>
 </div>
-<div class="section" id="the-piximi-classifier">
-<h3>The Piximi Classifier<a class="headerlink" href="#the-piximi-classifier" title="Permalink to this headline">¶</a></h3>
-<p>By using deep learning, Piximi can classify images of a variety of subject matter, such as bacteria, cultured cells, insects and more. The power of deep learning is applied upon a small number of images that have been categorized by the user in Piximi which then gives the computer a starting point on understanding what a particular category of image looks like. For example, the user can teach the computer what cells in G1, S, G2 or M-phases of the cell cycle look like. These user-made categorizations are then intensely examined by the deep learning model within Piximi through a process known as training. During this training process, the deep learning model finds patterns in the data in order to link the input (an image added by the user) to an output (the category, or class, defined by the user). The trained deep learning model can then predict on uncategorized images and determine which class they belong to. In the aforementioned example, this would determine which stage of the cell cycle a particular cell is in without relying on user input.</p>
-<p>Ultimately, Piximi offers users a way to have a highly customizable method of classifying large image sets across a range of subject matter by learning from annotations made by the user.</p>
+<div class="section" id="loss-function">
+<h2>Loss function<a class="headerlink" href="#loss-function" title="Permalink to this headline">¶</a></h2>
+<p>The loss function calculates how well a model has performed by comparing the prediction made by the model and what was expected. In essence, a well performing model will output a lower number for the loss function, whereas a poor model will output a higher number. The loss function therefore tells us how well our model is performing at making predictions for a particular set of model parameters. The aforementioned optimization algorithms work to reduce the loss function and in turn lead to a better performing model.</p>
 </div>
-<div class="section" id="piximi-next-steps">
-<h3>Piximi Next Steps<a class="headerlink" href="#piximi-next-steps" title="Permalink to this headline">¶</a></h3>
-<p>Piximi is a work in progress and currently features an image annotator and deep learning-based classification of images. The ultimate aim of Piximi is to provide users with an intuitive application for the annotation, segmentation, classification and measurement of information present in images. In this phase of Piximi, we have released the annotator and classifier as these are important first steps in preparing to add the segmentation and measurement functionalities.</p>
-<p>We are developing Piximi in the open. If you have any features that you think that you would like to see in Piximi, please create a discussion in <a class="reference external" href="https://github.com/piximi/prototype/discussions">our Piximi prototype Github repo</a></p>
-<!-- Table on contents directive prints the ToC -->
-<!-- ```{tableofcontents}
-``` -->
+<div class="section" id="learning-rate">
+<h2>Learning rate<a class="headerlink" href="#learning-rate" title="Permalink to this headline">¶</a></h2>
+<p>The learning rate is a value that determines by how much the model updates its internal parameters in response to the loss function. A low learning rate can result in a better performing model but can take a long time to train. Conversely, a higher training rate can lead to faster training but can result in a poorly performing model.</p>
 </div>
+<div class="section" id="batch-size">
+<h2>Batch size<a class="headerlink" href="#batch-size" title="Permalink to this headline">¶</a></h2>
+<p>Batch size defines how many images the model will look at before updating its internal parameters. A batch size of 1 would mean that the model will look at one image, update its internal parameters on what links an image to a class, and then repeat this with the next image until all images have been analyzed.</p>
+<p><em>How does the model update its internal parameters?</em>
+At the end of each batch, the predictions the model has made are compared with the ground truth set by the user. During this process, the model can see how close its prediction were. This comparison allows for the model to calculate an error using the <strong>loss function</strong>, which the model then uses to update internal parameters to reduce this error. How this error is reduced by adjusting model parameters is defined by the <strong>optimization algorithm</strong> hyperparameter.</p>
+<p>Having a larger batch size will lead to faster training but may take longer to yield a model with accurate predictions.</p>
+<p>A smaller batch size will train slower but might yield a model with accurate predictions faster.</p>
+<p>A good place to start is to have a batch size as large as your computer can handle, but not exceeding the total number of images in your dataset.</p>
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+<div class="section" id="epochs">
+<h2>Epochs<a class="headerlink" href="#epochs" title="Permalink to this headline">¶</a></h2>
+<p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve performance.</p>
+<p>However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).</p>
 </div>
 </div>
 
@@ -346,11 +351,18 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="classify-example-eukaryotic-image.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="classify-example-eukaryotic-object.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Object Classification</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="technical-faq.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Image Classification</p>
+        <p class="prev-next-title">Technical FAQ</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
