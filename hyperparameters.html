@@ -309,21 +309,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="learning-rate">
 <h2>Learning rate<a class="headerlink" href="#learning-rate" title="Permalink to this headline">¶</a></h2>
-<p>The learning rate is a value that determines by how much the model updates its internal parameters in response to the loss function. A low learning rate can result in a better performing model but can take a long time to train. Conversely, a higher training rate can lead to faster training but can result in a poorly performing model.</p>
+<p>The learning rate is a value that determines by how much the model updates its internal parameters in response to the loss function.</p>
 </div>
 <div class="section" id="batch-size">
 <h2>Batch size<a class="headerlink" href="#batch-size" title="Permalink to this headline">¶</a></h2>
 <p>Batch size defines how many images the model will look at before updating its internal parameters. A batch size of 1 would mean that the model will look at one image, update its internal parameters on what links an image to a class, and then repeat this with the next image until all images have been analyzed.</p>
 <p><em>How does the model update its internal parameters?</em>
 At the end of each batch, the predictions the model has made are compared with the ground truth set by the user. During this process, the model can see how close its prediction were. This comparison allows for the model to calculate an error using the <strong>loss function</strong>, which the model then uses to update internal parameters to reduce this error. How this error is reduced by adjusting model parameters is defined by the <strong>optimization algorithm</strong> hyperparameter.</p>
-<p>Having a larger batch size will lead to faster training but may take longer to yield a model with accurate predictions.</p>
-<p>A smaller batch size will train slower but might yield a model with accurate predictions faster.</p>
-<p>A good place to start is to have a batch size as large as your computer can handle, but not exceeding the total number of images in your dataset.</p>
 </div>
 <div class="section" id="epochs">
 <h2>Epochs<a class="headerlink" href="#epochs" title="Permalink to this headline">¶</a></h2>
-<p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve performance.</p>
-<p>However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).</p>
+<p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. Increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).</p>
 </div>
 </div>
 

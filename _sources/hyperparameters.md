@@ -14,8 +14,7 @@ The loss function calculates how well a model has performed by comparing the pre
 
 ### Learning rate
 
-The learning rate is a value that determines by how much the model updates its internal parameters in response to the loss function. A low learning rate can result in a better performing model but can take a long time to train. Conversely, a higher training rate can lead to faster training but can result in a poorly performing model.
-
+The learning rate is a value that determines by how much the model updates its internal parameters in response to the loss function.
 
 ### Batch size
 
@@ -24,17 +23,9 @@ Batch size defines how many images the model will look at before updating its in
 *How does the model update its internal parameters?*
 At the end of each batch, the predictions the model has made are compared with the ground truth set by the user. During this process, the model can see how close its prediction were. This comparison allows for the model to calculate an error using the **loss function**, which the model then uses to update internal parameters to reduce this error. How this error is reduced by adjusting model parameters is defined by the **optimization algorithm** hyperparameter.
 
-Having a larger batch size will lead to faster training but may take longer to yield a model with accurate predictions.
-
-A smaller batch size will train slower but might yield a model with accurate predictions faster.
-
-A good place to start is to have a batch size as large as your computer can handle, but not exceeding the total number of images in your dataset.
-
 ### Epochs
 
-An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve performance.
-
-However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).
+An epoch is a measure of how many times the entire training subset is studied by the deep learning model. Increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).
 
 
 
