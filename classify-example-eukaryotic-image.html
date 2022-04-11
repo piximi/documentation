@@ -292,7 +292,10 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="load-images">
 <h2>1. Load images<a class="headerlink" href="#load-images" title="Permalink to this headline">¶</a></h2>
 <p>To begin, we will load the images from an example dataset included in Piximi by pressing <img alt="open" src="_images/open-folder-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span></code> in the top left. Select <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">example</span> <span class="pre">project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">human</span> <span class="pre">U2OS-cells</span> <span class="pre">example</span> <span class="pre">project</span></code> to get started. Alternatively, if you would like to load your own images, press <img alt="upload" src="_images/cloud-upload-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">image</span></code> in the top right.</p>
-<p><img alt="open-img" src="_images/user-guide-open-img.png" /></p>
+<div class="figure align-default" id="open-img">
+<img alt="_images/user-guide-open-img.png" src="_images/user-guide-open-img.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Open the U2OS example dataset</span><a class="headerlink" href="#open-img" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="categorize-images">
 <h2>2. Categorize images<a class="headerlink" href="#categorize-images" title="Permalink to this headline">¶</a></h2>
@@ -306,7 +309,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Negative Control</p></li>
 <li><p>Positive Control</p></li>
 </ul>
-<p><img alt="u2os-labels" src="_images/user-guide-u2os-label-highlight.png" /></p>
+<div class="figure align-default" id="u2os-labels">
+<img alt="_images/user-guide-u2os-label-highlight.png" src="_images/user-guide-u2os-label-highlight.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Explore the category menu. Turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) a particular category to show/hide only those images.</span><a class="headerlink" href="#u2os-labels" title="Permalink to this image">¶</a></p>
+</div>
 <!-- ```{margin} 
 **Terminology**: We categorize into classes
 ``` -->
@@ -320,11 +326,20 @@ Click here for considerations when categorizing your images and deciding on how 
 <div class="section" id="train-model">
 <h2>3. Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
 <p>Click on the <code class="docutils literal notranslate"><span class="pre">Classifier</span></code> button to open the sub-menu and then click on the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings <img alt="settings" src="_images/settings-icon.svg" /> icon. Within the menu that opens, you can select various parameters to adjust model training. Open the <code class="docutils literal notranslate"><span class="pre">Dataset</span> <span class="pre">Settings</span></code> menu to find the <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">percentage</span> <span class="pre">option</span></code>. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.</p>
-<p><img alt="u2os-fit-settings" src="_images/user-guide-u2os-fit-settings.png" /></p>
+<div class="figure align-default" id="u2os-fit-settings">
+<img alt="_images/user-guide-u2os-fit-settings.png" src="_images/user-guide-u2os-fit-settings.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Open the classifier settings.</span><a class="headerlink" href="#u2os-fit-settings" title="Permalink to this image">¶</a></p>
+</div>
 <p>In the top right, press the <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training. Piximi will now look at the <strong>training</strong> subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the <strong>testing</strong> subset of images and compare the models answers to the image class.</p>
-<p><img alt="fit-settings" src="_images/user-guide-run-fit.png" /></p>
+<div class="figure align-default" id="fit-settings">
+<img alt="_images/user-guide-run-fit.png" src="_images/user-guide-run-fit.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Explore classifier settings and then press <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training.</span><a class="headerlink" href="#fit-settings" title="Permalink to this image">¶</a></p>
+</div>
 <p>At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.</p>
-<p><img alt="epoch-accuracy-plot" src="_images/user-guide-accuracy-plot.png" /></p>
+<div class="figure align-default" id="epoch-accuracy-plot">
+<img alt="_images/user-guide-accuracy-plot.png" src="_images/user-guide-accuracy-plot.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">TBC</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">¶</a></p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">What is an epoch?</p>
 <p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve classification performance.</p>
@@ -344,7 +359,10 @@ Click here for considerations when categorizing your images and deciding on how 
 </div>
 <p>Loss is another metric that is calculated on the training and test subets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification.</p>
 <p>You can now exit the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings by clicking the <img alt="arrow-back" src="_images/arrow-back-icon.svg" /> in the top left.</p>
-<p><img alt="fit-exit" src="_images/user-guide-exit-fit.png" /></p>
+<div class="figure align-default" id="fit-exit">
+<img alt="_images/user-guide-exit-fit.png" src="_images/user-guide-exit-fit.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Exit the fit settings menu.</span><a class="headerlink" href="#fit-exit" title="Permalink to this image">¶</a></p>
+</div>
 <!-- ```{margin} An optional title
 Diagnosing model underfitting and overfitting: https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
 
@@ -356,7 +374,10 @@ Piximi does not currently have a hold-out test-like set.
 <div class="section" id="predict-classes-for-unlabelled-data">
 <h2>4. Predict classes for unlabelled data<a class="headerlink" href="#predict-classes-for-unlabelled-data" title="Permalink to this headline">¶</a></h2>
 <p>Once your model has been trained you can press <img alt="label" src="_images/label-icon.svg" /> Predict to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="_images/label-icon.svg" /> color on the image thumbnail update to that particular class.</p>
-<p><img alt="run-predict" src="_images/user-guide-u2os-run-predict.png" /></p>
+<div class="figure align-default" id="run-predict">
+<img alt="_images/user-guide-u2os-run-predict.png" src="_images/user-guide-u2os-run-predict.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">TBC</span><a class="headerlink" href="#run-predict" title="Permalink to this image">¶</a></p>
+</div>
 <p>Click <img alt="chart" src="_images/chart-icon.svg" /> Evaluate to see in-depth metrics for how the model performed on the data.</p>
 <div class="seealso admonition">
 <p class="admonition-title">See also</p>

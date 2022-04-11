@@ -3,7 +3,13 @@
 
 To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open example project` > `Open human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, press ![upload](./icons/cloud-upload-icon.svg) `Open image` in the top right.
 
-![open-img](./img/user-guide-open-img.png)
+
+```{figure} ./img/user-guide-open-img.png
+---
+name: open-img
+---
+Open the U2OS example dataset
+```
 
 ### 2. Categorize images
 
@@ -13,7 +19,12 @@ In the `Categories` sub-menu on the right hand side you can see that there are a
 - Negative Control
 - Positive Control
 
-![u2os-labels](./img/user-guide-u2os-label-highlight.png)
+```{figure} ./img/user-guide-u2os-label-highlight.png
+---
+name: u2os-labels
+---
+Explore the category menu. Turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) a particular category to show/hide only those images.
+```
 
 <!-- ```{margin} 
 **Terminology**: We categorize into classes
@@ -31,15 +42,30 @@ Click here for considerations when categorizing your images and deciding on how 
 
 Click on the `Classifier` button to open the sub-menu and then click on the `Fit` settings ![settings](./icons/settings-icon.svg) icon. Within the menu that opens, you can select various parameters to adjust model training. Open the `Dataset Settings` menu to find the `Train percentage option`. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
 
-![u2os-fit-settings](./img/user-guide-u2os-fit-settings.png)
+```{figure} ./img/user-guide-u2os-fit-settings.png
+---
+name: u2os-fit-settings
+---
+Open the classifier settings.
+```
 
 In the top right, press the ![play-button](./icons/play-button-icon.svg) to begin training. Piximi will now look at the **training** subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **testing** subset of images and compare the models answers to the image class.
 
-![fit-settings](./img/user-guide-run-fit.png)
+```{figure} ./img/user-guide-run-fit.png
+---
+name: fit-settings
+---
+Explore classifier settings and then press ![play-button](./icons/play-button-icon.svg) to begin training.
+```
 
 At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.
 
-![epoch-accuracy-plot](./img/user-guide-accuracy-plot.png)
+```{figure} ./img/user-guide-accuracy-plot.png
+---
+name: epoch-accuracy-plot
+---
+TBC
+```
 
 ```{admonition} What is an epoch?
 :class: tip, dropdown
@@ -69,8 +95,12 @@ Loss is another metric that is calculated on the training and test subets of dat
 
 You can now exit the `Fit` settings by clicking the ![arrow-back](./icons/arrow-back-icon.svg) in the top left.
 
-![fit-exit](./img/user-guide-exit-fit.png)
-
+```{figure} ./img/user-guide-exit-fit.png
+---
+name: fit-exit
+---
+Exit the fit settings menu.
+```
 
 <!-- ```{margin} An optional title
 Diagnosing model underfitting and overfitting: https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
@@ -84,7 +114,12 @@ Piximi does not currently have a hold-out test-like set.
 
 Once your model has been trained you can press ![label](./icons/label-icon.svg) Predict to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class.
 
-![run-predict](./img/user-guide-u2os-run-predict.png)
+```{figure} ./img/user-guide-u2os-run-predict.png
+---
+name: run-predict
+---
+TBC
+```
 
 Click ![chart](./icons/chart-icon.svg) Evaluate to see in-depth metrics for how the model performed on the data.
 
