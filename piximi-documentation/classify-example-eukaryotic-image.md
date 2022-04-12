@@ -130,5 +130,10 @@ Link to our on guide, or a guide somewhere else. eg:
 For further information on the evaluation metrics, see our evaluating a model guide.
 ```
 
+```{admonition} Copyright
+:class: seealso
+
+The [BBBC016](https://bbbc.broadinstitute.org/BBBC016) images used here are licensed under a [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/) by Ilya Ravkin.
+```
 
 
