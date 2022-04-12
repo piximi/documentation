@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object Classification &#8212; Piximi Documentation</title>
+    <title>The Annotator &#8212; Piximi Documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Hyperparameters" href="hyperparameters.html" />
-    <link rel="prev" title="Image Classification" href="classify-example-eukaryotic-image.html" />
+    <link rel="next" title="Image Classification" href="classify-example-eukaryotic-image.html" />
+    <link rel="prev" title="Piximi" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,9 +94,9 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="annotation-guide.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    The Annotator
   </a>
  </li>
@@ -106,14 +106,14 @@ const thebe_selector_output = ".output, .cell_output"
   User Guides
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="classify-example-eukaryotic-image.html">
    Image Classification
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classify-example-eukaryotic-object.html">
    Object Classification
   </a>
  </li>
@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/classify-example-eukaryotic-object.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/annotation-guide.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -195,10 +195,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fclassify-example-eukaryotic-object.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fannotation-guide.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/piximi/documentation/edit/main/piximi-documentation/classify-example-eukaryotic-object.md"><button
+        <a class="edit-button" href="https://github.com/piximi/documentation/edit/main/piximi-documentation/annotation-guide.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -224,23 +224,43 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-image-crops-of-cells-in-cellprofiler">
-   1. Creating image crops of cells in CellProfiler
+  <a class="reference internal nav-link" href="#rectangular-annotation">
+   Rectangular annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#categorise-training-data">
-   2. Categorise training data
+  <a class="reference internal nav-link" href="#elliptical-annotation">
+   Elliptical annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#train-model">
-   3. Train model
+  <a class="reference internal nav-link" href="#polygonal-annotation">
+   Polygonal annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-images">
-   4. Predict classes for unlabelled images
+  <a class="reference internal nav-link" href="#pen-annotation">
+   Pen annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lasso-annotation">
+   Lasso annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-annotation">
+   Magnetic annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-annotation">
+   Color annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-annotation">
+   Quick annotation
   </a>
  </li>
 </ul>
@@ -253,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Object Classification</h1>
+                <h1>The Annotator</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -264,23 +284,43 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-image-crops-of-cells-in-cellprofiler">
-   1. Creating image crops of cells in CellProfiler
+  <a class="reference internal nav-link" href="#rectangular-annotation">
+   Rectangular annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#categorise-training-data">
-   2. Categorise training data
+  <a class="reference internal nav-link" href="#elliptical-annotation">
+   Elliptical annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#train-model">
-   3. Train model
+  <a class="reference internal nav-link" href="#polygonal-annotation">
+   Polygonal annotation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-images">
-   4. Predict classes for unlabelled images
+  <a class="reference internal nav-link" href="#pen-annotation">
+   Pen annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lasso-annotation">
+   Lasso annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#magnetic-annotation">
+   Magnetic annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-annotation">
+   Color annotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-annotation">
+   Quick annotation
   </a>
  </li>
 </ul>
@@ -292,34 +332,38 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="object-classification">
-<h1>Object Classification<a class="headerlink" href="#object-classification" title="Permalink to this headline">¶</a></h1>
-<p>Currently, Piximi can only classify at the image level. We are working on adding deep learning segmentation of cells which would enable users to classify individual cells or other segmentations, rather than at the whole image level. This approach will be useful for recording morphologies of cell subpopulations within larger a heterogenous population.</p>
-<p>While we work on adding segmentation, it’s currently possible to use CellProfiler to segment individual cells and create single cell cropped images using the CellProfiler module <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code>. These images of individual cells can be then be opened in Piximi and categorised.</p>
-<!-- ![cropped-object-create](./img/user-guide-creating-cell-objects.png) -->
-<div class="section" id="creating-image-crops-of-cells-in-cellprofiler">
-<h2>1. Creating image crops of cells in CellProfiler<a class="headerlink" href="#creating-image-crops-of-cells-in-cellprofiler" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Link to CellProfiler pipeline</p></li>
-<li><p>Link to example image dataset</p></li>
-<li><p>Brief walkthrough of getting the CellProfiler output</p>
-<ol class="simple">
-<li><p>Import images</p></li>
-<li><p>NamesAndTypes</p></li>
-<li><p>Run analysis</p></li>
-<li><p>Open cropped image folder in Piximi</p></li>
-</ol>
-</li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-annotator">
+<h1>The Annotator<a class="headerlink" href="#the-annotator" title="Permalink to this headline">¶</a></h1>
+<p>The annotator in Piximi can quickly create annotations for your <strong>multichannel</strong> and <strong>multiplane</strong> images. Below is a showcase of some of the different annotation tools that Piximi offers.</p>
+<div class="section" id="rectangular-annotation">
+<h2>Rectangular annotation<a class="headerlink" href="#rectangular-annotation" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="categorise-training-data">
-<h2>2. Categorise training data<a class="headerlink" href="#categorise-training-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="elliptical-annotation">
+<h2>Elliptical annotation<a class="headerlink" href="#elliptical-annotation" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="train-model">
-<h2>3. Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="polygonal-annotation">
+<h2>Polygonal annotation<a class="headerlink" href="#polygonal-annotation" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="predict-classes-for-unlabelled-images">
-<h2>4. Predict classes for unlabelled images<a class="headerlink" href="#predict-classes-for-unlabelled-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pen-annotation">
+<h2>Pen annotation<a class="headerlink" href="#pen-annotation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="lasso-annotation">
+<h2>Lasso annotation<a class="headerlink" href="#lasso-annotation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="magnetic-annotation">
+<h2>Magnetic annotation<a class="headerlink" href="#magnetic-annotation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="color-annotation">
+<h2>Color annotation<a class="headerlink" href="#color-annotation" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="color-annotation-demo">
+<img alt="_images/color-annotation.gif" src="_images/color-annotation.gif" />
+</div>
+</div>
+<div class="section" id="quick-annotation">
+<h2>Quick annotation<a class="headerlink" href="#quick-annotation" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="quick-annotation-demo">
+<img alt="_images/quick-annotation.gif" src="_images/quick-annotation.gif" />
+</div>
 </div>
 </div>
 
@@ -348,17 +392,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="classify-example-eukaryotic-image.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Image Classification</p>
+            <p class="prev-next-title">Piximi</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="hyperparameters.html" title="next page">
+    <a class='right-next' id="next-link" href="classify-example-eukaryotic-image.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hyperparameters</p>
+        <p class="prev-next-title">Image Classification</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
