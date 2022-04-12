@@ -5,6 +5,9 @@ format: jb-book
 root: intro
 # expand_sections: true
 parts:
+- caption:  
+  chapters:
+  - file: annotation-guide
 - caption: User Guides
   chapters:
   - file: classify-example-eukaryotic-image
