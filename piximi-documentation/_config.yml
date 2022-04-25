@@ -24,11 +24,12 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: documentation.piximi.app # Online location of your book
+  url: https://github.com/piximi/documentation # Online location of your book
   branch: main  # Which branch of the repository should be used when creating links (optional)
   path_to_book: piximi-documentation
 
 html:
+  baseurl: documentation.piximi.app
   use_repository_button: true
   use_issues_button: true
   use_edit_page_button: true  
