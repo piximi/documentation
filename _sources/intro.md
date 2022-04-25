@@ -6,7 +6,7 @@ Piximi is an application that runs entirely from your browser and requires no in
 <!-- ![piximi-workflow](./img/piximi-workflow.png) -->
 
 ```{epigraph}
-<a href="https://piximi.github.io/prototype/" target="_blank">Launch the Piximi prototype here</a>
+<a href="https://www.piximi.app/" target="_blank">Launch Piximi here</a>
 ```
 
 ### The Piximi Annotator
