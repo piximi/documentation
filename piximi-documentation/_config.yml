@@ -1,9 +1,9 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
-
-title: Piximi Documentation
-author: Imaging Platform
-# logo: logo.png
+title: Documentation
+author: Broad Institute
+# logo: img/user-guide-u2os-fit-settings.png
+logo: img/piximi-logo.svg
 
 # Only build files that are in the ToC
 only_build_toc_files: true
@@ -29,6 +29,7 @@ repository:
   path_to_book: piximi-documentation
 
 html:
+  favicon                   : "img/favicon.ico"  
   baseurl: documentation.piximi.app
   use_repository_button: true
   use_issues_button: true
