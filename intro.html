@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Piximi &#8212; Documentation</title>
+    <title>Images to Discovery &#8212; Documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Piximi
+   Images to Discovery
   </a>
  </li>
 </ul>
@@ -230,26 +230,19 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images-to-discovery">
-   Images to Discovery
+  <a class="reference internal nav-link" href="#the-piximi-annotator">
+   The Piximi Annotator
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-annotator">
-     The Piximi Annotator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-classifier">
-     The Piximi Classifier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piximi-next-steps">
-     Piximi Next Steps
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-piximi-classifier">
+   The Piximi Classifier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#piximi-next-steps">
+   Piximi Next Steps
+  </a>
  </li>
 </ul>
 
@@ -261,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Piximi</h1>
+                <h1>Images to Discovery</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -272,26 +265,19 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#images-to-discovery">
-   Images to Discovery
+  <a class="reference internal nav-link" href="#the-piximi-annotator">
+   The Piximi Annotator
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-annotator">
-     The Piximi Annotator
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-piximi-classifier">
-     The Piximi Classifier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piximi-next-steps">
-     Piximi Next Steps
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-piximi-classifier">
+   The Piximi Classifier
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#piximi-next-steps">
+   Piximi Next Steps
+  </a>
  </li>
 </ul>
 
@@ -302,33 +288,30 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="piximi">
-<h1>Piximi<a class="headerlink" href="#piximi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="images-to-discovery">
-<h2>Images to Discovery<a class="headerlink" href="#images-to-discovery" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="images-to-discovery">
+<h1>Images to Discovery<a class="headerlink" href="#images-to-discovery" title="Permalink to this headline">¶</a></h1>
 <p>Piximi is an application that runs entirely from your browser and requires no installation and minimal setup. Our vision for Piximi is to provide an intuitive application for the annotation, segmentation, classification and measurement of images. In this current release, Piximi allows users to annotate specific regions of your images, such as nuclei, and can also use deep learning to classify your images into distinct groups.</p>
 <!-- ![piximi-workflow](./img/piximi-workflow.png) -->
 <blockquote class="epigraph">
 <div><p><a href="https://www.piximi.app/" target="_blank">Launch Piximi here</a></p>
 </div></blockquote>
 <div class="section" id="the-piximi-annotator">
-<h3>The Piximi Annotator<a class="headerlink" href="#the-piximi-annotator" title="Permalink to this headline">¶</a></h3>
+<h2>The Piximi Annotator<a class="headerlink" href="#the-piximi-annotator" title="Permalink to this headline">¶</a></h2>
 <p><img alt="intro-annotator" src="_images/intro-annotator.png" /></p>
 <p>The annotator within Piximi allows you to intuitively create annotations on your image of choice using a variety of tools. These tools include manual pen annotations in addition to more automatic methods with quick annotation. The Piximi annotator also works with <strong>multichannel</strong> and <strong>multiplane</strong> images, both of which can be easily selected to make sure that annotations are placed where they need to be. In future releases, we aim to also include z-plane interpolation to make annotating in 3D even easier.</p>
 </div>
 <div class="section" id="the-piximi-classifier">
-<h3>The Piximi Classifier<a class="headerlink" href="#the-piximi-classifier" title="Permalink to this headline">¶</a></h3>
+<h2>The Piximi Classifier<a class="headerlink" href="#the-piximi-classifier" title="Permalink to this headline">¶</a></h2>
 <p>By using deep learning, Piximi can classify images of a variety of subject matter, such as bacteria, cultured cells, insects and more. The power of deep learning is applied upon a small number of images that have been categorized by the user in Piximi which then gives the computer a starting point on understanding what a particular category of image looks like. For example, the user can teach the computer what cells in G1, S, G2 or M-phases of the cell cycle look like. These user-made categorizations are then intensely examined by the deep learning model within Piximi through a process known as training. During this training process, the deep learning model finds patterns in the data in order to link the input (an image added by the user) to an output (the category, or class, defined by the user). The trained deep learning model can then predict on uncategorized images and determine which class they belong to. In the aforementioned example, this would determine which stage of the cell cycle a particular cell is in without relying on user input.</p>
 <p>Ultimately, Piximi offers users a way to have a highly customizable method of classifying large image sets across a range of subject matter by learning from annotations made by the user.</p>
 </div>
 <div class="section" id="piximi-next-steps">
-<h3>Piximi Next Steps<a class="headerlink" href="#piximi-next-steps" title="Permalink to this headline">¶</a></h3>
+<h2>Piximi Next Steps<a class="headerlink" href="#piximi-next-steps" title="Permalink to this headline">¶</a></h2>
 <p>Piximi is a work in progress and currently features an image annotator and deep learning-based classification of images. The ultimate aim of Piximi is to provide users with an intuitive application for the annotation, segmentation, classification and measurement of information present in images. In this phase of Piximi, we have released the annotator and classifier as these are important first steps in preparing to add the segmentation and measurement functionalities.</p>
 <p>We are developing Piximi in the open. If you have any features that you think that you would like to see in Piximi, please create a discussion in <a class="reference external" href="https://github.com/piximi/prototype/discussions">our Piximi prototype Github repo</a></p>
 <!-- Table on contents directive prints the ToC -->
 <!-- ```{tableofcontents}
 ``` -->
-</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
