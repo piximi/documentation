@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -52,8 +53,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="documentation.piximi.app/classify-example-eukaryotic-image.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
@@ -361,10 +360,9 @@ Click here for considerations when categorizing your images and deciding on how 
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Accuracy</span></code> is a measure of how well the model has performed and is calculated as the ratio between the number of correct predictions and the total number of predictions. In this case, <code class="docutils literal notranslate"><span class="pre">Accuracy</span></code> refers to the accuracy of the model at correctly determining the class of images in the <strong>training</strong> subset of images.</p>
 <!-- https://developers.google.com/machine-learning/crash-course/classification/accuracy -->
-<div class="math notranslate nohighlight">
-\[
-    Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
-\]</div>
+<p>$$
+Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
+$$</p>
 <p><code class="docutils literal notranslate"><span class="pre">Validation</span> <span class="pre">Accuracy</span></code> is the accuracy when the model examines the <strong>testing</strong> subset of the data.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Validation accuracy vs accuracy</p>

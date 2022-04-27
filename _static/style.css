@@ -1,0 +1,39 @@
+.text-img {
+    height: 1.5em;
+    padding-right: 0.5em;
+}
+
+.piximi-btn {
+  font-size: 1.5rem;  
+  align-items: center;
+  background-color: #FCFCFD;
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  color: black !important;
+  display: inline-flex;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  touch-action: manipulation;
+  will-change: box-shadow,transform;
+  outline: none;
+}
+
+.piximi-btn:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+}
+
+.piximi-btn:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.piximi-btn:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
