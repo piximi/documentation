@@ -30,4 +30,11 @@ ffmpeg -i input.mov \
 
 https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 
-
+```
+ffmpeg -ss 00:00:02.23 -i thebe_input.mov \
+-t 00:00:6.23 \
+-vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];\
+[s0]palettegen=max_colors=128:reserve_transparent=0[p];\
+[s1][p]paletteuse" \
+-y interactive_thebe.gif
+```
