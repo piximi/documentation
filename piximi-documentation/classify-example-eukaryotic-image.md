@@ -32,7 +32,7 @@ Explore the category menu. Turn on/off (![label](./icons/label-icon.svg)/![label
 
 Single-click to select a 2-3 images from the unknown category that best fit the `Negative Control` category. Once selected, click `Categorize` in the top right and select `Negative Control`. Do the same for 2-3 `Positive Control` images.
 
-```{admonition} How many images should I categorise?
+```{admonition} How many images should I categorize?
 :class: tip, dropdown
 Should this info be added? Something like:
 Click here for considerations when categorizing your images and deciding on how many images to add to each category.
@@ -91,7 +91,7 @@ If you notice that your `Validation accuracy` value decreases as epochs increase
 This is a result of **overfitting** as your model begins to pick up features within your image, such as noise, that are not relevant to classification. In essence, overfitting is when the model memorizes the answer to a specific question, rather than determining the answer from scratch itself.
 ```
 
-Loss is another metric that is calculated on the training and test subets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification. 
+Loss is another metric that is calculated on the training and test subsets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification. 
 
 You can now exit the `Fit` settings by clicking the ![arrow-back](./icons/arrow-back-icon.svg) in the top left.
 
