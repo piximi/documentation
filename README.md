@@ -1,3 +1,5 @@
+![Piximi](./piximi-documentation/img/piximi-logo.svg)
+
 # Contribute
 
 Contributions to the documentation are welcome. To contribute, clone the repository, and follow the [instructions here](https://github.com/piximi/piximi/wiki/contribute#version-control) for commiting changes and submitting work.
