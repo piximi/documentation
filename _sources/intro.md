@@ -25,7 +25,7 @@ Ultimately, Piximi offers users a way to have a highly customizable method of cl
 
 Piximi is a work in progress and currently features an image annotator and deep learning-based classification of images. The ultimate aim of Piximi is to provide users with an intuitive application for the annotation, segmentation, classification and measurement of information present in images. In this phase of Piximi, we have released the annotator and classifier as these are important first steps in preparing to add the segmentation and measurement functionalities.
 
-We are developing Piximi in the open. If you have any features that you think that you would like to see in Piximi, please create a discussion in [our Piximi prototype Github repo](https://github.com/piximi/prototype/discussions)
+We are developing Piximi in the open. If you have any features that you think that you would like to see in Piximi, please create a discussion in [our Piximi Github repo](https://github.com/piximi/piximi/discussions).
 
 <!-- Table on contents directive prints the ToC -->
 <!-- ```{tableofcontents}
