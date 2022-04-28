@@ -15,10 +15,16 @@ If on MacOS, use Shottr. In the Shottr preferences, change the window screenshot
 
 The following steps assume you're on MacOS:
 
-1. `brew install ffmpeg`
-2. Use `QuickTimePlayer.app` to create a new screen recording
-   1. If cropping of the video is required, you can use `Davinci Resolve` from the App Store for free
-      1. `Quick Export` as H.264
+1. Use `QuickTimePlayer.app` to create a new screen recording
+  - If cropping of the video is required, you can use `Davinci Resolve` from the App Store for free
+    - `Quick Export` as H.264
+
+2. Using [Gifski](https://gif.ski/), upload the video and convert to Gif
+
+If you'd rather use the command line, instead of Gifski:
+
+2. `brew install ffmpeg`
+
 3. Then, run:
 ```
 ffmpeg -i input.mov \
