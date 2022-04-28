@@ -1,19 +1,23 @@
-# Suggesting edits
+# Contribute
+
+Contributions to the documentation are welcome. To contribute, clone the repository, and follow the [instructions here](https://github.com/piximi/piximi/wiki/contribute#version-control) for commiting changes and submitting work.
+
+## Suggesting edits
 To make annotations on the webpage directly just highlight the text and annotate. You'll have to sign in/up for a [hypothes.is account](https://hypothes.is/login).
 
-# Adding new pages
+## Adding new pages
 Create a markdown file for your page and add the filename to the _toc.yml file in the piximi-documentation folder. Push your changes to main and the website will be reloaded with your new page.
 
-# Find icons 
+## Find icons 
 https://fonts.google.com/icons?icon.query=settings
 
-# Taking screenshots
+## Taking screenshots
 
 If you'd like to use MacOS native tools, press `shift+command+4` and select the area of the screen to take a screenshot of. Open the resulting screenshot in Preview, and annotate using Tools -> annotate options.
 
 Alternatively, for MacOS, use [Shottr](https://shottr.cc/). In the Shottr preferences, change the window screenshot background to `Transparent`. Take `Capture active windows` screenshots, which you can find in the Shottr menu bar icon > `... more` submenu. You can then add annotations to the screenshot in the popup, such as red rectangles to highlight buttons. `shift+command+S` to save to a custom directory.
 
-# Making GIFs
+## Making GIFs
 
 The following steps assume you're on MacOS:
 
