@@ -333,24 +333,55 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Technical FAQ<a class="headerlink" href="#technical-faq" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="if-piximi-crashes-how-can-i-recover-my-project">
 <h2>If Piximi crashes, how can I recover my project?<a class="headerlink" href="#if-piximi-crashes-how-can-i-recover-my-project" title="Permalink to this headline">¶</a></h2>
+<p>Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.</p>
+<p>The “Save project” option will save the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not including the trained model weights.</p>
+<p><img alt="Save Project Option" src="_images/save_project_1.png" /></p>
+<p><img alt="Save Project Dialog" src="_images/save_project_2.png" /></p>
+<p>To save the trained model weights, use the “Save classifier” option.</p>
+<p><img alt="Save Classifier Option" src="_images/save_classifier_1.png" /></p>
+<p><img alt="Save Classifier Dialog" src="_images/save_classifier_2.png" /></p>
+<p>If Piximi crashes, reload your work by using the “Open project” option to load images and project settings.</p>
+<p><img alt="Open Project Option" src="_images/open_project_1.png" /></p>
+<p><img alt="Open Project Location" src="_images/open_project_2.png" /></p>
+<p>Use the “Open classifier” option to load a trained model and its parameters.</p>
+<p><img alt="Open Classifier Option" src="_images/open_classifier_1.png" /></p>
+<p>Make sure to select both the weights (model paramaters) bin file and json (model architecture) file.</p>
+<p><img alt="Open Classifier Dialog" src="_images/open_classifier_2.png" /></p>
+<p><img alt="Open Classifier Location" src="_images/open_classifier_3.png" /></p>
 </div>
 <div class="section" id="can-i-run-piximi-offline">
 <h2>Can I run Piximi offline?<a class="headerlink" href="#can-i-run-piximi-offline" title="Permalink to this headline">¶</a></h2>
+<p>Yes. Once you visit the application, there is no need for an internet connection so long as you do not close or refresh the tab. If you close or refresh the tab, you will need an internet connection to reload Piximi.</p>
+<p>You can also serve the application locally using Docker. The instructions to do this are on the <a class="reference external" href="https://github.com/piximi/piximi#docker">main Piximi repo README</a>. After downloading the source code, no internet connection is necessary for serving locally and using the app.</p>
+<p>No internet connection is necessary to save or load projects and models.</p>
 </div>
 <div class="section" id="is-there-logging">
 <h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this headline">¶</a></h2>
+<p>No. Piximi does not log any information, perform any telemetry, or make any external API calls.</p>
 </div>
 <div class="section" id="what-models-are-used">
 <h2>What models are used?<a class="headerlink" href="#what-models-are-used" title="Permalink to this headline">¶</a></h2>
+<p>SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense layer. All layers are initialized with random weights and the entire model is trained.</p>
+<p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">MobileNetV1</a> (specifically, <code class="docutils literal notranslate"><span class="pre">MobileNet_v1_0.25_224</span></code>), which is a model pre-trained for image classification. Only the final convolutional layer’s parameters are modified during training, the rest of the parameters in the model are frozen.</p>
 </div>
 <div class="section" id="what-if-internet-connection-is-lost-while-a-model-is-training">
 <h2>What if internet connection is lost while a model is training?<a class="headerlink" href="#what-if-internet-connection-is-lost-while-a-model-is-training" title="Permalink to this headline">¶</a></h2>
+<p>Once Piximi is loaded, no internet connection is necessary. You may keep working, save your project and model, and load previously saved projects and models. If you close the tab containing Piximi, or hit refresh on the browser, you will need an internet connection to reload Piximi.</p>
+<p>No internet connection is necessary to save or load projects and models.</p>
 </div>
 <div class="section" id="is-it-possible-to-see-a-training-summary">
 <h2>Is it possible to see a training summary?<a class="headerlink" href="#is-it-possible-to-see-a-training-summary" title="Permalink to this headline">¶</a></h2>
+<p>Yes. The model summary, accuracy and loss are displayed in the Classifier dialog, and will remain there even if you leave the dialog and re-enter.</p>
+<p><img alt="Training Plots" src="_images/training_plots.png" /></p>
+<p>Additional metrics are available via the Evaluation dialog.</p>
+<p><img alt="Evaluate Option" src="_images/evaluate_option.png" /></p>
+<p><img alt="Evaluate Dialog" src="_images/evaluate_dialog.png" /></p>
+<p>If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.</p>
 </div>
 <div class="section" id="does-piximi-use-a-gpu">
 <h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this headline">¶</a></h2>
+<p>Yes. Piximi uses Tensorflow.js which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>.</p>
+<p>If using Chrome, users will need to enable GPU use by going into preferences -&gt; advanced -&gt; system, and enabling the “Use hardware acceleration when available” option.</p>
 </div>
 </div>
 
