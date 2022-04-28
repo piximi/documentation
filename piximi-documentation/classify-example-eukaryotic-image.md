@@ -1,5 +1,5 @@
 # Image Classification
-### 1. Load images
+## 1. Load images
 
 To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open example project` > `Open human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, press ![upload](./icons/cloud-upload-icon.svg) `Open image` in the top right.
 
@@ -11,7 +11,7 @@ name: open-img
 Open the U2OS example dataset
 ```
 
-### 2. Categorize images
+## 2. Categorize images
 
 In the `Categories` sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the ![label](./icons/label-icon.svg) label to the left of these classes to turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) the display of these images. The classes are:
 - Unknown
@@ -38,7 +38,7 @@ Should this info be added? Something like:
 Click here for considerations when categorizing your images and deciding on how many images to add to each category.
 ```
 
-### 3. Train model
+## 3. Train model
 
 Click on the `Classifier` button to open the sub-menu and then click on the `Fit` settings ![settings](./icons/settings-icon.svg) icon. Within the menu that opens, you can select various parameters to adjust model training. Open the `Dataset Settings` menu to find the `Train percentage option`. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
 
@@ -77,10 +77,10 @@ However, increasing the number of epochs does not necessarily lead to better res
 `Accuracy` is a measure of how well the model has performed and is calculated as the ratio between the number of correct predictions and the total number of predictions. In this case, `Accuracy` refers to the accuracy of the model at correctly determining the class of images in the **training** subset of images.
 
 <!-- https://developers.google.com/machine-learning/crash-course/classification/accuracy -->
-
-$$
-    Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
-$$
+```{math}
+:label: accuracy_equation
+Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
+```
 
 `Validation Accuracy` is the accuracy when the model examines the **testing** subset of the data. 
 
@@ -110,7 +110,7 @@ Discussion about train, validation and test sets: https://github.com/piximi/prot
 Piximi does not currently have a hold-out test-like set.
 ``` -->
 
-### 4. Predict classes for unlabelled data
+## 4. Predict classes for unlabelled data
 
 Once your model has been trained you can press ![label](./icons/label-icon.svg) Predict to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class.
 
