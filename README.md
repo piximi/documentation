@@ -9,13 +9,15 @@ https://fonts.google.com/icons?icon.query=settings
 
 # Taking screenshots
 
-If on MacOS, use Shottr. In the Shottr preferences, change the window screenshot background to `Transparent`. Take `Capture active windows` screenshots, which you can find in the Shottr menu bar icon > `... more` submenu. Can then add annotations to the screenshot in the popup, such as red rectangles to highlight buttons. `shift+command+S` to save to a custom directory.
+If you'd like to use MacOS native tools, press `shift+command+4` and select the area of the screen to take a screenshot of. Open the resulting screenshot in Preview, and annotate using Tools -> annotate options.
+
+Alternatively, for MacOS, use [Shottr](https://shottr.cc/). In the Shottr preferences, change the window screenshot background to `Transparent`. Take `Capture active windows` screenshots, which you can find in the Shottr menu bar icon > `... more` submenu. You can then add annotations to the screenshot in the popup, such as red rectangles to highlight buttons. `shift+command+S` to save to a custom directory.
 
 # Making GIFs
 
 The following steps assume you're on MacOS:
 
-1. Use `QuickTimePlayer.app` to create a new screen recording
+1. Use `QuickTimePlayer.app` to create a new screen recording; alternatively press `shift+command+5`, select "Record Selected Portion", set the recording area, and press "Record"
   - If cropping of the video is required, you can use `Davinci Resolve` from the App Store for free
     - `Quick Export` as H.264
 
