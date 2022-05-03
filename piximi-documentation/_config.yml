@@ -2,6 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 title: Documentation
 author: Broad Institute
+copyright: "2022"
 # logo: img/user-guide-u2os-fit-settings.png
 logo: img/piximi-logo.svg
 
