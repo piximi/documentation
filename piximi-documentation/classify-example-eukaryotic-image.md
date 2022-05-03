@@ -3,6 +3,8 @@
 
 To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open example project` > `Open human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, press ![upload](./icons/cloud-upload-icon.svg) `Open image` in the top right.
 
+The images correspond to U2OS cells expressing arrestin-GFP, and a beta2-adrenergic receptor. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.   
+
 
 ```{figure} ./img/user-guide-open-img.png
 ---
@@ -16,8 +18,8 @@ Open the U2OS example dataset
 In the `Categories` sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the ![label](./icons/label-icon.svg) label to the left of these classes to turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) the display of these images. The classes are:
 - Unknown
   - This represents the uncategorized images. Piximi will predict which class these images belong to later
-- Negative Control
-- Positive Control
+- Negative Control (cytoplasmic GFP)
+- Positive Control (vesicular GFP)
 
 ```{figure} ./img/user-guide-u2os-label-highlight.png
 ---
