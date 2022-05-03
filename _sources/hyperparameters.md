@@ -4,11 +4,13 @@ A hyperparameter are configuration variables that control the learning process f
 
 Determining the best hyperparameter for a given problem can be difficult to define as every problem is different. Below, we introduce hyperparameters in Piximi and some considerations in selecting a value. Ultimately, the goal of hyperparameter selection is to tune the hyperparameters that result in the best performing predictions.
 
+For an interactive example of how hyperparameter changes can influence classification, see the <a href="https://playground.tensorflow.org/" target="_blank">Tensorflow Playground example</a>.
+
 ## Optimization algorithms
 
 Optimization algorithms are what update the internal parameters of the model automatically in response to its own performance. These algorithms will compare a prediction made by the model to the expected output and adjust model parameters to bring the predictions closer to the expected output. 
 
-# Loss function
+## Loss function
 
 The loss function calculates how well a model has performed by comparing the prediction made by the model and what was expected. In essence, a well performing model will output a lower number for the loss function, whereas a poor model will output a higher number. The loss function therefore tells us how well our model is performing at making predictions for a particular set of model parameters. The aforementioned optimization algorithms work to reduce the loss function and in turn lead to a better performing model.
 
