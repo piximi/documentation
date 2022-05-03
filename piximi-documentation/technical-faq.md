@@ -1,6 +1,6 @@
 # Technical FAQ
 
-#### If Piximi crashes, how can I recover my project?
+## If Piximi crashes, how can I recover my project?
 
 Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.
 
@@ -32,7 +32,7 @@ Make sure to select both the weights (model paramaters) bin file and json (model
 
 ![Open Classifier Location](./img/open_classifier_3.png)
 
-#### Can I run Piximi offline?
+## Can I run Piximi offline?
 
 Yes. Once you visit the application, there is no need for an internet connection so long as you do not close or refresh the tab. If you close or refresh the tab, you will need an internet connection to reload Piximi.
 
@@ -50,13 +50,13 @@ SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense 
 
 [MobileNetV1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md) (specifically, `MobileNet_v1_0.25_224`), which is a model pre-trained for image classification. Only the final convolutional layer's parameters are modified during training, the rest of the parameters in the model are frozen.
 
-#### What if internet connection is lost while a model is training?
+## What if internet connection is lost while a model is training?
 
 Once Piximi is loaded, no internet connection is necessary. You may keep working, save your project and model, and load previously saved projects and models. If you close the tab containing Piximi, or hit refresh on the browser, you will need an internet connection to reload Piximi.
 
 No internet connection is necessary to save or load projects and models.
 
-#### Is it possible to see a training summary?
+## Is it possible to see a training summary?
 
 Yes. The model summary, accuracy and loss are displayed in the Classifier dialog, and will remain there even if you leave the dialog and re-enter.
 
@@ -70,7 +70,7 @@ Additional metrics are available via the Evaluation dialog.
 
 If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.
 
-#### Does Piximi use a GPU?
+## Does Piximi use a GPU?
 
 Yes. Piximi uses Tensorflow.js which in turn uses [WebGL](https://en.wikipedia.org/wiki/WebGL).
 
