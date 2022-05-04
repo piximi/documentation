@@ -120,7 +120,7 @@ Once your model has been trained you can press ![label](./icons/label-icon.svg) 
 ---
 name: run-predict
 ---
-TBC
+Training history of a successful classifier model for the U2OS example dataset. 
 ```
 
 Click ![chart](./icons/chart-icon.svg) Evaluate to see in-depth metrics for how the model performed on the data.
