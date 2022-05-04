@@ -75,3 +75,5 @@ If a new model is trained however, or if the current model is re-trained, these 
 Yes. Piximi uses Tensorflow.js which in turn uses [WebGL](https://en.wikipedia.org/wiki/WebGL).
 
 If using Chrome, users will need to enable GPU use by going into preferences -> advanced -> system, and enabling the "Use hardware acceleration when available" option.
+
+## If I run the same model multiple times, will I get different results (i.e., is the fit classifier relying on stochastic/random processes)? (Answer is yes I think but we should explain WHY). 
