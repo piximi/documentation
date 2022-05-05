@@ -67,7 +67,7 @@ Batch size defines how many images the model will look at before updating its in
 
 ### Epochs
 
-An epoch is a measure of how many times the entire training subset is studied by the deep learning model. However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. Click here to read more about overfitting (needs link).
+An epoch is a measure of how many times the entire training subset is studied by the deep learning model. However, increasing the number of epochs does not necessarily lead to better results and can instead result in overfitting. [Click here to read more about overfitting](https://en.wikipedia.org/wiki/Overfitting).
 
 
 
