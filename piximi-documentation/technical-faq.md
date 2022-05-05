@@ -76,4 +76,6 @@ Yes. Piximi uses Tensorflow.js which in turn uses [WebGL](https://en.wikipedia.o
 
 If using Chrome, users will need to enable GPU use by going into preferences -> advanced -> system, and enabling the "Use hardware acceleration when available" option.
 
-## If I run the same model multiple times, will I get different results (i.e., is the fit classifier relying on stochastic/random processes)? (Answer is yes I think but we should explain WHY). 
+## If I run the same model multiple times, why do I get different training results?
+
+It is possible to get different training results when training on the same data. This is a result of the random validation dataset that is selected by Piximi when you press ![play-button](./icons/play-button-icon.svg) `Fit Classifier`. For example, the first time you fit the classifier, images 1, 2 and 3 may be selected for the validation dataset. A second, and identical, run of fit classifier might then select images 4, 5 and 6 as your validation dataset, which look different to the images selected in the first run. Validation image selection is random so that the model performance can be evaluated independently of the images selected for validation.
