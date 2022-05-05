@@ -8,6 +8,12 @@ Piximi is an application that runs entirely from your browser and requires no in
 
 <a class='piximi-btn' href="https://www.piximi.app/" target="_blank"><img class="text-img" src="./img/piximi_logo_icon.png">  Launch Piximi here</a>
 
+```{admonition} Known issues
+:class: warning
+
+Piximi is an active work in progress. [Click here to see the known issues we're working on](work-in-progress).
+```
+
 
 ## The Piximi Annotator
 
