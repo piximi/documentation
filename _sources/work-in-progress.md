@@ -1,4 +1,4 @@
-# Known issues - a work in progress
+# Known issues
 
 ## M1 processors
 
