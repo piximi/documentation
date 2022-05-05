@@ -268,8 +268,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-i-run-the-same-model-multiple-times-will-i-get-different-results-i-e-is-the-fit-classifier-relying-on-stochastic-random-processes-answer-is-yes-i-think-but-we-should-explain-why">
-   If I run the same model multiple times, will I get different results (i.e., is the fit classifier relying on stochastic/random processes)? (Answer is yes I think but we should explain WHY).
+  <a class="reference internal nav-link" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results">
+   If I run the same model multiple times, why do I get different training results?
   </a>
  </li>
 </ul>
@@ -330,8 +330,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-i-run-the-same-model-multiple-times-will-i-get-different-results-i-e-is-the-fit-classifier-relying-on-stochastic-random-processes-answer-is-yes-i-think-but-we-should-explain-why">
-   If I run the same model multiple times, will I get different results (i.e., is the fit classifier relying on stochastic/random processes)? (Answer is yes I think but we should explain WHY).
+  <a class="reference internal nav-link" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results">
+   If I run the same model multiple times, why do I get different training results?
   </a>
  </li>
 </ul>
@@ -397,8 +397,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Yes. Piximi uses Tensorflow.js which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>.</p>
 <p>If using Chrome, users will need to enable GPU use by going into preferences -&gt; advanced -&gt; system, and enabling the “Use hardware acceleration when available” option.</p>
 </div>
-<div class="section" id="if-i-run-the-same-model-multiple-times-will-i-get-different-results-i-e-is-the-fit-classifier-relying-on-stochastic-random-processes-answer-is-yes-i-think-but-we-should-explain-why">
-<h2>If I run the same model multiple times, will I get different results (i.e., is the fit classifier relying on stochastic/random processes)? (Answer is yes I think but we should explain WHY).<a class="headerlink" href="#if-i-run-the-same-model-multiple-times-will-i-get-different-results-i-e-is-the-fit-classifier-relying-on-stochastic-random-processes-answer-is-yes-i-think-but-we-should-explain-why" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results">
+<h2>If I run the same model multiple times, why do I get different training results?<a class="headerlink" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to get different training results when training on the same data. This is a result of the random validation dataset that is selected by Piximi when you press <img alt="play-button" src="_images/play-button-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code>. For example, the first time you fit the classifier, images 1, 2 and 3 may be selected for the validation dataset. A second, and identical, run of fit classifier might then select images 4, 5 and 6 as your validation dataset, which look different to the images selected in the first run. Validation image selection is random so that the model performance can be evaluated independently of the images selected for validation.</p>
 </div>
 </div>
 
