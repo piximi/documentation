@@ -310,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The images correspond to U2OS cells expressing arrestin-GFP, and a beta2-adrenergic receptor. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.</p>
 <div class="figure align-default" id="open-img">
 <img alt="_images/user-guide-open-img.png" src="_images/user-guide-open-img.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Open the U2OS example dataset</span><a class="headerlink" href="#open-img" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Open the U2OS example dataset</span><a class="headerlink" href="#open-img" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="categorize-images">
@@ -327,7 +327,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="figure align-default" id="u2os-labels">
 <img alt="_images/user-guide-u2os-label-highlight.png" src="_images/user-guide-u2os-label-highlight.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Explore the category menu. Turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) a particular category to show/hide only those images.</span><a class="headerlink" href="#u2os-labels" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Explore the category menu. Turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) a particular category to show/hide only those images.</span><a class="headerlink" href="#u2os-labels" title="Permalink to this image">¶</a></p>
 </div>
 <!-- ```{margin} 
 **Terminology**: We categorize into classes
@@ -344,17 +344,17 @@ Click here for considerations when categorizing your images and deciding on how 
 <p>Click on the <code class="docutils literal notranslate"><span class="pre">Classifier</span></code> button to open the sub-menu and then click on the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings <img alt="settings" src="_images/settings-icon.svg" /> icon. Within the menu that opens, you can select various parameters to adjust model training. Open the <code class="docutils literal notranslate"><span class="pre">Dataset</span> <span class="pre">Settings</span></code> menu to find the <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">percentage</span> <span class="pre">option</span></code>. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.</p>
 <div class="figure align-default" id="u2os-fit-settings">
 <img alt="_images/user-guide-u2os-fit-settings.png" src="_images/user-guide-u2os-fit-settings.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Open the classifier settings.</span><a class="headerlink" href="#u2os-fit-settings" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Open the classifier settings.</span><a class="headerlink" href="#u2os-fit-settings" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the top right, press the <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training. Piximi will now look at the <strong>training</strong> subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the <strong>testing</strong> subset of images and compare the models answers to the image class.</p>
 <div class="figure align-default" id="fit-settings">
 <img alt="_images/user-guide-run-fit.png" src="_images/user-guide-run-fit.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Explore classifier settings and then press <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training.</span><a class="headerlink" href="#fit-settings" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Explore classifier settings and then press <img alt="play-button" src="_images/play-button-icon.svg" /> to begin training.</span><a class="headerlink" href="#fit-settings" title="Permalink to this image">¶</a></p>
 </div>
 <p>At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.</p>
 <div class="figure align-default" id="epoch-accuracy-plot">
 <img alt="_images/user-guide-accuracy-plot.png" src="_images/user-guide-accuracy-plot.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">TBC</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">TBC</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">¶</a></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">What is an epoch?</p>
@@ -375,7 +375,7 @@ Click here for considerations when categorizing your images and deciding on how 
 <p>You can now exit the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings by clicking the <img alt="arrow-back" src="_images/arrow-back-icon.svg" /> in the top left.</p>
 <div class="figure align-default" id="fit-exit">
 <img alt="_images/user-guide-exit-fit.png" src="_images/user-guide-exit-fit.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Exit the fit settings menu.</span><a class="headerlink" href="#fit-exit" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Exit the fit settings menu.</span><a class="headerlink" href="#fit-exit" title="Permalink to this image">¶</a></p>
 </div>
 <!-- ```{margin} An optional title
 Diagnosing model underfitting and overfitting: https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
@@ -390,7 +390,7 @@ Piximi does not currently have a hold-out test-like set.
 <p>Once your model has been trained you can press <img alt="label" src="_images/label-icon.svg" /> Predict to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="_images/label-icon.svg" /> color on the image thumbnail update to that particular class.</p>
 <div class="figure align-default" id="run-predict">
 <img alt="_images/user-guide-u2os-run-predict.png" src="_images/user-guide-u2os-run-predict.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Training history of a successful classifier model for the U2OS example dataset.</span><a class="headerlink" href="#run-predict" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Training history of a successful classifier model for the U2OS example dataset.</span><a class="headerlink" href="#run-predict" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click <img alt="chart" src="_images/chart-icon.svg" /> Evaluate to see in-depth metrics for how the model performed on the data.</p>
 <div class="seealso admonition">
