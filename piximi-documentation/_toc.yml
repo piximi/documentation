@@ -16,5 +16,6 @@ parts:
   chapters:
   - file: hyperparameters
   - file: technical-faq
+  - file: work-in-progress
   # chapters:
   # - file: technical-faq
