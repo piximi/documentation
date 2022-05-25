@@ -40,11 +40,11 @@ You can also serve the application locally using Docker. The instructions to do 
 
 No internet connection is necessary to save or load projects and models.
 
-#### Is there logging?
+## Is there logging?
 
 No. Piximi does not log any information, perform any telemetry, or make any external API calls.
 
-#### What models are used?
+## What models are used?
 
 SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense layer. All layers are initialized with random weights and the entire model is trained.
 

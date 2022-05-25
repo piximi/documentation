@@ -1,8 +1,8 @@
 # Hyperparameters
 
-A hyperparameter are configuration variables that control the learning process for deep learning models in Piximi. When a model is trained on your data, the neural network can internally learn and update its **own** parameters to yield the desired output. However, hyperparameters cannot be estimated by the model itself from the training data and requires user intuition to set.
+Hyperparameters are configuration variables that control the learning process for deep learning models in Piximi. When a model is trained on your data, the neural network can internally learn and update its **own** parameters to yield the desired output. However, hyperparameters cannot be estimated by the model itself from the training data and requires user intuition to set.
 
-Determining the best hyperparameter for a given problem can be difficult to define as every problem is different. Below, we introduce hyperparameters in Piximi and some considerations in selecting a value. Ultimately, the goal of hyperparameter selection is to tune the hyperparameters that result in the best performing predictions.
+Determining the best hyperparameter for a given problem can be difficult to define as every problem is different. Below, we introduce the hyperparameters available in Piximi and offer some considerations in selecting a value. Ultimately, the goal of hyperparameter selection is to tune the hyperparameters that result in the best performing predictions on your data.
 
 ```{tip}
 For an interactive example of how hyperparameter changes can influence classification, see the <a href="https://playground.tensorflow.org/" target="_blank">Tensorflow Playground example</a>.
@@ -61,9 +61,10 @@ The learning rate is a value that determines by how much the model updates its i
 
 Batch size defines how many images the model will look at before updating its internal parameters. A batch size of 1 would mean that the model will look at one image, update its internal parameters on what links an image to a class, and then repeat this with the next image until all images have been analyzed.
 
-> ***How does the model update its internal parameters?***
-> 
-> At the end of each batch, the predictions the model has made are compared with the ground truth set by the user. During this process, the model can see how close its prediction were. This comparison allows for the model to calculate an error using the **loss function**, which the model then uses to update internal parameters to reduce this error. How this error is reduced by adjusting model parameters is defined by the **optimization algorithm** hyperparameter.
+```{admonition} How does the model update its internal parameters?
+:class: tip, dropdown
+At the end of each batch, the predictions the model has made are compared with the ground truth set by the user. During this process, the model can see how close its prediction were. This comparison allows for the model to calculate an error using the **loss function**, which the model then uses to update internal parameters to reduce this error. How this error is reduced by adjusting model parameters is defined by the **optimization algorithm** hyperparameter.
+```
 
 ### Epochs
 

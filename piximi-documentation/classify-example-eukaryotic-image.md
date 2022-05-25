@@ -15,7 +15,7 @@ Open the U2OS example dataset
 
 ## 2. Categorize images
 
-In the `Categories` sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the ![label](./icons/label-icon.svg) label to the left of these classes to turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) the display of these images. The classes are:
+In the `Categories` sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the ![label](./icons/label-icon.svg) label to the left of these categories to turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) the display of these images. The classes are:
 - Unknown
   - This represents the uncategorized images. Piximi will predict which class these images belong to later
 - Negative Control (cytoplasmic GFP)
@@ -66,7 +66,7 @@ At the bottom of the fit settings page you will see two graphs update as Piximi 
 ---
 name: epoch-accuracy-plot
 ---
-TBC
+Training history of a successful classifier model for the U2OS example dataset.
 ```
 
 ```{admonition} What is an epoch?
@@ -114,16 +114,23 @@ Piximi does not currently have a hold-out test-like set.
 
 ## 4. Predict classes for unlabelled data
 
-Once your model has been trained you can press ![label](./icons/label-icon.svg) Predict to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class.
+Once your model has been trained you can press ![label](./icons/label-important-icon.svg) `Predict` to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class.
 
 ```{figure} ./img/user-guide-u2os-run-predict.png
 ---
 name: run-predict
 ---
-Training history of a successful classifier model for the U2OS example dataset. 
+Predict the class of unknown images using your trained model.
 ```
 
-Click ![chart](./icons/chart-icon.svg) Evaluate to see in-depth metrics for how the model performed on the data.
+Click ![chart](./icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed.
+
+<!-- ```{figure} ./img/user-guide-evaluate.png
+---
+name: evaluate
+---
+TBC
+``` -->
 
 ```{admonition} See also
 :class: seealso
