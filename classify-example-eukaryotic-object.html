@@ -354,12 +354,12 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>1. Import images<a class="headerlink" href="#import-images" title="Permalink to this headline">¶</a></h3>
 <p>To begin, drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module of CellProfiler.</p>
 <div class="figure align-default" id="images-input-view">
-<img alt="img/user-guide-images-input-view.png" src="img/user-guide-images-input-view.png" />
+<img alt="_images/user-guide-images-input-view.png" src="_images/user-guide-images-input-view.png" />
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">¶</a></p>
 </div>
 <p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code>. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
 <div class="figure align-default" id="id1">
-<img alt="img/user-guide-names-and-types-view.png" class="img-shadow" src="img/user-guide-names-and-types-view.png" />
+<img alt="_images/user-guide-names-and-types-view.png" class="img-shadow" src="_images/user-guide-names-and-types-view.png" />
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -367,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>2. IdentifyPrimaryObjects<a class="headerlink" href="#identifyprimaryobjects" title="Permalink to this headline">¶</a></h3>
 <p>Then, add a <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module and set <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as the input image. Name this primary object <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code>. Adjust the parameters accordingly so an appropriate segmentation is achieved while using test mode.</p>
 <div class="figure align-default" id="identifyprimaryobjects-view">
-<img alt="img/user-guide-identify-primary-object-view.png" src="img/user-guide-identify-primary-object-view.png" />
+<img alt="_images/user-guide-identify-primary-object-view.png" src="_images/user-guide-identify-primary-object-view.png" />
 <p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#identifyprimaryobjects-view" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -375,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>3. IdentifySecondaryObjects<a class="headerlink" href="#identifysecondaryobjects" title="Permalink to this headline">¶</a></h3>
 <p>Add a <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as the input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as the input objects. Name this Secondary object <code class="docutils literal notranslate"><span class="pre">Cells</span></code>. Since the cytoplasmic signal is inconsistent between cells and can therefore not be used to determine cytoplasmic segmentation, we will use the <code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">-</span> <span class="pre">N</span></code> method to identify secondary objects, with a distance of <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
 <div class="figure align-default" id="identifysecondaryobjects-view">
-<img alt="img/user-guide-identify-secondary-object-view.png" src="img/user-guide-identify-secondary-object-view.png" />
+<img alt="_images/user-guide-identify-secondary-object-view.png" src="_images/user-guide-identify-secondary-object-view.png" />
 <p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#identifysecondaryobjects-view" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -383,7 +383,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>4. GrayToColor<a class="headerlink" href="#graytocolor" title="Permalink to this headline">¶</a></h3>
 <p>Now, we will create a multichannel RGB image using the input <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> images. Add a <code class="docutils literal notranslate"><span class="pre">GrayToColor</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> to be colored green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> to be colored blue. Name the output image <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code>.</p>
 <div class="figure align-default" id="colortogray-view">
-<img alt="img/user-guide-color-to-gray-view.png" src="img/user-guide-color-to-gray-view.png" />
+<img alt="_images/user-guide-color-to-gray-view.png" src="_images/user-guide-color-to-gray-view.png" />
 <p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#colortogray-view" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -391,7 +391,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>5. SaveCroppedObjects<a class="headerlink" href="#savecroppedobjects" title="Permalink to this headline">¶</a></h3>
 <p>Next, add a <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module and select the <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects from <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code>. For the <code class="docutils literal notranslate"><span class="pre">Image</span></code> setting, select <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code> created by the <code class="docutils literal notranslate"><span class="pre">ColorToGray</span></code> module. It is this image that will be cropped to individual <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects. Select an appropriate directory to save your cropped images.</p>
 <div class="figure align-default" id="savecroppedobjects-view">
-<img alt="img/user-guide-save-cropped-objects-view.png" src="img/user-guide-save-cropped-objects-view.png" />
+<img alt="_images/user-guide-save-cropped-objects-view.png" src="_images/user-guide-save-cropped-objects-view.png" />
 <p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">¶</a></p>
 </div>
 <p>Finally, run the analysis within CellProfiler by pressing the <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">images</span></code> button in the bottom left of the main CellProfiler window.</p>
