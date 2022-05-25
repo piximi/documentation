@@ -245,18 +245,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#can-i-run-piximi-offline">
    Can I run Piximi offline?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#is-there-logging">
-     Is there logging?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-models-are-used">
-     What models are used?
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-there-logging">
+   Is there logging?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-models-are-used">
+   What models are used?
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">
@@ -307,18 +305,16 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#can-i-run-piximi-offline">
    Can I run Piximi offline?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#is-there-logging">
-     Is there logging?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-models-are-used">
-     What models are used?
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-there-logging">
+   Is there logging?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-models-are-used">
+   What models are used?
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">
@@ -374,15 +370,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Yes. Once you visit the application, there is no need for an internet connection so long as you do not close or refresh the tab. If you close or refresh the tab, you will need an internet connection to reload Piximi.</p>
 <p>You can also serve the application locally using Docker. The instructions to do this are on the <a class="reference external" href="https://github.com/piximi/piximi#docker">main Piximi repo README</a>. After downloading the source code, no internet connection is necessary for serving locally and using the app.</p>
 <p>No internet connection is necessary to save or load projects and models.</p>
+</div>
 <div class="section" id="is-there-logging">
-<h3>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this headline">¶</a></h3>
+<h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this headline">¶</a></h2>
 <p>No. Piximi does not log any information, perform any telemetry, or make any external API calls.</p>
 </div>
 <div class="section" id="what-models-are-used">
-<h3>What models are used?<a class="headerlink" href="#what-models-are-used" title="Permalink to this headline">¶</a></h3>
+<h2>What models are used?<a class="headerlink" href="#what-models-are-used" title="Permalink to this headline">¶</a></h2>
 <p>SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense layer. All layers are initialized with random weights and the entire model is trained.</p>
 <p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">MobileNetV1</a> (specifically, <code class="docutils literal notranslate"><span class="pre">MobileNet_v1_0.25_224</span></code>), which is a model pre-trained for image classification. Only the final convolutional layer’s parameters are modified during training, the rest of the parameters in the model are frozen.</p>
-</div>
 </div>
 <div class="section" id="what-if-internet-connection-is-lost-while-a-model-is-training">
 <h2>What if internet connection is lost while a model is training?<a class="headerlink" href="#what-if-internet-connection-is-lost-while-a-model-is-training" title="Permalink to this headline">¶</a></h2>

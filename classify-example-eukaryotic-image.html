@@ -320,7 +320,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="categorize-images">
 <h2>2. Categorize images<a class="headerlink" href="#categorize-images" title="Permalink to this headline">¶</a></h2>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the <img alt="label" src="_images/label-icon.svg" /> label to the left of these classes to turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) the display of these images. The classes are:</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the <img alt="label" src="_images/label-icon.svg" /> label to the left of these categories to turn on/off (<img alt="label" src="_images/label-icon.svg" />/<img alt="label" src="_images/label-off-icon.svg" />) the display of these images. The classes are:</p>
 <ul class="simple">
 <li><p>Unknown</p>
 <ul>
@@ -359,7 +359,7 @@ Click here for considerations when categorizing your images and deciding on how 
 <p>At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.</p>
 <div class="figure align-default" id="epoch-accuracy-plot">
 <img alt="_images/user-guide-accuracy-plot.png" src="_images/user-guide-accuracy-plot.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">TBC</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Training history of a successful classifier model for the U2OS example dataset.</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">¶</a></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">What is an epoch?</p>
@@ -392,12 +392,18 @@ Piximi does not currently have a hold-out test-like set.
 </div>
 <div class="section" id="predict-classes-for-unlabelled-data">
 <h2>4. Predict classes for unlabelled data<a class="headerlink" href="#predict-classes-for-unlabelled-data" title="Permalink to this headline">¶</a></h2>
-<p>Once your model has been trained you can press <img alt="label" src="_images/label-icon.svg" /> Predict to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="_images/label-icon.svg" /> color on the image thumbnail update to that particular class.</p>
+<p>Once your model has been trained you can press <img alt="label" src="_images/label-important-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Predict</span></code> to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="_images/label-icon.svg" /> color on the image thumbnail update to that particular class.</p>
 <div class="figure align-default" id="run-predict">
 <img alt="_images/user-guide-u2os-run-predict.png" src="_images/user-guide-u2os-run-predict.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Training history of a successful classifier model for the U2OS example dataset.</span><a class="headerlink" href="#run-predict" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Predict the class of unknown images using your trained model.</span><a class="headerlink" href="#run-predict" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click <img alt="chart" src="_images/chart-icon.svg" /> Evaluate to see in-depth metrics for how the model performed on the data.</p>
+<p>Click <img alt="chart" src="_images/chart-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> to see in-depth metrics on how well the model performed.</p>
+<!-- ```{figure} ./img/user-guide-evaluate.png
+---
+name: evaluate
+---
+TBC
+``` -->
 <div class="seealso admonition">
 <p class="admonition-title">See also</p>
 <p>Link to our on guide, or a guide somewhere else. eg:</p>
