@@ -4,14 +4,7 @@ Currently, Piximi can only classify entire images. We are working on adding deep
 
 While we work on adding segmentation, it's currently possible to use CellProfiler to segment individual cells and create single cell cropped images. These images of individual cells can be then be opened in Piximi and then categorized.
 
-The following example will demonstrate how the image crops for the Piximi `U2OS Cell Crops` example project were made using CellProfiler. The images we will use to recreate this dataset are from the [BBBC013 cytoplasm-nucleus translocation dataset](https://bbbc.broadinstitute.org/BBBC013) from the Broad Bioimage Benchmark Collection. Within this dataset, a cytoplasmic GFP signal is considered as positive and a nuclear GFP signal as negative. The pipeline used in the following example can be {download}`downloaded here <downloads/BBBC013-translocation-crop.cppipe.zip>`, but this guide will walk you through how to create the pipeline from scratch. 
-
-<!-- download here {download}`this pipeline111 <./test/test_download.zip>` -->
-<!-- A link to {Download}`a text file<./other-file.txt>`. -->
-
-
-
-<!-- ![cropped-object-create](./img/user-guide-creating-cell-objects.png) -->
+The following example will demonstrate how the image crops for the Piximi `U2OS Cell Crops` example project were made using CellProfiler. The images we will use to recreate this dataset are from the [BBBC013 cytoplasm-nucleus translocation dataset](https://bbbc.broadinstitute.org/BBBC013) from the Broad Bioimage Benchmark Collection. Within this dataset, a cytoplasmic GFP signal is considered as positive and a nuclear GFP signal as negative. The CellProfiler pipeline used in the following example can be {download}`downloaded here <downloads/BBBC013-translocation-crop.cppipe.zip>`, but this guide will walk you through how to create the pipeline from scratch. 
 
 ## Create cell crops with CellProfiler
 
@@ -89,14 +82,6 @@ Finally, run the analysis within CellProfiler by pressing the `Analyze images` b
 ### 6. Next steps
 
 Now that you have cropped images of your cells, you can follow the [image classification guide](classify-example-eukaryotic-image.md) and adjust it to accommodate your image crops. The crops of the [BBBC013 dataset](https://bbbc.broadinstitute.org/BBBC013) represents a 3-class problem: `NuclearGFP`, `CytoplasmicGFP` and `NoGFP`. When categorizing your images into these distinct categories, explore how categorizing more images into each of these classes can impact training performance. 
-
-<!-- [test](test/test-download.zip) -->
-
-{download}`test2 <downloads/BBBC013-translocation-crop.cppipe.zip>`
-
-<a href="https://raw.githubusercontent.com/CellProfiler/examples/master/ExampleYeastColonies/ExampleYeastColonies.cppipe" target="_blank">Click to download</a>
-
-<!-- {download}`example`<https://raw.githubusercontent.com/CellProfiler/tutorials/master/Translocation/Translocation_final.cppipe> -->
 
 ```{admonition} Copyright
 :class: seealso
