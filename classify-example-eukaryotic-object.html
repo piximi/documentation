@@ -237,24 +237,41 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-image-crops-of-cells-in-cellprofiler">
-   1. Creating image crops of cells in CellProfiler
+  <a class="reference internal nav-link" href="#create-cell-crops-with-cellprofiler">
+   Create cell crops with CellProfiler
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#categorise-training-data">
-   2. Categorise training data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#train-model">
-   3. Train model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-images">
-   4. Predict classes for unlabelled images
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-images">
+     1. Import images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifyprimaryobjects">
+     2. IdentifyPrimaryObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifysecondaryobjects">
+     3. IdentifySecondaryObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graytocolor">
+     4. GrayToColor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savecroppedobjects">
+     5. SaveCroppedObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-steps">
+     6. Next steps
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -277,24 +294,41 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-image-crops-of-cells-in-cellprofiler">
-   1. Creating image crops of cells in CellProfiler
+  <a class="reference internal nav-link" href="#create-cell-crops-with-cellprofiler">
+   Create cell crops with CellProfiler
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#categorise-training-data">
-   2. Categorise training data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#train-model">
-   3. Train model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predict-classes-for-unlabelled-images">
-   4. Predict classes for unlabelled images
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-images">
+     1. Import images
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifyprimaryobjects">
+     2. IdentifyPrimaryObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifysecondaryobjects">
+     3. IdentifySecondaryObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graytocolor">
+     4. GrayToColor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savecroppedobjects">
+     5. SaveCroppedObjects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-steps">
+     6. Next steps
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -307,32 +341,73 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="object-classification">
 <h1>Object Classification<a class="headerlink" href="#object-classification" title="Permalink to this headline">¶</a></h1>
-<p>Currently, Piximi can only classify at the image level. We are working on adding deep learning segmentation of cells which would enable users to classify individual cells or other segmentations, rather than at the whole image level. This approach will be useful for recording morphologies of cell subpopulations within larger a heterogenous population.</p>
-<p>While we work on adding segmentation, it’s currently possible to use CellProfiler to segment individual cells and create single cell cropped images using the CellProfiler module <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code>. These images of individual cells can be then be opened in Piximi and categorised.</p>
+<p>Currently, Piximi can only classify entire images. We are working on adding deep learning based segmentation that would enable users to classify individual cells or other segmented regions of interest within an image. This approach will be useful for recording phenotypes of cell subpopulations within a larger, heterogenous population, for example.</p>
+<p>While we work on adding segmentation, it’s currently possible to use CellProfiler to segment individual cells and create single cell cropped images. These images of individual cells can be then be opened in Piximi and then categorized.</p>
+<p>The following example will demonstrate how the image crops for the Piximi <code class="docutils literal notranslate"><span class="pre">U2OS</span> <span class="pre">Cell</span> <span class="pre">Crops</span></code> example project were made using CellProfiler. The images we will use to recreate this dataset are from the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013 cytoplasm-nucleus translocation dataset</a> from the Broad Bioimage Benchmark Collection. Within this dataset, a cytoplasmic GFP signal is considered as positive and a nuclear GFP signal as negative. The pipeline used in the following example can be <code class="xref download docutils literal notranslate"><span class="pre">downloaded</span> <span class="pre">here</span></code>, but this guide will walk you through how to create the pipeline from scratch.</p>
+<!-- download here {download}`this pipeline111 <./test/test_download.zip>` -->
+<!-- A link to {Download}`a text file<./other-file.txt>`. -->
 <!-- ![cropped-object-create](./img/user-guide-creating-cell-objects.png) -->
-<div class="section" id="creating-image-crops-of-cells-in-cellprofiler">
-<h2>1. Creating image crops of cells in CellProfiler<a class="headerlink" href="#creating-image-crops-of-cells-in-cellprofiler" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Link to CellProfiler pipeline</p></li>
-<li><p>Link to example image dataset</p></li>
-<li><p>Brief walkthrough of getting the CellProfiler output</p>
-<ol class="simple">
-<li><p>Import images</p></li>
-<li><p>NamesAndTypes</p></li>
-<li><p>Run analysis</p></li>
-<li><p>Open cropped image folder in Piximi</p></li>
-</ol>
-</li>
-</ul>
+<div class="section" id="create-cell-crops-with-cellprofiler">
+<h2>Create cell crops with CellProfiler<a class="headerlink" href="#create-cell-crops-with-cellprofiler" title="Permalink to this headline">¶</a></h2>
+<p>For this example, we will create a CellProfiler pipeline that will first identify nuclei using the <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module, followed by cell identification with the <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module. Following this, we will then create a multichannel RGB image with DNA colored blue and GFP colored green. Finally, these mulltichannel RGB images will be cropped based on the previously identified cell object using the <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module.</p>
+<div class="section" id="import-images">
+<h3>1. Import images<a class="headerlink" href="#import-images" title="Permalink to this headline">¶</a></h3>
+<p>To begin, drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module of CellProfiler.</p>
+<div class="figure align-default" id="images-input-view">
+<img alt="img/user-guide-images-input-view.png" src="img/user-guide-images-input-view.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="categorise-training-data">
-<h2>2. Categorise training data<a class="headerlink" href="#categorise-training-data" title="Permalink to this headline">¶</a></h2>
+<p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code>. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
+<div class="figure align-default" id="id1">
+<img alt="img/user-guide-names-and-types-view.png" class="img-shadow" src="img/user-guide-names-and-types-view.png" />
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="train-model">
-<h2>3. Train model<a class="headerlink" href="#train-model" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="predict-classes-for-unlabelled-images">
-<h2>4. Predict classes for unlabelled images<a class="headerlink" href="#predict-classes-for-unlabelled-images" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="identifyprimaryobjects">
+<h3>2. IdentifyPrimaryObjects<a class="headerlink" href="#identifyprimaryobjects" title="Permalink to this headline">¶</a></h3>
+<p>Then, add a <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module and set <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as the input image. Name this primary object <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code>. Adjust the parameters accordingly so an appropriate segmentation is achieved while using test mode.</p>
+<div class="figure align-default" id="identifyprimaryobjects-view">
+<img alt="img/user-guide-identify-primary-object-view.png" src="img/user-guide-identify-primary-object-view.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#identifyprimaryobjects-view" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="identifysecondaryobjects">
+<h3>3. IdentifySecondaryObjects<a class="headerlink" href="#identifysecondaryobjects" title="Permalink to this headline">¶</a></h3>
+<p>Add a <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as the input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as the input objects. Name this Secondary object <code class="docutils literal notranslate"><span class="pre">Cells</span></code>. Since the cytoplasmic signal is inconsistent between cells and can therefore not be used to determine cytoplasmic segmentation, we will use the <code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">-</span> <span class="pre">N</span></code> method to identify secondary objects, with a distance of <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<div class="figure align-default" id="identifysecondaryobjects-view">
+<img alt="img/user-guide-identify-secondary-object-view.png" src="img/user-guide-identify-secondary-object-view.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#identifysecondaryobjects-view" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="graytocolor">
+<h3>4. GrayToColor<a class="headerlink" href="#graytocolor" title="Permalink to this headline">¶</a></h3>
+<p>Now, we will create a multichannel RGB image using the input <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> images. Add a <code class="docutils literal notranslate"><span class="pre">GrayToColor</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> to be colored green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> to be colored blue. Name the output image <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code>.</p>
+<div class="figure align-default" id="colortogray-view">
+<img alt="img/user-guide-color-to-gray-view.png" src="img/user-guide-color-to-gray-view.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#colortogray-view" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="savecroppedobjects">
+<h3>5. SaveCroppedObjects<a class="headerlink" href="#savecroppedobjects" title="Permalink to this headline">¶</a></h3>
+<p>Next, add a <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module and select the <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects from <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code>. For the <code class="docutils literal notranslate"><span class="pre">Image</span></code> setting, select <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code> created by the <code class="docutils literal notranslate"><span class="pre">ColorToGray</span></code> module. It is this image that will be cropped to individual <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects. Select an appropriate directory to save your cropped images.</p>
+<div class="figure align-default" id="savecroppedobjects-view">
+<img alt="img/user-guide-save-cropped-objects-view.png" src="img/user-guide-save-cropped-objects-view.png" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">¶</a></p>
+</div>
+<p>Finally, run the analysis within CellProfiler by pressing the <code class="docutils literal notranslate"><span class="pre">Analyze</span> <span class="pre">images</span></code> button in the bottom left of the main CellProfiler window.</p>
+</div>
+<div class="section" id="next-steps">
+<h3>6. Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h3>
+<p>Now that you have cropped images of your cells, you can follow the <a class="reference internal" href="classify-example-eukaryotic-image.html"><span class="doc std std-doc">image classification guide</span></a> and adjust it to accommodate your image crops. The crops of the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013 dataset</a> represents a 3-class problem: <code class="docutils literal notranslate"><span class="pre">NuclearGFP</span></code>, <code class="docutils literal notranslate"><span class="pre">CytoplasmicGFP</span></code> and <code class="docutils literal notranslate"><span class="pre">NoGFP</span></code>. When categorizing your images into these distinct categories, explore how categorizing more images into each of these classes can impact training performance.</p>
+<!-- [test](test/test-download.zip) -->
+<p><code class="xref download docutils literal notranslate"><span class="pre">test2</span></code></p>
+<p><a href="https://raw.githubusercontent.com/CellProfiler/examples/master/ExampleYeastColonies/ExampleYeastColonies.cppipe" target="_blank">Click to download</a></p>
+<!-- {download}`example`<https://raw.githubusercontent.com/CellProfiler/tutorials/master/Translocation/Translocation_final.cppipe> -->
+<div class="seealso admonition">
+<p class="admonition-title">Copyright</p>
+<p>The <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013</a> images used here are licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> by Ilya Ravkin.</p>
+</div>
+</div>
 </div>
 </div>
 
