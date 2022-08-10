@@ -34,11 +34,11 @@ Explore the category menu. Turn on/off (![label](./icons/label-icon.svg)/![label
 
 Single-click to select a 2-3 images from the unknown category that best fit the `Negative Control` category. Once selected, click `Categorize` in the top right and select `Negative Control`. Do the same for 2-3 `Positive Control` images.
 
-```{admonition} How many images should I categorize?
+<!-- ```{admonition} How many images should I categorize?
 :class: tip, dropdown
 Should this info be added? Something like:
 Click here for considerations when categorizing your images and deciding on how many images to add to each category.
-```
+``` -->
 
 ## 3. Train model
 
