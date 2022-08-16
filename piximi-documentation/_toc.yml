@@ -18,7 +18,10 @@ parts:
   - file: PiximiConverter.ipynb
 - caption: Technical information
   chapters:
-  - file: hyperparameters
+  - file: hyperparameters/hyperparameters-intro
+    sections:
+    - file: hyperparameters/hyperquest-2-layer
+    - file: hyperparameters/hyperquest-conv-net
   - file: technical-faq
   - file: work-in-progress
   - file: example-datasets
