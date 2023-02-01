@@ -7,7 +7,7 @@ The annotator in Piximi can quickly create annotations for your **multichannel**
 The Piximi annotator offers a variety of ways to add, subtract and make intersections of annotations. Furthermore, the selection tool enables users to resize and delete specific annotations.
 
 
-### Add annotations
+### Add some annotations
 
 ```{figure} ./img/annotation-demo/addition-annotation.gif
 :class: annotation-gif
