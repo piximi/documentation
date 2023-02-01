@@ -1,5 +1,6 @@
-filters:
-  - filter_type: dir
-  source_file_dir: piximi-documentation
-  source_file_extension: md
-  source_language: en
+git:
+  filters:
+    - filter_type: dir
+    source_file_dir: piximi-documentation
+    source_file_extension: md
+    source_language: en
