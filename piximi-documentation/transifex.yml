@@ -1,6 +1,8 @@
 git:
   filters:
-    - filter_type: dir
-      source_file_dir: piximi-documentation
-      source_file_extension: md
-      source_language: en
+  - filter_type: dir
+    file_format: GITHUBMARKDOWN
+    source_file_extension: md
+    source_language: en
+    source_file_dir: piximi-documentation
+    translation_files_expression: 'piximi-documentation/translations/<lang>'
