@@ -5,7 +5,7 @@ format: jb-book
 root: intro
 # expand_sections: true
 parts:
-- caption:  
+- caption:
   chapters:
   - file: annotation-guide
 - caption: User Guides
@@ -17,5 +17,6 @@ parts:
   - file: hyperparameters
   - file: technical-faq
   - file: work-in-progress
-  # chapters:
-  # - file: technical-faq
+- caption: Tutorials and notebooks
+  chapters:
+  - file: PiximiConverter.ipynb
