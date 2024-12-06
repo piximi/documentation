@@ -19,9 +19,11 @@ When you ![save](./icons/save-project-icon.svg) `Save` a Piximi project to your 
 
 You can ![open](./icons/open-folder-icon.svg) `Open` a saved project by loading it from the `.zip` file directly or, alternatively, from the uncompressed project (`.zarr` file)
 
-You can also choose to ![open](./icons/open-folder-icon.svg) `Open` one of the `Example Projects` to explore and learn about what you can do using Piximi!
+You also have the option to ![open](./icons/open-folder-icon.svg) `Open` one of the `Example Projects` to explore and learn about what you can do using Piximi!
+
 
 <br clear="left"/>
+<br>
 
 <img style="float: left; padding-right:10px" width="150" src=./img/user-guide-open-image.png>
 
@@ -30,3 +32,13 @@ To load images into Piximi, you can simply `drag and drop` them into the browser
 There are also some `Example Images` that you can use to try out Piximi's tools.
 
 <br clear="left"/>
+<br>
+
+<img style="float: left; padding-right:10px" width="150" src=./img/user-guide-open-annotation.png>
+
+Once you load images into Piximi, you can also import annotations previously created in Piximi's [Annotator tool](.\annotation-guide.md) using the ![open](./icons/open-folder-icon.svg) `Open` menu. 
+
+Alternatively, you can generate the annotations using another software and save them in COCO (Common Objects in COntext) format to import into Piximi.
+
+<br clear="left"/>
+<br>
