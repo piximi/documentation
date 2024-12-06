@@ -1,9 +1,9 @@
 # Image Classification
 ## 1. Load images
 
-To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open example project` > `Open human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, press ![upload](./icons/cloud-upload-icon.svg) `Open image` in the top right.
+To begin, we will load the images from an example dataset included in Piximi by pressing ![open](./icons/open-folder-icon.svg) `Open` in the top left. Select `Open` > `Project` > `Example Project` > `Human U2OS-cells example project` to get started. Alternatively, if you would like to load your own images, go to `Open` > `Image` > `New Image`.
 
-The images correspond to U2OS cells expressing arrestin-GFP, and a beta2-adrenergic receptor. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.   
+The images correspond to U2OS cells co-expressing arrestin-GFP and an orphan GPCR. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.   
 
 
 ```{figure} ./img/user-guide-open-img.png
@@ -15,11 +15,11 @@ Open the U2OS example dataset
 
 ## 2. Categorize images
 
-In the `Categories` sub-menu on the right hand side you can see that there are already 3 classes defined for the U2OS example project. Click on the ![label](./icons/label-icon.svg) label to the left of these categories to turn on/off (![label](./icons/label-icon.svg)/![label](./icons/label-off-icon.svg)) the display of these images. The classes are:
+In the `Categories` sub-menu on the left hand side you can see that there are already 3 classes defined for the U2OS example project. To turn on/off the display of images under a given label, click on the ![filters](./icons/filter-icon.svg) filters icon on the right hand panel, and toggle the label of interest under `By category`. The classes are:
 - Unknown
   - This represents the uncategorized images. Piximi will predict which class these images belong to later
-- Negative Control (cytoplasmic GFP)
 - Positive Control (vesicular GFP)
+- Negative Control (cytoplasmic GFP)
 
 ```{figure} ./img/user-guide-u2os-label-highlight.png
 ---
@@ -32,7 +32,7 @@ Explore the category menu. Turn on/off (![label](./icons/label-icon.svg)/![label
 **Terminology**: We categorize into classes
 ``` -->
 
-Single-click to select a 2-3 images from the unknown category that best fit the `Negative Control` category. Once selected, click `Categorize` in the top right and select `Negative Control`. Do the same for 2-3 `Positive Control` images.
+Ensure no images are currently selected by clicking the ![deselect](./icons/deselect-icon.svg) `Deselect` icon. Then, single-click to select 2-3 images from the unknown category that best fit the `Negative Control` category. Once selected, click `Categorize` in the top right and select `Negative Control`. Do the same for 2-3 `Positive Control` images.
 
 <!-- ```{admonition} How many images should I categorize?
 :class: tip, dropdown
@@ -42,7 +42,7 @@ Click here for considerations when categorizing your images and deciding on how 
 
 ## 3. Train model
 
-Click on the `Classifier` button to open the sub-menu and then click on the `Fit` settings ![settings](./icons/settings-icon.svg) icon. Within the menu that opens, you can select various parameters to adjust model training. Open the `Dataset Settings` menu to find the `Train percentage option`. This value controls what percentage of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
+Click on the `Classification` button under `Learning Task` then proceed to customize the settings for model fitting by clicking the `Fit Model` ![fit-model](./icons/fit-model-icon.svg) icon. Within the menu that opens, you can select various parameters to adjust model training. Open the `Dataset Settings` menu to find the `Train percentage` field. This value controls what fraction of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
 
 ```{figure} ./img/user-guide-u2os-fit-settings.png
 ---
@@ -51,7 +51,7 @@ name: u2os-fit-settings
 Open the classifier settings.
 ```
 
-In the top right, press the ![play-button](./icons/play-button-icon.svg) to begin training. Piximi will now look at the **training** subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **testing** subset of images and compare the models answers to the image class.
+In the top right, click the ![play-button](./icons/play-button-icon.svg) `Fit Classifier` button to begin training. Piximi will now look at the **training** subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **validation** subset of images and compare the models answers to the image class.
 
 ```{figure} ./img/user-guide-run-fit.png
 ---
@@ -60,7 +60,7 @@ name: fit-settings
 Explore classifier settings and then press ![play-button](./icons/play-button-icon.svg) to begin training.
 ```
 
-At the bottom of the fit settings page you will see two graphs update as Piximi trains the model which show the accuracy and loss of the model over incrementing epochs.
+At the bottom of the `Fit Model` settings page you will see two graphs update as Piximi trains the model; these show the accuracy and loss of the model over incrementing epochs.
 
 ```{figure} ./img/user-guide-accuracy-plot.png
 ---
@@ -84,7 +84,7 @@ However, increasing the number of epochs does not necessarily lead to better res
 Accuracy = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
 ```
 
-`Validation Accuracy` is the accuracy when the model examines the **testing** subset of the data. 
+`Validation Accuracy` is the accuracy when the model examines the **validation** subset of the data. 
 
 ```{admonition} Validation accuracy vs accuracy
 :class: tip, dropdown
@@ -93,9 +93,9 @@ If you notice that your `Validation accuracy` value decreases as epochs increase
 This is a result of **overfitting** as your model begins to pick up features within your image, such as noise, that are not relevant to classification. In essence, overfitting is when the model memorizes the answer to a specific question, rather than determining the answer from scratch itself.
 ```
 
-Loss is another metric that is calculated on the training and test subsets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification. 
+Loss is another metric that is calculated on the training and validation subsets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification. 
 
-You can now exit the `Fit` settings by clicking the ![arrow-back](./icons/arrow-back-icon.svg) in the top left.
+You can now exit the `Fit Model` settings by clicking the ![close](./icons/close-icon.svg) in the top left of the dialog.
 
 ```{figure} ./img/user-guide-exit-fit.png
 ---
@@ -114,7 +114,7 @@ Piximi does not currently have a hold-out test-like set.
 
 ## 4. Predict classes for unlabelled data
 
-Once your model has been trained you can press ![label](./icons/label-important-icon.svg) `Predict` to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class.
+Once your model has been trained you can click ![chart](./icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed. You can then click ![label](./icons/label-important-icon.svg) `Predict` to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](./icons/label-icon.svg) color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding ![check-icon](./icons/check-icon.svg) `Accept Predictions`or reject them by clicking ![close](./icons/close-icon.svg) `Clear Predictions`. Depending on the performance of the model, annotating further images based on the predictions and/or adjusting the `Fit Model` settings may be desired.
 
 ```{figure} ./img/user-guide-u2os-run-predict.png
 ---
@@ -122,8 +122,6 @@ name: run-predict
 ---
 Predict the class of unknown images using your trained model.
 ```
-
-Click ![chart](./icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed.
 
 <!-- ```{figure} ./img/user-guide-evaluate.png
 ---
