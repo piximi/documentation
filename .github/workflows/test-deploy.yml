@@ -1,12 +1,11 @@
 name: test-deploy
 
-# Run this on tests of new PRs
+# Run this on PRs or on dispatch
 on:
   pull_request:
-    branches-ignore:
-      - main
-    paths:
-    - piximi-documentation/**
+    types: [opened, reopened, synchronize, ready_for_review, review_requested]
+  workflow_dispatch:
+
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
