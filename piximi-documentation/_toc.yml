@@ -3,6 +3,7 @@ root: intro
 parts:
 - caption: Piximi Views
   chapters:
+  - file: main-menu
   - file: annotation-guide
   - file: segmentation
   - file: classification
