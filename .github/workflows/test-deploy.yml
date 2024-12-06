@@ -1,14 +1,10 @@
 name: test-deploy
 
-# Only run this when the master branch changes
+# Run this on tests of new PRs
 on:
-  push:
-    branches:
-    - !main
-    # If your git repository has the Jupyter Book within some-subfolder next to
-    # unrelated files, you can make this run only if a file within that specific
-    # folder has been modified.
-    #
+  pull_request:
+    branches-ignore:
+      - main
     paths:
     - piximi-documentation/**
 
