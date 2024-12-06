@@ -1,9 +1,5 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
-# expand_sections: true
 parts:
 - caption: Piximi Views
   chapters:
@@ -24,5 +20,3 @@ parts:
   - file: hyperparameters
   - file: technical-faq
   - file: work-in-progress
-  # chapters:
-  # - file: technical-faq
