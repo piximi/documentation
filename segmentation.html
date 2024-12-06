@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="main-menu.html">Main menu (left)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annotation-guide.html">The Annotator</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Segmentation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
 </ul>
@@ -384,7 +385,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -400,6 +403,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Segmentation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#image-segmentation">Image Segmentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-images">1. Load images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-models">2. Load Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-model">3. Run the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-output">4. Segmentation output</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -411,7 +430,57 @@ document.write(`
                   
   <section id="segmentation">
 <h1>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this heading">#</a></h1>
-<p>…Coming soon!…</p>
+</section>
+<section id="image-segmentation">
+<h1>Image Segmentation<a class="headerlink" href="#image-segmentation" title="Permalink to this heading">#</a></h1>
+<p>The image segmentation module allows researchers to quickly identify cells or nuclei by selecting pre-trained segmentation models. Users can choose a model from the available options and apply it to images that are opened and selected in Piximi for inference.</p>
+<section id="load-images">
+<h2>1. Load images<a class="headerlink" href="#load-images" title="Permalink to this heading">#</a></h2>
+<p>To begin, loading the images from an example dataset included in Piximi by pressing <img alt="open" src="_images/open-folder-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span></code> in the top left. Select <code class="docutils literal notranslate"><span class="pre">Image</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">example</span> <span class="pre">image</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">U2OS</span> <span class="pre">cell-painting</span> <span class="pre">experiment</span> </code> to get started. Alternatively, if you would like to load your own images, press <img alt="upload" src="_images/cloud-upload-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">image</span></code> in the top right.</p>
+<p>The images correspond to U2OS cells U2OS cells treated with an RNAi reagent
+(https://portals.broadinstitute.org/gpp/public/clone/details?cloneld=TRCN0000195467) and stained for a cell-painting experiment.</p>
+</section>
+<section id="load-models">
+<h2>2. Load Models<a class="headerlink" href="#load-models" title="Permalink to this heading">#</a></h2>
+<p>Currently, the annotator provides five pre-trained models, each designed for specific segmentation tasks:</p>
+<ul class="simple">
+<li><p><strong>Cellpose</strong>: A generalist algorithm for cellular segmentation and trained on fluorecence images</p></li>
+<li><p><strong>Stardistfluo</strong>: Trained on fluorecence images, ideal for identifying objects with star-convex shapes</p></li>
+<li><p><strong>StardistVHE</strong>: To identify nuclei in hematoxylin and eosin (H&amp;E) stained image.</p></li>
+<li><p>StardistFluo</p></li>
+<li><p><strong>COCO-SSD</strong>: To identify objects in “natural images” (or photographs) of 80 different classes (such as humans and kites) using the COCO format</p></li>
+<li><p><strong>GlandSegmentation</strong>: To segment intestinal glands trained on the Gland Segmentation in Colon Histology Images Challenge Contest (GlaS)29</p></li>
+</ul>
+<p>In the ‘Learning task’ sub-menu on the left-hand side, click the ‘Segmentation’ button to switch the classification to cell segmentation.</p>
+<div align="center">
+<p><img alt="alt text" src="_images/model_predict.png" /></p>
+<p><em>Segmentation interface</em></p>
+</div>
+<p>Then, click the ‘+ Load Model’ button to select a model. Currently, only the pre-trained model is available for selection.</p>
+<div align="center">
+<p><img alt="alt text" src="_images/load_pretrained_model.png" /></p>
+<p><em>Segmentation model selection</em></p>
+</div>
+<p>Note: Cellpose is currently unique in that it runs on the AI4Life project’s BioEngine30 server while StarDist, like other Piximi models, runs client-only in the user’s own browser without data leaving their machine.</p>
+<p>Stay tuned for ‘upload local’ and fetch ‘remote feaure’!</p>
+</section>
+<section id="run-the-model">
+<h2>3. Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this heading">#</a></h2>
+<p>click on <img alt="alt text" src="_images/label-icon.svg" /> ‘predict model’ to run the model you selected for the image selected for segmentation</p>
+<div align="center">
+<p><img alt="alt text" src="_images/model_predict.png" />
+<em>Model prediction</em></p>
+</div>
+</section>
+<section id="segmentation-output">
+<h2>4. Segmentation output<a class="headerlink" href="#segmentation-output" title="Permalink to this heading">#</a></h2>
+<p>In this example, we use the Cellpose-Cell model to segment cells in the image. To view the segmented cells, switch the channels from ‘Image’ to ‘Cellpose-Cell’ <img alt="alt text" src="_images/cloud-upload-icon.svg" /> at the top center of the interface.</p>
+<div align="center">
+<p><img alt="alt text" src="_images/segmentation_output.png" />
+<em>Examples of segmentation output</em></p>
+</div>
+<p>The outputs of the segmented objects can be used for downstream analysis, including annotations, measurements, and classifications.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -468,6 +537,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Segmentation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#image-segmentation">Image Segmentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-images">1. Load images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-models">2. Load Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-model">3. Run the model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-output">4. Segmentation output</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
