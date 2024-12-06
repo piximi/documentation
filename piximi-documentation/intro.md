@@ -17,7 +17,7 @@ Piximi is an active work in progress. [Click here to see the known issues we're 
 
 ## The Piximi Annotator
 
-![intro-annotator](./img/intro-annotator.png)
+![alt text](img/annotator_20241206.png)
 
 The annotator within Piximi allows you to intuitively create annotations on your image of choice using a variety of tools. These tools include manual pen annotations in addition to more automatic methods with quick annotation. The Piximi annotator also works with **multichannel** and **multiplane** images, both of which can be easily selected to make sure that annotations are placed where they need to be. In future releases, we aim to also include z-plane interpolation to make annotating in 3D even easier.
 
