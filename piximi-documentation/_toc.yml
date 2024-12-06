@@ -5,18 +5,23 @@ format: jb-book
 root: intro
 # expand_sections: true
 parts:
-- caption:
+- caption: Piximi Views
   chapters:
   - file: annotation-guide
-- caption: User Guides
+  - file: segmentation
+  - file: classification
+  - file: measurements
+- caption: Tutorials
   chapters:
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
+- caption: How-to Guides
+  chapters:
+  - file: create-cell-crops-with-cellprofiler
 - caption: Technical information
   chapters:
   - file: hyperparameters
   - file: technical-faq
   - file: work-in-progress
-- caption: Tutorials and notebooks
-  chapters:
-  - file: PiximiConverter.ipynb
+  # chapters:
+  # - file: technical-faq
