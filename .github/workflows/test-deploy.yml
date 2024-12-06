@@ -1,0 +1,30 @@
+name: test-deploy
+
+# Run this on PRs or on dispatch
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review, review_requested]
+  workflow_dispatch:
+
+
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        pip install jupyter-book
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build piximi-documentation/

@@ -1,5 +1,14 @@
 # Technical FAQ
 
+- [If Piximi crashes, how can I recover my project?](#if-piximi-crashes-how-can-i-recover-my-project)
+- [Can I run Piximi offline?](#can-i-run-piximi-offline)
+- [Is there logging?](#is-there-logging)
+- [What models are used?](#what-models-are-used)
+- [What if I lose my internet connection while the model is training?](#what-if-internet-connection-is-lost-while-a-model-is-training)
+- [Is it possible to see a training summary?](#is-it-possible-to-see-a-training-summary)
+- [Does Piximi use a GPU?](#does-piximi-use-a-gpu)
+- [If I run Piximi multiple times, why do I get different traiing results?](#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results)
+
 ## If Piximi crashes, how can I recover my project?
 
 Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.
