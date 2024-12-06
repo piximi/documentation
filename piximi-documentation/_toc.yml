@@ -18,6 +18,7 @@ parts:
 - caption: How-to Guides
   chapters:
   - file: create-cell-crops-with-cellprofiler
+  - file: PiximiConverter.ipynb
 - caption: Technical information
   chapters:
   - file: hyperparameters
