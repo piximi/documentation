@@ -128,7 +128,7 @@ Predict the class of unknown images using your trained model.
 name: evaluate
 ---
 TBC
-``` -->
+
 
 ```{admonition} See also
 :class: seealso
@@ -136,6 +136,7 @@ Link to our on guide, or a guide somewhere else. eg:
 
 For further information on the evaluation metrics, see our evaluating a model guide.
 ```
+``` -->
 
 ```{admonition} Copyright
 :class: seealso
