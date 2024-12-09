@@ -49,7 +49,9 @@ Yes. Once you visit the application, there is no need for an internet connection
 
 You can also serve the application locally using Docker. The instructions to do this are on the [main Piximi repo README](https://github.com/piximi/piximi#docker). After downloading the source code, no internet connection is necessary for serving locally and using the app.
 
-No internet connection is necessary to save or load projects and models.
+No internet connection is necessary to save or load projects and classifier models.
+Segmentation models do require an internet connection and certain segmentation models, e.g. Cellpose, do transmit data over the internet.
+Segmentation models that transmit data over the internet are clearly indicated.
 
 (is-there-logging)=
 ## Is there logging?
@@ -57,7 +59,7 @@ No internet connection is necessary to save or load projects and models.
 No. Piximi does not log any information, perform any telemetry, or make any external API calls.
 
 (what-models-are-used)=
-## What models are used?
+## What classifier models are used?
 
 SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense layer. All layers are initialized with random weights and the entire model is trained.
 
