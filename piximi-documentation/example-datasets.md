@@ -8,10 +8,10 @@ If you use any of the example datasets in a publication, please also cite the or
 
 `````{grid}
 ````{grid-item}
+:columns: 3
 ```{image} img/example_project_icons/mnistExampleProjectIcon.png
 :alt: mnistExampleIcon
 :align: left
-:columns: 3
 ```
 ````
 ````{grid-item}
@@ -30,10 +30,10 @@ MNIST citation doi: 10.1109/5.726791
 
 `````{grid}
 ````{grid-item}
+:columns: 3
 ```{image} img/example_project_icons/cElegansExampleProjectIcon.png
 :alt: cElegansExampleIcon
 :align: left
-:columns: 3
 ```
 ````
 ````{grid-item}
@@ -54,10 +54,10 @@ The *C. elegans* data were provided by Javier Irazoqui as BBBC012 in the [Broad 
 
 `````{grid}
 ````{grid-item}
+:columns: 3
 ```{image} img/example_project_icons/humanU2OSCellsExampleProjectIcon.png
 :alt: humanU2OSCellsExampleIcon
 :align: left
-:columns: 3
 ```
 ````
 ````{grid-item}
@@ -76,10 +76,10 @@ U2OS citation doi: 10.1038/nmeth.2083
 
 `````{grid}
 ````{grid-item}
+:columns: 3
 ```{image} img/example_project_icons/BBBC013ExampleProjectIcon.png
 :alt: BBBC013ExampleIcon
 :align: left
-:columns: 3
 ```
 ````
 ````{grid-item}
@@ -99,10 +99,10 @@ U2OS citation doi: 10.1038/nmeth.2083
 
 `````{grid}
 ````{grid-item}
+:columns: 3
 ```{image} img/example_project_icons/PLP1ExampleProjectIcon.png
 :alt: PLP1ExampleIcon
 :align: left
-:columns: 3
 ```
 ````
 ````{grid-item}
