@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Object Classification &#8212; Documentation</title>
+    <title>Create cell crops with CellProfiler &#8212; Documentation</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example notebook - converting a Piximi classification model for use outside Piximi" href="PiximiConverter.html" />
+    <link rel="next" title="How to convert a Piximi classification model for use outside Piximi" href="PiximiConverter.html" />
     <link rel="prev" title="Image Classification" href="classify-example-eukaryotic-image.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,8 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Object Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PiximiConverter.html">Example notebook - converting a Piximi classification model for use outside Piximi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Create cell crops with CellProfiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PiximiConverter.html">How to convert a Piximi classification model for use outside Piximi</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical information</span></p>
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="hyperparameters.html">Hyperparameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technical-faq.html">Technical FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="work-in-progress.html">Known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example-datasets.html">Example datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing-piximi.html">Citing Piximi</a></li>
 </ul>
 
     </div>
@@ -398,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Object Classification</h1>
+    <h1>Create cell crops with CellProfiler</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,15 +410,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-cell-crops-with-cellprofiler">Create cell crops with CellProfiler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-images">1. Import images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects">2. IdentifyPrimaryObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects">3. IdentifySecondaryObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graytocolor">4. GrayToColor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#savecroppedobjects">5. SaveCroppedObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">6. Next steps</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-images">1. Import images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects">2. IdentifyPrimaryObjects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects">3. IdentifySecondaryObjects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graytocolor">4. GrayToColor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#savecroppedobjects">5. SaveCroppedObjects</a></li>
 </ul>
             </nav>
         </div>
@@ -428,16 +426,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="object-classification">
-<h1>Object Classification<a class="headerlink" href="#object-classification" title="Permalink to this heading">#</a></h1>
-<p>Currently, Piximi can only classify entire images. We are working on adding deep learning based segmentation that would enable users to classify individual cells or other segmented regions of interest within an image. This approach will be useful for recording phenotypes of cell subpopulations within a larger, heterogenous population, for example.</p>
-<p>While we work on adding segmentation, it’s currently possible to use CellProfiler to segment individual cells and create single cell cropped images. These images of individual cells can be then be opened in Piximi and then categorized.</p>
-<p>The following example will demonstrate how the image crops for the Piximi <code class="docutils literal notranslate"><span class="pre">U2OS</span> <span class="pre">Cell</span> <span class="pre">Crops</span></code> example project were made using CellProfiler. The images we will use to recreate this dataset are from the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013 cytoplasm-nucleus translocation dataset</a> from the Broad Bioimage Benchmark Collection. Within this dataset, a cytoplasmic GFP signal is considered as positive and a nuclear GFP signal as negative. The CellProfiler pipeline used in the following example can be <a class="reference download internal" download="" href="_downloads/9e50b9d93c4c04d9168f04359b68c23b/BBBC013-translocation-crop-4.2.2.cppipe.zip"><code class="xref download docutils literal notranslate"><span class="pre">downloaded</span> <span class="pre">here</span></code></a> for CellProfiler version <strong>4.2.2</strong>. For CellProfiler <strong>4.2.1</strong> or earlier, <a class="reference download internal" download="" href="_downloads/cfece3df538245087c88e091c9f20342/BBBC013-translocation-crop-4.2.1.cppipe.zip"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">this</span> <span class="pre">pipeline</span></code></a>. Alternatively, follow this guide to learn how to create this pipeline from scratch.</p>
-<section id="create-cell-crops-with-cellprofiler">
-<h2>Create cell crops with CellProfiler<a class="headerlink" href="#create-cell-crops-with-cellprofiler" title="Permalink to this heading">#</a></h2>
-<p>For this example, we will create a CellProfiler pipeline that will first identify nuclei using the <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module, followed by cell identification with the <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module. Following this, we will then create a multichannel RGB image with DNA colored blue and GFP colored green. Finally, these mulltichannel RGB images will be cropped based on the previously identified cell object using the <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module.</p>
+  <section id="create-cell-crops-with-cellprofiler">
+<h1>Create cell crops with CellProfiler<a class="headerlink" href="#create-cell-crops-with-cellprofiler" title="Permalink to this heading">#</a></h1>
+<p>While it is possible to segment/annotate and classify objects entirely within Piximi, you can also use <a class="reference external" href="https://cellprofiler.org/">CellProfiler</a> to segment individual cells and create single cell cropped images that can be then be opened in Piximi and then categorized.</p>
+<p>This guide explains how to create a CellProfiler pipeline that will first identify nuclei using the <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module, followed by cell identification with the <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module. We will then create a multichannel RGB image with DNA colored blue and GFP colored green. Finally, these multichannel RGB images will be cropped based on the previously identified cell object using the <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module.</p>
+<p>The single cell image crops for the Piximi <code class="docutils literal notranslate"><span class="pre">Human</span> <span class="pre">U2OS-cells</span> <span class="pre">Cytoplasm</span> <span class="pre">Crops</span></code> example project were made using this workflow. The images are from the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013 cytoplasm-nucleus translocation dataset</a> from the Broad Bioimage Benchmark Collection. The CellProfiler pipeline used in the following example can be <a class="reference download internal" download="" href="_downloads/9e50b9d93c4c04d9168f04359b68c23b/BBBC013-translocation-crop-4.2.2.cppipe.zip"><code class="xref download docutils literal notranslate"><span class="pre">downloaded</span> <span class="pre">here</span></code></a> for CellProfiler version <strong>4.2.2</strong>. For CellProfiler <strong>4.2.1</strong> or earlier, <a class="reference download internal" download="" href="_downloads/cfece3df538245087c88e091c9f20342/BBBC013-translocation-crop-4.2.1.cppipe.zip"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">this</span> <span class="pre">pipeline</span></code></a>.</p>
 <section id="import-images">
-<h3>1. Import images<a class="headerlink" href="#import-images" title="Permalink to this heading">#</a></h3>
+<h2>1. Import images<a class="headerlink" href="#import-images" title="Permalink to this heading">#</a></h2>
 <p>To begin, drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module of CellProfiler.</p>
 <figure class="align-default" id="images-input-view">
 <img alt="_images/user-guide-images-input-view.png" src="_images/user-guide-images-input-view.png" />
@@ -445,7 +440,7 @@ document.write(`
 <p><span class="caption-number">Fig. 19 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code>. For images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename, assign the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
+<p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. In these images, files that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename are assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename are assigned the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/user-guide-names-and-types-view.png" class="img-shadow" src="_images/user-guide-names-and-types-view.png" />
 <figcaption>
@@ -454,8 +449,8 @@ document.write(`
 </figure>
 </section>
 <section id="identifyprimaryobjects">
-<h3>2. IdentifyPrimaryObjects<a class="headerlink" href="#identifyprimaryobjects" title="Permalink to this heading">#</a></h3>
-<p>Then, add a <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module and set <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as the input image. Name this primary object <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code>. Adjust the parameters accordingly so an appropriate segmentation is achieved while using test mode.</p>
+<h2>2. IdentifyPrimaryObjects<a class="headerlink" href="#identifyprimaryobjects" title="Permalink to this heading">#</a></h2>
+<p>Then, add an <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module and set your DNA image (e.g. <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code>) as the input image. Name this primary object <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code>. Adjust the parameters so an appropriate segmentation is achieved while using test mode.</p>
 <figure class="align-default" id="identifyprimaryobjects-view">
 <img alt="_images/user-guide-identify-primary-object-view.png" src="_images/user-guide-identify-primary-object-view.png" />
 <figcaption>
@@ -464,8 +459,8 @@ document.write(`
 </figure>
 </section>
 <section id="identifysecondaryobjects">
-<h3>3. IdentifySecondaryObjects<a class="headerlink" href="#identifysecondaryobjects" title="Permalink to this heading">#</a></h3>
-<p>Add a <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as the input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as the input objects. Name this Secondary object <code class="docutils literal notranslate"><span class="pre">Cells</span></code>. Since the cytoplasmic signal is inconsistent between cells and can therefore not be used to determine cytoplasmic segmentation, we will use the <code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">-</span> <span class="pre">N</span></code> method to identify secondary objects, with a distance of <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<h2>3. IdentifySecondaryObjects<a class="headerlink" href="#identifysecondaryobjects" title="Permalink to this heading">#</a></h2>
+<p>Add an <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module and select the cell image (e.g. <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>) as the input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as the input objects. Name this Secondary object <code class="docutils literal notranslate"><span class="pre">Cells</span></code>. You can tune segmentation parameters to identify your cell objects or set the <code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">-</span> <span class="pre">N</span></code> method to identify secondary objects with a distance that captures the edge of most cells (e.g. <code class="docutils literal notranslate"><span class="pre">10</span></code>).</p>
 <figure class="align-default" id="identifysecondaryobjects-view">
 <img alt="_images/user-guide-identify-secondary-object-view.png" src="_images/user-guide-identify-secondary-object-view.png" />
 <figcaption>
@@ -474,7 +469,7 @@ document.write(`
 </figure>
 </section>
 <section id="graytocolor">
-<h3>4. GrayToColor<a class="headerlink" href="#graytocolor" title="Permalink to this heading">#</a></h3>
+<h2>4. GrayToColor<a class="headerlink" href="#graytocolor" title="Permalink to this heading">#</a></h2>
 <p>Now, we will create a multichannel RGB image using the input <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> images. Add a <code class="docutils literal notranslate"><span class="pre">GrayToColor</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> to be colored green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> to be colored blue. Name the output image <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code>.</p>
 <figure class="align-default" id="colortogray-view">
 <img alt="_images/user-guide-color-to-gray-view.png" src="_images/user-guide-color-to-gray-view.png" />
@@ -484,15 +479,10 @@ document.write(`
 </figure>
 </section>
 <section id="savecroppedobjects">
-<h3>5. SaveCroppedObjects<a class="headerlink" href="#savecroppedobjects" title="Permalink to this heading">#</a></h3>
+<h2>5. SaveCroppedObjects<a class="headerlink" href="#savecroppedobjects" title="Permalink to this heading">#</a></h2>
 <p>Next, add a <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module and select the <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects from <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code>. For the <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">to</span> <span class="pre">crop</span></code> setting, select <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code> created by the <code class="docutils literal notranslate"><span class="pre">ColorToGray</span></code> module. It is this image that will be cropped to individual <code class="docutils literal notranslate"><span class="pre">Cells</span></code> objects. Select an appropriate directory to save your cropped images.</p>
-<div class="tip admonition">
-<p class="admonition-title">Note</p>
-<p>The below screenshot is from CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code>, which includes additional features in the <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> module. These features allow for crops to be saved with their original input filename and also provides the option to save these crops into nested folders. For versions of CellProfiler earlier than 4.2.2, please see the <strong>Extra considerations if using CellProfiler 4.2.1 or earlier</strong> section below on how to save cropped objects without these new features.</p>
-</div>
-<!-- Note the extra backtick (`) for the outermost content block. This allows for nesting of content blocks. See more here: https://jupyterbook.org/en/stable/content/myst.html#markdown-nesting -->
 <div class="seealso dropdown admonition">
-<p class="admonition-title">Extra considerations if using CellProfiler 4.2.1 or earlier</p>
+<p class="admonition-title">Pipeline modifications if using CellProfiler 4.2.1 or earlier</p>
 <p>CellProfiler versions 4.2.1 and earlier can also be adjusted to save cropped images into subdirectories named after the input filename. This can be achieved by enabling metadata extraction and using the extracted filename in the subfolder output path in SaveCroppedObjects. Below are the changes to the above mentioned pipeline to achieve this result. The above pipeline that has been modified for CellProfiler 4.2.1 can be <a class="reference download internal" download="" href="_downloads/cfece3df538245087c88e091c9f20342/BBBC013-translocation-crop-4.2.1.cppipe.zip"><code class="xref download docutils literal notranslate"><span class="pre">downloaded</span> <span class="pre">here</span></code></a>.</p>
 <p><strong>1. Enable metadata extraction</strong></p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Metadata</span></code> input module, select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> on the <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Metadata</span></code> option. In the field marked <code class="docutils literal notranslate"><span class="pre">Regular</span> <span class="pre">expression</span> <span class="pre">to</span> <span class="pre">extract</span> <span class="pre">from</span> <span class="pre">file</span> <span class="pre">name</span></code> input the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code>. This will extract the information after the first <code class="docutils literal notranslate"><span class="pre">-</span></code> and before the last <code class="docutils literal notranslate"><span class="pre">.</span></code> from the image filenames in the <code class="docutils literal notranslate"><span class="pre">BBBC013</span></code> dataset.</p>
@@ -519,15 +509,10 @@ For each image there are two individual filenames, representing either <code cla
 <p><span class="caption-number">Fig. 26 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop. In CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code> you can select to save crops into nested folders with the input image filename.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="next-steps">
-<h3>6. Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h3>
-<p>Now that you have cropped images of your cells, you can follow the <a class="reference internal" href="classify-example-eukaryotic-image.html"><span class="doc std std-doc">image classification guide</span></a> and adjust it to accommodate your image crops. The crops of the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013 dataset</a> represents a 3-class problem: <code class="docutils literal notranslate"><span class="pre">NuclearGFP</span></code>, <code class="docutils literal notranslate"><span class="pre">CytoplasmicGFP</span></code> and <code class="docutils literal notranslate"><span class="pre">NoGFP</span></code>. When categorizing your images into these distinct categories, explore how categorizing more images into each of these classes can impact training performance.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Copyright</p>
 <p>The <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">BBBC013</a> images used here are licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> by Ilya Ravkin.</p>
 </div>
-</section>
 </section>
 </section>
 
@@ -575,7 +560,7 @@ For each image there are two individual filenames, representing either <code cla
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Example notebook - converting a Piximi classification model for use outside Piximi</p>
+        <p class="prev-next-title">How to convert a Piximi classification model for use outside Piximi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -594,15 +579,11 @@ For each image there are two individual filenames, representing either <code cla
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-cell-crops-with-cellprofiler">Create cell crops with CellProfiler</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-images">1. Import images</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects">2. IdentifyPrimaryObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects">3. IdentifySecondaryObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graytocolor">4. GrayToColor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#savecroppedobjects">5. SaveCroppedObjects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">6. Next steps</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-images">1. Import images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifyprimaryobjects">2. IdentifyPrimaryObjects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifysecondaryobjects">3. IdentifySecondaryObjects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graytocolor">4. GrayToColor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#savecroppedobjects">5. SaveCroppedObjects</a></li>
 </ul>
   </nav></div>
 

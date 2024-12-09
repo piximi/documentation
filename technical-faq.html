@@ -187,8 +187,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="create-cell-crops-with-cellprofiler.html">Object Classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PiximiConverter.html">Example notebook - converting a Piximi classification model for use outside Piximi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-cell-crops-with-cellprofiler.html">Create cell crops with CellProfiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PiximiConverter.html">How to convert a Piximi classification model for use outside Piximi</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical information</span></p>
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="hyperparameters.html">Hyperparameters</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Technical FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="work-in-progress.html">Known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example-datasets.html">Example datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing-piximi.html">Citing Piximi</a></li>
 </ul>
 
     </div>
@@ -411,7 +413,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-piximi-crashes-how-can-i-recover-my-project">If Piximi crashes, how can I recover my project?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-run-piximi-offline">Can I run Piximi offline?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-logging">Is there logging?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-models-are-used">What models are used?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-classifier-models-are-used">What classifier models are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">What if internet connection is lost while a model is training?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-see-a-training-summary">Is it possible to see a training summary?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-piximi-use-a-gpu">Does Piximi use a GPU?</a></li>
@@ -430,17 +432,17 @@ document.write(`
   <section id="technical-faq">
 <h1>Technical FAQ<a class="headerlink" href="#technical-faq" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p><span class="xref myst">If Piximi crashes, how can I recover my project?</span></p></li>
-<li><p><span class="xref myst">Can I run Piximi offline?</span></p></li>
-<li><p><span class="xref myst">Is there logging?</span></p></li>
-<li><p><span class="xref myst">What models are used?</span></p></li>
-<li><p><span class="xref myst">What if I lose my internet connection while the model is training?</span></p></li>
-<li><p><span class="xref myst">Is it possible to see a training summary?</span></p></li>
-<li><p><span class="xref myst">Does Piximi use a GPU?</span></p></li>
-<li><p><span class="xref myst">If I run Piximi multiple times, why do I get different traiing results?</span></p></li>
+<li><p><a class="reference internal" href="#if-piximi-crashes"><span class="std std-ref">If Piximi crashes, how can I recover my project?</span></a></p></li>
+<li><p><a class="reference internal" href="#can-i-run-piximi-offline"><span class="std std-ref">Can I run Piximi offline?</span></a></p></li>
+<li><p><a class="reference internal" href="#is-there-logging"><span class="std std-ref">Is there logging?</span></a></p></li>
+<li><p><a class="reference internal" href="#what-models-are-used"><span class="std std-ref">What models are used?</span></a></p></li>
+<li><p><a class="reference internal" href="#what-if-internet-is-lost"><span class="std std-ref">What if I lose my internet connection while the model is training?</span></a></p></li>
+<li><p><a class="reference internal" href="#see-a-training-summary"><span class="std std-ref">Is it possible to see a training summary?</span></a></p></li>
+<li><p><a class="reference internal" href="#does-piximi-use-a-gpu"><span class="std std-ref">Does Piximi use a GPU?</span></a></p></li>
+<li><p><a class="reference internal" href="#run-model-multiple-times"><span class="std std-ref">If I run Piximi multiple times, why do I get different traiing results?</span></a></p></li>
 </ul>
 <section id="if-piximi-crashes-how-can-i-recover-my-project">
-<h2>If Piximi crashes, how can I recover my project?<a class="headerlink" href="#if-piximi-crashes-how-can-i-recover-my-project" title="Permalink to this heading">#</a></h2>
+<span id="if-piximi-crashes"></span><h2>If Piximi crashes, how can I recover my project?<a class="headerlink" href="#if-piximi-crashes-how-can-i-recover-my-project" title="Permalink to this heading">#</a></h2>
 <p>Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.</p>
 <p>The “Save project” option will save the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not including the trained model weights.</p>
 <p><img alt="Save Project Option" src="_images/save_project_1.png" /></p>
@@ -458,27 +460,29 @@ document.write(`
 <p><img alt="Open Classifier Location" src="_images/open_classifier_3.png" /></p>
 </section>
 <section id="can-i-run-piximi-offline">
-<h2>Can I run Piximi offline?<a class="headerlink" href="#can-i-run-piximi-offline" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><h2>Can I run Piximi offline?<a class="headerlink" href="#can-i-run-piximi-offline" title="Permalink to this heading">#</a></h2>
 <p>Yes. Once you visit the application, there is no need for an internet connection so long as you do not close or refresh the tab. If you close or refresh the tab, you will need an internet connection to reload Piximi.</p>
 <p>You can also serve the application locally using Docker. The instructions to do this are on the <a class="reference external" href="https://github.com/piximi/piximi#docker">main Piximi repo README</a>. After downloading the source code, no internet connection is necessary for serving locally and using the app.</p>
-<p>No internet connection is necessary to save or load projects and models.</p>
+<p>No internet connection is necessary to save or load projects and classifier models.
+Segmentation models do require an internet connection and certain segmentation models, e.g. Cellpose, do transmit data over the internet.
+Segmentation models that transmit data over the internet are clearly indicated.</p>
 </section>
 <section id="is-there-logging">
-<h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this heading">#</a></h2>
+<span id="id2"></span><h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this heading">#</a></h2>
 <p>No. Piximi does not log any information, perform any telemetry, or make any external API calls.</p>
 </section>
-<section id="what-models-are-used">
-<h2>What models are used?<a class="headerlink" href="#what-models-are-used" title="Permalink to this heading">#</a></h2>
+<section id="what-classifier-models-are-used">
+<span id="what-models-are-used"></span><h2>What classifier models are used?<a class="headerlink" href="#what-classifier-models-are-used" title="Permalink to this heading">#</a></h2>
 <p>SimpleCNN, which uses 2 convolutional layers, 2 max pooling layers, and 1 dense layer. All layers are initialized with random weights and the entire model is trained.</p>
 <p><a class="reference external" href="https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md">MobileNetV1</a> (specifically, <code class="docutils literal notranslate"><span class="pre">MobileNet_v1_0.25_224</span></code>), which is a model pre-trained for image classification. Only the final convolutional layer’s parameters are modified during training, the rest of the parameters in the model are frozen.</p>
 </section>
 <section id="what-if-internet-connection-is-lost-while-a-model-is-training">
-<h2>What if internet connection is lost while a model is training?<a class="headerlink" href="#what-if-internet-connection-is-lost-while-a-model-is-training" title="Permalink to this heading">#</a></h2>
+<span id="what-if-internet-is-lost"></span><h2>What if internet connection is lost while a model is training?<a class="headerlink" href="#what-if-internet-connection-is-lost-while-a-model-is-training" title="Permalink to this heading">#</a></h2>
 <p>Once Piximi is loaded, no internet connection is necessary. You may keep working, save your project and model, and load previously saved projects and models. If you close the tab containing Piximi, or hit refresh on the browser, you will need an internet connection to reload Piximi.</p>
 <p>No internet connection is necessary to save or load projects and models.</p>
 </section>
 <section id="is-it-possible-to-see-a-training-summary">
-<h2>Is it possible to see a training summary?<a class="headerlink" href="#is-it-possible-to-see-a-training-summary" title="Permalink to this heading">#</a></h2>
+<span id="see-a-training-summary"></span><h2>Is it possible to see a training summary?<a class="headerlink" href="#is-it-possible-to-see-a-training-summary" title="Permalink to this heading">#</a></h2>
 <p>Yes. The model summary, accuracy and loss are displayed in the Classifier dialog, and will remain there even if you leave the dialog and re-enter.</p>
 <p><img alt="Training Plots" src="_images/training_plots.png" /></p>
 <p>Additional metrics are available via the Evaluation dialog.</p>
@@ -487,12 +491,12 @@ document.write(`
 <p>If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.</p>
 </section>
 <section id="does-piximi-use-a-gpu">
-<h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this heading">#</a></h2>
 <p>Yes. Piximi uses Tensorflow.js which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>.</p>
 <p>If using Chrome, users will need to enable GPU use by going into preferences -&gt; advanced -&gt; system, and enabling the “Use hardware acceleration when available” option.</p>
 </section>
 <section id="if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results">
-<h2>If I run the same model multiple times, why do I get different training results?<a class="headerlink" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results" title="Permalink to this heading">#</a></h2>
+<span id="run-model-multiple-times"></span><h2>If I run the same model multiple times, why do I get different training results?<a class="headerlink" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results" title="Permalink to this heading">#</a></h2>
 <p>It is possible to get different training results when training on the same data. There are two major reasons for this: the first is a result of the random validation dataset that is selected by Piximi when you press <img alt="play-button" src="_images/play-button-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code>. For example, the first time you fit the classifier, images 1, 2 and 3 may be selected for the validation dataset. A second, and identical, run of fit classifier might then select images 4, 5 and 6 as your validation dataset, which look different to the images selected in the first run. Validation image selection is random so that the model performance can be evaluated independently of the images selected for validation. Even if your validation data set were identical, however, your results may still end up slightly different run-to-run due to certain steps in the training process that draw on random numbers and/or shuffle the data; we do not currently but may in the future provide ways to stabilize these parameters across runs.</p>
 <p>Given these considerations, please do save your models frequently if you think they are performing well - you can always delete an old model later, but a generated model cannot be sure to be generated again if it hasn’t been saved!</p>
 </section>
@@ -564,7 +568,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-piximi-crashes-how-can-i-recover-my-project">If Piximi crashes, how can I recover my project?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-run-piximi-offline">Can I run Piximi offline?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-logging">Is there logging?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-models-are-used">What models are used?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-classifier-models-are-used">What classifier models are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">What if internet connection is lost while a model is training?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-see-a-training-summary">Is it possible to see a training summary?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#does-piximi-use-a-gpu">Does Piximi use a GPU?</a></li>

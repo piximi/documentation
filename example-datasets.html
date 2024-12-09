@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Measurements &#8212; Documentation</title>
+    <title>Example datasets &#8212; Documentation</title>
   
   
   
@@ -64,13 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'measurements';</script>
-    <link rel="canonical" href="documentation.piximi.app/measurements.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'example-datasets';</script>
+    <link rel="canonical" href="documentation.piximi.app/example-datasets.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Image Classification" href="classify-example-eukaryotic-image.html" />
-    <link rel="prev" title="Classification" href="classification.html" />
+    <link rel="next" title="Citing Piximi" href="citing-piximi.html" />
+    <link rel="prev" title="Known issues" href="work-in-progress.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,13 +173,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Piximi Views</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="main-menu.html">Main menu (left)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annotation-guide.html">The Annotator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="segmentation.html">Segmentation</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measurements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -192,11 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical information</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hyperparameters.html">Hyperparameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technical-faq.html">Technical FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="work-in-progress.html">Known issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example-datasets.html">Example datasets</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example datasets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citing-piximi.html">Citing Piximi</a></li>
 </ul>
 
@@ -269,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/piximi/documentation/edit/main/piximi-documentation/measurements.md" target="_blank"
+      <li><a href="https://github.com/piximi/documentation/edit/main/piximi-documentation/example-datasets.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fmeasurements.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fexample-datasets.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/measurements.md" target="_blank"
+      <li><a href="_sources/example-datasets.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -387,7 +387,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -398,11 +400,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Measurements</h1>
+    <h1>Example datasets</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mnist">MNIST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-elegans"><em>C. elegans</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-u2os-cells">Human U2OS-cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-u20s-cells-cytoplasm-crops">Human U20S-cells cytoplasm crops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-plp1-localization">Human PLP1 localization</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -412,11 +426,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="measurements">
-<h1>Measurements<a class="headerlink" href="#measurements" title="Permalink to this heading">#</a></h1>
-<p>While sometimes, the goal of an experiment is just to find objects or to classify images and/or objects, other times, we want to go deeper and learn more about the images and/or objects we care about. This is where <em>Measurements</em> come in.</p>
-<p>Right now, Piximi supports two broad classes of measurements - intensity measurements, which work for images OR objects, and shape/geometry measurements, which work for objects alone. More categories of measurements will be rolling out in time - stay tuned!</p>
-<p>Measurements are available from the <img alt="Measurements" src="_images/ruler-icon.svg" /> icon in the top bar of Piximi.</p>
+  <section id="example-datasets">
+<h1>Example datasets<a class="headerlink" href="#example-datasets" title="Permalink to this heading">#</a></h1>
+<p>Piximi includes several example datasets.
+They are described below along with their sources and licenses.
+If you use any of the example datasets in a publication, please also cite the original dataset with the citation provided below.</p>
+<section id="mnist">
+<h2>MNIST<a class="headerlink" href="#mnist" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<img alt="mnistExampleIcon" class="align-left" src="_images/mnistExampleProjectIcon.png" />
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<p>MNIST (Modified National Institute of Standards and Technology) is a database of handwritten digits often used in machine learning.
+Images are grayscale and 28x28 pixels and each image contains a single digit.
+We provide a small subset of the full MNIST database.</p>
+<p>We accesesd MNIST from a <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">website</a> provided by the original authors. <br />
+MNIST licencse: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3</a> <br />
+MNIST citation doi: 10.1109/5.726791</p>
+</div>
+</div>
+</div>
+</section>
+<section id="c-elegans">
+<h2><em>C. elegans</em><a class="headerlink" href="#c-elegans" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<img alt="cElegansExampleIcon" class="align-left" src="_images/cElegansExampleProjectIcon.png" />
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<p><em>Caenorhabditis elegans</em> is a nematode worm and is a commonly used model organism.
+This dataset is images of transgenic <em>C. elegans</em> expressing the promoter of gene <em>clec-60</em> fused to GFP (<em>clec-60:GFP</em>) and an mCherry pharynx label.
+In wild type worms, <em>clec-60:GFP</em> is expressed in posterior intestinal cells while in <em>pmk-1(km25)</em> mutants the <em>clec-60:GFP</em> is elevated in expression and visible in the anterior intestine, close to the pharynx.
+There are multiple worms visible in each image.
+Channel 1 is GFP, channel 2 is mCherry.</p>
+<p>The <em>C. elegans</em> data were provided by Javier Irazoqui as BBBC012 in the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC012">Broad Bioimage Benchmark Collection</a>. <br />
+<em>C. elegans</em> license: <a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> <br />
+<em>C. elegans</em> citation doi: 10.1038/nmeth.2083</p>
+</div>
+</div>
+</div>
+</section>
+<section id="human-u2os-cells">
+<h2>Human U2OS-cells<a class="headerlink" href="#human-u2os-cells" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<img alt="humanU2OSCellsExampleIcon" class="align-left" src="_images/humanU2OSCellsExampleProjectIcon.png" />
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<p>These human U2OS cells express b-arrestin-GFP and an orphan GPCR.
+When the GPCR is stimulated, b-arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.
+Channel 1 is GFP, channel 2 is DNA.</p>
+<p>The U2OS cells data were provided by Ilya Ravkin as BBBC016 in the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC016">Broad Bioimage Benchmark Collection</a>. <br />
+U2OS licence: <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC-BY-3</a> <br />
+U2OS citation doi: 10.1038/nmeth.2083</p>
+</div>
+</div>
+</div>
+</section>
+<section id="human-u20s-cells-cytoplasm-crops">
+<h2>Human U20S-cells cytoplasm crops<a class="headerlink" href="#human-u20s-cells-cytoplasm-crops" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<img alt="BBBC013ExampleIcon" class="align-left" src="_images/BBBC013ExampleProjectIcon.png" />
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<p>These human U2OS osteosarcoma cells are stably transfected with fluorescently tagged Forkhead protein (FKHR-EGFP).
+In proliferating cells, FKHR-EGFP is constantly trafficking between nucleus and cytoplasm.
+When treated with drugs that prevent PI3 kinase/PKB signaling, nuclear export is inhibited and FKHR-EGFP accumulates in the nucleus.
+Channel 1 is FKHR-GFP,  channel 2 is DNA.</p>
+<p>The U2OS cells cytoplasm crop data were provided by Ilya Ravkin as BBBC013 in the <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC013">Broad Bioimage Benchmark Collection</a>. <br />
+U2OS licence: <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC-BY-3</a> <br />
+U2OS citation doi: 10.1038/nmeth.2083</p>
+</div>
+</div>
+</div>
+</section>
+<section id="human-plp1-localization">
+<h2>Human PLP1 localization<a class="headerlink" href="#human-plp1-localization" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 docutils">
+<img alt="PLP1ExampleIcon" class="align-left" src="_images/PLP1ExampleProjectIcon.png" />
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 docutils">
+<p>These human HeLa cells express either wild type or the disease-associated variant of PLP1 protein, which localizes differently than the healthy version.<br />
+Channel 1 is artifacts, channel 2 is fluorescently tagged protein PLP1, and channel 3 is DNA.</p>
+<p>The human PLP1 localization data were provided by Jessica Lacoste in <a class="reference external" href="http://taipalelab.org/">Mikko Taipale’s lab</a> at University of Toronto. <br />
+Human PLP1 licence: <a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a> <br />
+Human PLP1 citation doi: 10.1016/j.cell.2024.09.003</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,20 +556,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="classification.html"
+       href="work-in-progress.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Classification</p>
+        <p class="prev-next-title">Known issues</p>
       </div>
     </a>
     <a class="right-next"
-       href="classify-example-eukaryotic-image.html"
+       href="citing-piximi.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Image Classification</p>
+        <p class="prev-next-title">Citing Piximi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -473,6 +579,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mnist">MNIST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-elegans"><em>C. elegans</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-u2os-cells">Human U2OS-cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-u20s-cells-cytoplasm-crops">Human U20S-cells cytoplasm crops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-plp1-localization">Human PLP1 localization</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
