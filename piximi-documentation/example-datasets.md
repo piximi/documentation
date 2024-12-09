@@ -45,7 +45,7 @@ There are multiple worms visible in each image.
 Channel 1 is GFP, channel 2 is mCherry.
 
 The *C. elegans* data were provided by Javier Irazoqui as BBBC012 in the [Broad Bioimage Benchmark Collection](https://bbbc.broadinstitute.org/BBBC012). \
-*C. elegans* license: \
+*C. elegans* license: [CC0](https://creativecommons.org/publicdomain/zero/1.0/) \
 *C. elegans* citation doi: 10.1038/nmeth.2083
 ````
 `````
@@ -112,6 +112,6 @@ Channel 1 is artifacts, channel 2 is fluorescently tagged protein PLP1, and chan
 
 The human PLP1 localization data were provided by Jessica Lacoste in [Mikko Taipale's lab](http://taipalelab.org/) at University of Toronto. \
 Human PLP1 licence: [CC0](https://creativecommons.org/publicdomain/zero/1.0/) \
-Human PLP1 citation doi:
+Human PLP1 citation doi: 10.1016/j.cell.2024.09.003
 ````
 `````
