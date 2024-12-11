@@ -1,8 +1,10 @@
 # HyperQuest - Two Layer Net
 
-HyperQuest is a program to learn about hyperparameters, developed for Stanford's [CS231n: Deep Learning for Computer Vision](http://cs231n.stanford.edu/). An open-source clone was created by [Bingcheng HU](https://bingcheng.openmc.cn/HyperQuest/about/), with [approval](https://github.com/bingcheng1998/HyperQuest/issues/1) from the co-creator of the original HyperQuest, [Linxi "Jim" Fan](https://jimfan.me).
+[HyperQuest](https://bingcheng.openmc.cn/HyperQuest) is a program to learn about hyperparameters, developed for Stanford's [CS231n: Deep Learning for Computer Vision](http://cs231n.stanford.edu/). An open-source clone was created by [Bingcheng HU](https://bingcheng.openmc.cn/HyperQuest/about/), with [approval](https://github.com/bingcheng1998/HyperQuest/issues/1) from the co-creator of the original HyperQuest, [Linxi "Jim" Fan](https://jimfan.me).
 
-* You are provided a dataset. Your goal is to train a two-layer network for classification on the dataset, with as high a validation accuracy (~0.5) as you can.
+Provided below is a copy of the [two-layer](https://bingcheng.openmc.cn/HyperQuest/versions/TwoLayerNet/) network example from the HyperQuest website.
+
+* The model is provided a dataset. Your goal is to train a two-layer network for classification on the dataset, with as high a validation accuracy (~0.5) as you can.
 * First, you will choose the initial network configuration (the set of hyperparameters), and then run the network.
 * Second, you are provided performance metrics in the form of training & validation accuracy and loss.
 * Third, re-adjust the hyperparameters reach optimize for a high validation accuracy.
