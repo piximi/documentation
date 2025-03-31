@@ -21,3 +21,5 @@ parts:
   - file: hyperparameters
   - file: technical-faq
   - file: work-in-progress
+  - file: example-datasets
+  - file: citing-piximi
