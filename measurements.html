@@ -180,6 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Measurements</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -387,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -403,6 +406,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Measurements</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-measurements-in-piximi">Creating Measurements in Piximi</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -417,6 +430,91 @@ document.write(`
 <p>While sometimes, the goal of an experiment is just to find objects or to classify images and/or objects, other times, we want to go deeper and learn more about the images and/or objects we care about. This is where <em>Measurements</em> come in.</p>
 <p>Right now, Piximi supports two broad classes of measurements - intensity measurements, which work for images OR objects, and shape/geometry measurements, which work for objects alone. More categories of measurements will be rolling out in time - stay tuned!</p>
 <p>Measurements are available from the <img alt="Measurements" src="_images/ruler-icon.svg" /> icon in the top bar of Piximi.</p>
+<p>Measurements are created in individual tables - each table is specific to one “kind” - either images or a type of segmented object (such as cells). You can create as many tables as you like.
+Each table has measurements broken down by <em>Splits</em> - essentially, what are the different conditions in this experiment (if any) and how should we parse them? Each table has its own set of splits, which you can adjust at any time.</p>
+</section>
+<section id="creating-measurements-in-piximi">
+<h1>Creating Measurements in Piximi<a class="headerlink" href="#creating-measurements-in-piximi" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Click the <a class="reference download internal" download="" href="_downloads/ef64c2a0f177f3d5767eb5f8f731c37f/ruler-icon.svg"><span class="xref download myst">Measurements</span></a> icon in the top bar of Piximi.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">+</span></code> button next to the word <code class="docutils literal notranslate"><span class="pre">Tables</span></code> to create a new measurement table. You can make as many tables as you like, to express different images or objects, broken down by different subsets.</p></li>
+</ol>
+<figure class="align-default" id="measurement-00-table-plus">
+<a class="reference internal image-reference" href="_images/measure-00-pre-measurement.png"><img alt="_images/measure-00-pre-measurement.png" src="_images/measure-00-pre-measurement.png" style="width: 274.0px; height: 135.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">+</span></code> button at the top of the Tables menu allows you to add a new table</span><a class="headerlink" href="#measurement-00-table-plus" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Select a <code class="docutils literal notranslate"><span class="pre">kind</span></code> you’d like to make measurements of. Reminder, <code class="docutils literal notranslate"><span class="pre">kind</span></code>s include the images, as well as any objects you created via segmentation or annotation.</p></li>
+</ol>
+<figure class="align-default" id="measure-01-create-table">
+<a class="reference internal image-reference" href="_images/measure-01-create-table.png"><img alt="_images/measure-01-create-table.png" src="_images/measure-01-create-table.png" style="width: 593.0px; height: 228.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Select what kind of measurement table you’d like to make</span><a class="headerlink" href="#measure-01-create-table" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Piximi will begin to calculate metrics in the background. Depending on the number of examples present in that <code class="docutils literal notranslate"><span class="pre">kind</span></code>, this may take a few minutes - an indicator will show you the progress made.</p></li>
+</ol>
+<figure class="align-default" id="measure-02-spin-while-creating-table">
+<a class="reference internal image-reference" href="_images/measure-02-spin-while-creating-table.png"><img alt="_images/measure-02-spin-while-creating-table.png" src="_images/measure-02-spin-while-creating-table.png" style="width: 128.0px; height: 77.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The circular indicator next to <code class="docutils literal notranslate"><span class="pre">Tables</span></code> indicates how far through measurement generation Piximi is. Make sure to keep the Piximi window open (consider moving it into its own tab) to let calculations continue!</span><a class="headerlink" href="#measure-02-spin-while-creating-table" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>Once the initial pre-calculations are done, you can select which measurements you’d like to make, as well as how you’d like to subset “split” the data (currently by <code class="docutils literal notranslate"><span class="pre">Category</span></code> or by <code class="docutils literal notranslate"><span class="pre">Partition</span></code>; if you only have one category, tha’s fine, but you do have to click something here!). As before, this will take some time, so just leave the Piximi tab open and the circular indicator will let you know how long this is going to take.</p></li>
+</ol>
+<figure class="align-default" id="measure-03-select-splits-and-measurements">
+<a class="reference internal image-reference" href="_images/measure-03-select-splits-and-measurements.png"><img alt="_images/measure-03-select-splits-and-measurements.png" src="_images/measure-03-select-splits-and-measurements.png" style="width: 118.5px; height: 302.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Select the split or splits you want to measure for each table, as well as the measurements you want for that table. Just like during table creation, a circular indicator next to the word <code class="docutils literal notranslate"><span class="pre">Measurements</span></code> will tell you how far along Piximi is at generating your measurements.</span><a class="headerlink" href="#measure-03-select-splits-and-measurements" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="6">
+<li><p>Once your measurements have been generated, they will appear in the main area in a data grid! In the grid, you can see the measurement name, the subset (or <code class="docutils literal notranslate"><span class="pre">Split</span></code>) of the data represented, and the Mean, Median, and Standard deviation of the data for that feature in that subset.</p></li>
+</ol>
+<figure class="align-default" id="measure-04-data-grid">
+<img alt="_images/measure-04-data-grid.png" src="_images/measure-04-data-grid.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">The Piximi data grid</span><a class="headerlink" href="#measure-04-data-grid" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="7">
+<li><p>If you’d like to plot data in Piximi, simply navigate to the data grid containing the data you want to plot and hit the Plots tab at the top. You can make as many plots as you would like by hitting the <code class="docutils literal notranslate"><span class="pre">+</span></code> button on the plots tab. Plots can also be exported by saving to PNG. Piximi includes several plot types, including scatter plots, swarm plots, and histograms.</p></li>
+</ol>
+<figure class="align-default" id="measure-05-scatter">
+<a class="reference internal image-reference" href="_images/measure-05-scatter.png"><img alt="_images/measure-05-scatter.png" src="_images/measure-05-scatter.png" style="width: 587.0px; height: 280.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Scatter plots generated in Piximi can have X, Y, and Size measurements selected; they can also show colors according to the selected splits (with many colormaps to choose from). Note the “Save to PNG” button in the bottom right!</span><a class="headerlink" href="#measure-05-scatter" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="measure-06a-swarms">
+<a class="reference internal image-reference" href="_images/measure-06a-swarm-no-category.png"><img alt="_images/measure-06a-swarm-no-category.png" src="_images/measure-06a-swarm-no-category.png" style="width: 588.5px; height: 275.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Swarm plots can be shown on their own…</span><a class="headerlink" href="#measure-06a-swarms" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="measure-06b-swarms">
+<a class="reference internal image-reference" href="_images/measure-06b-swarm-with-category.png"><img alt="_images/measure-06b-swarm-with-category.png" src="_images/measure-06b-swarm-with-category.png" style="width: 585.5px; height: 277.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">… or with a summary boxplot overlaid.</span><a class="headerlink" href="#measure-06b-swarms" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="measure-07-histogram">
+<a class="reference internal image-reference" href="_images/measure-07-histogram.png"><img alt="_images/measure-07-histogram.png" src="_images/measure-07-histogram.png" style="width: 618.0px; height: 242.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">You can choose to represent your data as a histogram, with a custom number of bins.</span><a class="headerlink" href="#measure-07-histogram" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you want to do further analyses of your data (and you should)!, you can export your data tables from the measurements menu  - this will let you do whatever downstream analysis you like.</p>
+<figure class="align-default" id="measure-08-export-measurements">
+<a class="reference internal image-reference" href="_images/measure-08-export-measurements.png"><img alt="_images/measure-08-export-measurements.png" src="_images/measure-08-export-measurements.png" style="width: 114.0px; height: 305.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Piximi lets you export your data to outside programs</span><a class="headerlink" href="#measure-08-export-measurements" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
@@ -473,6 +571,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Measurements</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-measurements-in-piximi">Creating Measurements in Piximi</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
