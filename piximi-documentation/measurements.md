@@ -96,12 +96,12 @@ scale: 50%
 You can choose to represent your data as a histogram, with a custom number of bins.
 ```
 
-If you want to do further analyses of your data (and you should)!, you can export your images from the measurements menu  - this will let you do whatever downstream analysis you like. 
+If you want to do further analyses of your data (and you should)!, you can export your data tables from the measurements menu  - this will let you do whatever downstream analysis you like. 
 
 ```{figure} ./img/measurement-walkthrough/measure-08-export-measurements.png
 ---
 name: measure-08-export-measurements
 scale: 50%
 ---
-The `+` button at the top of the Tables menu allows you to add a new table
+Piximi lets you export your data to outside programs
 ```
