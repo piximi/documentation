@@ -414,7 +414,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-annotations">Add annotations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract-annotations">Subtract annotations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect-annotations">Intersect annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-selection">Annotation selection</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
@@ -444,7 +443,7 @@ document.write(`
 <section id="add-annotations">
 <h3>Add annotations<a class="headerlink" href="#add-annotations" title="Permalink to this heading">#</a></h3>
 <figure class="align-default" id="id1">
-<img alt="_images/addition-annotation.gif" class="annotation-gif" src="_images/addition-annotation.gif" />
+<img alt="_images/PiximiAnnotationAdd.gif" class="annotation-gif" src="_images/PiximiAnnotationAdd.gif" />
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Annotations can be added together</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -453,7 +452,7 @@ document.write(`
 <section id="subtract-annotations">
 <h3>Subtract annotations<a class="headerlink" href="#subtract-annotations" title="Permalink to this heading">#</a></h3>
 <figure class="align-default" id="id2">
-<img alt="_images/subtraction-annotation.gif" class="annotation-gif" src="_images/subtraction-annotation.gif" />
+<img alt="_images/PiximiAnnotationSubtract.gif" class="annotation-gif" src="_images/PiximiAnnotationSubtract.gif" />
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Annotations can be subtracted from one another</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -462,82 +461,83 @@ document.write(`
 <section id="intersect-annotations">
 <h3>Intersect annotations<a class="headerlink" href="#intersect-annotations" title="Permalink to this heading">#</a></h3>
 <figure class="align-default" id="id3">
-<img alt="_images/intersection-annotation.gif" class="annotation-gif" src="_images/intersection-annotation.gif" />
+<img alt="_images/PiximiAnnotationIntersect.gif" class="annotation-gif" src="_images/PiximiAnnotationIntersect.gif" />
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">The intersection of two annotations can be created</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="annotation-selection">
-<h3>Annotation selection<a class="headerlink" href="#annotation-selection" title="Permalink to this heading">#</a></h3>
-<figure class="align-default" id="id4">
-<img alt="_images/selection-tool.gif" class="annotation-gif" src="_images/selection-tool.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Annotations can be selected and resized</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<!--
+### Annotation selection
+```{figure} ./img/annotation-demo/selection-tool.gif
+:class: annotation-gif
+---
+name: annotation-selection-demo
+---
+Annotations can be selected and resized
+```
+-->
 </section>
 </section>
 <section id="color-annotation">
 <h2>Color annotation<a class="headerlink" href="#color-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id5">
-<img alt="_images/color-annotation.gif" class="annotation-gif" src="_images/color-annotation.gif" />
+<figure class="align-default" id="id4">
+<img alt="_images/PiximiColor.gif" class="annotation-gif" src="_images/PiximiColor.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The color annotation tool</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The color annotation tool</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="quick-annotation">
 <h2>Quick annotation<a class="headerlink" href="#quick-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id6">
-<img alt="_images/quick-annotation.gif" class="annotation-gif" src="_images/quick-annotation.gif" />
+<figure class="align-default" id="id5">
+<img alt="_images/PiximiSuperpixel.gif" class="annotation-gif" src="_images/PiximiSuperpixel.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The quick annotation tool</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The quick annotation (aka superpixel) tool</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="rectangular-annotation">
 <h2>Rectangular annotation<a class="headerlink" href="#rectangular-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id7">
-<img alt="_images/rectangular-annotation.gif" class="annotation-gif" src="_images/rectangular-annotation.gif" />
+<figure class="align-default" id="id6">
+<img alt="_images/PiximiRectangle.gif" class="annotation-gif" src="_images/PiximiRectangle.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The rectangular annotation tool</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The rectangular annotation tool</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="elliptical-annotation">
 <h2>Elliptical annotation<a class="headerlink" href="#elliptical-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id8">
-<img alt="_images/elliptical-annotation.gif" class="annotation-gif" src="_images/elliptical-annotation.gif" />
+<figure class="align-default" id="id7">
+<img alt="_images/PiximiEllipse.gif" class="annotation-gif" src="_images/PiximiEllipse.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">The elliptical annotation tool</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The elliptical annotation tool</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="polygonal-annotation">
 <h2>Polygonal annotation<a class="headerlink" href="#polygonal-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id9">
-<img alt="_images/polygon-annotation.gif" class="annotation-gif" src="_images/polygon-annotation.gif" />
+<figure class="align-default" id="id8">
+<img alt="_images/PiximiPolygon.gif" class="annotation-gif" src="_images/PiximiPolygon.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">The polygon annotation tool</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">The polygon annotation tool</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="pen-annotation">
 <h2>Pen annotation<a class="headerlink" href="#pen-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id10">
-<img alt="_images/pen-annotation.gif" class="annotation-gif" src="_images/pen-annotation.gif" />
+<figure class="align-default" id="id9">
+<img alt="_images/PiximiPen.gif" class="annotation-gif" src="_images/PiximiPen.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The pen annotation tool</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">The pen annotation tool</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="lasso-annotation">
 <h2>Lasso annotation<a class="headerlink" href="#lasso-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id11">
-<img alt="_images/lasso-annotation.gif" class="annotation-gif" src="_images/lasso-annotation.gif" />
+<figure class="align-default" id="id10">
+<img alt="_images/PiximiLasso.gif" class="annotation-gif" src="_images/PiximiLasso.gif" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">The lasso annotation tool</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The lasso annotation tool</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <!-- ## Magnetic annotation -->
@@ -611,7 +611,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-annotations">Add annotations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract-annotations">Subtract annotations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect-annotations">Intersect annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-selection">Annotation selection</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
