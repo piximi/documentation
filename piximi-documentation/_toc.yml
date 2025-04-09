@@ -1,21 +1,25 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
-# expand_sections: true
 parts:
-- caption:  
+- caption: Piximi Views
   chapters:
+  - file: main-menu
   - file: annotation-guide
-- caption: User Guides
+  - file: segmentation
+  - file: classification
+  - file: measurements
+- caption: Tutorials
   chapters:
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
+- caption: How-to Guides
+  chapters:
+  - file: create-cell-crops-with-cellprofiler
+  - file: PiximiConverter.ipynb
 - caption: Technical information
   chapters:
   - file: hyperparameters
   - file: technical-faq
   - file: work-in-progress
-  # chapters:
-  # - file: technical-faq
+  - file: example-datasets
+  - file: citing-piximi
