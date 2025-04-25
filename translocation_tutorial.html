@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Piximi: Installation-free segmentation and classification in the browser &#8212; Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'translocation_tutorial';</script>
+    <link rel="canonical" href="documentation.piximi.app/translocation_tutorial.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Image Classification" href="classify-example-eukaryotic-image.html" />
+    <link rel="prev" title="Measurements" href="measurements.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/piximi-logo.svg" class="logo__image only-light" alt="Documentation - Home"/>
+    <script>document.write(`<img src="_static/piximi-logo.svg" class="logo__image only-dark" alt="Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Images to Discovery
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Piximi Views</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="main-menu.html">Main menu (left)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annotation-guide.html">The Annotator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="segmentation.html">Segmentation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="measurements.html">Measurements</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Piximi: Installation-free segmentation and classification in the browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classify-example-eukaryotic-image.html">Image Classification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="create-cell-crops-with-cellprofiler.html">Create cell crops with CellProfiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PiximiConverter.html">How to convert a Piximi classification model for use outside Piximi</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hyperparameters.html">Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technical-faq.html">Technical FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work-in-progress.html">Known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example-datasets.html">Example datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing-piximi.html">Citing Piximi</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation/edit/main/piximi-documentation/translocation_tutorial.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Ftranslocation_tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/translocation_tutorial.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Piximi: Installation-free segmentation and classification in the browser</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-computer-exercise-using-webtool-piximi">A computer exercise using webtool - Piximi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-piximi"><strong>What is Piximi?</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-the-exercise"><strong>Goal of the exercise</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#context-of-the-sample-experiment"><strong>Context of the sample experiment</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-instructions"><strong>Exercise instructions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-piximi-project"><strong>Load the Piximi project</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-loaded-images-and-explore-the-piximi-interface"><strong>Check the loaded images and explore the Piximi interface</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-cells-find-out-the-cells-from-the-background"><strong>Segment Cells - find out the cells from the background</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-segmentation-result-and-fix-the-segmentation-errors"><strong>Visualize segmentation result and fix the segmentation errors</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells"><strong>Classify cells</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-classifier-model"><strong>Train the Classifier model</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model"><strong>Evaluate model:</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement"><strong>Measurement</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization"><strong>Visualization</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#export-results-and-save-the-project"><strong>Export results and save the project</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-information"><strong>Supporting Information</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="piximi-installation-free-segmentation-and-classification-in-the-browser">
+<h1>Piximi: Installation-free segmentation and classification in the browser<a class="headerlink" href="#piximi-installation-free-segmentation-and-classification-in-the-browser" title="Permalink to this heading">#</a></h1>
+<section id="a-computer-exercise-using-webtool-piximi">
+<h2>A computer exercise using webtool - Piximi<a class="headerlink" href="#a-computer-exercise-using-webtool-piximi" title="Permalink to this heading">#</a></h2>
+<p>Beth Cimini, Le Liu, Esteban Miglietta, Paula Llanos, Nodar Gogoberidze</p>
+<p>Broad Institute of MIT and Harvard, Cambridge, MA.</p>
+<section id="background-information">
+<h3><strong>Background information:</strong><a class="headerlink" href="#background-information" title="Permalink to this heading">#</a></h3>
+<section id="what-is-piximi">
+<h4><strong>What is Piximi?</strong><a class="headerlink" href="#what-is-piximi" title="Permalink to this heading">#</a></h4>
+<p>Piximi is a modern, no-programming image analysis tool leveraging deep learning. Implemented as a web application at <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi requires no installation and can be accessed by any modern web browser. Its client-only architecture preserves the security of researcher data by running all* computation locally.</p>
+<p>Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive researcher interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.</p>
+<p>* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).</p>
+<p>Core functionalities:  <strong>Annotator, Segmentor, Classifier, Measurments.</strong></p>
+</section>
+<section id="goal-of-the-exercise">
+<h4><strong>Goal of the exercise</strong><a class="headerlink" href="#goal-of-the-exercise" title="Permalink to this heading">#</a></h4>
+<p>In this exercise, you will familiarize yourself with Piximi’s main functionalities of annotation, segmentation, classification, measurement and visualization and use it to analyze a sample image dataset from a translocation experiment. The goal of this experiment is to determine the <strong>lowest effective dose</strong> of Wortmannin required to induce GFP-tagged FOXO1A nuclear localization (Figure 1)<strong>.</strong> You will segment the images using one of the deep learning models available in Piximi, check and curate the segmentation, then train an image classifier to classify the individual cells as having “nuclear-GFP”, “cytoplasmic-GFP” or “no-GFP”. Finally, you will make measurements and plot them to answer the biological question.</p>
+</section>
+<section id="context-of-the-sample-experiment">
+<h4><strong>Context of the sample experiment</strong><a class="headerlink" href="#context-of-the-sample-experiment" title="Permalink to this heading">#</a></h4>
+<a class="reference internal image-reference" href="_images/Figure1.png"><img alt="Figure 1" src="_images/Figure1.png" style="width: 200px;" /></a>
+<p>In this experiment, researchers imaged fixed U2OS osteosarcoma (bone cancer) cells expressing a FOXO1A-GFP fusion protein and stained DAPI to label the nuclei. FOXO1 is a transcription factor that plays a key role in regulating gluconeogenesis and glycogenolysis through insulin signaling. FOXO1A dynamically shuttles between the cytoplasm and nucleus in response to various stimuli. Wortmannin, a PI3K inhibitor, can block nuclear export, resulting in the accumulation of FOXO1A in the nucleus.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/Figure1.png"><img alt="_images/Figure1.png" src="_images/Figure1.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text"><strong>Figure 1</strong>: Schematic representation of FOXO1A mechanism</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="materials-necessary-for-this-exercise">
+<h4><strong>Materials necessary for this exercise</strong><a class="headerlink" href="#materials-necessary-for-this-exercise" title="Permalink to this heading">#</a></h4>
+<p>The materials needed in this exercise can be downloaded from: <a class="reference download internal" download="" href="_downloads/07bc4137dea52bf1b73cfa486285f50f/Piximi_Translocation_Tutorial_RGB.zip"><span class="xref download myst">PiximiTutorial</span></a>. The “Piximi Translocation Tutorial RGB.zip” file contains a Piximi project, including all the images, already labeled with the corresponding treatment (Wortmannin concentration or Control). Download this file but <strong>do NOT unzip it</strong>!</p>
+</section>
+<section id="exercise-instructions">
+<h4><strong>Exercise instructions</strong><a class="headerlink" href="#exercise-instructions" title="Permalink to this heading">#</a></h4>
+<p>Read through the steps below and follow instructions where stated. Steps where you must figure out a solution are marked with 🔴 TO DO.</p>
+<ol class="arabic simple">
+<li></li>
+</ol>
+<section id="load-the-piximi-project">
+<h5><strong>Load the Piximi project</strong><a class="headerlink" href="#load-the-piximi-project" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Start Piximi by going to:<a class="reference external" href="https://piximi.app/">https://piximi.app/</a></p></li>
+<li><p>Load the example project:  Click “Open” - “Project” - “Project from Zip”, as shown in figure 2 to upload a project file for this tutorial from Zip, and you can optionally change the project name in the top left panel, such as “Piximi Exercise”. As it is loaded, you can see the progression in the top left corner logo <a class="reference internal" href="_images/Piximi_logo.png"><img alt="_images/Piximi_logo.png" src="_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure2.png"><img alt="Figure 2" src="_images/Figure2.png" style="width: 600px;" /></a>
+<ol class="arabic simple" start="2">
+<li></li>
+</ol>
+<section id="check-the-loaded-images-and-explore-the-piximi-interface">
+<h5><strong>Check the loaded images and explore the Piximi interface</strong><a class="headerlink" href="#check-the-loaded-images-and-explore-the-piximi-interface" title="Permalink to this heading">#</a></h5>
+</section>
+<p>These 17 images represent Wortmannin treatments at eight different concentrations (expressed in nM), as well as mock treatments (0uM). Note the DAPI channel (Nuclei) is shown in magenta and that the GFP channel (FOXOA1) is shown in green.</p>
+<p>As you hover over the image, color labels are displayed on the left corner of the images. These annotations are from metadata in the zipped file we just uploaded. In this tutorial, the different colored labels indicate the concentration of Wortmannin, while the numbers represent the number of images in each category.</p>
+<p>Optionally, you can annotate the images manually by clicking “+ Category”, entering your label, and then selecting the image by clicking the images annotating the selected images by clicking <strong>“Categorize”</strong>. In this tutorial, we’ll skip this step since the labels were already uploaded at the beginning.</p>
+<a class="reference internal image-reference" href="_images/Figure3.png"><img alt="Figure 3" src="_images/Figure3.png" style="width: 600px;" /></a>
+<ol class="arabic simple" start="3">
+<li></li>
+</ol>
+<section id="segment-cells-find-out-the-cells-from-the-background">
+<h5><strong>Segment Cells - find out the cells from the background</strong><a class="headerlink" href="#segment-cells-find-out-the-cells-from-the-background" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>To start the prediction on all images, click “Select All Images” in the top panel as shown in Figure 3.</p></li>
+<li><p>Change the Learning Task to “SEGMENTATION” (Figure 4, Arrow 1).</p></li>
+<li><p>Click on “+ LOAD MODEL” (Arrow 2) and the window will pop up, allowing you to choose a pretrained model (Arrow 3). For today’s exercise, select “Cellpose” (Arrow 4).  More information about the model supported can be found <a class="reference external" href="https://documentation.piximi.app/segmentation.html">here</a>.</p></li>
+<li><p>Click “Open Segmentation Model” (Arrow 5) to load your model and select it. Finally, click “Predict Model” (Arrow 5). You’ll see the prediction progress displayed in the top left corner beneath the Piximi logo <a class="reference internal" href="_images/Piximi_Progress_logo.png"><img alt="_images/Piximi_Progress_logo.png" src="_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
+<li><p>It will take a few minutes to finish the segmentation.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure4.png"><img alt="Figure 1" src="_images/Figure4.png" style="width: 600px;" /></a>
+<p>Please note that the previous steps were performed on your local machine, meaning your images are stored locally. However, Cellpose inference runs in the cloud, which means your images will be uploaded for processing. If your images are highly sensitive, please exercise caution when using cloud-based services.</p>
+<ol class="arabic simple" start="4">
+<li></li>
+</ol>
+<section id="visualize-segmentation-result-and-fix-the-segmentation-errors">
+<h5><strong>Visualize segmentation result and fix the segmentation errors</strong><a class="headerlink" href="#visualize-segmentation-result-and-fix-the-segmentation-errors" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Click on the <strong>CELLPOSE_CELLS</strong> tab to check the individual cells that have been segmented Click on the “IMAGE” tab and then “Annotate”, you can check the segmentation on the whole image.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure5.png"><img alt="Figure 5" src="_images/Figure5.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p>Optionally, here you can manually refine the segmentation using the annotator tools. The Piximi annotator provides several options to <strong>add</strong>, <strong>subtract</strong>, or <strong>intersect</strong> annotations. Additionally, the <strong>selection tool</strong> allows you to <strong>resize</strong> or <strong>delete</strong> specific annotations. To begin editing, select specific or all images by clicking the checkbox at the top.</p></li>
+<li><p>Optionally, you can adjust channels: Although there are two channels in this experiment, the nuclei signal is duplicated in both the red and green channels. This design is intended to be <strong>color-blind friendly</strong> and to produce a <strong>magenta color</strong> for nuclei. The <strong>green channel</strong> also includes cytoplasmic signals.</p></li>
+</ul>
+<p>Another reason for duplicating the channels is that some models—such as the <strong>Cellpose model</strong> we used today—require a <strong>three-channel</strong> input.</p>
+<ul class="simple">
+<li><p>You can choose to manually segment the cells to generate masks for ground truth data.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li></li>
+</ol>
+<section id="classify-cells">
+<h5><strong>Classify cells</strong><a class="headerlink" href="#classify-cells" title="Permalink to this heading">#</a></h5>
+</section>
+<p>Reason for doing this: We want to classify the ‘CELLPOSE_CELLS’ based on GFP distribution (on Nuclei, cytoplasm, or no GFP) without manually labeling all of them. To do this, we can use the classification function in Piximi, which allows us to train a classifier using a small subset of labeled data and then automatically classify the remaining cells.</p>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Go to the <strong>CELLPOSE_CELLS</strong> tab that displays the segmented objects (arrow 1, figure 6)</p></li>
+<li><p>Click on the <strong>Classification</strong> tab on the left panel (arrow 2, figure 6).</p></li>
+<li><p>Create new categories by clicking <strong>“+ Category”</strong>. Adding “Cytoplasmatic_GFP”, “Nuclear _GFP”, “No GFP” three categories (Arrow 3, Figure 6).</p></li>
+<li><p>Click on the images that match your criteria. You can select multiple cells by holding <strong>Command (⌘)</strong> on Mac or <strong>Shift</strong> on Linux. Aim to assign <strong>~20–40 cells per category</strong>. Once selected, click <strong>“Categorize”</strong> to assign the labels to the selected cells.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure6.png"><img alt="Figure 6" src="_images/Figure6.png" style="width: 600px;" /></a>
+<ol class="arabic simple" start="6">
+<li></li>
+</ol>
+<section id="train-the-classifier-model">
+<h5><strong>Train the Classifier model</strong><a class="headerlink" href="#train-the-classifier-model" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<ul>
+<li><p>Click the ”<a class="reference internal" href="img/tutorial_images/Fit_model.png"><img alt="Fit model icon" src="img/tutorial_images/Fit_model.png" style="width: 20px;" /></a> - fit model” icon to open the model hyperparameter settings. For today’s exercise, we’ll adjust a few parameters:</p></li>
+<li><p>Click on “Architecture Settings” and set the Model Architecture to SimpleCNN.</p></li>
+<li><p>Update the Input Dimensions to:</p>
+<ul class="simple">
+<li><p>Input rows: 48</p></li>
+<li><p>Input cols: 48</p></li>
+<li><p>Channels: 3 (since our images are in RGB format)</p></li>
+</ul>
+<p>(You can change to other numbers such as 64, 128)</p>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure7.png"><img alt="Figure 7" src="_images/Figure7.png" style="width: 600px;" /></a>
+<ul class="simple">
+<li><p>Click on the “Dataset Setting” tab and set the Training Percentage to 0.75, which reserves 25% of the labeled data for validation.</p></li>
+<li><p>When you click <strong>“Fit Classifier”</strong> in Piximi, two training plots will appear “<strong>Accuracy vs Epochs”</strong> and <strong>“Loss vs Epochs”</strong>. Each plot shows curves for both <strong>training</strong> and <strong>validation</strong> data.</p></li>
+<li><p>In the <strong>accuracy plot</strong>, you’ll see how well the model is learning. Ideally, both training and validation accuracy should increase and stay close.</p></li>
+<li><p>In the <strong>loss plot</strong>, lower values mean better performance. If validation loss starts rising while training loss keeps dropping. g, the model might be overfitting.</p></li>
+</ul>
+<p>These plots help you understand how the model is learning and whether adjustments are needed.</p>
+<ol class="arabic simple" start="7">
+<li></li>
+</ol>
+<section id="evaluate-model">
+<h5><strong>Evaluate model:</strong><a class="headerlink" href="#evaluate-model" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<a class="reference internal image-reference" href="_images/Figure8.png"><img alt="Figure 8" src="_images/Figure8.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><p>Click <strong>“Predict Model” (figure 8, arrow 1)</strong>  to apply the model we just trained. This step will generate predictions on the cells we did not annotate.</p></li>
+<li><p>You can review the predictions in the CELLPOSE_CELLS tab and delete any wrongly assigned categories.</p></li>
+<li><p>Optionally, you can continue using the labels to refine the ground truth and improve the classifier. This process is part of the <strong>Human-in-the-loop classification</strong>, where you iteratively correct and train the model based on human   input.</p></li>
+<li><p>Click <strong>“Evaluate Model” (figure 8, arrow 2)</strong> to evaluate the model we just trained. The confusion metrics and evaluation metrics can be compared to the ground truth.</p></li>
+<li><p>Click “Accept Prediction (Hold)”, to assign the predicted labels to all the objects.</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li></li>
+</ol>
+<section id="measurement">
+<h5><strong>Measurement</strong><a class="headerlink" href="#measurement" title="Permalink to this heading">#</a></h5>
+</section>
+<p>Once you are satisfied with the classification, we will proceed to measure the objects. The goal of today’s exercise is to determine the minimum concentration of Wortmannin required to block the export of FOXO1A-GFP from the nuclei. To do this, we can measure the total GFP intensity at either the image level or the object level.</p>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Click “Measurement” in the top right corner.</p></li>
+<li><p>Click Tables (Arrow 1) and select Image and click “Confirm” (Arrow 2).</p></li>
+<li><p>Choose “MEASUREMENT” in the left panel, note the measurement step may take some time to process.</p></li>
+<li><p>Click on ‘Category’ to include all categories in the measurement.</p></li>
+<li><p>“Under ‘Total’, click on ‘Channel 1’ (Arrow 3) to select the measurement for GFP. You will see the measurement in the “DATA GRID” tab.  Measurements are presented as either mean or median values, and the full dataset is available upon exporting the .csv file.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure9.png"><img alt="Figure 9" src="_images/Figure9.png" style="width: 600px;" /></a>
+<ol class="arabic simple" start="9">
+<li></li>
+</ol>
+<section id="visualization">
+<h5><strong>Visualization</strong><a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h5>
+</section>
+<p>After generating the measurements, you can plot the measurements.</p>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Click on ‘PLOTS’ (Arrow 1) to visualize the measurements.</p></li>
+<li><p>Set the plot type to ‘Swarm’ and choose a color theme based on your preference.</p></li>
+<li><p>Select ‘Y-axis’ as ‘intensity-total-channel-1’ and set ‘SwarmGroup’ to ‘category’; this will generate a curve showing how GFP intensity varies across different categories (Arrow 2).</p></li>
+<li><p>Selecting ‘Show Statistics’ will display the mean, as well as the upper and lower quality bounds, on the plot.</p></li>
+<li><p>Optionally, you can experiment with different plot types and axes to see if the data reveals additional insights.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/Figure10.png"><img alt="Figure 10" src="_images/Figure10.png" style="width: 600px;" /></a>
+<ol class="arabic simple" start="10">
+<li></li>
+</ol>
+<section id="export-results-and-save-the-project">
+<h5><strong>Export results and save the project</strong><a class="headerlink" href="#export-results-and-save-the-project" title="Permalink to this heading">#</a></h5>
+</section>
+<p>🔴 TO DO</p>
+<ul class="simple">
+<li><p>Click “SAVE” in the top left corner to save the entire project. You’ll see the Piximi logo animation as the save progresses <a class="reference internal" href="_images/Piximi_Progress_logo.png"><img alt="_images/Piximi_Progress_logo.png" src="_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
+</ul>
+<ol class="arabic simple" start="11">
+<li></li>
+</ol>
+<section id="supporting-information">
+<h5><strong>Supporting Information</strong><a class="headerlink" href="#supporting-information" title="Permalink to this heading">#</a></h5>
+</section>
+<p>Check out the Piximi paper:  <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2024.06.03.597232v2">https://www.biorxiv.org/content/10.1101/2024.06.03.597232v2</a></p>
+<p>Check out the Piximi documentation:<a class="reference external" href="https://documentation.piximi.app/intro.html">Piximi documentation</a>:<a class="reference external" href="https://documentation.piximi.app/intro.html">https://documentation.piximi.app/intro.html</a></p>
+<p>Report bugs/errors or request features <a class="github reference external" href="https://github.com/piximi/documentation/issues">piximi/documentation#issues</a></p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="measurements.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Measurements</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classify-example-eukaryotic-image.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Image Classification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-computer-exercise-using-webtool-piximi">A computer exercise using webtool - Piximi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-information"><strong>Background information:</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-piximi"><strong>What is Piximi?</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-of-the-exercise"><strong>Goal of the exercise</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#context-of-the-sample-experiment"><strong>Context of the sample experiment</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materials-necessary-for-this-exercise"><strong>Materials necessary for this exercise</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-instructions"><strong>Exercise instructions</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-piximi-project"><strong>Load the Piximi project</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-loaded-images-and-explore-the-piximi-interface"><strong>Check the loaded images and explore the Piximi interface</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-cells-find-out-the-cells-from-the-background"><strong>Segment Cells - find out the cells from the background</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-segmentation-result-and-fix-the-segmentation-errors"><strong>Visualize segmentation result and fix the segmentation errors</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells"><strong>Classify cells</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-classifier-model"><strong>Train the Classifier model</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model"><strong>Evaluate model:</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement"><strong>Measurement</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization"><strong>Visualization</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#export-results-and-save-the-project"><strong>Export results and save the project</strong></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-information"><strong>Supporting Information</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Broad Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="translocation_tutorial.html">Piximi: Installation-free segmentation and classification in the browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classify-example-eukaryotic-image.html">Image Classification</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
@@ -438,14 +439,14 @@ document.write(`
 <figure class="align-default" id="images-input-view">
 <img alt="_images/user-guide-images-input-view.png" src="_images/user-guide-images-input-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. In these images, files that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename are assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename are assigned the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/user-guide-names-and-types-view.png" class="img-shadow" src="_images/user-guide-names-and-types-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -455,7 +456,7 @@ document.write(`
 <figure class="align-default" id="identifyprimaryobjects-view">
 <img alt="_images/user-guide-identify-primary-object-view.png" src="_images/user-guide-identify-primary-object-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#identifyprimaryobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#identifyprimaryobjects-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -465,7 +466,7 @@ document.write(`
 <figure class="align-default" id="identifysecondaryobjects-view">
 <img alt="_images/user-guide-identify-secondary-object-view.png" src="_images/user-guide-identify-secondary-object-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#identifysecondaryobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#identifysecondaryobjects-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -475,7 +476,7 @@ document.write(`
 <figure class="align-default" id="colortogray-view">
 <img alt="_images/user-guide-color-to-gray-view.png" src="_images/user-guide-color-to-gray-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#colortogray-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#colortogray-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -492,7 +493,7 @@ For each image there are two individual filenames, representing either <code cla
 <figure class="align-default" id="metadata-view-4-2-1">
 <img alt="_images/user-guide-metadata-view-4.2.1.png" src="_images/user-guide-metadata-view-4.2.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Use the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code> to extract an appropriate filename from the BBBC013 images.</span><a class="headerlink" href="#metadata-view-4-2-1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Use the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code> to extract an appropriate filename from the BBBC013 images.</span><a class="headerlink" href="#metadata-view-4-2-1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>2. SaveCroppedObjects</strong></p>
@@ -500,14 +501,14 @@ For each image there are two individual filenames, representing either <code cla
 <figure class="align-default" id="savecroppedobjects-view-4-2-1">
 <img alt="_images/user-guide-save-cropped-objects-view-4.2.1.png" src="_images/user-guide-save-cropped-objects-view-4.2.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Right click within the <code class="docutils literal notranslate"><span class="pre">Sub-folder</span></code> text box and select <code class="docutils literal notranslate"><span class="pre">FileName</span></code>, as defined in the Metadata module earlier.</span><a class="headerlink" href="#savecroppedobjects-view-4-2-1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Right click within the <code class="docutils literal notranslate"><span class="pre">Sub-folder</span></code> text box and select <code class="docutils literal notranslate"><span class="pre">FileName</span></code>, as defined in the Metadata module earlier.</span><a class="headerlink" href="#savecroppedobjects-view-4-2-1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
 <figure class="align-default" id="savecroppedobjects-view">
 <img alt="_images/user-guide-save-cropped-objects-view.png" src="_images/user-guide-save-cropped-objects-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop. In CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code> you can select to save crops into nested folders with the input image filename.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop. In CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code> you can select to save crops into nested folders with the input image filename.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="seealso admonition">
