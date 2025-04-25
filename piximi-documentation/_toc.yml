@@ -10,6 +10,7 @@ parts:
   - file: measurements
 - caption: Tutorials
   chapters:
+  - file: translocation_tutorial
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
 - caption: How-to Guides
