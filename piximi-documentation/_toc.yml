@@ -11,6 +11,7 @@ parts:
 - caption: Tutorials
   chapters:
   - file: translocation_tutorial
+  - file: translocation_tutorial_ES
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
 - caption: How-to Guides
