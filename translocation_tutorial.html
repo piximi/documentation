@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Image Classification" href="classify-example-eukaryotic-image.html" />
+    <link rel="next" title="Piximi: Segmentación y clasificación sin instalación en el navegador" href="translocation_tutorial_ES.html" />
     <link rel="prev" title="Measurements" href="measurements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Piximi: Installation-free segmentation and classification in the browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translocation_tutorial_ES.html">Piximi: Segmentación y clasificación sin instalación en el navegador</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classify-example-eukaryotic-image.html">Image Classification</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
@@ -458,17 +459,16 @@ document.write(`
 <section id="what-is-piximi">
 <h4><strong>What is Piximi?</strong><a class="headerlink" href="#what-is-piximi" title="Permalink to this heading">#</a></h4>
 <p>Piximi is a modern, no-programming image analysis tool leveraging deep learning. Implemented as a web application at <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi requires no installation and can be accessed by any modern web browser. Its client-only architecture preserves the security of researcher data by running all* computation locally.</p>
-<p>Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive researcher interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.</p>
+<p>Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.</p>
 <p>* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).</p>
 <p>Core functionalities:  <strong>Annotator, Segmentor, Classifier, Measurments.</strong></p>
 </section>
 <section id="goal-of-the-exercise">
 <h4><strong>Goal of the exercise</strong><a class="headerlink" href="#goal-of-the-exercise" title="Permalink to this heading">#</a></h4>
-<p>In this exercise, you will familiarize yourself with Piximi’s main functionalities of annotation, segmentation, classification, measurement and visualization and use it to analyze a sample image dataset from a translocation experiment. The goal of this experiment is to determine the <strong>lowest effective dose</strong> of Wortmannin required to induce GFP-tagged FOXO1A nuclear localization (Figure 1)<strong>.</strong> You will segment the images using one of the deep learning models available in Piximi, check and curate the segmentation, then train an image classifier to classify the individual cells as having “nuclear-GFP”, “cytoplasmic-GFP” or “no-GFP”. Finally, you will make measurements and plot them to answer the biological question.</p>
+<p>In this exercise, you will familiarize yourself with Piximi’s main functionalities of annotation, segmentation, classification, measurement and visualization and use it to analyze a sample image dataset from a translocation experiment. The goal of this experiment is to determine the <strong>lowest effective dose</strong> of Wortmannin required to induce GFP-tagged FOXO1A nuclear localization (Figure 1). You will segment the images using one of the deep learning models available in Piximi, check and curate the segmentation, then train an image classifier to classify the individual cells as having “nuclear-GFP”, “cytoplasmic-GFP” or “no-GFP”. Finally, you will make measurements and plot them to answer the biological question.</p>
 </section>
 <section id="context-of-the-sample-experiment">
 <h4><strong>Context of the sample experiment</strong><a class="headerlink" href="#context-of-the-sample-experiment" title="Permalink to this heading">#</a></h4>
-<a class="reference internal image-reference" href="_images/Figure1.png"><img alt="Figure 1" src="_images/Figure1.png" style="width: 200px;" /></a>
 <p>In this experiment, researchers imaged fixed U2OS osteosarcoma (bone cancer) cells expressing a FOXO1A-GFP fusion protein and stained DAPI to label the nuclei. FOXO1 is a transcription factor that plays a key role in regulating gluconeogenesis and glycogenolysis through insulin signaling. FOXO1A dynamically shuttles between the cytoplasm and nucleus in response to various stimuli. Wortmannin, a PI3K inhibitor, can block nuclear export, resulting in the accumulation of FOXO1A in the nucleus.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/Figure1.png"><img alt="_images/Figure1.png" src="_images/Figure1.png" style="width: 300px;" /></a>
@@ -495,17 +495,27 @@ document.write(`
 <li><p>Start Piximi by going to:<a class="reference external" href="https://piximi.app/">https://piximi.app/</a></p></li>
 <li><p>Load the example project:  Click “Open” - “Project” - “Project from Zip”, as shown in figure 2 to upload a project file for this tutorial from Zip, and you can optionally change the project name in the top left panel, such as “Piximi Exercise”. As it is loaded, you can see the progression in the top left corner logo <a class="reference internal" href="_images/Piximi_logo.png"><img alt="_images/Piximi_logo.png" src="_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure2.png"><img alt="Figure 2" src="_images/Figure2.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/Figure2.png"><img alt="_images/Figure2.png" src="_images/Figure2.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text"><strong>Figure 2</strong>: Loading a project file.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple" start="2">
 <li></li>
 </ol>
 <section id="check-the-loaded-images-and-explore-the-piximi-interface">
 <h5><strong>Check the loaded images and explore the Piximi interface</strong><a class="headerlink" href="#check-the-loaded-images-and-explore-the-piximi-interface" title="Permalink to this heading">#</a></h5>
 </section>
-<p>These 17 images represent Wortmannin treatments at eight different concentrations (expressed in nM), as well as mock treatments (0uM). Note the DAPI channel (Nuclei) is shown in magenta and that the GFP channel (FOXOA1) is shown in green.</p>
+<p>These 17 images represent Wortmannin treatments at eight different concentrations (expressed in nM), as well as mock treatments (0nM). Note the DAPI channel (Nuclei) is shown in magenta and that the GFP channel (FOXOA1) is shown in green.</p>
 <p>As you hover over the image, color labels are displayed on the left corner of the images. These annotations are from metadata in the zipped file we just uploaded. In this tutorial, the different colored labels indicate the concentration of Wortmannin, while the numbers represent the number of images in each category.</p>
 <p>Optionally, you can annotate the images manually by clicking “+ Category”, entering your label, and then selecting the image by clicking the images annotating the selected images by clicking <strong>“Categorize”</strong>. In this tutorial, we’ll skip this step since the labels were already uploaded at the beginning.</p>
-<a class="reference internal image-reference" href="_images/Figure3.png"><img alt="Figure 3" src="_images/Figure3.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/Figure3.png"><img alt="_images/Figure3.png" src="_images/Figure3.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><strong>Figura 3</strong>: Exploring the images and labels.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple" start="3">
 <li></li>
 </ol>
@@ -520,7 +530,12 @@ document.write(`
 <li><p>Click “Open Segmentation Model” (Arrow 5) to load your model and select it. Finally, click “Predict Model” (Arrow 5). You’ll see the prediction progress displayed in the top left corner beneath the Piximi logo <a class="reference internal" href="_images/Piximi_Progress_logo.png"><img alt="_images/Piximi_Progress_logo.png" src="_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
 <li><p>It will take a few minutes to finish the segmentation.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure4.png"><img alt="Figure 1" src="_images/Figure4.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/Figure4.png"><img alt="_images/Figure4.png" src="_images/Figure4.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text"><strong>Figura 4</strong>: Loading a segmentation model.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Please note that the previous steps were performed on your local machine, meaning your images are stored locally. However, Cellpose inference runs in the cloud, which means your images will be uploaded for processing. If your images are highly sensitive, please exercise caution when using cloud-based services.</p>
 <ol class="arabic simple" start="4">
 <li></li>
@@ -530,9 +545,14 @@ document.write(`
 </section>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click on the <strong>CELLPOSE_CELLS</strong> tab to check the individual cells that have been segmented Click on the “IMAGE” tab and then “Annotate”, you can check the segmentation on the whole image.</p></li>
+<li><p>Click on the <strong>CELLPOSE_CELLS</strong> tab to check the individual cells that have been segmented. Click on the “IMAGE” tab and then “Annotate”, you can check the segmentation on the whole image.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure5.png"><img alt="Figure 5" src="_images/Figure5.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/Figure5.png"><img alt="_images/Figure5.png" src="_images/Figure5.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><strong>Figura 5</strong>: Piximi’s annotator tool.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Optionally, here you can manually refine the segmentation using the annotator tools. The Piximi annotator provides several options to <strong>add</strong>, <strong>subtract</strong>, or <strong>intersect</strong> annotations. Additionally, the <strong>selection tool</strong> allows you to <strong>resize</strong> or <strong>delete</strong> specific annotations. To begin editing, select specific or all images by clicking the checkbox at the top.</p></li>
 <li><p>Optionally, you can adjust channels: Although there are two channels in this experiment, the nuclei signal is duplicated in both the red and green channels. This design is intended to be <strong>color-blind friendly</strong> and to produce a <strong>magenta color</strong> for nuclei. The <strong>green channel</strong> also includes cytoplasmic signals.</p></li>
@@ -552,10 +572,15 @@ document.write(`
 <ul class="simple">
 <li><p>Go to the <strong>CELLPOSE_CELLS</strong> tab that displays the segmented objects (arrow 1, figure 6)</p></li>
 <li><p>Click on the <strong>Classification</strong> tab on the left panel (arrow 2, figure 6).</p></li>
-<li><p>Create new categories by clicking <strong>“+ Category”</strong>. Adding “Cytoplasmatic_GFP”, “Nuclear _GFP”, “No GFP” three categories (Arrow 3, Figure 6).</p></li>
+<li><p>Create new categories by clicking <strong>“+ Category”</strong>. Adding “Cytoplasmatic_GFP”, “Nuclear_GFP”, “No_GFP” three categories (Arrow 3, Figure 6).</p></li>
 <li><p>Click on the images that match your criteria. You can select multiple cells by holding <strong>Command (⌘)</strong> on Mac or <strong>Shift</strong> on Linux. Aim to assign <strong>~20–40 cells per category</strong>. Once selected, click <strong>“Categorize”</strong> to assign the labels to the selected cells.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure6.png"><img alt="Figure 6" src="_images/Figure6.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/Figure6.png"><img alt="_images/Figure6.png" src="_images/Figure6.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text"><strong>Figura 6</strong>: Classifying individual cells based on GFP presence and localization.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple" start="6">
 <li></li>
 </ol>
@@ -564,8 +589,8 @@ document.write(`
 </section>
 <p>🔴 TO DO</p>
 <ul>
-<li><p>Click the ”<a class="reference internal" href="img/tutorial_images/Fit_model.png"><img alt="Fit model icon" src="img/tutorial_images/Fit_model.png" style="width: 20px;" /></a> - fit model” icon to open the model hyperparameter settings. For today’s exercise, we’ll adjust a few parameters:</p></li>
-<li><p>Click on “Architecture Settings” and set the Model Architecture to SimpleCNN.</p></li>
+<li><p>Click the ”<a class="reference internal" href="img/tutorial_images/Fit_model.png"><img alt="Fit model icon" src="img/tutorial_images/Fit_model.png" style="width: 20px;" /></a> - Fit Model” icon to open the model hyperparameter settings. For today’s exercise, we’ll adjust a few parameters:</p></li>
+<li><p>Click on “Architecture Settings” and set the Model Architecture to <strong>SimpleCNN</strong>.</p></li>
 <li><p>Update the Input Dimensions to:</p>
 <ul class="simple">
 <li><p>Input rows: 48</p></li>
@@ -575,7 +600,12 @@ document.write(`
 <p>(You can change to other numbers such as 64, 128)</p>
 </li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure7.png"><img alt="Figure 7" src="_images/Figure7.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/Figure7.png"><img alt="_images/Figure7.png" src="_images/Figure7.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text"><strong>Figura 7</strong>: Classifier model setup.</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Click on the “Dataset Setting” tab and set the Training Percentage to 0.75, which reserves 25% of the labeled data for validation.</p></li>
 <li><p>When you click <strong>“Fit Classifier”</strong> in Piximi, two training plots will appear “<strong>Accuracy vs Epochs”</strong> and <strong>“Loss vs Epochs”</strong>. Each plot shows curves for both <strong>training</strong> and <strong>validation</strong> data.</p></li>
@@ -590,7 +620,12 @@ document.write(`
 <h5><strong>Evaluate model:</strong><a class="headerlink" href="#evaluate-model" title="Permalink to this heading">#</a></h5>
 </section>
 <p>🔴 TO DO</p>
-<a class="reference internal image-reference" href="_images/Figure8.png"><img alt="Figure 8" src="_images/Figure8.png" style="width: 300px;" /></a>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="_images/Figure8.png"><img alt="_images/Figure8.png" src="_images/Figure8.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text"><strong>Figura 8</strong>: Classifier training and validation.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Click <strong>“Predict Model” (figure 8, arrow 1)</strong>  to apply the model we just trained. This step will generate predictions on the cells we did not annotate.</p></li>
 <li><p>You can review the predictions in the CELLPOSE_CELLS tab and delete any wrongly assigned categories.</p></li>
@@ -613,7 +648,12 @@ document.write(`
 <li><p>Click on ‘Category’ to include all categories in the measurement.</p></li>
 <li><p>“Under ‘Total’, click on ‘Channel 1’ (Arrow 3) to select the measurement for GFP. You will see the measurement in the “DATA GRID” tab.  Measurements are presented as either mean or median values, and the full dataset is available upon exporting the .csv file.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure9.png"><img alt="Figure 9" src="_images/Figure9.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="_images/Figure9.png"><img alt="_images/Figure9.png" src="_images/Figure9.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><strong>Figura 9</strong>: Add measurements.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple" start="9">
 <li></li>
 </ol>
@@ -623,13 +663,18 @@ document.write(`
 <p>After generating the measurements, you can plot the measurements.</p>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click on ‘PLOTS’ (Arrow 1) to visualize the measurements.</p></li>
+<li><p>Click on ‘PLOTS’ (Figure 10, Arrow 1) to visualize the measurements.</p></li>
 <li><p>Set the plot type to ‘Swarm’ and choose a color theme based on your preference.</p></li>
-<li><p>Select ‘Y-axis’ as ‘intensity-total-channel-1’ and set ‘SwarmGroup’ to ‘category’; this will generate a curve showing how GFP intensity varies across different categories (Arrow 2).</p></li>
-<li><p>Selecting ‘Show Statistics’ will display the mean, as well as the upper and lower quality bounds, on the plot.</p></li>
+<li><p>Select ‘Y-axis’ as ‘intensity-total-channel-1’ and set ‘SwarmGroup’ to ‘category’; this will generate a curve showing how GFP intensity varies across different categories (Figure 10, Arrow 2).</p></li>
+<li><p>Selecting ‘Show Statistics’ will display the mean, as well as the upper and lower confidence boundaries, on the plot.</p></li>
 <li><p>Optionally, you can experiment with different plot types and axes to see if the data reveals additional insights.</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/Figure10.png"><img alt="Figure 10" src="_images/Figure10.png" style="width: 600px;" /></a>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="_images/Figure10.png"><img alt="_images/Figure10.png" src="_images/Figure10.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><strong>Figura 10</strong>: Plot results.</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple" start="10">
 <li></li>
 </ol>
@@ -694,11 +739,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="classify-example-eukaryotic-image.html"
+       href="translocation_tutorial_ES.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Image Classification</p>
+        <p class="prev-next-title">Piximi: Segmentación y clasificación sin instalación en el navegador</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
