@@ -11,9 +11,9 @@ parts:
 - caption: Tutorials
   chapters:
   - file: translocation_tutorial
-    title: <Beginner tutorial: translocation (ENGLISH)>
+    title: Beginner tutorial: translocation (ENGLISH)
   - file: translocation_tutorial_ES
-    title: <Tutorial inicial: translocación (ESPAÑOL)>
+    title: Tutorial inicial: translocación (ESPAÑOL)
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
 - caption: How-to Guides
