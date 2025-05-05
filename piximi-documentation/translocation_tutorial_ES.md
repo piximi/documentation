@@ -33,7 +33,6 @@ En este experimento, los investigadores tomaron imágenes de células U2OS de os
 Representación esquemática del mecanismo de acción de FOXO1A.
 ```
 
-
 #### **Materiales necesarios para este ejercicio**
 
 Los materiales necesarios para este ejercicio pueden descargarse de: [PiximiTutorial](./downloads/Piximi_Translocation_Tutorial_RGB.zip). El archivo «Piximi Translocation Tutorial RGB.zip» contiene un proyecto de Piximi que incluye todas las imágenes, ya etiquetadas con el tratamiento correspondiente (concentración de Wortmannin o Control). ¡Descargue este archivo pero **NO lo descomprima**!
@@ -49,7 +48,6 @@ Lea los pasos que se indican a continuación y siga las instrucciones donde se i
 * Inicia Piximi en:[https://piximi.app/](https://piximi.app/)
 
 * Cargar el proyecto de ejemplo:  Haga clic en «Abrir» \- “Proyecto” \- «Proyecto desde Zip», como se muestra en la figura 32 para cargar un archivo de proyecto para este tutorial desde Zip, y opcionalmente puede cambiar el nombre del proyecto en el panel superior izquierdo, como «Ejercicio Piximi». A medida que se carga, se puede ver la progresión en la esquina superior izquierda logotipo <img src="./img/tutorial_images/Piximi_logo.png" width="80">.
-
 
 ```{figure} ./img/tutorial_images/Figure2.png
 :width: 600
@@ -79,7 +77,6 @@ Explorando las imágenes y etiquetas.
 
 * Para iniciar la predicción en todas las imágenes, haga clic en «Seleccionar todas las imágenes» en el panel superior, como se muestra en la Figura 33.
 * Cambie la Tarea de Aprendizaje a «SEGMENTATION» (Figura 34, Flecha 1).
-
 * Haga clic en «+ LOAD MODEL» (Flecha 2) y aparecerá una ventana que le permitirá elegir un modelo pre-entrenado (Flecha 3). Para el ejercicio de hoy, seleccione «Cellpose» (Flecha 4).  Puede encontrar más información sobre el modelo admitido [aquí](https://documentation.piximi.app/segmentation.html).
 * Haga clic en «Open Segmentation Modeln» (Flecha 5\) para cargar su modelo y seleccionarlo. Por último, haga clic en «Predict model» (Flecha 5). Verá el progreso de la predicción en la esquina superior izquierda debajo del logo de Piximi <img src="./img/tutorial_images/Piximi_Progress_logo.png" width="140">.
 * Tardará unos minutos en finalizar la segmentación.

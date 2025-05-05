@@ -14,6 +14,7 @@ Piximi is a modern, no-programming image analysis tool leveraging deep learning.
 
 Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.
 
+
 \* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).
 
 Core functionalities:  **Annotator, Segmentor, Classifier, Measurments.** 
@@ -21,6 +22,7 @@ Core functionalities:  **Annotator, Segmentor, Classifier, Measurments.**
 #### **Goal of the exercise**
 
 In this exercise, you will familiarize yourself with Piximi’s main functionalities of annotation, segmentation, classification, measurement and visualization and use it to analyze a sample image dataset from a translocation experiment. The goal of this experiment is to determine the **lowest effective dose** of Wortmannin required to induce GFP-tagged FOXO1A nuclear localization (Figure 21). You will segment the images using one of the deep learning models available in Piximi, check and curate the segmentation, then train an image classifier to classify the individual cells as having “nuclear-GFP”, “cytoplasmic-GFP” or “no-GFP”. Finally, you will make measurements and plot them to answer the biological question.
+
 
 #### **Context of the sample experiment**
 
@@ -75,6 +77,7 @@ Exploring the images and labels.
 ```
 
 ##### 3. **Segment Cells - find out the cells from the background**
+
 
  🔴 TO DO
 
