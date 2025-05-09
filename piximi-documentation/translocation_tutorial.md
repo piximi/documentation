@@ -14,7 +14,6 @@ Piximi is a modern, no-programming image analysis tool leveraging deep learning.
 
 Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.
 
-
 \* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).
 
 Core functionalities:  **Annotator, Segmentor, Classifier, Measurments.** 
@@ -27,7 +26,6 @@ In this exercise, you will familiarize yourself with Piximi’s main functionali
 #### **Context of the sample experiment**
 
 In this experiment, researchers imaged fixed U2OS osteosarcoma (bone cancer) cells expressing a FOXO1A-GFP fusion protein and stained DAPI to label the nuclei. FOXO1 is a transcription factor that plays a key role in regulating gluconeogenesis and glycogenolysis through insulin signaling. FOXO1A dynamically shuttles between the cytoplasm and nucleus in response to various stimuli. Wortmannin, a PI3K inhibitor, can block nuclear export, resulting in the accumulation of FOXO1A in the nucleus.  
-
 
 
 ```{figure} ./img/tutorial_images/Figure1.png

@@ -49,6 +49,7 @@ Lea los pasos que se indican a continuación y siga las instrucciones donde se i
 
 * Cargar el proyecto de ejemplo:  Haga clic en «Abrir» \- “Proyecto” \- «Proyecto desde Zip», como se muestra en la figura 32 para cargar un archivo de proyecto para este tutorial desde Zip, y opcionalmente puede cambiar el nombre del proyecto en el panel superior izquierdo, como «Ejercicio Piximi». A medida que se carga, se puede ver la progresión en la esquina superior izquierda logotipo <img src="./img/tutorial_images/Piximi_logo.png" width="80">.
 
+
 ```{figure} ./img/tutorial_images/Figure2.png
 :width: 600
 :align: center
