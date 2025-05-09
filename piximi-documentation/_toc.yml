@@ -12,7 +12,7 @@ parts:
   chapters:
   - file: translocation_tutorial
   - file: translocation_tutorial_ES
-  - file: translations/pt_BR/translocation_tutorial
+  - file: translocation_tutorial_pt_BR
   - file: classify-example-eukaryotic-image
   - file: classify-example-eukaryotic-object
 - caption: How-to Guides
