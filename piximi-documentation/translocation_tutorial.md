@@ -22,10 +22,10 @@ Core functionalities:  **Annotator, Segmentor, Classifier, Measurments.**
 
 In this exercise, you will familiarize yourself with Piximi’s main functionalities of annotation, segmentation, classification, measurement and visualization and use it to analyze a sample image dataset from a translocation experiment. The goal of this experiment is to determine the **lowest effective dose** of Wortmannin required to induce GFP-tagged FOXO1A nuclear localization (Figure 21). You will segment the images using one of the deep learning models available in Piximi, check and curate the segmentation, then train an image classifier to classify the individual cells as having “nuclear-GFP”, “cytoplasmic-GFP” or “no-GFP”. Finally, you will make measurements and plot them to answer the biological question.
 
+
 #### **Context of the sample experiment**
 
 In this experiment, researchers imaged fixed U2OS osteosarcoma (bone cancer) cells expressing a FOXO1A-GFP fusion protein and stained DAPI to label the nuclei. FOXO1 is a transcription factor that plays a key role in regulating gluconeogenesis and glycogenolysis through insulin signaling. FOXO1A dynamically shuttles between the cytoplasm and nucleus in response to various stimuli. Wortmannin, a PI3K inhibitor, can block nuclear export, resulting in the accumulation of FOXO1A in the nucleus.  
-
 
 
 ```{figure} ./img/tutorial_images/Figure1.png
@@ -75,6 +75,7 @@ Exploring the images and labels.
 ```
 
 ##### 3. **Segment Cells - find out the cells from the background**
+
 
  🔴 TO DO
 
