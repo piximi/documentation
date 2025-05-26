@@ -52,8 +52,8 @@ Lea los pasos que se indican a continuación y siga las instrucciones donde se i
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/open-zip-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/open-zip-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/open-zip-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/open-zip-light.webp/>
 
 _Cargando el archivo de proyecto._
 
@@ -63,8 +63,8 @@ _Cargando el archivo de proyecto._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/trans-project-images-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/trans-project-images-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/trans-project-images-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/trans-project-images-light.webp/>
 
 _Visualización de las imágenes del proyecto._
 
@@ -84,8 +84,8 @@ Opcionalmente, puede anotar las imágenes manualmente haciendo clic en «+ Categ
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/select-all-dark.png/>
-<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/select-all-light.png/>
+<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/select-all-dark.webp/>
+<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/select-all-light.webp/>
 
 </div>
 
@@ -96,8 +96,8 @@ Opcionalmente, puede anotar las imágenes manualmente haciendo clic en «+ Categ
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/segmenter-section-dark.png/>
-<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/segmenter-section-light.png/>
+<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/segmenter-section-dark.webp/>
+<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/segmenter-section-light.webp/>
 
 </div>
 
@@ -108,8 +108,8 @@ Opcionalmente, puede anotar las imágenes manualmente haciendo clic en «+ Categ
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/load-model-dark.png/>
-<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/load-model-light.png/>
+<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/load-model-dark.webp/>
+<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/load-model-light.webp/>
 
 </div>
 
@@ -120,8 +120,8 @@ Opcionalmente, puede anotar las imágenes manualmente haciendo clic en «+ Categ
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/open-model-dark.png/>
-<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/open-model-light.png/>
+<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/open-model-dark.webp/>
+<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/open-model-light.webp/>
 
 </div>
 
@@ -132,8 +132,8 @@ Opcionalmente, puede anotar las imágenes manualmente haciendo clic en «+ Categ
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/predict-dark.png/>
-<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/predict-light.png/>
+<img class="theme-img dark-img content-img" width="600px" src=../../img/translocation-tutorial/predict-dark.webp/>
+<img class="theme-img light-img content-img" width="600px" src=../../img/translocation-tutorial/predict-light.webp/>
 
 </div>
 
@@ -150,8 +150,8 @@ Tenga en cuenta que los pasos anteriores se realizaron en su computadora local, 
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/image-viewer-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/image-viewer-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/image-viewer-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/image-viewer-light.webp/>
 
 _Visualización de las imágenes del proyecto en el Visor de imágenes._
 
@@ -174,8 +174,8 @@ Razón para hacer esto: Queremos clasificar las “CELLPOSE_CELLS” basándonos
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/cellpose_cells-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/cellpose_cells-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/cellpose_cells-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/cellpose_cells-light.webp/>
 
 _Visualización del tipo «cellpose_cells»._
 
@@ -185,8 +185,8 @@ _Visualización del tipo «cellpose_cells»._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/classifier-section-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/classifier-section-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/classifier-section-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/classifier-section-light.webp/>
 
 _Sección de clasificadores de Action Drawer._
 
@@ -196,8 +196,8 @@ _Sección de clasificadores de Action Drawer._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/classifier-create-category-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/classifier-create-category-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/classifier-create-category-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/classifier-create-category-light.webp/>
 
 _Botón Crear categoría._
 
@@ -207,8 +207,8 @@ _Botón Crear categoría._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/categorize-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/categorize-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/categorize-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/categorize-light.webp/>
 
 _Clasificando células individuales en base a la presencia de GFP y su localización._
 
@@ -232,8 +232,8 @@ _Clasificando células individuales en base a la presencia de GFP y su localizac
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-settings-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-settings-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-settings-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-settings-light.webp/>
 
 _Configuración del modelo clasificador._
 
@@ -243,8 +243,8 @@ _Configuración del modelo clasificador._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-plots-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-plots-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-plots-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-plots-light.webp/>
 
 _Gráficos del historial de entrenamiento._
 
@@ -261,8 +261,8 @@ Estos gráficos le ayudan a comprender cómo está aprendiendo el modelo y si es
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-eval-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-eval-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/training-eval-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/training-eval-light.webp/>
 
 _Evaluación de la ejecución de entrenamiento._
 
@@ -272,8 +272,8 @@ _Evaluación de la ejecución de entrenamiento._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/predict-classifier-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/predict-classifier-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/predict-classifier-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/predict-classifier-light.webp/>
 
 _Predecir clasificador._
 
@@ -286,8 +286,8 @@ _Predecir clasificador._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/accept-predictions-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/accept-predictions-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/accept-predictions-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/accept-predictions-light.webp/>
 
 _Aceptar predicciones._
 
@@ -303,8 +303,8 @@ Una vez que esté satisfecho con la clasificación, procederemos a medir los obj
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/nav-measurements-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/nav-measurements-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/nav-measurements-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/nav-measurements-light.webp/>
 
 _Navegar a Medidas._
 
@@ -314,8 +314,8 @@ _Navegar a Medidas._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-table-create-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-table-create-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-table-create-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-table-create-light.webp/>
 
 _Crear tabla de medidas "**Image**"._
 
@@ -326,8 +326,8 @@ _Crear tabla de medidas "**Image**"._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-data-grid-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-data-grid-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-data-grid-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-data-grid-light.webp/>
 
 _Medidas calculadas._
 
@@ -343,8 +343,8 @@ Después de generar las mediciones, puede trazar las mediciones.
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-plot-switch-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-plot-switch-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-plot-switch-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-plot-switch-light.webp/>
 
 _Parcelas de medición._
 
@@ -357,8 +357,8 @@ _Parcelas de medición._
 
 <div class="centered-stack">
 
-<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-swarm-plot-dark.png/>
-<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-swarm-plot-light.png/>
+<img class="theme-img dark-img content-img" width=600 src=../../img/translocation-tutorial/measurements-swarm-plot-dark.webp/>
+<img class="theme-img light-img content-img" width=600 src=../../img/translocation-tutorial/measurements-swarm-plot-light.webp/>
 
 _Graficar los resultados._
 
