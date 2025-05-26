@@ -2,8 +2,8 @@
 
 The annotator in Piximi can quickly create annotations for your **multichannel** and **multiplane** images. Below is a showcase of some of the different annotation tools that Piximi offers.
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotated.png>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotated.png>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotated.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotated.webp>
 
 <br/>
 <br/>
@@ -15,8 +15,8 @@ The annotator in Piximi can quickly create annotations for your **multichannel**
 
 ## Action Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-actionbar.png>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-actionbar.png>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-actionbar.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-actionbar.webp>
 
 <br/>
 <br/>
@@ -53,8 +53,8 @@ Clear all or selected annotations
 
 ## Canvas
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-canvas.png>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-canvas.png>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-canvas.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-canvas.webp>
 
 <br/>
 <br/>
@@ -77,8 +77,8 @@ Displays the color of the pixel at the current cursor position.
 
 ## Image Tools
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-imagetools.png>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-imagetools.png>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-imagetools.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-imagetools.webp>
 
 <br/>
 <br/>
@@ -102,8 +102,8 @@ Click on the selection tool to select annotations. Holding `shift` while selecti
 
 ## Annotation Tools
 
-<img  class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotationtools.png>
-<img  class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotationtools.png>
+<img  class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotationtools.webp>
+<img  class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotationtools.webp>
 
 <br/>
 <br/>
