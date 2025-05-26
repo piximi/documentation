@@ -4,8 +4,8 @@ The annotator in Piximi can quickly create annotations for your **multichannel**
 
 ## Table Creation and Measurement Selection
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-dark.png>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-light.png>
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-dark.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-light.webp>
 
 <br/>
 <br/>
@@ -50,8 +50,8 @@ These measurements are perfomres on the object masks, and are not available for 
 
 ## Measurements Data Grid
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-dark.png>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-light.png>
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-dark.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-light.webp>
 
 <br/>
 <br/>
@@ -70,8 +70,8 @@ Switch views between the data grid and the measurement plots.
 
 ## Measurements Plots
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-dark.png>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-light.png>
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-dark.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-light.webp>
 
 <br/>
 <br/>
