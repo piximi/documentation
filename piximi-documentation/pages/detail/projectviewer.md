@@ -4,8 +4,8 @@ The Project Viewer is where you can create **New** projects, **open** previous p
 
 This view is also where you can **categorize** your images and perform **classification** and **segmentation** tasks.
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-annotated.png>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-annotated.png>
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-annotated.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-annotated.webp>
 
 <br/>
 <br/>
@@ -17,8 +17,8 @@ This view is also where you can **categorize** your images and perform **classif
 
 ## Top Appbar
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-appbar.png>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-appbar.png>
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-appbar.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-appbar.webp>
 
 <br/>
 <br/>
@@ -68,8 +68,8 @@ The Measurements View operates on all images/objects in the project, so no selec
 
 ## Action Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-actionbar.png>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-actionbar.png>
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-actionbar.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-actionbar.webp>
 
 <br/>
 <br/>
@@ -149,8 +149,8 @@ When activated, sections of the app which are associted with help informatino wi
 
 ## Image/Object Grid
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-maingrid.png>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-maingrid.png>
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-maingrid.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-maingrid.webp>
 
 <br/>
 <br/>
@@ -197,12 +197,12 @@ The main image grid displays all of the images or objects in a project. Yuo can 
 
 ## Info Bar
 
-<img  class="theme-img dark-img content-img"  src=../../img/project-viewer/project-viewer-infobar-dark.png>
-<img  class="theme-img light-img content-img"  src=../../img/project-viewer/project-viewer-infobar-light.png>
+<img  class="theme-img dark-img content-img"  src=../../img/project-viewer/project-viewer-infobar-dark.webp>
+<img  class="theme-img light-img content-img"  src=../../img/project-viewer/project-viewer-infobar-light.webp>
 
 <br/>
 <br/>
 
-### 1. Filter by category/training partition
+**1. Filter by category/training partition**
 
-### 2. View image/object details
+**2. View image/object details**
