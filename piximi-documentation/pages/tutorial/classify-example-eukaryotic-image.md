@@ -6,7 +6,7 @@ To begin, we will load the images from an example dataset included in Piximi by 
 
 The images correspond to U2OS cells co-expressing arrestin-GFP and an orphan GPCR. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.
 
-```{figure} ../../img/eukaryotic-classification/load-example-light.png
+```{figure} ../../img/eukaryotic-classification/load-example-light.webp
 ---
 name: open-img
 ---
@@ -22,7 +22,7 @@ In the `Categories` sub-menu on the left hand side you can see that there are al
 - Positive Control (vesicular GFP)
 - Negative Control (cytoplasmic GFP)
 
-```{figure} ../../img/eukaryotic-classification/human-u20s-category-light.png
+```{figure} ../../img/eukaryotic-classification/human-u20s-category-light.webp
 ---
 name: u2os-labels
 ---
@@ -45,7 +45,7 @@ Click here for considerations when categorizing your images and deciding on how 
 
 Click on the `Classification` button under `Learning Task` then proceed to customize the settings for model fitting by clicking the `Fit Model` button. Within the menu that opens, you can select various parameters to adjust model training. Open the `Dataset Settings` menu to find the `Train percentage` field. This value controls what fraction of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
 
-```{figure} ../../img/eukaryotic-classification/human-u20s-fit-button-light.png
+```{figure} ../../img/eukaryotic-classification/human-u20s-fit-button-light.webp
 ---
 name: u2os-fit-settings
 ---
@@ -54,7 +54,7 @@ Open the classifier settings.
 
 In the top right, click the ![play-button](../../icons/play-button-icon.svg) `Fit Classifier` button to begin training. Piximi will now look at the **training** subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **validation** subset of images and compare the models answers to the image class.
 
-```{figure} ../../img/eukaryotic-classification/human-u20s-fit-dialog-fit-light.png
+```{figure} ../../img/eukaryotic-classification/human-u20s-fit-dialog-fit-light.webp
 ---
 name: fit-settings
 ---
@@ -63,7 +63,7 @@ Explore classifier settings and then press ![play-button](../../icons/play-butto
 
 At the bottom of the `Fit Model` settings page you will see two graphs update as Piximi trains the model; these show the accuracy and loss of the model over incrementing epochs.
 
-```{figure} ../../img/eukaryotic-classification/user-guide-accuracy-plot.png
+```{figure} ../../img/eukaryotic-classification/user-guide-accuracy-plot.webp
 ---
 name: epoch-accuracy-plot
 ---
@@ -99,7 +99,7 @@ Loss is another metric that is calculated on the training and validation subsets
 
 You can now exit the `Fit Model` settings by clicking the ![close](../../icons/close-icon.svg) in the top left of the dialog.
 
-```{figure} ../../img/eukaryotic-classification/human-u20s-fit-dialog-exit-light.png
+```{figure} ../../img/eukaryotic-classification/human-u20s-fit-dialog-exit-light.webp
 ---
 name: fit-exit
 ---
@@ -118,14 +118,14 @@ Piximi does not currently have a hold-out test-like set.
 
 Once your model has been trained you can click ![chart](../../icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed. You can then click ![label](../../icons/label-important-icon.svg) `Predict` to run the trained model on the unannotated data. Once an image has been classified you will see the ![label](../../icons/label-icon.svg) color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding ![check-icon](../../icons/check-icon.svg) `Accept Predictions`or reject them by clicking ![close](../../icons/close-icon.svg) `Clear Predictions`. Depending on the performance of the model, annotating further images based on the predictions and/or adjusting the `Fit Model` settings may be desired.
 
-```{figure} ../../img/eukaryotic-classification/human-u20s-predict-light.png
+```{figure} ../../img/eukaryotic-classification/human-u20s-predict-light.webp
 ---
 name: run-predict
 ---
 Predict the class of unknown images using your trained model.
 ```
 
-<!-- ```{figure} ../../img/eukaryotic-classification/user-guide-evaluate.png
+<!-- ```{figure} ../../img/eukaryotic-classification/user-guide-evaluate.webp
 
 ## name: evaluate
 
