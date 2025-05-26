@@ -24,8 +24,8 @@ In the 'Learning task' sub-menu on the left-hand side, click the 'Segmentation' 
 
 <div align="center">
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-light.webp>
 
 _Segmentation interface_
 
@@ -34,15 +34,16 @@ _Segmentation interface_
 Then, click the '+ Load Model' button to select a model. Currently, only the pre-trained model is available for selection.
 
 <div align="center">
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-light.png>
+
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-light.webp>
 
 _Segmentation model selection_
 
 </div>
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-light.webp>
 
 <br/>
 
@@ -56,8 +57,8 @@ click on ![alt text](../../icons/label-icon.svg) 'predict model' to run the mode
 
 <div align="center">
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-light.webp>
 
 _Model prediction_
 
@@ -69,8 +70,8 @@ In this example, we use the Cellpose-Cell model to segment cells in the image. T
 
 <div align="center">
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-light.webp>
  
 _Examples of segmentation output_
 

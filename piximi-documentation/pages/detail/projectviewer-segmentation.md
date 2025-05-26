@@ -10,8 +10,8 @@ All of the models run locally on your own device **EXCEPT** the Cellpose model. 
 
 ## Overview
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/segmenter/segmentation-section-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/segmenter/segmentation-section-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/segmenter/segmentation-section-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/segmenter/segmentation-section-light.webp>
 
 <br/>
 <br/>
@@ -29,8 +29,8 @@ Switch between classification and segmentation tasks. The tasks will operate on 
 
 ### Model Selection
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/segmenter/load-seg-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/segmenter/load-seg-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/segmenter/load-seg-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/segmenter/load-seg-light.webp>
 
 <br/>
 <br/>

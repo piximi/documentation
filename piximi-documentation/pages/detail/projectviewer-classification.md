@@ -10,8 +10,8 @@ Piximi uses TensorFlowJS under the hood for all DL tasks. Any model you upload m
 
 ## Overview
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/classifier-section-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/classifier-section-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/classifier-section-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/classifier-section-light.webp>
 
 <br/>
 <br/>
@@ -29,8 +29,8 @@ Switch between classification and segmentation tasks. The tasks will operate on 
 
 ### Local Model Loading
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/load-local-class-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/load-local-class-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/load-local-class-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/load-local-class-light.webp>
 
 <br/>
 <br/>
@@ -47,8 +47,8 @@ Onces youve confirmed the type and selected the files, click "Open Classificatio
 
 ### Remote Model Loading
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/load-remote-class-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/load-remote-class-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/load-remote-class-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/load-remote-class-light.webp>
 
 <br/>
 <br/>
@@ -69,8 +69,8 @@ Onces youve confirmed the type and selected the files, click "Open Classificatio
 
 Clicking the _Fit_ button will open up a dialog displaying the configurable model settings.
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/fit-classifier-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/fit-classifier-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/fit-classifier-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/fit-classifier-light.webp>
 
 <br/>
 <br/>
@@ -124,8 +124,8 @@ Click on the **Export Hyperparameters** button to download a `.json` file with t
 
 Displays the model's performance from epoch to epoch. Monitoring the training history can help identify common model fitting difficulties such as overfitting.
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/history-plots-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/history-plots-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/history-plots-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/history-plots-light.webp>
 
 <br/>
 
@@ -141,8 +141,8 @@ Shows the change in training loss for the _training_ and _validation_ sets. Gene
 
 Displays the model's summary, detailing each layer and a way to export this information.
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/summary-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/summary-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/summary-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/summary-light.webp>
 
 <br/>
 
@@ -162,8 +162,8 @@ Exports the model summary as a `.csv` file.
 
 Clicking the _Predict_ button will begin running inference on the images/object of the displayed Kind, using the selected model.
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/predict-options-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/predict-options-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/predict-options-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/predict-options-light.webp>
 
 <br/>
 
@@ -183,8 +183,8 @@ confirm the predicted categories. Once accepted you wont be able to revert to a 
 
 Clicking the _Evaluate_ button will open a dialog with the evaluation result of the current run, along with the previous runs for which evaluation has been done.
 
-<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/eval-dark.png>
-<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/eval-light.png>
+<img  class="theme-img dark-img content-img" src=../../img/project-viewer/classifier/eval-dark.webp>
+<img  class="theme-img light-img content-img" src=../../img/project-viewer/classifier/eval-light.webp>
 
 <br/>
 
