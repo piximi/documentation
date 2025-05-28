@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Measurements Viewer &#8212; Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/detail/measurements-viewer';</script>
+    <link rel="canonical" href="documentation.piximi.app/pages/detail/measurements-viewer.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Piximi beginner tutorial (ENGLISH)" href="../tutorial/translocation_tutorial.html" />
+    <link rel="prev" title="Annotation Tools" href="imageviewer-tools-annotation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/piximi-logo.svg" class="logo__image only-light" alt="Documentation - Home"/>
+    <script>document.write(`<img src="../../_static/piximi-logo.svg" class="logo__image only-dark" alt="Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Piximi: Images to Discovery
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick Start</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Piximi Views</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="projectviewer.html">Project Viewer</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="projectviewer-classification.html">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projectviewer-segmentation.html">Segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="imageviewer.html">Image Viewer</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="imageviewer-tools-annotation.html">Annotation Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measurements Viewer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/translocation_tutorial.html">Piximi beginner tutorial (ENGLISH)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/translocation_tutorial_ES.html">Tutorial Inicial de Piximi (ESPAÑOL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/translocation_tutorial_pt_BR.html">Tutorial Para Iniciantes do Piximi (Portugues)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/creating-measurements.html">Creating Measurements</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/classify-example-eukaryotic-image.html">Image Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/segmentation-tutorial.html">Image Segmentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../how-to/create-cell-crops-with-cellprofiler.html">Create cell crops with CellProfiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/PiximiConverter.html">How to convert a Piximi classification model for use outside Piximi</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../technical/hyperparameters.html">Hyperparameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/technical-faq.html">Technical FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/work-in-progress.html">Known issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/example-datasets.html">Example datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical/citing-piximi.html">Citing Piximi</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation/edit/main/piximi-documentation/pages/detail/measurements-viewer.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/piximi/documentation/issues/new?title=Issue%20on%20page%20%2Fpages/detail/measurements-viewer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pages/detail/measurements-viewer.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Measurements Viewer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-creation-and-measurement-selection">Table Creation and Measurement Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-data-grid">Measurements Data Grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-plots">Measurements Plots</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="measurements-viewer">
+<h1>Measurements Viewer<a class="headerlink" href="#measurements-viewer" title="Permalink to this heading">#</a></h1>
+<p>The annotator in Piximi can quickly create annotations for your <strong>multichannel</strong> and <strong>multiplane</strong> images. Below is a showcase of some of the different annotation tools that Piximi offers.</p>
+<section id="table-creation-and-measurement-selection">
+<h2>Table Creation and Measurement Selection<a class="headerlink" href="#table-creation-and-measurement-selection" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/measurements-viewer-actionbar-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-actionbar-dark.webp" />
+<img alt="../../_images/measurements-viewer-actionbar-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-actionbar-light.webp" />
+<br/>
+<br/>
+<p><strong>1. Table Creation</strong></p>
+<p>Click in the “+” button to create a new measurement group based on one of the Kinds in the project.</p>
+<p><strong>2. Split Selection</strong></p>
+<p>Select the splits yout want to use for the measurements. The splits dictate how the measurements are grouped for statitical analysis (i.e. calculating the mean intensity over all the imges in the <strong>training</strong> partition).</p>
+<p><strong>3. Measurement Selection</strong></p>
+<p>Measurements are separated into two sections; <strong>Intensity</strong> and <strong>Object Geometry</strong>.</p>
+<p><em>Intensity Measurements</em></p>
+<p>These measurements are performed for whole images, as well as image crops for annotated objects and include:</p>
+<ul class="simple">
+<li><p><em>Total Intensity</em>: Cummulative sum of the intensity values of each pixel.</p></li>
+<li><p><em>Mean Intensity</em>: The mean of the pixel intensities.</p></li>
+<li><p><em>Standard Deviation</em>: The std of the pixel intensities.</p></li>
+<li><p><em>MAD</em>: The median adjusted deviation of the pixel intensities of the image.</p></li>
+<li><p><em>Minimum Intensity</em>: The minimum intensity of the pixels in the image.</p></li>
+<li><p><em>Maximum Intensity</em>: The maximum intensity of the pixels in the image.</p></li>
+<li><p><em>Lower Quartile</em>: The value of the intensity for which 25% of the pixel intensities are lower.</p></li>
+<li><p><em>Upper Quartile</em>: The value of the intensity for which 75% of the pixel intensities are lower.</p></li>
+</ul>
+<p><em>Object Geometry Measurements</em></p>
+<p>These measurements are perfomres on the object masks, and are not available for the <strong>Image</strong> Kind.</p>
+<ul class="simple">
+<li><p><em>Area</em>: The area of the annotation mask.</p></li>
+<li><p><em>Bounding-Box Area</em>:the area of the annotation’s bounding-box</p></li>
+<li><p><em>Perimeter</em>: The perimeter of the annotation mask.</p></li>
+<li><p><em>Extent</em>: The ratio of bounding-box area to mask area.</p></li>
+<li><p><em>Equivalent Diameter</em>: The diameter of a perfect circle whose area is equivalent to the area of the annotation.</p></li>
+<li><p><em>Diameter of Equal Perimeter (PED)</em>: The diameter of a circle whose perimeter is equal to that of the annotation’s.</p></li>
+<li><p><em>Sphericity</em>: The extent to which an annotation is perfectly spherical. Ranges from 0 (irregularly shaped) to 1 (spherical)
+= <em>Compactness</em>: The degree to which objects are compact. Circles will be the most compact with a value of 1, with the value increasing with increasing shape irregularity.</p></li>
+</ul>
+</section>
+<section id="measurements-data-grid">
+<h2>Measurements Data Grid<a class="headerlink" href="#measurements-data-grid" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/measurements-viewer-table-tab-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-table-tab-dark.webp" />
+<img alt="../../_images/measurements-viewer-table-tab-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-table-tab-light.webp" />
+<br/>
+<br/>
+<p><strong>1. Display Tabs</strong></p>
+<p>Switch views between the data grid and the measurement plots.</p>
+<p><strong>2. Data Grid</strong></p>
+<ul class="simple">
+<li><p><em>Measurement Name</em>: Name of the measurement.</p></li>
+<li><p><em>Split</em>: The split which the measurement results are analysed over.</p></li>
+<li><p><em>Mean</em>: The mean values over all the measurement values in the split.</p></li>
+<li><p><em>Median</em>: The median values over all the measurement values in the split.</p></li>
+<li><p><em>Standard Deviation</em>:The standard deviation over all the measurement values in the split.</p></li>
+</ul>
+</section>
+<section id="measurements-plots">
+<h2>Measurements Plots<a class="headerlink" href="#measurements-plots" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/measurements-viewer-plot-tab-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-plot-tab-dark.webp" />
+<img alt="../../_images/measurements-viewer-plot-tab-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-plot-tab-light.webp" />
+<br/>
+<br/>
+<p><strong>1. Plot Controls</strong></p>
+<ul class="simple">
+<li><p><em>Plot Type</em>: The type of plot to use: Histogram, Scatter, Beeswarm</p></li>
+<li><p><em>Color Scheme</em>: The color scheme of the plot.</p></li>
+<li><p><em>x-Axis</em>: The measurement used for the x-axis.</p></li>
+<li><p><em>y-Axis</em>: The measurement used for the y-axis.</p></li>
+<li><p><em>Size</em>: The measurement used for the size mapping.</p></li>
+<li><p><em>Color</em>: The split type used for color mapping (by-category or by-partition)</p></li>
+<li><p><em>Number of Bins</em>: Number of binds to use in the histogram plot.</p></li>
+<li><p><em>Swarm Group</em>: The split type used for swarm grouping (by-category or by-partition)</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plot Name</p></th>
+<th class="head"><p>Color Scheme</p></th>
+<th class="head"><p>x-Axis</p></th>
+<th class="head"><p>y-Axis</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Color</p></th>
+<th class="head"><p>Num. Bins</p></th>
+<th class="head"><p>Swarm Group</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Histogram</p></td>
+<td><p>Configurable</p></td>
+<td><p>Configurable</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Configurable</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scatter</p></td>
+<td><p>Configurable</p></td>
+<td><p>Configurable</p></td>
+<td><p>Configurable</p></td>
+<td><p>Configurable</p></td>
+<td><p>Configurable</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>Beeswarm</p></td>
+<td><p>Configurable</p></td>
+<td><p>N/A</p></td>
+<td><p>Configurable</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Configurable</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Plot Container</strong></p>
+<p>Displays the current plot.</p>
+<p><strong>3. Plot Tabs</strong></p>
+<p>Switch between multiple active plots. Click on the tab title to update the name of the plot, or click on the “X” button to remove the plot.</p>
+<p><strong>4. Create New Plot</strong></p>
+<p>Create a new plot</p>
+<p><strong>5. Save Plot</strong></p>
+<p>Save the currently viewd plot as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> file.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pages/detail"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="imageviewer-tools-annotation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Annotation Tools</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorial/translocation_tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Piximi beginner tutorial (ENGLISH)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-creation-and-measurement-selection">Table Creation and Measurement Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-data-grid">Measurements Data Grid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-plots">Measurements Plots</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Broad Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
