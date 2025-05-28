@@ -1,49 +1,97 @@
 .text-img {
-    height: 1.5em;
-    padding-right: 0.5em;
+  height: 1.5em;
+  padding-right: 0.5em;
 }
 
 .annotation-gif {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   border-radius: 10px;
 }
 
 .img-shadow {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   border-radius: 10px;
 }
 
 .piximi-btn {
-  font-size: 1.5rem;  
+  font-size: 1.25rem;
   align-items: center;
-  background-color: #FCFCFD;
   border-radius: 8px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
-  color: black !important;
+  border: 1px solid #02aec5;
+  color: #02aec5 !important;
   display: inline-flex;
   margin-top: 1rem;
-  margin-left: 2rem;
+  margin-inline: auto;
   padding: 1rem;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow 0.15s, transform 0.15s;
   touch-action: manipulation;
-  will-change: box-shadow,transform;
+  will-change: box-shadow, transform;
   outline: none;
 }
 
 .piximi-btn:focus {
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
 }
 
 .piximi-btn:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   transform: translateY(-2px);
   text-decoration: none;
 }
 
 .piximi-btn:active {
-  box-shadow: #D6D6E7 0 3px 7px inset;
+  box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.horiz-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.theme-img {
+  display: none;
+}
+
+.content-img {
+  border-radius: 8px;
+  border: 1px solid #d1d5da;
+}
+
+/* Show light image only in light theme */
+html[data-theme="light"] .light-img {
+  display: block;
+}
+
+/* Show dark image only in dark theme */
+html[data-theme="dark"] .dark-img {
+  display: block;
+}
+
+.centered-stack {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  color: red;
+}
+
+.translate {
+  color: red;
 }

@@ -20,3 +20,12 @@ yarn-error.log*
 package-lock.json
 stories
 .storybook
+conf.py
+
+# pixi environments
+.pixi
+*.egg-info
+pixi.toml
+.gitattributes
+pixi.lock
+_build

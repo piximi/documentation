@@ -1,28 +1,35 @@
 format: jb-book
 root: intro
 parts:
-- caption: Piximi Views
-  chapters:
-  - file: main-menu
-  - file: annotation-guide
-  - file: segmentation
-  - file: classification
-  - file: measurements
-- caption: Tutorials
-  chapters:
-  - file: translocation_tutorial
-  - file: translocation_tutorial_ES
-  - file: translocation_tutorial_pt_BR
-  - file: classify-example-eukaryotic-image
-  - file: classify-example-eukaryotic-object
-- caption: How-to Guides
-  chapters:
-  - file: create-cell-crops-with-cellprofiler
-  - file: PiximiConverter.ipynb
-- caption: Technical information
-  chapters:
-  - file: hyperparameters
-  - file: technical-faq
-  - file: work-in-progress
-  - file: example-datasets
-  - file: citing-piximi
+  - caption: Quick Start
+    chapters:
+      - file: quick-start
+  - caption: Piximi Views
+    chapters:
+      - file: pages/detail/projectviewer
+        sections:
+          - file: pages/detail/projectviewer-classification
+          - file: pages/detail/projectviewer-segmentation
+      - file: pages/detail/imageviewer
+        sections:
+          - file: pages/detail/imageviewer-tools-annotation
+      - file: pages/detail/measurements-viewer
+  - caption: Tutorials
+    chapters:
+      - file: pages/tutorial/translocation_tutorial
+      - file: pages/tutorial/translocation_tutorial_ES
+      - file: pages/tutorial/translocation_tutorial_pt_BR
+      - file: pages/tutorial/creating-measurements
+      - file: pages/tutorial/classify-example-eukaryotic-image
+      - file: pages/tutorial/segmentation-tutorial
+  - caption: How-to Guides
+    chapters:
+      - file: pages/how-to/create-cell-crops-with-cellprofiler
+      - file: pages/how-to/PiximiConverter.ipynb
+  - caption: Technical information
+    chapters:
+      - file: pages/technical/hyperparameters
+      - file: pages/technical/technical-faq
+      - file: pages/technical/work-in-progress
+      - file: pages/technical/example-datasets
+      - file: pages/technical/citing-piximi
