@@ -72,7 +72,7 @@ In this example, we use the Cellpose-Cell model to segment cells in the image. T
 
 <img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-dark.webp>
 <img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-light.webp>
- 
+
 _Examples of segmentation output_
 
 </div>
