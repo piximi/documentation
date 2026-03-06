@@ -157,11 +157,11 @@ When activated, sections of the app which are associted with help informatino wi
 
 ### 1. Kind Tabs
 
-Piximi groups the project data into what we cal "Kinds". Kind are essential a **suppercategory**. Each project will have an "Image" kind which referes to whole images and cannot be deleted or edited.
+Piximi groups the project data into what we cal "Kinds". Kinds are essentially a **supercategory**. Each project will have an "Image" kind which refers to whole images and cannot be deleted or edited.
 
-Additional kinds can be created, edited and deleted, and each kind has it own set of associated categories. For example, A project will contain a set of whole images (belonging to the "Image" kind). An image then may contain objects, such as "Nuclei" and "Cell Membrane" objects.
+Additional kinds can be created, edited and deleted, and each kind has it own set of associated categories.
 
-In this example the project has three kinds -- "Image", "Nuclei", and "Cell Membrane". The object can then be grouped by category, for example the objects of kind "Nuclei" can be categorized as "Healthy" or "Infected".
+For example, a project will contain a set of whole images (belonging to the "Image" kind). An image then may contain objects, such as "Nuclei" and "Cell Membrane" objects. In this example the project has three kinds -- "Image", "Nuclei", and "Cell Membrane". The object can then be grouped by category, for example the objects of kind "Nuclei" can be categorized as "Healthy" or "Infected".
 
 A simple structure could look like this:
 
@@ -179,12 +179,12 @@ kinds:{
 }
 ```
 
-Each Kind tab contains functinoality for editing the kind name, minimizing the kind (removing the kind from the visible tabs) and deleting the kind.
+Each Kind tab contains functionality for editing the kind name, minimizing the kind (removing the kind from the visible tabs) and deleting the kind.
 
 ```{admonition} Deleting Kinds
 :class: warning
 
-Deleting a Kind will also delet all associated objects or images.
+Deleting a Kind will also delete all associated objects or images.
 ```
 
 ### 2. Create/Show Kinds
@@ -193,7 +193,7 @@ Use the "+" button to create new kinds. Additionally, any kind that was previous
 
 ### 3. Images/Objects
 
-The main image grid displays all of the images or objects in a project. Yuo can click on an image to select it, as well as view its category and some brief info.
+The main image grid displays all of the images or objects in a project. You can click on an image to select it, as well as view its category and some brief info.
 
 ## Info Bar
 
@@ -203,6 +203,5 @@ The main image grid displays all of the images or objects in a project. Yuo can 
 <br/>
 <br/>
 
-**1. Filter by category/training partition**
-
-**2. View image/object details**
+1. Filter by category/training partition
+2. View image/object details
