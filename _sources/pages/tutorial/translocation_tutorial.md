@@ -36,7 +36,7 @@ _Schematic representation of FOXO1A mechanism_
 
 #### **Materials necessary for this exercise**
 
-The materials needed in this exercise can be downloaded from: [PiximiTutorial](./downloads/Piximi_Translocation_Tutorial_RGB.zip). The “Piximi Translocation Tutorial RGB.zip” file contains a Piximi project, including all the images, already labeled with the corresponding treatment (Wortmannin concentration or Control). Download this file but **do NOT unzip it**!
+The materials needed in this exercise can be downloaded from: [PiximiTutorial](../../downloads/Piximi_Translocation_Tutorial_RGB.zip). The “Piximi Translocation Tutorial RGB.zip” file contains a Piximi project, including all the images, already labeled with the corresponding treatment (Wortmannin concentration or Control). Download this file but **do NOT unzip it**!
 
 #### **Exercise instructions**
 
