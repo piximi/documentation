@@ -3,6 +3,7 @@
 - [If Piximi crashes, how can I recover my project?](if-piximi-crashes)
 - [Can I run Piximi offline?](can-i-run-piximi-offline)
 - [Is there logging?](is-there-logging)
+- [What file formats are used?](what-file-formats-are-used)
 - [What models are used?](what-models-are-used)
 - [What if I lose my internet connection while the model is training?](what-if-internet-is-lost)
 - [Is it possible to see a training summary?](see-a-training-summary)
@@ -59,7 +60,15 @@ Segmentation models that transmit data over the internet are clearly indicated.
 
 ## Is there logging?
 
-No. Piximi does not log any information, perform any telemetry, or make any external API calls.
+No. Piximi does not log any information, perform any telemetry, or make any external API calls which granular user identify or behavior. Our only telemetry is on city- and referring-tool level access counts to the Piximi main and sub-pages.
+
+
+(what-file-formats-are-used)=
+
+## What file formats are used?
+
+Piximi currently supports web-compatible formats such as BMP, PNG, JPG, as well as scientific file formats TIFF and DICOM. Webp support for mobile phone images is coming soon. There is no easy technical path to mass-support (ala bioformats) of proprietary microscope vendor file formats as this time, but if it becomes available, we would be excited to include it.
+
 
 (what-models-are-used)=
 
