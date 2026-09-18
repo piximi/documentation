@@ -427,6 +427,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-piximi-crashes-how-can-i-recover-my-project">If Piximi crashes, how can I recover my project?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-run-piximi-offline">Can I run Piximi offline?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-logging">Is there logging?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-file-formats-are-used">What file formats are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-classifier-models-are-used">What classifier models are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">What if internet connection is lost while a model is training?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-see-a-training-summary">Is it possible to see a training summary?</a></li>
@@ -449,6 +450,7 @@ document.write(`
 <li><p><a class="reference internal" href="#if-piximi-crashes"><span class="std std-ref">If Piximi crashes, how can I recover my project?</span></a></p></li>
 <li><p><a class="reference internal" href="#can-i-run-piximi-offline"><span class="std std-ref">Can I run Piximi offline?</span></a></p></li>
 <li><p><a class="reference internal" href="#is-there-logging"><span class="std std-ref">Is there logging?</span></a></p></li>
+<li><p><a class="reference internal" href="#what-file-formats-are-used"><span class="std std-ref">What file formats are used?</span></a></p></li>
 <li><p><a class="reference internal" href="#what-models-are-used"><span class="std std-ref">What models are used?</span></a></p></li>
 <li><p><a class="reference internal" href="#what-if-internet-is-lost"><span class="std std-ref">What if I lose my internet connection while the model is training?</span></a></p></li>
 <li><p><a class="reference internal" href="#see-a-training-summary"><span class="std std-ref">Is it possible to see a training summary?</span></a></p></li>
@@ -483,7 +485,11 @@ Segmentation models that transmit data over the internet are clearly indicated.<
 </section>
 <section id="is-there-logging">
 <span id="id2"></span><h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this heading">#</a></h2>
-<p>No. Piximi does not log any information, perform any telemetry, or make any external API calls.</p>
+<p>No. Piximi does not log any information, perform any telemetry, or make any external API calls which granular user identify or behavior. Our only telemetry is on city- and referring-tool level access counts to the Piximi main and sub-pages.</p>
+</section>
+<section id="what-file-formats-are-used">
+<span id="id3"></span><h2>What file formats are used?<a class="headerlink" href="#what-file-formats-are-used" title="Permalink to this heading">#</a></h2>
+<p>Piximi currently supports web-compatible formats such as BMP, PNG, JPG, as well as scientific file formats TIFF and DICOM. Webp support for mobile phone images is coming soon. There is no easy technical path to mass-support (ala bioformats) of proprietary microscope vendor file formats as this time, but if it becomes available, we would be excited to include it.</p>
 </section>
 <section id="what-classifier-models-are-used">
 <span id="what-models-are-used"></span><h2>What classifier models are used?<a class="headerlink" href="#what-classifier-models-are-used" title="Permalink to this heading">#</a></h2>
@@ -505,7 +511,7 @@ Segmentation models that transmit data over the internet are clearly indicated.<
 <p>If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.</p>
 </section>
 <section id="does-piximi-use-a-gpu">
-<span id="id3"></span><h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this heading">#</a></h2>
+<span id="id4"></span><h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this heading">#</a></h2>
 <p>Yes. Piximi uses Tensorflow.js which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>.</p>
 <p>If using Chrome, users will need to enable GPU use by going into preferences -&gt; advanced -&gt; system, and enabling the “Use hardware acceleration when available” option.</p>
 </section>
@@ -582,6 +588,7 @@ Segmentation models that transmit data over the internet are clearly indicated.<
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-piximi-crashes-how-can-i-recover-my-project">If Piximi crashes, how can I recover my project?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-run-piximi-offline">Can I run Piximi offline?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-logging">Is there logging?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-file-formats-are-used">What file formats are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-classifier-models-are-used">What classifier models are used?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-internet-connection-is-lost-while-a-model-is-training">What if internet connection is lost while a model is training?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-it-possible-to-see-a-training-summary">Is it possible to see a training summary?</a></li>
