@@ -1,110 +1,111 @@
 # Measurements Viewer
 
-The annotator in Piximi can quickly create annotations for your **multichannel** and **multiplane** images. Below is a showcase of some of the different annotation tools that Piximi offers.
+The Measurements Viewer lets you measure the images and objects in your project, summarize the results in tables, and visualize them in plots. It operates on every image/object of the chosen **Kind**, so no selection is needed in the Project Viewer: click **Measure** at the top of the Project Viewer to open it.
 
 ## Table Creation and Measurement Selection
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-dark.webp>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-actionbar-light.webp>
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-drawer.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-drawer.webp>
 
 <br/>
 <br/>
 
-**1. Table Creation**
+**1. Create Table**
 
-Click in the "+" button to create a new measurement group based on one of the Kinds in the project.
+Click **Add Table**, then choose one of the project's Kinds. Each table measures all of the items belonging to that Kind (the **Image** kind measures whole images). Tables appear as tabs along the top of the viewer, and can be renamed or deleted from their tab.
 
-**2. Split Selection**
+**2. Object Measurements**
 
-Select the splits you want to use for the measurements. The splits dictate how the measurements are grouped for statistical analysis (i.e. calculating the mean intensity over all the images in the **training** partition).
-
-**3. Measurement Selection**
-
-Measurements are separated into two sections; **Intensity** and **Object Geometry**.
-
-_Intensity Measurements_
-
-These measurements are performed for whole images, as well as image crops for annotated objects and include:
-
-- _Total Intensity_: Cummulative sum of the intensity values of each pixel.
-- _Mean Intensity_: The mean of the pixel intensities.
-- _Standard Deviation_: The std of the pixel intensities.
-- _MAD_: The median adjusted deviation of the pixel intensities of the image.
-- _Minimum Intensity_: The minimum intensity of the pixels in the image.
-- _Maximum Intensity_: The maximum intensity of the pixels in the image.
-- _Lower Quartile_: The value of the intensity for which 25% of the pixel intensities are lower.
-- _Upper Quartile_: The value of the intensity for which 75% of the pixel intensities are lower.
-
-_Object Geometry Measurements_
-
-These measurements are perfomres on the object masks, and are not available for the **Image** Kind.
+Geometry measurements performed on the object masks. They are not available for the **Image** Kind.
 
 - _Area_: The area of the annotation mask.
-- _Bounding-Box Area_:the area of the annotation's bounding-box
+- _Bounding-Box Area_: The area of the annotation's bounding box.
 - _Perimeter_: The perimeter of the annotation mask.
-- _Extent_: The ratio of bounding-box area to mask area.
-- _Equivalent Diameter_: The diameter of a perfect circle whose area is equivalent to the area of the annotation.
-- _Diameter of Equal Perimeter (PED)_: The diameter of a circle whose perimeter is equal to that of the annotation's.
-- _Sphericity_: The extent to which an annotation is perfectly spherical. Ranges from 0 (irregularly shaped) to 1 (spherical)
-  = _Compactness_: The degree to which objects are compact. Circles will be the most compact with a value of 1, with the value increasing with increasing shape irregularity.
+- _Extent_: The ratio of mask area to bounding-box area.
+- _Equivalent Diameter_: The diameter of a circle whose area is equal to the area of the annotation.
+- _Diameter of Equal Perimeter (PED)_: The diameter of a circle whose perimeter is equal to that of the annotation.
+- _Radius_: The radius of the annotation.
+- _Sphericity_: How close the annotation is to a perfect circle. Ranges from 0 (irregular) to 1 (circular).
+- _Compactness_: How compact the object is. A circle is the most compact, with a value of 1; the value increases as the shape becomes more irregular.
+- _Center of Mass (X, Y)_: The coordinates of the object's center of mass.
 
-## Measurements Data Grid
+**3. Intensity Measurements**
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-dark.webp>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-table-tab-light.webp>
+Performed on whole images, as well as on the image crops of annotated objects:
+
+- _Total_: The cumulative sum of the pixel intensities.
+- _Mean_ and _Median_: The mean and median pixel intensity.
+- _Std_: The standard deviation of the pixel intensities.
+- _MAD_: The median absolute deviation of the pixel intensities.
+- _Min Value_ and _Max Value_: The lowest and highest pixel intensity.
+- _Lower Quartile_ and _Upper Quartile_: The intensities below which 25% and 75% of the pixels fall.
+
+Tick a group to select all of its measurements, or expand it to pick individual ones.
+
+## Table View
+
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-table-tab.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-table-tab.webp>
 
 <br/>
 <br/>
 
-**1. Display Tabs**
+1. **Table Tabs**: Switch between the measurement tables you have created.
+2. **Table | Plot View**: Switch between the data grid and the measurement plots.
+3. **Export**: Download the table as a `.csv` file (or, in the plot view, save the plot as a `.png`).
+4. **Split Options**: Choose how the measurements are grouped (see below).
+5. **Data Grid**: One row per measurement, with:
+   - _Count_: The number of items measured.
+   - _Mean_, _Median_ and _Std Dev_: Statistics over those items.
 
-Switch views between the data grid and the measurement plots.
+### Split Options
 
-**2. Data Grid**
+By default the statistics are computed over every item in the Kind. Use the **Split Options** to break them down by one or more dimensions:
 
-- _Measurement Name_: Name of the measurement.
-- _Split_: The split which the measurement results are analysed over.
-- _Mean_: The mean values over all the measurement values in the split.
-- _Median_: The median values over all the measurement values in the split.
-- _Standard Deviation_:The standard deviation over all the measurement values in the split.
+- **Category**: The category of each item.
+- **Partition**: The training partition of each item (training, validation, or unassigned).
+- **Image**: The image an object belongs to (for object Kinds).
 
-## Measurements Plots
+Drag a dimension from **Available Dimensions** into **Column Grouping** to create a pivot table with one set of columns per value. The order of the dimensions matters: the first dimension is the outermost grouping. Drag a dimension back to remove it.
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-dark.webp>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-plot-tab-light.webp>
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-table-pivot.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-table-pivot.webp>
+
+<br/>
+<br/>
+
+## Plot View
+
+<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-plot-tab.webp>
+<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-plot-tab.webp>
 
 <br/>
 <br/>
 
 **1. Plot Controls**
 
-- _Plot Type_: The type of plot to use: Histogram, Scatter, Beeswarm
-- _Color Scheme_: The color scheme of the plot.
-- _x-Axis_: The measurement used for the x-axis.
-- _y-Axis_: The measurement used for the y-axis.
-- _Size_: The measurement used for the size mapping.
-- _Color_: The split type used for color mapping (by-category or by-partition)
-- _Number of Bins_: Number of binds to use in the histogram plot.
-- _Swarm Group_: The split type used for swarm grouping (by-category or by-partition)
+- _Plot_: The type of plot: Histogram, Scatter, or Beeswarm.
+- _Color Theme_: The color scheme of the plot.
+- _X-axis_ / _Y-axis_: The measurements used for each axis.
+- _Size_: The measurement used for the size of the marks.
+- _Color_: The split (category or partition) used to color the marks.
+- _Number of Bins_ and _Show Bin Label_: Histogram options.
+- _Swarm Group_: The split (category or partition) used to group a beeswarm plot.
 
-| Plot Name | Color Scheme | x-Axis       | y-Axis       | Size         | Color        | Num. Bins    | Swarm Group  |
+| Plot Name | Color Theme  | x-Axis       | y-Axis       | Size         | Color        | Num. Bins    | Swarm Group  |
 | --------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
 | Histogram | Configurable | Configurable | N/A          | N/A          | N/A          | Configurable | N/A          |
 | Scatter   | Configurable | Configurable | Configurable | Configurable | Configurable | N/A          | N/A          |
-| Beeswarm  | Configurable | N/A          | Configurable | N/A          | N/A          | N/A          | Configurable |
+| Beeswarm  | Configurable | N/A          | Configurable | Configurable | N/A          | N/A          | Configurable |
 
-**2. Plot Container**
+**2. Plot**
 
 Displays the current plot.
 
 **3. Plot Tabs**
 
-Switch between multiple active plots. Click on the tab title to update the name of the plot, or click on the "X" button to remove the plot.
+Switch between multiple plots. Click the **+** at the end of the tab bar to create a new plot, click a tab's title to rename it, and use the **x** to remove it.
 
-**4. Create New Plot**
+**4. Save Plot**
 
-Create a new plot
-
-**5. Save Plot**
-
-Save the currently viewed plot as a `.png` file.
+Save the current plot as a `.png` file.

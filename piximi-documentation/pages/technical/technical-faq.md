@@ -16,33 +16,108 @@
 
 Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.
 
-The "Save project" option will save the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not including the trained model weights.
+Click `Save` in the top bar of the Project Viewer to save the project.
 
-![Save Project Option](../../img/faq/save_project_1.png)
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-project.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-project.webp>
 
-![Save Project Dialog](../../img/faq/save_project_2.png)
+<br/>
+<br/>
 
-To save the trained model weights, use the "Save classifier" option.
+```{div} tutorial-caption
+The `Save` button in the Project Viewer.
+```
 
-![Save Classifier Option](../../img/faq/save_classifier_1.png)
 
-![Save Classifier Dialog](../../img/faq/save_classifier_2.png)
+Enter a name in the `Save Project` window and click `Save Project`. Piximi downloads the project as a `.zip` file.
 
-If Piximi crashes, reload your work by using the "Open project" option to load images and project settings.
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-project-dialog.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-project-dialog.webp>
 
-![Open Project Option](../../img/faq/open_project_1.png)
+<br/>
+<br/>
 
-![Open Project Location](../../img/faq/open_project_2.png)
+```{div} tutorial-caption
+The `Save Project` window.
+```
 
-Use the "Open classifier" option to load a trained model and its parameters.
 
-![Open Classifier Option](../../img/faq/open_classifier_1.png)
+The saved project contains the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not the trained model weights.
 
-Make sure to select both the weights (model paramaters) bin file and json (model architecture) file.
+To save the trained model weights, select the model under `Selected Model` in the `Classification` section of the `Learning Task` panel and click `Save Model` under `Model I/O`.
 
-![Open Classifier Dialog](../../img/faq/open_classifier_2.png)
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-model-io.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-model-io.webp>
 
-![Open Classifier Location](../../img/faq/open_classifier_3.png)
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Load Model` and `Save Model` buttons in the Classification section.
+```
+
+
+Enter a name in the `Save` window and click `Save`. Piximi downloads a `.zip` file with the model topology (`.json`), the model weights (`.bin`), the history of its training runs, and a manifest file that lets Piximi find them again.
+
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-model-dialog.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-model-dialog.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The window for saving a model.
+```
+
+
+If Piximi crashes, reload your work through `Open` > `Project` > `Upload .zip` (or `Upload .zarr`) to load the images and project settings. Your computer's file picker opens, where you choose the project file. If a project is already open, Piximi first asks you to confirm that it should be replaced. The same menu offers `Load Example` for the example projects.
+
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-open-menu.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-open-menu.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Open` menu.
+```
+
+
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-open-project-menu.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-open-project-menu.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Project` submenu of the `Open` menu.
+```
+
+
+Use `Load Model` in the same `Model I/O` section to load a trained model and its parameters.
+
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-load-model-dialog.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-load-model-dialog.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Load Classification Model` window.
+```
+
+
+In the `Upload Local` tab, click `Upload Model` and select either the `.zip` saved by Piximi, or the individual files. When selecting individual files, make sure to select both the weights (`.bin`) file and the model topology (`.json`) file; the manifest and the training runs `.json` files are optional. Once the model is uploaded, Piximi shows a summary of it and selects it as the active model.
+
+<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-load-model-uploaded.webp>
+<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-load-model-uploaded.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+A model that has been uploaded successfully.
+```
 
 (can-i-run-piximi-offline)=
 
@@ -53,8 +128,7 @@ Yes. Once you visit the application, there is no need for an internet connection
 You can also serve the application locally using Docker. The instructions to do this are on the [main Piximi repo README](https://github.com/piximi/piximi#docker). After downloading the source code, no internet connection is necessary for serving locally and using the app.
 
 No internet connection is necessary to save or load projects and classifier models.
-Segmentation models do require an internet connection and certain segmentation models, e.g. Cellpose, do transmit data over the internet.
-Segmentation models that transmit data over the internet are clearly indicated.
+Segmentation models run in your browser, and your images are never transmitted over the internet. An internet connection is only needed to download a model the first time you load it (for example, Cellpose-SAM is downloaded from HuggingFace); it is cached by your browser afterwards.
 
 (is-there-logging)=
 
@@ -90,17 +164,44 @@ No internet connection is necessary to save or load projects and models.
 
 ## Is it possible to see a training summary?
 
-Yes. The model summary, accuracy and loss are displayed in the Classifier dialog, and will remain there even if you leave the dialog and re-enter.
+Yes. The model summary, accuracy and loss are displayed in the `Fit Model` window, in the `Model Summary` and `Training Plots` tabs, and will remain there even if you leave the window and re-enter.
 
-![Training Plots](../../img/faq/training_plots.png)
+<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-training-plots.webp>
+<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-training-plots.webp>
 
-Additional metrics are available via the Evaluation dialog.
+<br/>
+<br/>
 
-![Evaluate Option](../../img/faq/evaluate_option.png)
+```{div} tutorial-caption
+The `Training Plots` tab of the `Fit Model` window.
+```
 
-![Evaluate Dialog](../../img/faq/evaluate_dialog.png)
 
-If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.
+Additional metrics are available via `Evaluate` in the `Classification` section, which shows the evaluation of the model's most recent training run.
+
+<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-section.webp>
+<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-section.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Evaluate` button is among the model operations of the `Classification` section.
+```
+
+
+<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-evaluate.webp>
+<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-evaluate.webp>
+
+<br/>
+<br/>
+
+```{div} tutorial-caption
+The `Evaluate` window.
+```
+
+
+If the current model is re-trained, or if a new model is trained, the summary and evaluation shown are those of the new training run. To avoid losing the results, save the current model before performing any additional training; the saved `.zip` includes the history of its training runs.
 
 (does-piximi-use-a-gpu)=
 
@@ -109,6 +210,8 @@ If a new model is trained however, or if the current model is re-trained, these 
 Yes. Piximi uses Tensorflow.js which in turn uses [WebGL](https://en.wikipedia.org/wiki/WebGL).
 
 If using Chrome, users will need to enable GPU use by going into preferences -> advanced -> system, and enabling the "Use hardware acceleration when available" option.
+
+Some segmentation models, such as Cellpose-SAM, additionally require a browser with [WebGPU](https://en.wikipedia.org/wiki/WebGPU) support.
 
 (run-model-multiple-times)=
 

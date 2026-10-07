@@ -1,6 +1,10 @@
 # Image Viewer
 
-The annotator in Piximi can quickly create annotations for your **multichannel** and **multiplane** images. Below is a showcase of some of the different annotation tools that Piximi offers.
+The Image Viewer is Piximi's annotator. Use it to inspect your **multichannel** and **multiplane** images, adjust how they are displayed, and create, edit, filter and export annotations.
+
+To open it, select one or more images (or objects) in the [Project Viewer](projectviewer.md) and click **Image Viewer** at the top of the grid. If you selected objects, the images they belong to are loaded and the objects are highlighted.
+
+## Overview
 
 <img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotated.webp>
 <img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotated.webp>
@@ -8,124 +12,121 @@ The annotator in Piximi can quickly create annotations for your **multichannel**
 <br/>
 <br/>
 
-1. Action Drawer
-2. Canvas
-3. Image Tools
-4. Annotation Tools
+1. **Drawer Tabs**: Switch the drawer between the **Images | Channels** and **Annotations** panels. The arrow at the top returns to the Project Viewer, and the app controls (settings, feedback, help) are pinned to the bottom.
+2. **Drawer**: The panel selected in the drawer tabs.
+3. **Zoom & Position Tools**: Control how the image is zoomed and positioned in the canvas.
+4. **Canvas**: The image and its annotations.
+5. **Image Info Strip**: Cursor position, pixel values, and per-image settings.
+6. **Tools**: Select, measure, and create annotations.
 
-## Action Drawer
+## Images | Channels Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-actionbar.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-actionbar.webp>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-images-drawer.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-images-drawer.webp>
 
 <br/>
 <br/>
 
-**1. Export Annotations**
+1. **Image List**: The images loaded in the viewer. Click an image to show it in the canvas. Use the menu button on an image to export or clear the annotations for that image.
+2. **Channels**: One row per channel of the active image. Use the check box to show or hide a channel, and the settings button to adjust the channel's brightness and contrast range (min and max values), its color, and to view its histogram.
 
-Export the annotation masks for each of the images in the Image Viewer.
+## Annotations Drawer
 
-Masks can be exported in a variety of formats:
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotations-drawer.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotations-drawer.webp>
 
-- Piximi-Formatted JSON (Annotations exported in this format can be imported back into Piximi.)
-- COCO-Formatted JSON
-- Instance Masks (Labeled or Binary)
-- Semantic Masks (Labeled or Binary)
-- Label MAtrices
+<br/>
+<br/>
 
-The mask images will be exported in the `.tiff` file format.
+1. **Plane Scope**: For multiplane images, choose whether the panel (counts, filters, and actions) applies to the **Current Plane** or the **Whole Stack**.
+2. **Filters**: Build a non-destructive filter from the categories, kinds, and object features selected below. Choose whether matching objects are **kept** or **hidden**, then click **Create Filter** (or **Update Filter** to merge the current selection into an existing filter).
+3. **Object Features**: Narrow the filter using measured object properties.
+4. **Kinds & Categories**: Every kind in the project and its categories, with the number of annotations in view.
+   - Click **Add Kind** to create a new kind, or **Add category** to add a category to a kind.
+   - Use the check boxes to select all the annotations of a kind or category. **Select all** selects everything in view.
+   - Each row has a menu for editing or deleting the kind or category.
+5. **Selection Actions**: Shows how many annotations are selected (**Clear** deselects them), and acts on them:
+   - **Delete** -- delete annotations from the selection, the current view, the current plane, or the whole image.
+   - **Categorize** -- change the category of the annotations in the chosen scope.
+   - **Export** -- export annotations in the chosen scope (see below).
 
-**2. Image List**
+### Exporting Annotations
 
-The images viewable in the canvas are listed here. You can export or clear annotations for a particular image by selecting the associated menu icon.
+Choose the scope of the export (selected annotations, those in view, the current plane, or the whole image) and a format:
 
-**3. Create a New Kind**
+- Piximi-formatted JSON (annotations exported in this format can be imported back into Piximi)
+- COCO-formatted JSON
+- Labeled or Binary Instance Masks
+- Labeled or Binary Semantic Masks
+- Label Matrices
 
-Click the **+** button to create a new Kind in the project. Existing Kinds are listed here and expanding them reveals the associated categories. Click on the menu button to edit or delete the associated Kind, or clear the associated annotation. You can hide the associated annotations by clicking the "eye" button.
-
-**4. Category List**
-
-Contains the per-Kind categories in the project. Here you can create new categories, hide annotations of a specific category by clicking the lag to the left of it's name, and clear associated annotations from the category's menu.
-
-**5. Clear Annotations**
-
-Clear all or selected annotations
+Mask images are exported in the `.tiff` file format.
 
 ## Canvas
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-canvas.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-canvas.webp>
+The selected image is shown in the canvas, with its annotations overlaid in the color of their category.
+
+- **Zoom**: Scroll to zoom.
+- **Pan**: Hold `alt`/`option` and drag.
+
+The **Image Info Strip** along the bottom of the canvas shows:
+
+- **x, y**: The position of the cursor on the image.
+- **Pixel Color**: The value of each channel at the cursor position.
+- **Timepoint** and **Plane**: For multiplane images, a slider to move through the planes.
+- **Image Category**: The category of the whole image. Select a category from the list, or create a new one.
+
+## Zoom & Position Tools
+
+These sit at the top of the viewer:
+
+- ![zoom-center-toggle](../../img/icons/icon-dark-zoom-center-toggle.webp)![zoom-center-toggle](../../img/icons/icon-light-zoom-center-toggle.webp) **Zoom Center**: Choose whether scroll zooming is centered on the image or on the cursor.
+- ![actual size](../../img/icons/icon-dark-zoom-actual-size.webp)![actual size](../../img/icons/icon-light-zoom-actual-size.webp) **Actual Size**: Show the image at its original size.
+- ![fit screen](../../img/icons/icon-dark-zoom-fit-screen.webp)![fit screen](../../img/icons/icon-light-zoom-fit-screen.webp) **Fit Screen**: Resize the image so it fits the canvas.
+- ![reset position](../../img/icons/icon-dark-zoom-reset-position.webp)![reset position](../../img/icons/icon-light-zoom-reset-position.webp) **Reset Position**: Move the image back to the origin and reset the zoom.
+
+## Tools
+
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-tools.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-tools.webp>
 
 <br/>
 <br/>
 
-**1. Image**
+The toolbar on the right of the canvas has two groups of tools. Each tool also has a keyboard shortcut, shown in its tooltip.
 
-The image selected in the image list can be viewed here. You can scroll to zoom, and click and drag while holding down `alt`/`option` to pan.
+**1. Utility Tools**
 
-**2. Annotations**
+- ![selection tool](../../img/icons/icon-dark-tool-selection.webp)![selection tool](../../img/icons/icon-light-tool-selection.webp) **Selection Tool** (`shift` + `S`): Click an annotation to select it. Hold `shift` while clicking, or click and drag, to select several. Selected annotations can be resized and moved.
+- ![measure tool](../../img/icons/icon-dark-tool-measure.webp)![measure tool](../../img/icons/icon-light-tool-measure.webp) **Measure Tool** (`shift` + `D`): Click and drag to measure a distance on the image.
 
-Created annotations are overlayed over the image with a color corresponding to its category.
+**2. Annotation Creation Tools**
 
-**3. Cursor Coords**
+- ![rectangle](../../img/icons/icon-dark-tool-rectangle.webp)![rectangle](../../img/icons/icon-light-tool-rectangle.webp) **Rectangle** (`shift` + `R`): Click and drag, or click twice, to create a rectangular annotation.
+- ![ellipse](../../img/icons/icon-dark-tool-ellipse.webp)![ellipse](../../img/icons/icon-light-tool-ellipse.webp) **Ellipse** (`shift` + `E`): Click and drag, or click twice, to create an elliptical annotation.
+- ![polygon](../../img/icons/icon-dark-tool-polygon.webp)![polygon](../../img/icons/icon-light-tool-polygon.webp) **Polygon** (`shift` + `P`): Click to place each vertex, then click on or near the first vertex to finish.
+- ![pen](../../img/icons/icon-dark-tool-pen.webp)![pen](../../img/icons/icon-light-tool-pen.webp) **Pen** (`shift` + `F`): Draw an annotation freehand. Open the slider to set the pen size.
+- ![lasso](../../img/icons/icon-dark-tool-lasso.webp)![lasso](../../img/icons/icon-light-tool-lasso.webp) **Lasso** (`shift` + `L`): Click and drag to draw a boundary around the object.
+- ![magnetic](../../img/icons/icon-dark-tool-magnetic.webp)![magnetic](../../img/icons/icon-light-tool-magnetic.webp) **Magnetic** (`shift` + `M`): Snaps to the edges of objects to speed up annotating.
+- ![color](../../img/icons/icon-dark-tool-color.webp)![color](../../img/icons/icon-light-tool-color.webp) **Color / Fill** (`shift` + `C`): Click an object to annotate the connected region of similar color.
+- ![quick](../../img/icons/icon-dark-tool-quick.webp)![quick](../../img/icons/icon-light-tool-quick.webp) **Quick Annotation** (`shift` + `Q`): Predicts an annotation near the cursor. Use the slider to adjust the sensitivity.
+- ![threshold](../../img/icons/icon-dark-tool-threshold.webp)![threshold](../../img/icons/icon-light-tool-threshold.webp) **Threshold** (`shift` + `T`): Select a region in which to generate annotations. Use the slider to adjust the sensitivity. _Note: the generated mask is treated as a single annotation._
 
-Displays the coordinated of the cursor respective to the image.
+## Confirming and Editing Annotations
 
-**4. Pixel Color**
+When you finish drawing a shape it is not saved right away. A small toolbar appears at the bottom of the canvas so you can decide what to do with it.
 
-Displays the color of the pixel at the current cursor position.
-
-## Image Tools
-
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-imagetools.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-imagetools.webp>
-
-<br/>
-<br/>
-
-**1. Zoom Tools**
-
-- _Toggle Zoom Center_: Configure scroll zooming to zoom to the center of the image or to the cursor position
-- _Zoom to Region_: Zoom to a selected region of the image.
-- _Actual Size_: Reset the image to its original size.
-- _Zoom-to-Fit_: Adjust the image so that it fits the canvas.
-- _Center_: Reset the position of the image.
-
-**2. Channel and Plane Adjustment**
-
-- _Channel Adjustment_: Toggle channels on or off, adjust the min and max values, and change the color mapping. Clicking "Apply All" will apply the changes to all images in the Image Viewer.
-- _Plane Adjustment_: When viewing a 3D image, use this to change the visibly plane in the canvas.
-
-**3. Annotation Selection**
-
-Click on the selection tool to select annotations. Holding `shift` while selecting, or clicking then dragging, will select multiple annotations.
-
-## Annotation Tools
-
-<img  class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotationtools.webp>
-<img  class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotationtools.webp>
+<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-confirm-bar.webp>
+<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-confirm-bar.webp>
 
 <br/>
 <br/>
 
-**1. Augmentation Type**
-
-- _New_: This augmentation creates a new annotation.
-- _Combine_: With this augmentation selected, any annotation being drawn will be merged with another currently selected annotation.
-- _Subtract_: With this augmentation selected, any annotation being srawn will be subtracted from another currently selected annotation.
-- _Intersection_: With this augmentation selected, a currently selected annotation will be modified to be the intersection of itself and a newly drawn annotation.
-- _Invert_: Inverts the currently selected annotation.
-
-**2. Creation Tools**
-
-- _Rectangular Tool_: Click and drag, or click twice to create a rectangular annotation.
-- _Ellipctical Tool_: Click and drag, or click twice to create an elliptical annotation.
-- _Polygonal Tool_: Click at point where you want a vertex of the polygon, then click on or near the initial vertex to complete the annotation.
-- _Pen Tool_: Free draw an annnotation. Open the slider to select the pen size.
-- _Lasso Tool_: Click and drag to create a boundary for the annotation.
-- _Magnetic Tool_: The magnetic tool tries to find edges of objects to help speed up the annotating process.
-- _Fill Tool_: Click and drag from the center of an object to create an annotation over it.
-- _Quick Annotation Tool_: Attempts to predict annotations near the cursor. Use the slider to adjust the sensitivity of this tool.
-- _Threshold Tool_: Select a region in which to generate annotations. Use the slider to adjust the sensitivity. \*Note: generated mask will be considered as a single annotation.
+1. **Confirm** (`enter`): Save the annotation. A kind must be selected or created first.
+2. **Add as New Annotation**: Save the shape as a separate annotation.
+3. **Combine**: Merge the shape into the annotation(s) it overlaps.
+4. **Subtract**: Remove the shape from the annotation(s) it overlaps.
+5. **Intersection**: Keep only the region where the shape and an existing annotation overlap.
+6. **Cancel** (`esc`): Discard the shape.
 
 To see the tools in action go to the [](imageviewer-tools-annotation.md) section.
