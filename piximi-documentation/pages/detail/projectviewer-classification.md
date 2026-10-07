@@ -10,11 +10,8 @@ Piximi uses TensorFlowJS under the hood for all DL tasks. Any model you upload m
 
 ## Overview
 
-<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-section.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/classifier/classifier-dark-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/classifier/classifier-light-section.webp>
 
 1. **Model I/O**: Load a model, or save the selected model.
 2. **Model Selection**: Choose which model to use, or delete the selected model.
@@ -28,11 +25,8 @@ Switch between classification and segmentation tasks. The tasks will operate on 
 
 Click **Load Model** to open the model loading dialog, or **Save Model** to save the selected model (this is only enabled once a model has been selected or trained). Saved models are also included whenever you save the project.
 
-<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-load-model.webp>
-<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-load-model.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/classifier/classifier-dark-load-model.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/classifier/classifier-light-load-model.webp>
 
 ### Local Model Loading
 
@@ -71,9 +65,6 @@ Clicking the _Fit_ button will open up a dialog displaying the configurable mode
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-hyperparameters.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-hyperparameters.webp>
 
-<br/>
-<br/>
-
 #### Hyperparameters
 
 1. **Dialog Tabs**: Switch between the settings, the training plots, the model summary and the summary of previous runs.
@@ -111,8 +102,6 @@ Displays the model's performance from epoch to epoch. Monitoring the training hi
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-training-plots.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-training-plots.webp>
 
-<br/>
-
 - **Accuracy Plot**: The change in accuracy for the _training_ and _validation_ sets per epoch. Generally, higher is better.
 - **Loss Plot**: The change in loss for the _training_ and _validation_ sets. Generally, lower is better.
 
@@ -122,8 +111,6 @@ Displays the model's summary, detailing each layer, and a way to export this inf
 
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-model-summary.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-model-summary.webp>
-
-<br/>
 
 - **Summary Table**: For each layer in the model, displays its output shape, number of parameters, and whether it is trainable (not frozen).
 - **Export Model Summary**: Exports the model summary as a `.csv` file.
@@ -135,8 +122,6 @@ Lists every training run of the selected model.
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-runs-summary.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-runs-summary.webp>
 
-<br/>
-
 - **Run table**: For each run, shows when it started, what triggered it (e.g. a fresh model or continued training), the random seed, the number of epochs and the final loss and accuracy. Click **View** to see the hyperparameters used for that run.
 - **Export Runs Summary**: Exports the table of runs.
 
@@ -144,10 +129,8 @@ Lists every training run of the selected model.
 
 Clicking the _Predict_ button will begin running inference on the unlabeled images/objects of the displayed Kind, using the selected model. Predicted categories are shown in the grid but are not applied until you accept them.
 
-<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-predict-options.webp>
-<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-predict-options.webp>
-
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-float" src=../../img/classifier/classifier-dark-predict-options.webp>
+<img  class="theme-img light-img content-img fig-315 fig-float" src=../../img/classifier/classifier-light-predict-options.webp>
 
 **Clear Predictions**
 
@@ -163,8 +146,6 @@ Clicking the _Evaluate_ button will open a dialog with the evaluation result of 
 
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-evaluate.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-evaluate.webp>
-
-<br/>
 
 **Select Run**
 

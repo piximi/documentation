@@ -4,11 +4,8 @@ The Measurements Viewer lets you measure the images and objects in your project,
 
 ## Table Creation and Measurement Selection
 
-<img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-drawer.webp>
-<img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-drawer.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img fig-315 fig-float" src=../../img/measurements-viewer/measurements-viewer-dark-drawer.webp>
+<img class="theme-img light-img content-img fig-315 fig-float" src=../../img/measurements-viewer/measurements-viewer-light-drawer.webp>
 
 **1. Create Table**
 
@@ -47,9 +44,6 @@ Tick a group to select all of its measurements, or expand it to pick individual 
 <img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-table-tab.webp>
 <img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-table-tab.webp>
 
-<br/>
-<br/>
-
 1. **Table Tabs**: Switch between the measurement tables you have created.
 2. **Table | Plot View**: Switch between the data grid and the measurement plots.
 3. **Export**: Download the table as a `.csv` file (or, in the plot view, save the plot as a `.png`).
@@ -71,16 +65,10 @@ Drag a dimension from **Available Dimensions** into **Column Grouping** to creat
 <img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-table-pivot.webp>
 <img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-table-pivot.webp>
 
-<br/>
-<br/>
-
 ## Plot View
 
 <img class="theme-img dark-img content-img" src=../../img/measurements-viewer/measurements-viewer-dark-plot-tab.webp>
 <img class="theme-img light-img content-img" src=../../img/measurements-viewer/measurements-viewer-light-plot-tab.webp>
-
-<br/>
-<br/>
 
 **1. Plot Controls**
 

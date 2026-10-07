@@ -24,13 +24,11 @@ Neste exercício, você se familiarizará com as principais funcionalidades do P
 
 Neste experimento, pesquisadores obtiveram imagens de células U2OS de osteossarcoma (câncer ósseo) fixadas expressando uma proteína de fusão FOXO1A-GFP e coraram DAPI para marcar os núcleos. FOXO1 é um fator de transcrição que desempenha um papel fundamental na regulação da gliconeogênese e glicogenólise por meio da sinalização da insulina. FOXO1A transita dinamicamente entre o citoplasma e o núcleo em resposta a vários estímulos. A wortmanina, um inibidor da PI3K, pode bloquear a exportação nuclear, resultando no acúmulo de FOXO1A no núcleo.
 
-<div class="centered-stack">
+<img class="content-img fig-center fig-single" width=300 src=../../img/translocation-tutorial/f0x01a.png>
 
-<img width=300 src=../../img/translocation-tutorial/f0x01a.png/>
-
-_Schematic representation of FOXO1A mechanism_
-
-</div>
+```{div} tutorial-caption
+Schematic representation of FOXO1A mechanism
+```
 
 #### **Materiais necessários para este exercício**
 
@@ -51,9 +49,6 @@ Leia os passos abaixo e siga as instruções onde indicado. Os passos em que voc
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-open-example.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-open-example.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Carregando o projeto de exemplo Translocation Tutorial.
 ```
@@ -63,9 +58,6 @@ Carregando o projeto de exemplo Translocation Tutorial.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-project-images.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-project-images.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Explorando as imagens e rótulos.
@@ -87,45 +79,45 @@ Opcionalmente, você pode rotular as imagens manualmente clicando no ícone “+
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-select-all.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-select-all.webp>
 
-<br/>
-<br/>
-
+```{div} tutorial-caption
+Selecionando todas as imagens.
+```
 
 - Na seção “Learning Task”, altere a tarefa para “Segmentation”.
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-segmenter-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-segmenter-section.webp>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-segmenter-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-segmenter-section.webp>
 
-<br/>
-<br/>
-
+```{div} tutorial-caption
+Alterando a tarefa para “Segmentation”.
+```
 
 - Clique em “Select Model” e a janela “Load Segmentation Model” será exibida, permitindo que você escolha um modelo pré-treinado.
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-load-model.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-load-model.webp>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-load-model.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-load-model.webp>
 
-<br/>
-<br/>
-
+```{div} tutorial-caption
+A janela “Load Segmentation Model”.
+```
 
 - Para o exercício de hoje, selecione “Cellpose-SAM” na lista “Pre-trained Models”. Mais informações sobre os modelos suportados podem ser encontradas [aqui](./segmentation-tutorial.md#2-load-models). Clique em “Load Model” para carregar seu modelo e selecioná-lo. O modelo é executado no seu navegador, então o primeiro carregamento baixa os arquivos do modelo (o Cellpose-SAM tem cerca de 588 MB e requer um navegador compatível com WebGPU).
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-open-model.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-open-model.webp>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-open-model.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-open-model.webp>
 
-<br/>
-<br/>
-
+```{div} tutorial-caption
+Escolhendo “Cellpose-SAM” na lista “Pre-trained Models”.
+```
 
 - Por fim, clique em “Run Segmentation”. Os objetos segmentados serão adicionados ao projeto como um novo tipo (_kind_), com o nome definido em “Output kind name” (“cellpose_cells” por padrão). O Piximi mostra o progresso da segmentação enquanto ela é executada.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-predict.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-predict.webp>
 
-<br/>
-<br/>
-
+```{div} tutorial-caption
+Executando a segmentação.
+```
 
 Observe que as etapas anteriores foram executadas em sua máquina local, o que significa que suas imagens estão armazenadas localmente. A inferência do Cellpose-SAM também é executada localmente em seu navegador, portanto suas imagens nunca são enviadas.
 
@@ -138,9 +130,6 @@ Observe que as etapas anteriores foram executadas em sua máquina local, o que s
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-cellpose-cells.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-cellpose-cells.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Visualizando o tipo "cellpose_cells".
 ```
@@ -150,9 +139,6 @@ Visualizando o tipo "cellpose_cells".
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-image-viewer.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-image-viewer.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Visualizando as células segmentadas no Visualizador de Imagens.
@@ -174,37 +160,30 @@ Motivo para isso: Queremos classificar as 'cellpose_cells' com base na distribui
 
 - Acesse a aba **cellpose_cells** (na visualização “Annotations”) que exibe os objetos segmentados e clique no botão “Classification” na seção “Learning Task” do painel esquerdo. As categorias listadas à esquerda agora pertencem às células, e não às imagens.
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-classifier-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-classifier-section.webp>
-
-<br/>
-<br/>
+````{div} fig-float fig-wrap
+<img  class="theme-img dark-img content-img fig-315" src=../../img/translocation-tutorial/translocation-tutorial-dark-classifier-section.webp>
+<img  class="theme-img light-img content-img fig-315" src=../../img/translocation-tutorial/translocation-tutorial-light-classifier-section.webp>
 
 ```{div} tutorial-caption
 A seção de classificação do painel esquerdo.
 ```
+````
 
 
 - Crie novas categorias clicando no ícone “+” (New Category) ao lado de “Categories”, inserindo um nome na janela “Create Category” e clicando em “Confirm”. Adicione as três categorias “Cytoplasmic_GFP”, “Nuclear_GFP” e “No_GFP”.
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-classifier-create-category.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-classifier-create-category.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-classifier-create-category.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-classifier-create-category.webp>
 
 ```{div} tutorial-caption
 Criando uma categoria.
 ```
 
 
-- Clique nas células que correspondem aos seus critérios; cada clique adiciona uma célula à seleção (use o ícone ![deselect](../../icons/deselect-icon.svg) “Deselect” para recomeçar). Tente atribuir **\~20–40 células por categoria**. Após selecionar, clique no ícone ![label](../../icons/label-icon.svg) “Categorize” acima das células e escolha a categoria a atribuir às células selecionadas.
+- Clique nas células que correspondem aos seus critérios; cada clique adiciona uma célula à seleção (use o ícone ![deselect-all icon](../../img/icons/icon-dark-deselect-all.webp)![deselect-all icon](../../img/icons/icon-light-deselect-all.webp) “Deselect” para recomeçar). Tente atribuir **\~20–40 células por categoria**. Após selecionar, clique no ícone ![categorize icon](../../img/icons/icon-dark-categorize.webp)![categorize icon](../../img/icons/icon-light-categorize.webp) “Categorize” acima das células e escolha a categoria a atribuir às células selecionadas.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-categorize.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-categorize.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Classificação de células individuais com base na presença e localização de GFP.
@@ -230,9 +209,6 @@ Classificação de células individuais com base na presença e localização de
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-training-settings.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-training-settings.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Configuração do modelo classificador.
 ```
@@ -243,9 +219,6 @@ Configuração do modelo classificador.
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-training-plots.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-training-plots.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Gráficos do histórico de treinamento.
 ```
@@ -254,32 +227,26 @@ Gráficos do histórico de treinamento.
 - No **gráfico de precisão**, você verá o quão bem o modelo está aprendendo. Idealmente, a precisão tanto do treinamento quanto da validação deve aumentar e permanecer próxima.
 - No **gráfico de perdas**, valores menores significam melhor desempenho. Se a perda de validação começar a aumentar enquanto a perda de treinamento continua caindo, o modelo pode estar com sobreajuste.
 
-Esses gráficos ajudam a entender como o modelo está aprendendo e se ajustes são necessários. Feche a janela “Fit Model” com o ícone ![close](../../icons/close-icon.svg) no canto superior direito quando terminar.
+Esses gráficos ajudam a entender como o modelo está aprendendo e se ajustes são necessários. Feche a janela “Fit Model” com o ícone ![close](../../img/icons/close-icon.svg) no canto superior direito quando terminar.
 
 ##### 7. **Avaliar modelo:**
 
 🔴 A FAZER
 
-- Clique em ![chart](../../icons/chart-icon.svg) “Evaluate” para avaliar o modelo que acabamos de treinar. A matriz de confusão e as métricas de avaliação comparam as previsões do modelo nas células de validação com seus rótulos de verdade básica.
+- Clique em ![chart](../../img/icons/chart-icon.svg) “Evaluate” para avaliar o modelo que acabamos de treinar. A matriz de confusão e as métricas de avaliação comparam as previsões do modelo nas células de validação com seus rótulos de verdade básica.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-training-eval.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-training-eval.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Avaliação da execução de treinamento.
 ```
 
 
-- Clique em ![label](../../icons/label-important-icon.svg) “Predict” para aplicar o modelo que acabamos de treinar. Esta etapa gerará previsões nas células que não categorizamos.
+- Clique em ![label](../../img/icons/label-important-icon.svg) “Predict” para aplicar o modelo que acabamos de treinar. Esta etapa gerará previsões nas células que não categorizamos.
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-predict-classifier.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-predict-classifier.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-predict-classifier.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-predict-classifier.webp>
 
 ```{div} tutorial-caption
 Prever classificador.
@@ -288,13 +255,10 @@ Prever classificador.
 
 - Você pode revisar as previsões na guia **cellpose_cells**. As categorias previstas são apenas exibidas, não aplicadas, até que você as aceite, e “Clear Predictions” as descarta.
 - Opcionalmente, você pode continuar categorizando células para refinar a verdade básica e aprimorar o classificador, e depois treinar e prever novamente. Esse processo faz parte da **classificação humana no ciclo**, na qual você corrige e treina o modelo iterativamente com base na entrada humana.
-- Clique e mantenha pressionado ![check-icon](../../icons/check-icon.svg) “Accept Predictions (Hold)” para atribuir os rótulos previstos a todos os objetos.
+- Clique e mantenha pressionado ![check-icon](../../img/icons/check-icon.svg) “Accept Predictions (Hold)” para atribuir os rótulos previstos a todos os objetos.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-accept-predictions.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-accept-predictions.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Aceitar previsões.
@@ -312,9 +276,6 @@ Assim que estiver satisfeito com a classificação, prosseguiremos com a mediç�
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-nav-measurements.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-nav-measurements.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Navegar para Medidas.
 ```
@@ -322,11 +283,8 @@ Navegar para Medidas.
 
 - Clique em “Add Table”, mantenha “Images” como tipo (_kind_) e clique em “Confirm”. _Observação: a preparação dos dados para a etapa de medição pode levar algum tempo para ser processada._
 
-<img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-measurements-table-create.webp>
-<img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-measurements-table-create.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-dark-measurements-table-create.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/translocation-tutorial/translocation-tutorial-light-measurements-table-create.webp>
 
 ```{div} tutorial-caption
 Criar tabela de medidas “Images”.
@@ -338,9 +296,6 @@ Criar tabela de medidas “Images”.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-measurements-data-grid.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-measurements-data-grid.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Medidas calculadas.
@@ -358,9 +313,6 @@ Após gerar as medições, você pode plotá-las.
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-measurements-plot-switch.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-measurements-plot-switch.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Gráficos de medição.
 ```
@@ -373,9 +325,6 @@ Gráficos de medição.
 
 <img  class="theme-img dark-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-dark-measurements-swarm-plot.webp>
 <img  class="theme-img light-img content-img" src=../../img/translocation-tutorial/translocation-tutorial-light-measurements-swarm-plot.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Gráfico de enxame (_swarm_) da intensidade total de GFP por categoria.

@@ -18,9 +18,6 @@ This page walks through the steps. For a description of every control, see the [
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-nav.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-nav.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 The `Measure` button in the Project Viewer.
 ```
@@ -30,9 +27,6 @@ The `Measure` button in the Project Viewer.
 
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-add-table.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-add-table.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 The `Add Table` button creates a new measurement table.
@@ -44,9 +38,6 @@ The `Add Table` button creates a new measurement table.
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-create-table.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-create-table.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Select what kind of measurement table you'd like to make.
 ```
@@ -56,24 +47,20 @@ Select what kind of measurement table you'd like to make.
 
 5. Once the initial pre-calculations are done, you can select which measurements you'd like to make in the left panel. Tick a group (`Object` measurements or `Intensity` measurements) to select all of its measurements, or expand it to pick individual ones. As before, this may take some time, so just leave the Piximi tab open and the circular indicator will let you know how long this is going to take. Object measurements are not available for the `Images` kind.
 
-<img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-select-measurements.webp>
-<img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-select-measurements.webp>
-
-<br/>
-<br/>
+````{div} fig-float fig-wrap
+<img  class="theme-img dark-img content-img fig-315" src=../../img/creating-measurements/creating-measurements-dark-select-measurements.webp>
+<img  class="theme-img light-img content-img fig-315" src=../../img/creating-measurements/creating-measurements-light-select-measurements.webp>
 
 ```{div} tutorial-caption
 Select the measurements you want for this table. Just like during table creation, a circular indicator next to the word `Measurements` will tell you how far along Piximi is at generating them.
 ```
+````
 
 
 6. Once your measurements have been generated, they will appear in the main area in a data grid! In the grid, you can see the measurement name and the Count, Mean, Median, and Standard deviation of the data for that measurement. By default these are computed over every item of the kind. To break them down further, drag a dimension (`Category`, `Partition` or `Image`) from `Available Dimensions` into `Column Grouping` under `Split Options`; the grid then shows one set of columns for each value (for example, each category). If you only have one category, that's fine - splitting is optional.
 
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-data-grid.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-data-grid.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 The Piximi data grid, split by category.
@@ -85,9 +72,6 @@ The Piximi data grid, split by category.
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-plot-scatter.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-plot-scatter.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Scatter plots generated in Piximi can have `X-axis`, `Y-axis` and `Size` measurements selected; they can also show colors according to the selected split (`Color`), with many color themes to choose from. Note the button to save the plot as a PNG!
 ```
@@ -95,9 +79,6 @@ Scatter plots generated in Piximi can have `X-axis`, `Y-axis` and `Size` measure
 
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-plot-swarm.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-plot-swarm.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Swarm plots can be shown on their own, grouped by the split chosen in `SwarmGroup`...
@@ -107,9 +88,6 @@ Swarm plots can be shown on their own, grouped by the split chosen in `SwarmGrou
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-plot-swarm-stats.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-plot-swarm-stats.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 ... or with a summary box plot overlaid by ticking `Show Statistics`.
 ```
@@ -117,9 +95,6 @@ Swarm plots can be shown on their own, grouped by the split chosen in `SwarmGrou
 
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-plot-histogram.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-plot-histogram.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 You can choose to represent your data as a histogram, with a custom number of bins.
@@ -130,9 +105,6 @@ If you want to do further analyses of your data (and you should)!, you can expor
 
 <img  class="theme-img dark-img content-img" src=../../img/creating-measurements/creating-measurements-dark-export.webp>
 <img  class="theme-img light-img content-img" src=../../img/creating-measurements/creating-measurements-light-export.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Piximi lets you export your data to outside programs.

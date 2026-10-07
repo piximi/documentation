@@ -9,9 +9,6 @@ This view is also where you can **categorize** your images and perform **classif
 <img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-annotated.webp>
 <img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-annotated.webp>
 
-<br/>
-<br/>
-
 1. **Project Name** - Update the name of your project. Saved filenames will default to the project name.
 
 2. **Navigate to Image Viewer / Measurements**:
@@ -97,35 +94,33 @@ The grid has two views, toggled at the top: **Images** and **Annotations**.
 
 The **Sort | Filter** and **Categorize** popovers look slightly different in each view, since the available options depend on what is being shown:
 
-````{div} side-by-side
+````{div} popover-grid
 ```{div}
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-sortfilter-images.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-sortfilter-images.webp>
+<img class="theme-img dark-img content-img fig-315" src=../../img/project-viewer/project-viewer-dark-sortfilter-images.webp>
+<img class="theme-img light-img content-img fig-315" src=../../img/project-viewer/project-viewer-light-sortfilter-images.webp>
 
-Images view
+**Images view**: Images can be filtered on whether they contain segmented objects or not
 ```
 
 ```{div}
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-sortfilter-annotations.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-sortfilter-annotations.webp>
+<img class="theme-img dark-img content-img fig-315" src=../../img/project-viewer/project-viewer-dark-sortfilter-annotations.webp>
+<img class="theme-img light-img content-img fig-315" src=../../img/project-viewer/project-viewer-light-sortfilter-annotations.webp>
 
-Annotations view
-```
-````
-
-````{div} side-by-side
-```{div}
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-categorize-images.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-categorize-images.webp>
-
-Images view
+**Annotations view**: Annotations can be filtered on images selected in the "Images view"
 ```
 
 ```{div}
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-categorize-annotations.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-categorize-annotations.webp>
+<img class="theme-img dark-img content-img fig-118" src=../../img/project-viewer/project-viewer-dark-categorize-images.webp>
+<img class="theme-img light-img content-img fig-118" src=../../img/project-viewer/project-viewer-light-categorize-images.webp>
 
-Annotations view
+**Images view**: Select from a list of image categories
+```
+
+```{div}
+<img class="theme-img dark-img content-img fig-154" src=../../img/project-viewer/project-viewer-dark-categorize-annotations.webp>
+<img class="theme-img light-img content-img fig-154" src=../../img/project-viewer/project-viewer-light-categorize-annotations.webp>
+
+**Annotations view**: Annotations can be categorized across Kinds. Select a Kind from the drop-down then select a category from the list. The annotation's Kind will be updated as well.
 ```
 ````
 

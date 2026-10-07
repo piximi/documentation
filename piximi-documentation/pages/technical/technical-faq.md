@@ -21,9 +21,6 @@ Click `Save` in the top bar of the Project Viewer to save the project.
 <img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-project.webp>
 <img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-project.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 The `Save` button in the Project Viewer.
 ```
@@ -31,11 +28,8 @@ The `Save` button in the Project Viewer.
 
 Enter a name in the `Save Project` window and click `Save Project`. Piximi downloads the project as a `.zip` file.
 
-<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-project-dialog.webp>
-<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-project-dialog.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-dark-save-project-dialog.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-light-save-project-dialog.webp>
 
 ```{div} tutorial-caption
 The `Save Project` window.
@@ -46,11 +40,8 @@ The saved project contains the entire state of the project, including all images
 
 To save the trained model weights, select the model under `Selected Model` in the `Classification` section of the `Learning Task` panel and click `Save Model` under `Model I/O`.
 
-<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-model-io.webp>
-<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-model-io.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/technical-faq/technical-faq-dark-model-io.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/technical-faq/technical-faq-light-model-io.webp>
 
 ```{div} tutorial-caption
 The `Load Model` and `Save Model` buttons in the Classification section.
@@ -59,11 +50,8 @@ The `Load Model` and `Save Model` buttons in the Classification section.
 
 Enter a name in the `Save` window and click `Save`. Piximi downloads a `.zip` file with the model topology (`.json`), the model weights (`.bin`), the history of its training runs, and a manifest file that lets Piximi find them again.
 
-<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-save-model-dialog.webp>
-<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-save-model-dialog.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-dark-save-model-dialog.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-light-save-model-dialog.webp>
 
 ```{div} tutorial-caption
 The window for saving a model.
@@ -75,9 +63,6 @@ If Piximi crashes, reload your work through `Open` > `Project` > `Upload .zip` (
 <img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-open-menu.webp>
 <img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-open-menu.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 The `Open` menu.
 ```
@@ -86,9 +71,6 @@ The `Open` menu.
 <img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-open-project-menu.webp>
 <img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-open-project-menu.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 The `Project` submenu of the `Open` menu.
 ```
@@ -96,11 +78,8 @@ The `Project` submenu of the `Open` menu.
 
 Use `Load Model` in the same `Model I/O` section to load a trained model and its parameters.
 
-<img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-load-model-dialog.webp>
-<img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-load-model-dialog.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-dark-load-model-dialog.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/technical-faq/technical-faq-light-load-model-dialog.webp>
 
 ```{div} tutorial-caption
 The `Load Classification Model` window.
@@ -111,9 +90,6 @@ In the `Upload Local` tab, click `Upload Model` and select either the `.zip` sav
 
 <img  class="theme-img dark-img content-img" src=../../img/technical-faq/technical-faq-dark-load-model-uploaded.webp>
 <img  class="theme-img light-img content-img" src=../../img/technical-faq/technical-faq-light-load-model-uploaded.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 A model that has been uploaded successfully.
@@ -169,9 +145,6 @@ Yes. The model summary, accuracy and loss are displayed in the `Fit Model` windo
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-fit-training-plots.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-fit-training-plots.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 The `Training Plots` tab of the `Fit Model` window.
 ```
@@ -179,11 +152,8 @@ The `Training Plots` tab of the `Fit Model` window.
 
 Additional metrics are available via `Evaluate` in the `Classification` section, which shows the evaluation of the model's most recent training run.
 
-<img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-section.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/classifier/classifier-dark-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/classifier/classifier-light-section.webp>
 
 ```{div} tutorial-caption
 The `Evaluate` button is among the model operations of the `Classification` section.
@@ -192,9 +162,6 @@ The `Evaluate` button is among the model operations of the `Classification` sect
 
 <img  class="theme-img dark-img content-img" src=../../img/classifier/classifier-dark-evaluate.webp>
 <img  class="theme-img light-img content-img" src=../../img/classifier/classifier-light-evaluate.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 The `Evaluate` window.
@@ -217,6 +184,6 @@ Some segmentation models, such as Cellpose-SAM, additionally require a browser w
 
 ## If I run the same model multiple times, why do I get different training results?
 
-It is possible to get different training results when training on the same data. There are two major reasons for this: the first is a result of the random validation dataset that is selected by Piximi when you press ![play-button](../../icons/play-button-icon.svg) `Fit Classifier`. For example, the first time you fit the classifier, images 1, 2 and 3 may be selected for the validation dataset. A second, and identical, run of fit classifier might then select images 4, 5 and 6 as your validation dataset, which look different to the images selected in the first run. Validation image selection is random so that the model performance can be evaluated independently of the images selected for validation. Even if your validation data set were identical, however, your results may still end up slightly different run-to-run due to certain steps in the training process that draw on random numbers and/or shuffle the data; we do not currently but may in the future provide ways to stabilize these parameters across runs.
+It is possible to get different training results when training on the same data. There are two major reasons for this: the first is a result of the random validation dataset that is selected by Piximi when you press ![play-button](../../img/icons/play-button-icon.svg) `Fit Classifier`. For example, the first time you fit the classifier, images 1, 2 and 3 may be selected for the validation dataset. A second, and identical, run of fit classifier might then select images 4, 5 and 6 as your validation dataset, which look different to the images selected in the first run. Validation image selection is random so that the model performance can be evaluated independently of the images selected for validation. Even if your validation data set were identical, however, your results may still end up slightly different run-to-run due to certain steps in the training process that draw on random numbers and/or shuffle the data; we do not currently but may in the future provide ways to stabilize these parameters across runs.
 
 Given these considerations, please do save your models frequently if you think they are performing well - you can always delete an old model later, but a generated model cannot be sure to be generated again if it hasn't been saved!

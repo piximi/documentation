@@ -9,9 +9,6 @@ To open it, select one or more images (or objects) in the [Project Viewer](proje
 <img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotated.webp>
 <img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotated.webp>
 
-<br/>
-<br/>
-
 1. **Drawer Tabs**: Switch the drawer between the **Images | Channels** and **Annotations** panels. The arrow at the top returns to the Project Viewer, and the app controls (settings, feedback, help) are pinned to the bottom.
 2. **Drawer**: The panel selected in the drawer tabs.
 3. **Zoom & Position Tools**: Control how the image is zoomed and positioned in the canvas.
@@ -21,22 +18,16 @@ To open it, select one or more images (or objects) in the [Project Viewer](proje
 
 ## Images | Channels Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-images-drawer.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-images-drawer.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img fig-315 fig-float" src=../../img/image-viewer/image-viewer-dark-images-drawer.webp>
+<img class="theme-img light-img content-img fig-315 fig-float" src=../../img/image-viewer/image-viewer-light-images-drawer.webp>
 
 1. **Image List**: The images loaded in the viewer. Click an image to show it in the canvas. Use the menu button on an image to export or clear the annotations for that image.
 2. **Channels**: One row per channel of the active image. Use the check box to show or hide a channel, and the settings button to adjust the channel's brightness and contrast range (min and max values), its color, and to view its histogram.
 
 ## Annotations Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-annotations-drawer.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-annotations-drawer.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img fig-315 fig-float" src=../../img/image-viewer/image-viewer-dark-annotations-drawer.webp>
+<img class="theme-img light-img content-img fig-315 fig-float" src=../../img/image-viewer/image-viewer-light-annotations-drawer.webp>
 
 1. **Plane Scope**: For multiplane images, choose whether the panel (counts, filters, and actions) applies to the **Current Plane** or the **Whole Stack**.
 2. **Filters**: Build a non-destructive filter from the categories, kinds, and object features selected below. Choose whether matching objects are **kept** or **hidden**, then click **Create Filter** (or **Update Filter** to merge the current selection into an existing filter).
@@ -87,11 +78,8 @@ These sit at the top of the viewer:
 
 ## Tools
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-tools.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-tools.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img fig-76 fig-float-right" src=../../img/image-viewer/image-viewer-dark-tools.webp>
+<img class="theme-img light-img content-img fig-76 fig-float-right" src=../../img/image-viewer/image-viewer-light-tools.webp>
 
 The toolbar on the right of the canvas has two groups of tools. Each tool also has a keyboard shortcut, shown in its tooltip.
 
@@ -116,11 +104,8 @@ The toolbar on the right of the canvas has two groups of tools. Each tool also h
 
 When you finish drawing a shape it is not saved right away. A small toolbar appears at the bottom of the canvas so you can decide what to do with it.
 
-<img class="theme-img dark-img content-img" src=../../img/image-viewer/image-viewer-dark-confirm-bar.webp>
-<img class="theme-img light-img content-img" src=../../img/image-viewer/image-viewer-light-confirm-bar.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img fig-315 fig-center" src=../../img/image-viewer/image-viewer-dark-confirm-bar.webp>
+<img class="theme-img light-img content-img fig-315 fig-center" src=../../img/image-viewer/image-viewer-light-confirm-bar.webp>
 
 1. **Confirm** (`enter`): Save the annotation. A kind must be selected or created first.
 2. **Add as New Annotation**: Save the shape as a separate annotation.

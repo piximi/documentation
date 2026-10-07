@@ -2,15 +2,12 @@
 
 ## 1. Load images
 
-To begin, we will load the images from an example dataset included in Piximi. On the start screen, click `Open Example Project` and select `Human U2OS-cells example project`. If you already have a project open, you can reach the same list through ![open](../../icons/open-folder-icon.svg) `Open` > `Project` > `Load Example`. Alternatively, if you would like to load your own images, go to `Open` > `Image`.
+To begin, we will load the images from an example dataset included in Piximi. On the start screen, click `Open Example Project` and select `Human U2OS-cells example project`. If you already have a project open, you can reach the same list through ![open](../../img/icons/open-folder-icon.svg) `Open` > `Project` > `Load Example`. Alternatively, if you would like to load your own images, go to `Open` > `Image`.
 
 The images correspond to U2OS cells co-expressing arrestin-GFP and an orphan GPCR. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-open-example.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-open-example.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Open the U2OS example dataset
@@ -27,35 +24,28 @@ The `Categories` list on the left hand side shows that there are already 3 class
 - Negative Control (Untreated)
   - Images in which the GFP is spread throughout the cytoplasm
 
-<img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-categories.webp>
-<img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-categories.webp>
-
-<br/>
-<br/>
+````{div} fig-float fig-wrap
+<img  class="theme-img dark-img content-img fig-315" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-categories.webp>
+<img  class="theme-img light-img content-img fig-315" src=../../img/eukaryotic-classification/eukaryotic-classification-light-categories.webp>
 
 ```{div} tutorial-caption
 Explore the Categories list. The number next to each category is how many images it holds.
 ```
+````
 
-To turn on/off the display of images under a given label, click on the ![filters](../../icons/filter-icon.svg) `Sort | Filter` icon above the images, open `Category Filters`, and click a category to move it between `Visible` and `Filtered`. Categories in the `Filtered` box are hidden from the grid; click the ✕ on its chip to show it once more.
+To turn on/off the display of images under a given label, click on the ![sort-filter icon](../../img/icons/icon-dark-sort-filter.webp)![sort-filter icon](../../img/icons/icon-light-sort-filter.webp) `Sort | Filter` icon above the images, open `Category Filters`, and click a category to move it between `Visible` and `Filtered`. Categories in the `Filtered` box are hidden from the grid; click the ✕ on its chip to show it once more.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-category-filters.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-category-filters.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Hide the Unknown images by moving the Unknown category to Filtered.
 ```
 
-Ensure no images are currently selected by clicking the ![deselect](../../icons/deselect-icon.svg) `Deselect` icon. Then, single-click to select 2-3 images from the unknown category that best fit the `Negative Control (Untreated)` category. Once selected, click the ![label](../../icons/label-icon.svg) `Categorize` icon in the top right of the image grid and select `Negative Control (Untreated)`. Do the same for 2-3 `Positive Control (GRK)` images.
+Ensure no images are currently selected by clicking the ![deselect-all icon](../../img/icons/icon-dark-deselect-all.webp)![deselect-all icon](../../img/icons/icon-light-deselect-all.webp) `Deselect` icon. Then, single-click to select 2-3 images from the unknown category that best fit the `Negative Control (Untreated)` category. Once selected, click the ![categorize icon](../../img/icons/icon-dark-categorize.webp)![categorize icon](../../img/icons/icon-light-categorize.webp) `Categorize` icon in the top right of the image grid and select `Negative Control (Untreated)`. Do the same for 2-3 `Positive Control (GRK)` images.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-categorize.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-categorize.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Select a few images, then choose the category to assign them to.
@@ -71,23 +61,17 @@ Click here for considerations when categorizing your images and deciding on how 
 
 Click on the `Classification` button under `Learning Task` then proceed to customize the settings for model fitting by clicking the `Fit` button. Within the dialog that opens, you can select various parameters to adjust model training. Under `Data Preprocessing Settings`, the `Training Percentage` field (found under `Data Partitioning`) controls what fraction of the images you have categorized will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.
 
-<img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-fit-button.webp>
-<img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-fit-button.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-fit-button.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/eukaryotic-classification/eukaryotic-classification-light-fit-button.webp>
 
 ```{div} tutorial-caption
 Select the Classification task and open the classifier settings with Fit.
 ```
 
-In the bottom right, click the ![play-button](../../icons/play-button-icon.svg) `Fit Classifier` button to begin training. Piximi will now look at the **training** subset of the images you have categorized and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **validation** subset of images and compare the models answers to the image class.
+In the bottom right, click the ![play-button](../../img/icons/play-button-icon.svg) `Fit Classifier` button to begin training. Piximi will now look at the **training** subset of the images you have categorized and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the **validation** subset of images and compare the models answers to the image class.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-fit-dialog.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-fit-dialog.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Explore classifier settings and then press Fit Classifier to begin training.
@@ -97,9 +81,6 @@ While Piximi trains the model, the dialog switches to the `Training Plots` tab, 
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-training-plots.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-training-plots.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Training history of a classifier model for the U2OS example dataset.
@@ -132,13 +113,10 @@ This is a result of **overfitting** as your model begins to pick up features wit
 
 Loss is another metric that is calculated on the training and validation subsets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification.
 
-The dialog also has a `Model Summary` tab, describing the layers of the trained model, and a `Model Runs Summary` tab, which compares the runs you have trained. You can now exit the `Fit Model` dialog by clicking the ![close](../../icons/close-icon.svg) in the top right of the dialog.
+The dialog also has a `Model Summary` tab, describing the layers of the trained model, and a `Model Runs Summary` tab, which compares the runs you have trained. You can now exit the `Fit Model` dialog by clicking the ![close](../../img/icons/close-icon.svg) in the top right of the dialog.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-fit-exit.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-fit-exit.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Exit the fit settings dialog.
@@ -154,25 +132,19 @@ Piximi does not currently have a hold-out test-like set.
 
 ## 4. Predict classes for unlabelled data
 
-Once your model has been trained you can click ![chart](../../icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed, including a confusion matrix of the model's predictions against the true categories.
+Once your model has been trained you can click ![chart](../../img/icons/chart-icon.svg) `Evaluate` to see in-depth metrics on how well the model performed, including a confusion matrix of the model's predictions against the true categories.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-evaluate.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-evaluate.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Evaluate the trained model.
 ```
 
-You can then click ![label](../../icons/label-important-icon.svg) `Predict` to run the trained model on the uncategorized data. Once an image has been classified you will see the ![label](../../icons/label-icon.svg) color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding ![check-icon](../../icons/check-icon.svg) `Accept Predictions (Hold)` or reject them by clicking ![close](../../icons/close-icon.svg) `Clear Predictions`. Depending on the performance of the model, categorizing further images based on the predictions and/or adjusting the `Fit` settings may be desired.
+You can then click ![label](../../img/icons/label-important-icon.svg) `Predict` to run the trained model on the uncategorized data. Once an image has been classified you will see the ![label](../../img/icons/label-icon.svg) color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding ![check-icon](../../img/icons/check-icon.svg) `Accept Predictions (Hold)` or reject them by clicking ![close](../../img/icons/close-icon.svg) `Clear Predictions`. Depending on the performance of the model, categorizing further images based on the predictions and/or adjusting the `Fit` settings may be desired.
 
 <img  class="theme-img dark-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-dark-predict.webp>
 <img  class="theme-img light-img content-img" src=../../img/eukaryotic-classification/eukaryotic-classification-light-predict.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Predict the class of unknown images using your trained model.

@@ -10,11 +10,8 @@ All of the segmentation models run locally in your browser, so your images are n
 
 ## Overview
 
-<img  class="theme-img dark-img content-img" src=../../img/segmenter/segmenter-dark-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmenter/segmenter-light-section.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/segmenter/segmenter-dark-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/segmenter/segmenter-light-section.webp>
 
 1. **Model Selection and Operations**: Choose a model, and run it on the selected images.
 
@@ -26,11 +23,8 @@ Switch between classification and segmentation tasks. The tasks will operate on 
 
 Click **Select Model** to choose a pre-trained model.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmenter/segmenter-dark-load-model-selected.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmenter/segmenter-light-load-model-selected.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmenter/segmenter-dark-load-model-selected.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmenter/segmenter-light-load-model-selected.webp>
 
 **Pre-trained Models**
 
@@ -52,11 +46,8 @@ Displays information about the model, its sources, the Kind it outputs, and a po
 
 Once a model is loaded, its settings appear in the drawer.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmenter/segmenter-dark-settings.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmenter/segmenter-light-settings.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-float" src=../../img/segmenter/segmenter-dark-settings.webp>
+<img  class="theme-img light-img content-img fig-315 fig-float" src=../../img/segmenter/segmenter-light-settings.webp>
 
 1. **Run Segmentation**: Click this button to run the selected model on the images/objects of the displayed Kind. A new Kind will be created and populated with the identified objects. The name of the loaded model is shown to the left of the button. The button is disabled while a segmentation is already running, or if there is a problem with the current settings; hover over it to see the reason.
 2. **Output Kind Name**: The name of the Kind the model will create for the objects it identifies. Click the pencil icon to rename it. Models that detect a fixed set of object classes (such as COCO-SSD) create one Kind per class, so their names cannot be edited.

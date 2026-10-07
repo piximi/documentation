@@ -4,15 +4,12 @@ The image segmentation module allows researchers to quickly identify cells or nu
 
 ## 1. Load images
 
-To begin, we will load the images from an example dataset included in Piximi. On the start screen, click `Open Example Project`, switch to the `Image and Object Sets` tab and select `U2OS cell-painting experiment`. If you already have a project open, you can reach the same list through ![open](../../icons/open-folder-icon.svg) `Open` > `Project` > `Load Example`. Alternatively, if you would like to load your own images, go to `Open` > `Image`.
+To begin, we will load the images from an example dataset included in Piximi. On the start screen, click `Open Example Project`, switch to the `Image and Object Sets` tab and select `U2OS cell-painting experiment`. If you already have a project open, you can reach the same list through ![open](../../img/icons/open-folder-icon.svg) `Open` > `Project` > `Load Example`. Alternatively, if you would like to load your own images, go to `Open` > `Image`.
 
 The images correspond to U2OS cells treated with an RNAi reagent ([clone TRCN0000195467](https://portals.broadinstitute.org/gpp/public/clone/details?cloneId=TRCN0000195467)) and stained for a cell-painting experiment. The project contains a single image, and already includes two kinds of objects (`Cell membrane` and `Cell nucleus`) that you can look at in the `Annotations` view.
 
 <img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-open-example.webp>
 <img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-open-example.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 Open the U2OS cell-painting example project from the `Image and Object Sets` tab
@@ -30,11 +27,8 @@ Piximi provides five pre-trained segmentation models, each designed for specific
 
 In the `Learning Task` section on the left-hand side, click the `Segmentation` button to switch from classification to segmentation.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-section.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-section.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-section.webp>
 
 ```{div} tutorial-caption
 Switch the Learning Task to segmentation, then choose a model
@@ -42,11 +36,8 @@ Switch the Learning Task to segmentation, then choose a model
 
 Then click `Select Model` to open the `Load Segmentation Model` dialog.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-select-model.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-select-model.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-select-model.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-select-model.webp>
 
 ```{div} tutorial-caption
 The model selection dialog
@@ -54,11 +45,8 @@ The model selection dialog
 
 Open the `Pre-trained Models` list to see the available models. In this example, we will use `Cellpose-SAM`.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-list.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-list.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-list.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-list.webp>
 
 ```{div} tutorial-caption
 The pre-trained models
@@ -66,11 +54,8 @@ The pre-trained models
 
 Once a model is chosen, the dialog describes what it is for and where it comes from. Click `Load Model` to load it.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-selected.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-selected.webp>
-
-<br/>
-<br/>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-selected.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-selected.webp>
 
 ```{div} tutorial-caption
 Details of the selected model
@@ -91,9 +76,6 @@ Click `Run Segmentation` to run the model on the selected image. Piximi shows th
 <img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-run.webp>
 <img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-run.webp>
 
-<br/>
-<br/>
-
 ```{div} tutorial-caption
 Select the image, then run the segmentation
 ```
@@ -104,9 +86,6 @@ The segmented objects are added to the project as a new kind. To view them, clic
 
 <img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-results.webp>
 <img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-results.webp>
-
-<br/>
-<br/>
 
 ```{div} tutorial-caption
 The objects found by Cellpose-SAM
