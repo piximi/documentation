@@ -6,7 +6,8 @@ parts:
       - file: quick-start
   - caption: Piximi Concepts
     chapters: 
-      - file: pages/detail/kinds-and-categories
+      - file: pages/concepts/kinds-and-categories
+      - file: pages/concepts/project-file
   - caption: Piximi Views
     chapters:
       - file: pages/detail/projectviewer
