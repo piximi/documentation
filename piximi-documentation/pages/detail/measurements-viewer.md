@@ -16,7 +16,7 @@ Click in the "+" button to create a new measurement group based on one of the Ki
 
 **2. Split Selection**
 
-Select the splits yout want to use for the measurements. The splits dictate how the measurements are grouped for statitical analysis (i.e. calculating the mean intensity over all the imges in the **training** partition).
+Select the splits you want to use for the measurements. The splits dictate how the measurements are grouped for statistical analysis (i.e. calculating the mean intensity over all the images in the **training** partition).
 
 **3. Measurement Selection**
 
@@ -107,4 +107,4 @@ Create a new plot
 
 **5. Save Plot**
 
-Save the currently viewd plot as a `.png` file.
+Save the currently viewed plot as a `.png` file.

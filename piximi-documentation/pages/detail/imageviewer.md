@@ -25,9 +25,9 @@ The annotator in Piximi can quickly create annotations for your **multichannel**
 
 Export the annotation masks for each of the images in the Image Viewer.
 
-Masks can be exportted in a variety of formats:
+Masks can be exported in a variety of formats:
 
-- Piximi-Formatted JSON (Annotations exportted in this format can be imported back into Piximi.)
+- Piximi-Formatted JSON (Annotations exported in this format can be imported back into Piximi.)
 - COCO-Formatted JSON
 - Instance Masks (Labeled or Binary)
 - Semantic Masks (Labeled or Binary)
@@ -37,7 +37,7 @@ The mask images will be exported in the `.tiff` file format.
 
 **2. Image List**
 
-The images viewable in the canvas are listed here. You can export or clear annotations foar a particular image by selecting the associated menu icon.
+The images viewable in the canvas are listed here. You can export or clear annotations for a particular image by selecting the associated menu icon.
 
 **3. Create a New Kind**
 
