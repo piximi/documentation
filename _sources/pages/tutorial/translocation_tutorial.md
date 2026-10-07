@@ -16,7 +16,7 @@ Piximi is interoperable with existing tools and workflows by supporting import a
 
 \* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).
 
-Core functionalities: **Annotator, Segmentor, Classifier, Measurments.**
+Core functionalities: **Annotator, Segmenter, Classifier, Measurements.**
 
 #### **Goal of the exercise**
 

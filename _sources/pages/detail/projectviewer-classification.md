@@ -43,7 +43,7 @@ Tensorflow models can have either a Layers framework or a Graph framework. We ne
 
 Open a file picker and select the model files you want to upload. Piximi requires a `[model].json` description file as well as one or more `[model].weights.bin` files(s).
 
-Onces youve confirmed the type and selected the files, click "Open Classification Model" to upload it.
+Onces you've confirmed the type and selected the files, click "Open Classification Model" to upload it.
 
 ### Remote Model Loading
 
@@ -177,7 +177,7 @@ Reset the project to before the predition were made.
 
 **3. Accept Predictions**
 
-confirm the predicted categories. Once accepted you wont be able to revert to a state before they were categorized, so to prevent accidental acception we require users to press and hold the button.
+confirm the predicted categories. Once accepted you wont be able to revert to a state before they were categorized, so to prevent accidental acceptance we require users to press and hold the button.
 
 ### Evaluate
 

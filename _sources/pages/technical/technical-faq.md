@@ -8,7 +8,7 @@
 - [What if I lose my internet connection while the model is training?](what-if-internet-is-lost)
 - [Is it possible to see a training summary?](see-a-training-summary)
 - [Does Piximi use a GPU?](does-piximi-use-a-gpu)
-- [If I run Piximi multiple times, why do I get different traiing results?](run-model-multiple-times)
+- [If I run Piximi multiple times, why do I get different training results?](run-model-multiple-times)
 
 (if-piximi-crashes)=
 

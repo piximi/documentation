@@ -44,7 +44,7 @@ Piximi provides several segmentation models to choose from:
 - Gland Segmentation
 - COCO-SSD
 
-More informatino about the models can be found in the [Segmentation Tutorial](pages/tutorial/segmentation-tutorial.html#load-models).
+More information about the models can be found in the [Segmentation Tutorial](pages/tutorial/segmentation-tutorial.html#load-models).
 
 **2. Model Details**
 

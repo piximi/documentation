@@ -116,9 +116,9 @@ Save your current project. Piximi saves the project as a compressed `.zip` file 
 
 ### 2. Learning Task
 
-This section contains the deep learning functionality of piximi (Classification and Segmentation). From this section, users can upload and train classification models, select pretrained segmentation models, perform inference on the images and objects in the project, evaluate the performance of the classifiaction models, and save trained models.
+This section contains the deep learning functionality of piximi (Classification and Segmentation). From this section, users can upload and train classification models, select pretrained segmentation models, perform inference on the images and objects in the project, evaluate the performance of the classification models, and save trained models.
 
-More information about classificatin and segmentation can be viewed in their respective chapters.
+More information about classification and segmentation can be viewed in their respective chapters.
 
 ### 3. Categories
 
@@ -145,7 +145,7 @@ This sections contains the app settings, functionality to report issues within t
 
 **Help Context**
 
-When activated, sections of the app which are associted with help informatino will be highlighted. Hovering over these sections will update the help dialog in the lower left of the screen with the relavent information. Hold down the `shift` key and click a section to lock the information dialog to that section.
+When activated, sections of the app which are associated with help information will be highlighted. Hovering over these sections will update the help dialog in the lower left of the screen with the relevant information. Hold down the `shift` key and click a section to lock the information dialog to that section.
 
 ## Image/Object Grid
 
