@@ -24,6 +24,10 @@ To open it, select one or more images (or objects) in the [Project Viewer](proje
 1. **Image List**: The images loaded in the viewer. Click an image to show it in the canvas. Use the menu button on an image to export or clear the annotations for that image.
 2. **Channels**: One row per channel of the active image. Use the check box to show or hide a channel, and the settings button to adjust the channel's brightness and contrast range (min and max values), its color, and to view its histogram.
 
+```{important} 
+All images in Piximi use the same scaling - this allows for the fairest comparisons between images. 
+```
+
 ## Annotations Drawer
 
 <img class="theme-img dark-img content-img fig-315 fig-float" src=../../img/image-viewer/image-viewer-dark-annotations-drawer.webp>

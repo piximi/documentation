@@ -36,7 +36,7 @@ The `Save Project` window.
 ```
 
 
-The saved project contains the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not the trained model weights.
+The saved project contains the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not the trained model weights. Note that the project file is not optimized for human viewing - see our guidance on [exporting data](../concepts/project-file.md) to see how to export various types of data in a friendlier format.
 
 To save the trained model weights, select the model under `Selected Model` in the `Classification` section of the `Learning Task` panel and click `Save Model` under `Model I/O`.
 

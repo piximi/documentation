@@ -432,6 +432,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinds">Kinds</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-decide-what-s-a-kind-and-what-s-a-category">How do I decide what’s a kind and what’s a category?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-change-an-object-s-kind-and-or-category">Can I change an object’s kind and/or category?</a></li>
 </ul>
             </nav>
         </div>
@@ -459,6 +460,10 @@ document.write(`
 <p>Say I want to find all the cells in a field of view - some are mitotic and some are interphase. Should those be two different kinds or two different categories?</p>
 <p>It’s really up to you! The most critical point is whether or not you want to identify all the objects together and sub-classify them using a deep learning classifier - in that case, you should make them all the same Kind and then make two Categories for “Mitotic” and “Interphase”.</p>
 <p>If you aren’t using the classifier, it mostly doesn’t matter, but may vary by the segmentation approach you are taking - if the model you’re using finds both kinds of things, you might as well treat them as the same kind and then just divide them into categories. If it only finds one of those groups well with a given set of segmentation settings (or annotation approaches), you might think about making them different kinds in two different segmentation passes. Neither option is wrong if you aren’t using the classifier!</p>
+</section>
+<section id="can-i-change-an-object-s-kind-and-or-category">
+<h2>Can I change an object’s kind and/or category?<a class="headerlink" href="#can-i-change-an-object-s-kind-and-or-category" title="Permalink to this heading">#</a></h2>
+<p>Yes! In the <a class="reference internal" href="../detail/imageviewer.html"><span class="doc std std-doc">Image Viewer</span></a>, you can select the objects and use the “Categorize” button in the bottom left to change them to a new category and/or kind; in the <a class="reference internal" href="../detail/projectviewer.html"><span class="doc std std-doc">Project Viewer</span></a>, you can select them and use the Categorize icon button at the top right to change the category and/or kind.</p>
 </section>
 </section>
 
@@ -528,6 +533,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinds">Kinds</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">Categories</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-i-decide-what-s-a-kind-and-what-s-a-category">How do I decide what’s a kind and what’s a category?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-i-change-an-object-s-kind-and-or-category">Can I change an object’s kind and/or category?</a></li>
 </ul>
   </nav></div>
 

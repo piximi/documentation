@@ -78,6 +78,12 @@ The grid has two views, toggled at the top: **Images** and **Annotations**.
 ```
 ````
 
+```{tip} 
+**Want to change the colors or display settings used on the images?**
+
+You can do so by selecting one or more images and then opening them in the [Image Viewer](imageviewer.md)
+```
+
 1.  **View Toggle**: Switches the items in the grid between images and annotations. The **Annotations** toggle is disabled unless the project has at least one annotation/object.
 2.  **Grid Actions**: Control what you see in the grid and act on selected items.
     - ![sort-filter icon](../../img/icons/icon-dark-sort-filter.webp)![sort-filter icon](../../img/icons/icon-light-sort-filter.webp) **Sort | Filter** -- Choose the order in which your images/objects appear in the grid, and filter which items are shown. Sort options are by:
