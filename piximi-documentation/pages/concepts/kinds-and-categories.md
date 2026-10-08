@@ -17,3 +17,7 @@ Say I want to find all the cells in a field of view - some are mitotic and some 
 It's really up to you! The most critical point is whether or not you want to identify all the objects together and sub-classify them using a deep learning classifier - in that case, you should make them all the same Kind and then make two Categories for "Mitotic" and "Interphase". 
 
 If you aren't using the classifier, it mostly doesn't matter, but may vary by the segmentation approach you are taking - if the model you're using finds both kinds of things, you might as well treat them as the same kind and then just divide them into categories. If it only finds one of those groups well with a given set of segmentation settings (or annotation approaches), you might think about making them different kinds in two different segmentation passes. Neither option is wrong if you aren't using the classifier!
+
+## Can I change an object's kind and/or category?
+
+Yes! In the [Image Viewer](../detail/imageviewer.md), you can select the objects and use the "Categorize" button in the bottom left to change them to a new category and/or kind; in the [Project Viewer](../detail/projectviewer.md), you can select them and use the Categorize icon button at the top right to change the category and/or kind.
