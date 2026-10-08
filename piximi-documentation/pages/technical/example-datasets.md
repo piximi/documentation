@@ -8,14 +8,15 @@ If you use any of the example datasets in a publication, please also cite the or
 
 `````{grid}
 ````{grid-item}
-:columns: 3
+:columns: 2
 ```{image} ../../img/example_project_icons/mnistExampleProjectIcon.png
 :alt: mnistExampleIcon
 :align: left
+:class: example-thumb
 ```
 ````
 ````{grid-item}
-:columns: 9
+:columns: 10
 MNIST (Modified National Institute of Standards and Technology) is a database of handwritten digits often used in machine learning.
 Images are grayscale and 28x28 pixels and each image contains a single digit.
 We provide a small subset of the full MNIST database.
@@ -30,14 +31,15 @@ MNIST citation doi: 10.1109/5.726791
 
 `````{grid}
 ````{grid-item}
-:columns: 3
+:columns: 2
 ```{image} ../../img/example_project_icons/cElegansExampleProjectIcon.png
 :alt: cElegansExampleIcon
 :align: left
+:class: example-thumb
 ```
 ````
 ````{grid-item}
-:columns: 9
+:columns: 10
 *Caenorhabditis elegans* is a nematode worm and is a commonly used model organism.
 This dataset is images of transgenic *C. elegans* expressing the promoter of gene *clec-60* fused to GFP (*clec-60:GFP*) and an mCherry pharynx label.
 In wild type worms, *clec-60:GFP* is expressed in posterior intestinal cells while in *pmk-1(km25)* mutants the *clec-60:GFP* is elevated in expression and visible in the anterior intestine, close to the pharynx.
@@ -54,14 +56,15 @@ The *C. elegans* data were provided by Javier Irazoqui as BBBC012 in the [Broad 
 
 `````{grid}
 ````{grid-item}
-:columns: 3
+:columns: 2
 ```{image} ../../img/example_project_icons/humanU2OSCellsExampleProjectIcon.png
 :alt: humanU2OSCellsExampleIcon
 :align: left
+:class: example-thumb
 ```
 ````
 ````{grid-item}
-:columns: 9
+:columns: 10
 These human U2OS cells express b-arrestin-GFP and an orphan GPCR.
 When the GPCR is stimulated, b-arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.
 Channel 1 is GFP, channel 2 is DNA.
@@ -76,14 +79,15 @@ U2OS citation doi: 10.1038/nmeth.2083
 
 `````{grid}
 ````{grid-item}
-:columns: 3
+:columns: 2
 ```{image} ../../img/example_project_icons/BBBC013ExampleProjectIcon.png
 :alt: BBBC013ExampleIcon
 :align: left
+:class: example-thumb
 ```
 ````
 ````{grid-item}
-:columns: 9
+:columns: 10
 These human U2OS osteosarcoma cells are stably transfected with fluorescently tagged Forkhead protein (FKHR-EGFP).
 In proliferating cells, FKHR-EGFP is constantly trafficking between nucleus and cytoplasm.
 When treated with drugs that prevent PI3 kinase/PKB signaling, nuclear export is inhibited and FKHR-EGFP accumulates in the nucleus.
@@ -99,14 +103,15 @@ U2OS citation doi: 10.1038/nmeth.2083
 
 `````{grid}
 ````{grid-item}
-:columns: 3
+:columns: 2
 ```{image} ../../img/example_project_icons/PLP1ExampleProjectIcon.png
 :alt: PLP1ExampleIcon
 :align: left
+:class: example-thumb
 ```
 ````
 ````{grid-item}
-:columns: 9
+:columns: 10
 These human HeLa cells express either wild type or the disease-associated variant of PLP1 protein, which localizes differently than the healthy version.
 Channel 1 is artifacts, channel 2 is fluorescently tagged protein PLP1, and channel 3 is DNA.
 

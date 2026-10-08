@@ -4,137 +4,48 @@ The Project Viewer is where you can create **New** projects, **open** previous p
 
 This view is also where you can **categorize** your images and perform **classification** and **segmentation** tasks.
 
+## Overview
+
 <img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-annotated.webp>
 <img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-annotated.webp>
 
-<br/>
-<br/>
+1. **Project Name** - Update the name of your project. Saved filenames will default to the project name.
 
-1. Top Appbar
-2. Action Drawer
-3. Image/Object Grid
-4. Info Bar
+2. **Navigate to Image Viewer / Measurements**:
+   - **Image Viewer**: After selecting images or objects, navigate to the Image Viewer to view, annotate, or adjust the selected images. Selecting an object, or objects, and navigating to the Image Viewer will load the image the object belongs to, and highlight the object(s).
+   - **Measure**: The Measurements View operates on all images/objects in the project, so no selection is necessary.
+3. **Project Drawer**: This is where you perform tasks like loading and saving projects, run machine learning models (classification or segmentation) and create/edit/delete categories.
+4. **Image / Annotation Grid**: Switch between viewing the images or annotations in the project.
 
-## Top Appbar
+## Project Drawer
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-appbar.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-appbar.webp>
-
-<br/>
-<br/>
-
-### 1. Project Name
-
-Update the name of your project. Saved filenames will default to the project name.
-
-### 2. Sort
-
-Choose the order in which your images/Objects appear in the image grid. Options are by:
-
-- File Name
-- Category
-- Random
-- Image Name (Image name may be be updated by the user. Default is file name)
-
-### 3. Grid Item Size
-
-Adjust the size of the images/objects displayed in the grid
-
-### 4. Select/Deselect/Delete
-
-- Select all images/objects
-- Deselect all images/objects
-- Delete selected images/objects
-
-The number of selected images will be shown near the "Select All" button.
-
-```{admonition} Image Deletion
-:class: warning
-
-In the case that an image has associated annotations, deleting the image will also delete the annotations.
-```
-
-### 5. Categorize Images/Objects
-
-After selecting a subset of images/objects, you can use this dropdown menu to select an available category to apply to the selected images.
-
-### 6. Navigate to Image Viewer
-
-After selecting images or objects, navigate to the Image Viewer to view, annotate, or adjust the selected images. Selecting an object, or objects, and navigating to the Image Viewer will load the image the object belongs to, and highlight the object(s).
-
-### 7. Navigate to Measurements Viewer
-
-The Measurements View operates on all images/objects in the project, so no selection is necessary.
-
-## Action Drawer
-
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-actionbar.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-actionbar.webp>
-
-<br/>
-<br/>
+<img class="theme-img dark-img content-img img-float-left"  src=../../img/project-viewer/project-viewer-dark-projectdrawer.webp>
+<img class="theme-img light-img content-img img-float-left"  src=../../img/project-viewer/project-viewer-light-projectdrawer.webp>
 
 ### 1. File I/O
 
-**Project Creation**
+- **Project Creation**: Clicking **NEW** opens a new project. You will be prompted to input a new project name, and the current project will be replaced with a blank one.
 
-You can start a new project by clicking the **New** button. You will be prompted to input a new project name, and the current project will be replaced with a blank one.
+- **Open a Project**: Clicking **OPEN** opens a menu which allows you to:
+  - Open a previously saved project (`.zip` or `.zarr`)
+  - Open one of Piximi's provided example projects (see [here](../technical/example-datasets.md) for information about the datasets)
+  - Open a new image (PNG, JPEG, TIFF, DICOM, BMP, or HEIF formats). <span style="color: var(--pst-color-warning)"> Piximi requires all image in the project to have the same number of channels</span>
 
-**Open a Project**
-
-You can load a previously saved project from either the `.zip` file or the `.zarr` file. As with creating a new project, the current project will be replaced.
-
-You can also choose to load one of our example projects. These are:
-
-- MNIST -- Small subset of the MNIST database of handwritten digits
-- C. elegans -- Images of transgenic C. elegans expressing the promoter of gene clec-60 fused to GFP.
-- Human U2OS-cells -- "This image set is of a Transfluor assay where an orphan GPCR is stably integrated into the b-arrestin GFP expressing U2OS cell line.
-- Human U2OS-cells Cytoplasm Crops -- Images of cytoplasm to nucleus translocation of the Forkhead (FKHR-EGFP) fusion protein in stably transfected human osteosarcoma cells.
-- Human PLP1 Localization -- Human HeLa cells expressing the disease-associated variant of PLP1 protein, which localizes differently than the healthy version.
-- Malaria Infected Human Blood Smears -- Blood cells infected by P. vivax (malaria) and stained with Giemsa reagent.
-- U2OS Cell-Painting Experiment -- U2OS cells treated with an RNAi reagent and stained.
-
-**Upload Images**
-
-Open a file picker to select images you want to upload, or drag and drop them into the image grid. Piximi supports a variety of file types:
-
-- PNG
-- JPEG
-- TIFF
-- DICOM
-- BMP
-
-```{admonition} Image Channels
-:class: warning
-
-Currently, Piximi requires all images in a project to contain the same number of channels. In the case of 3D `.tiff` images, Piximi will load the file under the assumption that the number of channels equals that of the images in the project and will calculate the number of planes based off of that assumption.
-```
-
-**Save Project**
-
-Save your current project. Piximi saves the project as a compressed `.zip` file containing a `.zarr` file with the project data (images, objects, categories, measurements) as well as any trained classifiers used in the project.
+- **Save Project**: Clicking **SAVE** saves the project as a compressed `.zip` file containing a `.zarr` directory with the project data as well as any trained classifiers used in the project.
 
 ### 2. Learning Task
 
-This section contains the deep learning functionality of piximi (Classification and Segmentation). From this section, users can upload and train classification models, select pretrained segmentation models, perform inference on the images and objects in the project, evaluate the performance of the classification models, and save trained models.
-
-More information about classification and segmentation can be viewed in their respective chapters.
+This section contains the deep learning functionality of piximi (Classification and Segmentation), and is explained in detail in the [classification](projectviewer-classification) and [segmentation](projectviewer-segmentation) pages.
 
 ### 3. Categories
 
-This section contains the per-Kind categories in the project. You can create, edit, and delete categories here.
+This section contains the categories for the items in the currently viewed grid. You can create, edit, and delete categories here.
 
-When creating a new category, the category names must be unique within each kind, and you can select a category color from a pre-populated list.
-
-Each kind will contain an "Unknown" category which loaded images will default to.
-
-Deleting a category will recategorize the associated images as "Unknown".
-
-In addition to the "Categorize" button in the **Top App Bar** users can recategorize selected images by holding down the `shift` key, entering the index of the desired category (0, 1, 2, etc.) then releasing the `shift` key.
+The images along with each kind are associated with an "Unknown" category. This is the default category of newly loaded images as well as segmented objects. Deleting a category will recategorize the associated items as "Unknown".
 
 ### 4. App Controls
 
-This sections contains the app settings, functionality to report issues within the app to the GitHub project repo, and activation of the in-app help context.
+Pinned to the bottom of the drawer, this section contains the app settings, functionality to report issues within the app to the GitHub project repo, and activation of the in-app help context.
 
 **App Settings**
 
@@ -149,59 +60,104 @@ When activated, sections of the app which are associated with help information w
 
 ## Image/Object Grid
 
-<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-maingrid.webp>
-<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-maingrid.webp>
+The grid has two views, toggled at the top: **Images** and **Annotations**.
 
-<br/>
-<br/>
+````{div} side-by-side
+```{div}
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-maingrid-images.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-maingrid-images.webp>
 
-### 1. Kind Tabs
+**Images view** -- shows whole images.
+```
 
-Piximi groups the project data into what we cal "Kinds". Kinds are essentially a **supercategory**. Each project will have an "Image" kind which refers to whole images and cannot be deleted or edited.
+```{div}
+<img class="theme-img dark-img content-img" src=../../img/project-viewer/project-viewer-dark-maingrid-annotations.webp>
+<img class="theme-img light-img content-img" src=../../img/project-viewer/project-viewer-light-maingrid-annotations.webp>
 
-Additional kinds can be created, edited and deleted, and each kind has it own set of associated categories.
+**Annotations view** -- once a project has annotations, this view splits the grid by Kind Tabs (see below).
+```
+````
 
-For example, a project will contain a set of whole images (belonging to the "Image" kind). An image then may contain objects, such as "Nuclei" and "Cell Membrane" objects. In this example the project has three kinds -- "Image", "Nuclei", and "Cell Membrane". The object can then be grouped by category, for example the objects of kind "Nuclei" can be categorized as "Healthy" or "Infected".
+1.  **View Toggle**: Switches the items in the grid between images and annotations. The **Annotations** toggle is disabled unless the project has at least one annotation/object.
+2.  **Grid Actions**: Control what you see in the grid and act on selected items.
+    - ![sort-filter icon](../../img/icons/icon-dark-sort-filter.webp)![sort-filter icon](../../img/icons/icon-light-sort-filter.webp) **Sort | Filter** -- Choose the order in which your images/objects appear in the grid, and filter which items are shown. Sort options are by:
+      - File Name
+      - Category
+      - Random
+      - Image Name (the image name may be updated by the user; the default is the file name)
+
+    - ![select-all icon](../../img/icons/icon-dark-select-all.webp)![select-all icon](../../img/icons/icon-light-select-all.webp) **Select all** -- Select every image/object. The number of selected items is shown in a badge on the button.
+    - ![deselect-all icon](../../img/icons/icon-dark-deselect-all.webp)![deselect-all icon](../../img/icons/icon-light-deselect-all.webp) **Deselect all** -- Clear the current selection.
+    - ![categorize icon](../../img/icons/icon-dark-categorize.webp)![categorize icon](../../img/icons/icon-light-categorize.webp) **Categorize** -- After selecting a subset of images/objects, use this control to apply an available category to the selection.
+    - ![delete-selected icon](../../img/icons/icon-dark-delete-selected.webp)![delete-selected icon](../../img/icons/icon-light-delete-selected.webp) **Delete selected** -- Delete the selected images/objects.
+    - ![grid-zoom icon](../../img/icons/icon-dark-grid-zoom.webp)![grid-zoom icon](../../img/icons/icon-light-grid-zoom.webp) **Zoom** -- Change the size of the items in the grid.
+
+The **Sort | Filter** and **Categorize** popovers look slightly different in each view, since the available options depend on what is being shown:
+
+````{div} popover-grid
+```{div}
+<img class="theme-img dark-img content-img fig-315" src=../../img/project-viewer/project-viewer-dark-sortfilter-images.webp>
+<img class="theme-img light-img content-img fig-315" src=../../img/project-viewer/project-viewer-light-sortfilter-images.webp>
+
+**Images view**: Images can be filtered on whether they contain segmented objects or not
+```
+
+```{div}
+<img class="theme-img dark-img content-img fig-315" src=../../img/project-viewer/project-viewer-dark-sortfilter-annotations.webp>
+<img class="theme-img light-img content-img fig-315" src=../../img/project-viewer/project-viewer-light-sortfilter-annotations.webp>
+
+**Annotations view**: Annotations can be filtered on images selected in the "Images view"
+```
+
+```{div}
+<img class="theme-img dark-img content-img fig-118" src=../../img/project-viewer/project-viewer-dark-categorize-images.webp>
+<img class="theme-img light-img content-img fig-118" src=../../img/project-viewer/project-viewer-light-categorize-images.webp>
+
+**Images view**: Select from a list of image categories
+```
+
+```{div}
+<img class="theme-img dark-img content-img fig-154" src=../../img/project-viewer/project-viewer-dark-categorize-annotations.webp>
+<img class="theme-img light-img content-img fig-154" src=../../img/project-viewer/project-viewer-light-categorize-annotations.webp>
+
+**Annotations view**: Annotations can be categorized across Kinds. Select a Kind from the drop-down then select a category from the list. The annotation's Kind will be updated as well.
+```
+````
+
+3.  **Kind Tabs**
+
+```{admonition} Only in the Annotations view
+:class: note
+
+Kind Tabs only appear once you switch to the **Annotations** view above -- they aren't part of the Images view.
+```
+
+Piximi groups the objects into what we call "Kinds". Kinds are essentially a **supercategory**. Like categories there is a default **Unknown** kind which exists to hold annotations which have been disassociated with a specific kind. This would occur if for instance an object's kind was deleted by the user.
+
+Additional kinds can be created, edited and deleted, and each kind has its own set of associated categories.
+
+For example, an image may contain "Nuclei" and "Cell Membrane" objects. In this example the project has two kinds -- "Nuclei", and "Cell Membrane". The object can then be grouped by category, for example the objects of kind "Nuclei" can be categorized as "Healthy" or "Infected".
 
 A simple structure could look like this:
 
 ```
 kinds:{
-    Image:{
-        data:[...]
-        categories:[...]
-    },
     Nuclei:{
-        data:[...],
         categories:[Healthy, Infected, ...],
     },
+    Cell Membrane:{
+        categories:[...]
+    }
     ...
 }
 ```
 
 Each Kind tab contains functionality for editing the kind name, minimizing the kind (removing the kind from the visible tabs) and deleting the kind.
 
-```{admonition} Deleting Kinds
-:class: warning
+4. **Kind Actions**: Hovering over a Kind's tab shows the actions that can be performed on the Kind:
 
-Deleting a Kind will also delete all associated objects or images.
-```
+- **Edit** -- Change the name of the Kind.
+- **Minimize** -- Remove the Kind's tab from the view
+- **Delete** -- Delete the Kind
 
-### 2. Create/Show Kinds
-
-Use the "+" button to create new kinds. Additionally, any kind that was previously hidden can be restored from the dropdown menu that appears upon clicking the button.
-
-### 3. Images/Objects
-
-The main image grid displays all of the images or objects in a project. You can click on an image to select it, as well as view its category and some brief info.
-
-## Info Bar
-
-<img  class="theme-img dark-img content-img"  src=../../img/project-viewer/project-viewer-infobar-dark.webp>
-<img  class="theme-img light-img content-img"  src=../../img/project-viewer/project-viewer-infobar-light.webp>
-
-<br/>
-<br/>
-
-1. Filter by category/training partition
-2. View image/object details
+5. **Add/Restore Kinds**: The ![add-kind icon](../../img/icons/icon-dark-add-kind.webp)![add-kind icon](../../img/icons/icon-light-add-kind.webp) button allows you to create a new Kind, or restore a previously minimized Kind.

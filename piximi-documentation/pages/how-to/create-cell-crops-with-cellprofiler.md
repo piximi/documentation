@@ -11,6 +11,7 @@ The single cell image crops for the Piximi `Human U2OS-cells Cytoplasm Crops` ex
 To begin, drag and drop your images into the `Images` input module of CellProfiler.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-images-input-view.png
+:class: content-img
 ---
 name: images-input-view
 ---
@@ -20,7 +21,7 @@ Drag and drop your images into the `Images` input module.
 Next, select appropriate rules to categorize your files in the `NamesAndTypes` input module. In these images, files that contain `Channel2` in their filename are assign the name `rawDNA` and images that contain `Channel1` in their filename are assigned the name `rawGFP`.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-names-and-types-view.png
-:class: img-shadow
+:class: content-img
 ---
 name: NamesAndTypes-view
 ---
@@ -32,6 +33,7 @@ Within the `NamesAndTypes` module, assign appropriate names for the DNA and GFP 
 Then, add an `IdentifyPrimaryObjects` module and set your DNA image (e.g. `rawDNA`) as the input image. Name this primary object `Nuclei`. Adjust the parameters so an appropriate segmentation is achieved while using test mode.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-identify-primary-object-view.png
+:class: content-img
 ---
 name: IdentifyPrimaryObjects-view
 ---
@@ -43,6 +45,7 @@ Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequat
 Add an `IdentifySecondaryObjects` module and select the cell image (e.g. `rawGFP`) as the input image and `Nuclei` as the input objects. Name this Secondary object `Cells`. You can tune segmentation parameters to identify your cell objects or set the `Distance - N` method to identify secondary objects with a distance that captures the edge of most cells (e.g. `10`).
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-identify-secondary-object-view.png
+:class: content-img
 ---
 name: IdentifySecondaryObjects-view
 ---
@@ -54,6 +57,7 @@ Add a IdentifySecondaryObjects module using the `rawGFP` as an input image and `
 Now, we will create a multichannel RGB image using the input `rawDNA` and `rawGFP` images. Add a `GrayToColor` module and select `rawGFP` to be colored green and `rawDNA` to be colored blue. Name the output image `GFPandDNA`.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-color-to-gray-view.png
+:class: content-img
 ---
 name: ColorToGray-view
 ---
@@ -78,6 +82,7 @@ In the `Metadata` input module, select `Yes` on the `Extract Metadata` option. I
 For each image there are two individual filenames, representing either `channel1` or `channel2`. If you choose to extract the entire filename, `SaveCroppedObjects` will be unable to reconcile which filename to use and instead use `None`. By using the regular expression mentioned above, the extracted filename will be the same across the two channels.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-metadata-view-4.2.1.png
+:class: content-img
 ---
 name: metadata-view-4.2.1
 ---
@@ -89,6 +94,7 @@ Use the regular expression `\-(?P<FileName>.*)\.` to extract an appropriate file
 Within `SaveCroppedObjects`, select `Default Output Folder sub-folder` and then **right-click** in the `sub-folder` text box and select `FileName`.
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-save-cropped-objects-view-4.2.1.png
+:class: content-img
 ---
 name: SaveCroppedObjects-view-4.2.1
 ---
@@ -100,6 +106,7 @@ Right click within the `Sub-folder` text box and select `FileName`, as defined i
 ````
 
 ```{figure} ../../img/cellprofiler-cell-crops-examples/user-guide-save-cropped-objects-view.png
+:class: content-img
 ---
 name: SaveCroppedObjects-view
 ---
