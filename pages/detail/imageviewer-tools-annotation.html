@@ -429,18 +429,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-some-annotations">Add some annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract-annotations">Subtract annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect-annotations">Intersect annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-annotations">Combining annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine">Combine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract">Subtract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect">Intersect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-annotation">Quick annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-tool">Selection tool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangular-annotation">Rectangular annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptical-annotation">Elliptical annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonal-annotation">Polygonal annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pen-annotation">Pen annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso-annotation">Lasso annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-annotation">Magnetic annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-annotation">Quick annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-annotation">Threshold annotation</a></li>
 </ul>
             </nav>
         </div>
@@ -454,107 +458,126 @@ document.write(`
                   
   <section id="annotation-tools">
 <h1>Annotation Tools<a class="headerlink" href="#annotation-tools" title="Permalink to this heading">#</a></h1>
-<p>The Piximi annotator offers a variety of ways to add, subtract and make intersections of annotations. Furthermore, the selection tool enables users to resize and delete specific annotations.</p>
-<section id="add-some-annotations">
-<h2>Add some annotations<a class="headerlink" href="#add-some-annotations" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id1">
-<img alt="../../_images/PiximiAnnotationAdd.gif" class="annotation-gif" src="../../_images/PiximiAnnotationAdd.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Annotations can be added together</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<section id="subtract-annotations">
-<h3>Subtract annotations<a class="headerlink" href="#subtract-annotations" title="Permalink to this heading">#</a></h3>
-<figure class="align-default" id="id2">
-<img alt="../../_images/PiximiAnnotationSubtract.gif" class="annotation-gif" src="../../_images/PiximiAnnotationSubtract.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Annotations can be subtracted from one another</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p>The Image Viewer’s annotator has nine tools for creating annotations, a selection tool for picking them out again, and three ways of combining a new shape with an annotation that is already there. Each is shown below on a nucleus of the <a class="reference internal" href="../tutorial/translocation_tutorial.html"><span class="doc std std-doc">Translocation Tutorial</span></a> example project.</p>
+<p>Whichever tool you use, a finished shape is not saved right away: the confirm bar appears at the bottom of the canvas (see <a class="reference internal" href="imageviewer.html"><span class="doc std std-doc">Confirming and Editing Annotations</span></a>) and the shape is saved when you click <strong>Confirm</strong> or press <code class="docutils literal notranslate"><span class="pre">enter</span></code>. New annotations go into the kind and category selected in the <strong>Annotations</strong> drawer, so create a kind first if the project has none.</p>
+<section id="combining-annotations">
+<h2>Combining annotations<a class="headerlink" href="#combining-annotations" title="Permalink to this heading">#</a></h2>
+<p>Draw a shape that overlaps an existing annotation, then choose what to do with the two on the confirm bar. The result is previewed on the canvas, and nothing changes until you confirm.</p>
+<p>If the new shape overlaps more than one annotation, the bar says so and you click the annotations you want to act on.</p>
+<section id="combine">
+<h3>Combine<a class="headerlink" href="#combine" title="Permalink to this heading">#</a></h3>
+<img alt="Combining a new shape with an annotation" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-combine.webp" />
+<img alt="Combining a new shape with an annotation" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-combine.webp" />
+<div class="tutorial-caption docutils">
+<p><strong>Combine</strong> merges the new shape and the annotation it overlaps into a single annotation.</p>
+</div>
 </section>
-<section id="intersect-annotations">
-<h3>Intersect annotations<a class="headerlink" href="#intersect-annotations" title="Permalink to this heading">#</a></h3>
-<figure class="align-default" id="id3">
-<img alt="../../_images/PiximiAnnotationIntersect.gif" class="annotation-gif" src="../../_images/PiximiAnnotationIntersect.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The intersection of two annotations can be created</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<!--
-### Annotation selection
-```{figure} ../../img/annotation-demo/selection-tool.gif
-:class: annotation-gif
----
-name: annotation-selection-demo
----
-Annotations can be selected and resized
-```
--->
+<section id="subtract">
+<h3>Subtract<a class="headerlink" href="#subtract" title="Permalink to this heading">#</a></h3>
+<img alt="Subtracting a new shape from an annotation" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-subtract.webp" />
+<img alt="Subtracting a new shape from an annotation" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-subtract.webp" />
+<div class="tutorial-caption docutils">
+<p><strong>Subtract</strong> removes the area of the new shape from the annotation it overlaps. No new annotation is created.</p>
+</div>
+</section>
+<section id="intersect">
+<h3>Intersect<a class="headerlink" href="#intersect" title="Permalink to this heading">#</a></h3>
+<img alt="Intersecting a new shape with an annotation" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-intersect.webp" />
+<img alt="Intersecting a new shape with an annotation" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-intersect.webp" />
+<div class="tutorial-caption docutils">
+<p><strong>Intersection</strong> keeps only the region where the new shape and the annotation overlap.</p>
+</div>
 </section>
 </section>
-<section id="color-annotation">
-<h2>Color annotation<a class="headerlink" href="#color-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id4">
-<img alt="../../_images/PiximiColor.gif" class="annotation-gif" src="../../_images/PiximiColor.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The color annotation tool</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="quick-annotation">
-<h2>Quick annotation<a class="headerlink" href="#quick-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id5">
-<img alt="../../_images/PiximiSuperpixel.gif" class="annotation-gif" src="../../_images/PiximiSuperpixel.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The quick annotation (aka superpixel) tool</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<section id="selection-tool">
+<h2>Selection tool<a class="headerlink" href="#selection-tool" title="Permalink to this heading">#</a></h2>
+<p><img alt="selection tool" src="../../_images/icon-dark-tool-selection.webp" /><img alt="selection tool" src="../../_images/icon-light-tool-selection.webp" /> <strong>Selection Tool</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">S</span></code>): click an annotation to select it, and click it again to deselect it. Click and drag a box to select every annotation inside it. Selected annotations are highlighted, and are the ones the <strong>Delete</strong>, <strong>Categorize</strong> and <strong>Export</strong> actions of the Annotations drawer apply to.</p>
+<img alt="Selecting annotations with the selection tool" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-selection.webp" />
+<img alt="Selecting annotations with the selection tool" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-selection.webp" />
+<div class="tutorial-caption docutils">
+<p>Click annotations to select them one at a time, or drag a box around several.</p>
+</div>
 </section>
 <section id="rectangular-annotation">
 <h2>Rectangular annotation<a class="headerlink" href="#rectangular-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id6">
-<img alt="../../_images/PiximiRectangle.gif" class="annotation-gif" src="../../_images/PiximiRectangle.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The rectangular annotation tool</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p><img alt="rectangle" src="../../_images/icon-dark-tool-rectangle.webp" /><img alt="rectangle" src="../../_images/icon-light-tool-rectangle.webp" /> <strong>Rectangle</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">R</span></code>): Click and drag from one corner to the opposite corner, or click the two corners.</p>
+<img alt="The rectangle tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-rectangle.webp" />
+<img alt="The rectangle tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-rectangle.webp" />
+<div class="tutorial-caption docutils">
+<p>The rectangle tool.</p>
+</div>
 </section>
 <section id="elliptical-annotation">
 <h2>Elliptical annotation<a class="headerlink" href="#elliptical-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id7">
-<img alt="../../_images/PiximiEllipse.gif" class="annotation-gif" src="../../_images/PiximiEllipse.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The elliptical annotation tool</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p><img alt="ellipse" src="../../_images/icon-dark-tool-ellipse.webp" /><img alt="ellipse" src="../../_images/icon-light-tool-ellipse.webp" /> <strong>Ellipse</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">E</span></code>): Click and drag across the bounding box of the ellipse, or click twice.</p>
+<img alt="The ellipse tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-ellipse.webp" />
+<img alt="The ellipse tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-ellipse.webp" />
+<div class="tutorial-caption docutils">
+<p>The ellipse tool.</p>
+</div>
 </section>
 <section id="polygonal-annotation">
 <h2>Polygonal annotation<a class="headerlink" href="#polygonal-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id8">
-<img alt="../../_images/PiximiPolygon.gif" class="annotation-gif" src="../../_images/PiximiPolygon.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">The polygon annotation tool</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p><img alt="polygon" src="../../_images/icon-dark-tool-polygon.webp" /><img alt="polygon" src="../../_images/icon-light-tool-polygon.webp" /> <strong>Polygon</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code>): Click to place each corner of the shape. Click the first corner again to close it.</p>
+<img alt="The polygon tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-polygon.webp" />
+<img alt="The polygon tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-polygon.webp" />
+<div class="tutorial-caption docutils">
+<p>The polygon tool.</p>
+</div>
 </section>
 <section id="pen-annotation">
 <h2>Pen annotation<a class="headerlink" href="#pen-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id9">
-<img alt="../../_images/PiximiPen.gif" class="annotation-gif" src="../../_images/PiximiPen.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">The pen annotation tool</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p><img alt="pen" src="../../_images/icon-dark-tool-pen.webp" /><img alt="pen" src="../../_images/icon-light-tool-pen.webp" /> <strong>Pen</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">F</span></code>): Paint the annotation by dragging. Click the tool again to open its slider, which sets the size of the brush.</p>
+<img alt="The pen tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-pen.webp" />
+<img alt="The pen tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-pen.webp" />
+<div class="tutorial-caption docutils">
+<p>The pen tool.</p>
+</div>
 </section>
 <section id="lasso-annotation">
 <h2>Lasso annotation<a class="headerlink" href="#lasso-annotation" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="id10">
-<img alt="../../_images/PiximiLasso.gif" class="annotation-gif" src="../../_images/PiximiLasso.gif" />
-<figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">The lasso annotation tool</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<!-- ## Magnetic annotation -->
+<p><img alt="lasso" src="../../_images/icon-dark-tool-lasso.webp" /><img alt="lasso" src="../../_images/icon-light-tool-lasso.webp" /> <strong>Lasso</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">L</span></code>): Drag to draw a freehand outline around the object. When you let go, the outline is closed.</p>
+<img alt="The lasso tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-lasso.webp" />
+<img alt="The lasso tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-lasso.webp" />
+<div class="tutorial-caption docutils">
+<p>The lasso tool.</p>
+</div>
+</section>
+<section id="magnetic-annotation">
+<h2>Magnetic annotation<a class="headerlink" href="#magnetic-annotation" title="Permalink to this heading">#</a></h2>
+<p><img alt="magnetic" src="../../_images/icon-dark-tool-magnetic.webp" /><img alt="magnetic" src="../../_images/icon-light-tool-magnetic.webp" /> <strong>Magnetic</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">M</span></code>): Click on the edge of an object to start, then move along the edge: the line snaps to it. Click to fix the line where you are, and click the starting point to close the outline.</p>
+<img alt="The magnetic tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-magnetic.webp" />
+<img alt="The magnetic tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-magnetic.webp" />
+<div class="tutorial-caption docutils">
+<p>The magnetic tool.</p>
+</div>
+</section>
+<section id="color-annotation">
+<h2>Color annotation<a class="headerlink" href="#color-annotation" title="Permalink to this heading">#</a></h2>
+<p><img alt="color" src="../../_images/icon-dark-tool-color.webp" /><img alt="color" src="../../_images/icon-light-tool-color.webp" /> <strong>Color</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">C</span></code>): Press in the middle of the object, then drag away from where you pressed: the further you drag, the more of the surrounding area of similar color is filled. Let go when the fill covers the object.</p>
+<img alt="The color tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-color.webp" />
+<img alt="The color tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-color.webp" />
+<div class="tutorial-caption docutils">
+<p>The color tool.</p>
+</div>
+</section>
+<section id="quick-annotation">
+<h2>Quick annotation<a class="headerlink" href="#quick-annotation" title="Permalink to this heading">#</a></h2>
+<p><img alt="quick annotation" src="../../_images/icon-dark-tool-quick.webp" /><img alt="quick annotation" src="../../_images/icon-light-tool-quick.webp" /> <strong>Quick Annotation</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">Q</span></code>): Move the pointer over the image and the tool highlights the region it predicts there. Click to accept it, or press and drag to add together the regions you pass over. Click the tool again to open its slider, which sets the size of the prediction.</p>
+<img alt="The quick annotation tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-quick.webp" />
+<img alt="The quick annotation tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-quick.webp" />
+<div class="tutorial-caption docutils">
+<p>The quick annotation (aka superpixel) tool.</p>
+</div>
+</section>
+<section id="threshold-annotation">
+<h2>Threshold annotation<a class="headerlink" href="#threshold-annotation" title="Permalink to this heading">#</a></h2>
+<p><img alt="threshold" src="../../_images/icon-dark-tool-threshold.webp" /><img alt="threshold" src="../../_images/icon-light-tool-threshold.webp" /> <strong>Threshold</strong> (<code class="docutils literal notranslate"><span class="pre">shift</span></code> + <code class="docutils literal notranslate"><span class="pre">T</span></code>): Drag a box around the region to threshold. Click the tool again to open its slider, then move it to change the sensitivity and see what is picked up. The generated mask is saved as a single annotation.</p>
+<img alt="The threshold tool in use" class="theme-img dark-img content-img" src="../../_images/annotation-tools-dark-threshold.webp" />
+<img alt="The threshold tool in use" class="theme-img light-img content-img" src="../../_images/annotation-tools-light-threshold.webp" />
+<div class="tutorial-caption docutils">
+<p>The threshold tool.</p>
+</div>
 </section>
 </section>
 
@@ -621,18 +644,22 @@ Annotations can be selected and resized
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-some-annotations">Add some annotations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract-annotations">Subtract annotations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect-annotations">Intersect annotations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-annotations">Combining annotations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combine">Combine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subtract">Subtract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersect">Intersect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-annotation">Quick annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-tool">Selection tool</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangular-annotation">Rectangular annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elliptical-annotation">Elliptical annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonal-annotation">Polygonal annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pen-annotation">Pen annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lasso-annotation">Lasso annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-annotation">Magnetic annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-annotation">Color annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-annotation">Quick annotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-annotation">Threshold annotation</a></li>
 </ul>
   </nav></div>
 

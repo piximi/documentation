@@ -4,13 +4,15 @@
 }
 
 .annotation-gif {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   border-radius: 10px;
 }
 
 .img-shadow {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   border-radius: 10px;
 }
@@ -27,19 +29,24 @@
   padding: 1rem;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
   touch-action: manipulation;
   will-change: box-shadow, transform;
   outline: none;
 }
 
 .piximi-btn:focus {
-  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
 }
 
 .piximi-btn:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   transform: translateY(-2px);
   text-decoration: none;
@@ -64,6 +71,31 @@
 .content-img {
   border-radius: 8px;
   border: 1px solid #d1d5da;
+  margin-bottom: 1.5rem;
+}
+
+/* Display content at 35% width */
+.w-35 {
+  width: 35%;
+}
+
+.img-float-left {
+  float: left;
+  width: 315px;
+  max-width: 40%;
+  margin: 0 1.5rem 1rem 0;
+}
+
+section > h2 {
+  clear: both;
+}
+/* Lists next to a floated image: sit beside it so nested indents still show */
+section:has(> .img-float-left) :is(ul, ol) {
+  display: flow-root;
+}
+/* Let admonitions sit beside a floated image instead of dropping below it */
+section:has(> .img-float-left) div.admonition {
+  clear: none;
 }
 
 /* Show light image only in light theme */
@@ -76,14 +108,6 @@ html[data-theme="dark"] .dark-img {
   display: block;
 }
 
-.centered-stack {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .grid-text {
   display: flex;
   flex-direction: column;
@@ -94,4 +118,280 @@ html[data-theme="dark"] .dark-img {
 
 .translate {
   color: red;
+}
+
+/* Let the page use the full window width (theme caps it at 88rem) */
+@media (min-width: 960px) {
+  .bd-page-width {
+    max-width: none;
+  }
+}
+
+/* Two figures next to each other; stack on narrow screens */
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.side-by-side > div {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+.side-by-side img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+.side-by-side p {
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .side-by-side {
+    flex-direction: column;
+  }
+}
+
+/* Small icons set inside running text. They are plain markdown images (so
+   Sphinx copies them); the theme variant is chosen by file name. */
+img[src*="/icon-dark-"],
+img[src*="/icon-light-"] {
+  display: inline-block;
+  height: 1.3em;
+  width: auto;
+  vertical-align: text-bottom;
+  border: none;
+}
+html[data-theme="light"] img[src*="/icon-dark-"],
+html[data-theme="dark"] img[src*="/icon-light-"] {
+  display: none;
+}
+
+/* Single-colour SVG icons in text: same size and alignment as the webp icons,
+   and the same grey (black at 54%). */
+img[src$="-icon.svg"] {
+  display: inline-block;
+  height: 1.3em;
+  width: auto;
+  vertical-align: text-bottom;
+  border: none;
+  opacity: 0.54;
+}
+
+/* Caption under a tutorial figure (a theme-paired image block above it). */
+.tutorial-caption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  margin: -1rem 0 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Dark mode: keep figure styling from being overridden by the theme.
+   pydata-sphinx-theme dims every content image (brightness .8 / contrast 1.2),
+   puts it on a white chip and squares its corners to .25rem. These rules undo
+   that where it does harm:
+   - theme-paired screenshots are already captured for dark mode
+   - inline icons are transparent
+   Single-variant (light-only) images, such as the GIFs, CellProfiler PNGs, the
+   schematic and the dataset thumbnails, keep the theme's dimming on purpose.
+   (The extra `body` raises specificity above the theme's rules.)
+   --------------------------------------------------------------------------- */
+html[data-theme="dark"] body .bd-content img.theme-img {
+  filter: none;
+  background: none;
+}
+html[data-theme="dark"] body .bd-content img.content-img {
+  border-radius: 8px;
+  border-color: var(--pst-color-border);
+}
+
+/* Inline icons: new webp pair (icon-dark-/icon-light-) and legacy black SVGs */
+html[data-theme="dark"] body .bd-content img[src*="/icon-"],
+html[data-theme="dark"] body .bd-content img[src$="-icon.svg"] {
+  background: none;
+  border-radius: 0;
+  filter: none;
+}
+/* The remaining single-colour SVG icons (img/icons/*-icon.svg) are black, so on
+   the dark page they are inverted. */
+html[data-theme="dark"] body .bd-content img[src$="-icon.svg"] {
+  filter: invert(1);
+  opacity: 0.78; /* white at 78% on the dark page, as the dark webp icons (#c8c8c8) */
+}
+
+/* GIFs and shadowed images: restore the radius and add a faint ring, since the
+   drop shadow is invisible on a dark page. */
+html[data-theme="dark"] body .bd-content img.annotation-gif,
+html[data-theme="dark"] body .bd-content img.img-shadow {
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    rgba(0, 0, 0, 0.5) 0 4px 8px,
+    rgba(0, 0, 0, 0.4) 0 7px 13px -3px;
+}
+
+/* ---------------------------------------------------------------------------
+   Figure sizes. Screenshots are captured at 2x, so a crop is shown at half its
+   pixel width ("true size"). Full-window and large-dialog captures (1704-2400
+   px wide) are left to fill the column.
+     fig-600    1200 px captures (600 px dialogs)
+     fig-315    ~630 px captures (panels and drawers)
+     fig-76     the 152 px Image Viewer tools strip
+     fig-center centre a narrow figure so its caption sits under it
+     fig-float / fig-float-right
+                float beside the text that follows (right for the tools strip,
+                which is on the right in the app)
+     fig-wrap   put around an image pair plus its caption so the caption is
+                centred under the image instead of the whole column
+   --------------------------------------------------------------------------- */
+.content-img.fig-600 {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+}
+.content-img.fig-315 {
+  width: 315px;
+  max-width: 100%;
+  height: auto;
+}
+.content-img.fig-76 {
+  width: 76px;
+  max-width: 100%;
+  height: auto;
+}
+.content-img.fig-118 {
+  width: 118px;
+  max-width: 100%;
+  height: auto;
+}
+.content-img.fig-154 {
+  width: 154px;
+  max-width: 100%;
+  height: auto;
+}
+.content-img.fig-center {
+  margin-inline: auto;
+}
+.fig-float {
+  float: left;
+  margin: 0 1.5rem 1rem 0;
+}
+.fig-float-right {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+}
+.fig-wrap {
+  width: 315px;
+  max-width: 100%;
+}
+.fig-wrap .tutorial-caption {
+  margin: -1rem 0 0;
+}
+/* As for .img-float-left: lists and admonitions sit beside the float */
+section:has(> :is(.fig-float, .fig-float-right)) :is(ul, ol) {
+  display: flow-root;
+}
+section:has(> :is(.fig-float, .fig-float-right)) div.admonition {
+  clear: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Figure spacing. The <br/> spacer pairs are gone: every figure image has a
+   1.5rem bottom margin (see .content-img), and a caption pulls up to sit 0.5rem
+   under its image (see .tutorial-caption). A figure with no caption is followed
+   by 1.5rem of space.
+   --------------------------------------------------------------------------- */
+
+/* A single (non-themed) figure image, such as the FOXO1A schematic */
+.content-img.fig-single {
+  display: block;
+}
+/* Sphinx wraps a scaled image in <a class="image-reference"> and copies the classes
+   onto it; keep the border/margin on the <img> only */
+a.content-img {
+  display: block;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+/* MyST {figure} blocks (annotation GIFs, CellProfiler screenshots): same size,
+   spacing and caption look as the tutorial figures. Numbering is off in
+   conf.py (numfig = False). */
+figure.align-default {
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+figure.align-default > img {
+  max-width: 100%;
+  margin-bottom: 0;
+}
+figure.align-default > figcaption {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* ---------------------------------------------------------------------------
+   Popover grid (Project Viewer): popover screenshots at true size, two columns
+   of equal width. Each image is centred in its column and its label is as wide
+   as the column, so labels line up whatever the image width.
+   --------------------------------------------------------------------------- */
+.popover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 315px);
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.popover-grid > div {
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popover-grid img {
+  margin-bottom: 0;
+}
+.popover-grid p {
+  width: 100%;
+  margin: 0.5rem 0 0;
+  font-size: 0.9em;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .popover-grid {
+    grid-template-columns: minmax(0, 315px);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Example-dataset thumbnails (technical/example-datasets): 110px wide, aspect
+   ratio kept, centred in their column, and the same border/radius as figures.
+   They are data previews, so the dark theme's dimming and white chip are off.
+   --------------------------------------------------------------------------- */
+img.example-thumb {
+  display: block;
+  float: none;
+  clear: none;
+  margin: 0 auto;
+  width: 110px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #d1d5da;
+  border-radius: 8px;
+}
+html[data-theme="dark"] body .bd-content img.example-thumb {
+  border-color: var(--pst-color-border);
+  border-radius: 8px;
+  filter: none;
+  background: none;
 }

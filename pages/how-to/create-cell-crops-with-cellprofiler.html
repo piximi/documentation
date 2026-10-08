@@ -453,47 +453,47 @@ document.write(`
 <section id="import-images">
 <h2>1. Import images<a class="headerlink" href="#import-images" title="Permalink to this heading">#</a></h2>
 <p>To begin, drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module of CellProfiler.</p>
-<figure class="align-default" id="images-input-view">
-<img alt="../../_images/user-guide-images-input-view.png" src="../../_images/user-guide-images-input-view.png" />
+<figure class="align-default" id="id1">
+<img alt="../../_images/user-guide-images-input-view.png" class="content-img" src="../../_images/user-guide-images-input-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#images-input-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Drag and drop your images into the <code class="docutils literal notranslate"><span class="pre">Images</span></code> input module.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Next, select appropriate rules to categorize your files in the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> input module. In these images, files that contain <code class="docutils literal notranslate"><span class="pre">Channel2</span></code> in their filename are assign the name <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and images that contain <code class="docutils literal notranslate"><span class="pre">Channel1</span></code> in their filename are assigned the name <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>.</p>
-<figure class="align-default" id="id1">
-<img alt="../../_images/user-guide-names-and-types-view.png" class="img-shadow" src="../../_images/user-guide-names-and-types-view.png" />
+<figure class="align-default" id="id2">
+<img alt="../../_images/user-guide-names-and-types-view.png" class="content-img" src="../../_images/user-guide-names-and-types-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Within the <code class="docutils literal notranslate"><span class="pre">NamesAndTypes</span></code> module, assign appropriate names for the DNA and GFP channels.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="identifyprimaryobjects">
 <h2>2. IdentifyPrimaryObjects<a class="headerlink" href="#identifyprimaryobjects" title="Permalink to this heading">#</a></h2>
 <p>Then, add an <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module and set your DNA image (e.g. <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code>) as the input image. Name this primary object <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code>. Adjust the parameters so an appropriate segmentation is achieved while using test mode.</p>
-<figure class="align-default" id="identifyprimaryobjects-view">
-<img alt="../../_images/user-guide-identify-primary-object-view.png" src="../../_images/user-guide-identify-primary-object-view.png" />
+<figure class="align-default" id="id3">
+<img alt="../../_images/user-guide-identify-primary-object-view.png" class="content-img" src="../../_images/user-guide-identify-primary-object-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#identifyprimaryobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Add a IdentifyPrimaryObjects module and adjust the parameters to achieve adequate object segmentation of the <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> image.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="identifysecondaryobjects">
 <h2>3. IdentifySecondaryObjects<a class="headerlink" href="#identifysecondaryobjects" title="Permalink to this heading">#</a></h2>
 <p>Add an <code class="docutils literal notranslate"><span class="pre">IdentifySecondaryObjects</span></code> module and select the cell image (e.g. <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code>) as the input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as the input objects. Name this Secondary object <code class="docutils literal notranslate"><span class="pre">Cells</span></code>. You can tune segmentation parameters to identify your cell objects or set the <code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">-</span> <span class="pre">N</span></code> method to identify secondary objects with a distance that captures the edge of most cells (e.g. <code class="docutils literal notranslate"><span class="pre">10</span></code>).</p>
-<figure class="align-default" id="identifysecondaryobjects-view">
-<img alt="../../_images/user-guide-identify-secondary-object-view.png" src="../../_images/user-guide-identify-secondary-object-view.png" />
+<figure class="align-default" id="id4">
+<img alt="../../_images/user-guide-identify-secondary-object-view.png" class="content-img" src="../../_images/user-guide-identify-secondary-object-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#identifysecondaryobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Add a IdentifySecondaryObjects module using the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as an input image and <code class="docutils literal notranslate"><span class="pre">Nuclei</span></code> as in input object.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="graytocolor">
 <h2>4. GrayToColor<a class="headerlink" href="#graytocolor" title="Permalink to this heading">#</a></h2>
 <p>Now, we will create a multichannel RGB image using the input <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> and <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> images. Add a <code class="docutils literal notranslate"><span class="pre">GrayToColor</span></code> module and select <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> to be colored green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> to be colored blue. Name the output image <code class="docutils literal notranslate"><span class="pre">GFPandDNA</span></code>.</p>
-<figure class="align-default" id="colortogray-view">
-<img alt="../../_images/user-guide-color-to-gray-view.png" src="../../_images/user-guide-color-to-gray-view.png" />
+<figure class="align-default" id="id5">
+<img alt="../../_images/user-guide-color-to-gray-view.png" class="content-img" src="../../_images/user-guide-color-to-gray-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#colortogray-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Add a ColorToGray module and set the <code class="docutils literal notranslate"><span class="pre">rawGFP</span></code> as green and <code class="docutils literal notranslate"><span class="pre">rawDNA</span></code> as blue.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -507,25 +507,25 @@ document.write(`
 <p>In the <code class="docutils literal notranslate"><span class="pre">Metadata</span></code> input module, select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> on the <code class="docutils literal notranslate"><span class="pre">Extract</span> <span class="pre">Metadata</span></code> option. In the field marked <code class="docutils literal notranslate"><span class="pre">Regular</span> <span class="pre">expression</span> <span class="pre">to</span> <span class="pre">extract</span> <span class="pre">from</span> <span class="pre">file</span> <span class="pre">name</span></code> input the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code>. This will extract the information after the first <code class="docutils literal notranslate"><span class="pre">-</span></code> and before the last <code class="docutils literal notranslate"><span class="pre">.</span></code> from the image filenames in the <code class="docutils literal notranslate"><span class="pre">BBBC013</span></code> dataset.</p>
 <p><em>Why extract metadata for this portion of the filename?</em>
 For each image there are two individual filenames, representing either <code class="docutils literal notranslate"><span class="pre">channel1</span></code> or <code class="docutils literal notranslate"><span class="pre">channel2</span></code>. If you choose to extract the entire filename, <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code> will be unable to reconcile which filename to use and instead use <code class="docutils literal notranslate"><span class="pre">None</span></code>. By using the regular expression mentioned above, the extracted filename will be the same across the two channels.</p>
-<figure class="align-default" id="metadata-view-4-2-1">
-<img alt="../../_images/user-guide-metadata-view-4.2.1.png" src="../../_images/user-guide-metadata-view-4.2.1.png" />
+<figure class="align-default" id="id6">
+<img alt="../../_images/user-guide-metadata-view-4.2.1.png" class="content-img" src="../../_images/user-guide-metadata-view-4.2.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Use the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code> to extract an appropriate filename from the BBBC013 images.</span><a class="headerlink" href="#metadata-view-4-2-1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Use the regular expression <code class="docutils literal notranslate"><span class="pre">\-(?P&lt;FileName&gt;.*)\.</span></code> to extract an appropriate filename from the BBBC013 images.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><strong>2. SaveCroppedObjects</strong></p>
 <p>Within <code class="docutils literal notranslate"><span class="pre">SaveCroppedObjects</span></code>, select <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Output</span> <span class="pre">Folder</span> <span class="pre">sub-folder</span></code> and then <strong>right-click</strong> in the <code class="docutils literal notranslate"><span class="pre">sub-folder</span></code> text box and select <code class="docutils literal notranslate"><span class="pre">FileName</span></code>.</p>
-<figure class="align-default" id="savecroppedobjects-view-4-2-1">
-<img alt="../../_images/user-guide-save-cropped-objects-view-4.2.1.png" src="../../_images/user-guide-save-cropped-objects-view-4.2.1.png" />
+<figure class="align-default" id="id7">
+<img alt="../../_images/user-guide-save-cropped-objects-view-4.2.1.png" class="content-img" src="../../_images/user-guide-save-cropped-objects-view-4.2.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Right click within the <code class="docutils literal notranslate"><span class="pre">Sub-folder</span></code> text box and select <code class="docutils literal notranslate"><span class="pre">FileName</span></code>, as defined in the Metadata module earlier.</span><a class="headerlink" href="#savecroppedobjects-view-4-2-1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Right click within the <code class="docutils literal notranslate"><span class="pre">Sub-folder</span></code> text box and select <code class="docutils literal notranslate"><span class="pre">FileName</span></code>, as defined in the Metadata module earlier.</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<figure class="align-default" id="savecroppedobjects-view">
-<img alt="../../_images/user-guide-save-cropped-objects-view.png" src="../../_images/user-guide-save-cropped-objects-view.png" />
+<figure class="align-default" id="id8">
+<img alt="../../_images/user-guide-save-cropped-objects-view.png" class="content-img" src="../../_images/user-guide-save-cropped-objects-view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop. In CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code> you can select to save crops into nested folders with the input image filename.</span><a class="headerlink" href="#savecroppedobjects-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Add a SaveCroppedObjects module and select your desired <code class="docutils literal notranslate"><span class="pre">Object</span></code> and the <code class="docutils literal notranslate"><span class="pre">Image</span></code> to crop. In CellProfiler <code class="docutils literal notranslate"><span class="pre">4.2.2</span></code> you can select to save crops into nested folders with the input image filename.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="seealso admonition">

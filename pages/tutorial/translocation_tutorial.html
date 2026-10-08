@@ -439,7 +439,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-loaded-images-and-explore-the-piximi-interface">2. <strong>Check the loaded images and explore the Piximi interface</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-cells-find-out-the-cells-from-the-background">3. <strong>Segment Cells - Find out the cells from the background</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-segmentation-result-and-fix-the-segmentation-errors">4. <strong>Visualize segmentation result and fix the segmentation errors</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells"><strong>Classify cells</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">5. <strong>Classify cells</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-classifier-model">6. <strong>Train the Classifier model</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model">7. <strong>Evaluate model:</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">8. <strong>Measurement</strong></a></li>
@@ -472,10 +472,9 @@ document.write(`
 <h2><strong>Background information:</strong><a class="headerlink" href="#background-information" title="Permalink to this heading">#</a></h2>
 <section id="what-is-piximi">
 <h3><strong>What is Piximi?</strong><a class="headerlink" href="#what-is-piximi" title="Permalink to this heading">#</a></h3>
-<p>Piximi is a modern, no-programming image analysis tool leveraging deep learning. Implemented as a web application at <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi requires no installation and can be accessed by any modern web browser. Its client-only architecture preserves the security of researcher data by running all computation locally*.</p>
+<p>Piximi is a modern, no-programming image analysis tool leveraging deep learning. Implemented as a web application at <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi requires no installation and can be accessed by any modern web browser. Its client-only architecture preserves the security of researcher data by running all computation locally.</p>
 <p>Piximi is interoperable with existing tools and workflows by supporting import and export of common data and model formats. The intuitive interface and easy access to Piximi allows biological researchers to obtain insights into images within just a few minutes. Piximi aims to bring deep learning-powered image analysis to a broader community by eliminating barriers to entry.</p>
-<p>* except for the segmentations using Cellpose, which are sent to a remote server (with the permission of the user).</p>
-<p>Core functionalities: <strong>Annotator, Segmenter, Classifier, Measurements.</strong></p>
+<p>Core functionalities: <strong>Annotator, Segmentor, Classifier, Measurements.</strong></p>
 </section>
 <section id="goal-of-the-exercise">
 <h3><strong>Goal of the exercise</strong><a class="headerlink" href="#goal-of-the-exercise" title="Permalink to this heading">#</a></h3>
@@ -484,14 +483,14 @@ document.write(`
 <section id="context-of-the-sample-experiment">
 <h3><strong>Context of the sample experiment</strong><a class="headerlink" href="#context-of-the-sample-experiment" title="Permalink to this heading">#</a></h3>
 <p>In this experiment, researchers imaged fixed U2OS osteosarcoma (bone cancer) cells expressing a FOXO1A-GFP fusion protein and stained DAPI to label the nuclei. FOXO1 is a transcription factor that plays a key role in regulating gluconeogenesis and glycogenolysis through insulin signaling. FOXO1A dynamically shuttles between the cytoplasm and nucleus in response to various stimuli. Wortmannin, a PI3K inhibitor, can block nuclear export, resulting in the accumulation of FOXO1A in the nucleus.</p>
-<div class="centered-stack">
-<a class="reference internal image-reference" href="../../_images/f0x01a.png"><img alt="../../_images/f0x01a.png" src="../../_images/f0x01a.png" style="width: 300px;" /></a>
-<p><em>Schematic representation of FOXO1A mechanism</em></p>
+<a class="content-img fig-center fig-single reference internal image-reference" href="../../_images/f0x01a.png"><img alt="../../_images/f0x01a.png" class="content-img fig-center fig-single" src="../../_images/f0x01a.png" style="width: 300px;" /></a>
+<div class="tutorial-caption docutils">
+<p>Schematic representation of FOXO1A mechanism</p>
 </div>
 </section>
 <section id="materials-necessary-for-this-exercise">
 <h3><strong>Materials necessary for this exercise</strong><a class="headerlink" href="#materials-necessary-for-this-exercise" title="Permalink to this heading">#</a></h3>
-<p>The materials needed in this exercise can be downloaded from: <a class="reference download internal" download="" href="../../_downloads/07bc4137dea52bf1b73cfa486285f50f/Piximi_Translocation_Tutorial_RGB.zip"><span class="xref download myst">PiximiTutorial</span></a>. The “Piximi Translocation Tutorial RGB.zip” file contains a Piximi project, including all the images, already labeled with the corresponding treatment (Wortmannin concentration or Control). Download this file but <strong>do NOT unzip it</strong>!</p>
+<p>No download is needed: the images are included in Piximi as an example project called <strong>Translocation Tutorial</strong>. It contains all the images, already labeled with the corresponding treatment (Wortmannin concentration or Control).</p>
 </section>
 <section id="exercise-instructions">
 <h3><strong>Exercise instructions</strong><a class="headerlink" href="#exercise-instructions" title="Permalink to this heading">#</a></h3>
@@ -501,85 +500,88 @@ document.write(`
 <p>🔴 TO DO</p>
 <ul class="simple">
 <li><p>Start Piximi by going to:<a class="reference external" href="https://piximi.app/">https://piximi.app/</a></p></li>
-<li><p>Load the example project: Click “Open” - “Project” - “Project from Zip” to upload a project file for this tutorial from Zip, and you can optionally change the project name in the top left panel, such as “Piximi Exercise”. As it is loaded, you can see the progression in the top left corner logo <a class="reference internal" href="../../_images/Piximi_logo.png"><img alt="../../_images/Piximi_logo.png" src="../../_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
+<li><p>Load the example project: On the start screen, click <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Example</span> <span class="pre">Project</span></code> and select <code class="docutils literal notranslate"><span class="pre">Translocation</span> <span class="pre">Tutorial</span></code>. If you already have a project open, you can reach the same list through <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Example</span></code>. You can optionally change the project name in the top left panel, such as “Piximi Exercise”. As it is loaded, you can see the progression in the top left corner logo <a class="reference internal" href="../../_images/Piximi_logo.png"><img alt="../../_images/Piximi_logo.png" src="../../_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/open-zip-dark.webp"><img alt="../../_images/open-zip-dark.webp" class="theme-img dark-img content-img" src="../../_images/open-zip-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/open-zip-light.webp"><img alt="../../_images/open-zip-light.webp" class="theme-img light-img content-img" src="../../_images/open-zip-light.webp" style="width: 600px;" /></a>
-<p><em>Loading a project file.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-open-example.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-open-example.webp" />
+<img alt="../../_images/translocation-tutorial-light-open-example.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-open-example.webp" />
+<div class="tutorial-caption docutils">
+<p>Loading the Translocation Tutorial example project.</p>
 </div>
 </section>
 <section id="check-the-loaded-images-and-explore-the-piximi-interface">
 <h4>2. <strong>Check the loaded images and explore the Piximi interface</strong><a class="headerlink" href="#check-the-loaded-images-and-explore-the-piximi-interface" title="Permalink to this heading">#</a></h4>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/trans-project-images-dark.webp"><img alt="../../_images/trans-project-images-dark.webp" class="theme-img dark-img content-img" src="../../_images/trans-project-images-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/trans-project-images-light.webp"><img alt="../../_images/trans-project-images-light.webp" class="theme-img light-img content-img" src="../../_images/trans-project-images-light.webp" style="width: 600px;" /></a>
-<p><em>Viewing the project images.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-project-images.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-project-images.webp" />
+<img alt="../../_images/translocation-tutorial-light-project-images.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-project-images.webp" />
+<div class="tutorial-caption docutils">
+<p>Viewing the project images.</p>
 </div>
-<p>These 17 images represent Wortmannin treatments at eight different concentrations (expressed in nM), as well as mock treatments (0nM). Note the DAPI channel (Nuclei) is shown in magenta and that the GFP channel (FOXOA1) is shown in green.</p>
-<p>As you hover over the image, color labels are displayed on the left corner of the images. These annotations are from metadata in the zipped file we just uploaded. In this tutorial, the different colored labels indicate the concentration of Wortmannin, while the numbers represent the number of images in each category.</p>
-<p>Optionally, you can annotate the images manually by clicking “+ Category”, entering your label, and then selecting the image by clicking the images annotating the selected images by clicking <strong>“Categorize”</strong>. In this tutorial, we’ll skip this step since the labels were already uploaded at the beginning. More information can be found in the <a class="reference internal" href="../detail/projectviewer.html"><span class="doc std std-doc">Project Viewer</span></a> section of the docs.</p>
+<p>These 17 images represent Wortmannin treatments at ten different concentrations (expressed in nM), as well as mock treatments (0 nM). Note the DAPI channel (Nuclei) is shown in magenta and that the GFP channel (FOXOA1) is shown in green.</p>
+<p>The colored labels at the top left of each image, and the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> list on the left, come from metadata saved with the example project. In this tutorial, the different colored labels indicate the concentration of Wortmannin, while the numbers in the list represent the number of images in each category.</p>
+<p>Optionally, you can label the images manually by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> (New Category) icon next to <code class="docutils literal notranslate"><span class="pre">Categories</span></code> and entering a name, then selecting images in the grid and clicking the <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> icon above them to assign a category. In this tutorial, we’ll skip this step since the labels are already part of the project. More information can be found in the <a class="reference internal" href="../detail/projectviewer.html"><span class="doc std std-doc">Project Viewer</span></a> section of the docs.</p>
 </section>
 <section id="segment-cells-find-out-the-cells-from-the-background">
 <h4>3. <strong>Segment Cells - Find out the cells from the background</strong><a class="headerlink" href="#segment-cells-find-out-the-cells-from-the-background" title="Permalink to this heading">#</a></h4>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>To start the prediction on all images, click “Select All Images” in the top panel.</p></li>
+<li><p>To start the prediction on all images, click the <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">all</span></code> icon above the images.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/select-all-dark.webp"><img alt="../../_images/select-all-dark.webp" class="theme-img dark-img content-img" src="../../_images/select-all-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/select-all-light.webp"><img alt="../../_images/select-all-light.webp" class="theme-img light-img content-img" src="../../_images/select-all-light.webp" style="width: 600px;" /></a>
+<img alt="../../_images/translocation-tutorial-dark-select-all.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-select-all.webp" />
+<img alt="../../_images/translocation-tutorial-light-select-all.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-select-all.webp" />
+<div class="tutorial-caption docutils">
+<p>Selecting all images.</p>
 </div>
-</br>
-</br>
 <ul class="simple">
-<li><p>Change the Learning Task to “SEGMENTATION”.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> section, change the task to <code class="docutils literal notranslate"><span class="pre">Segmentation</span></code>.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/segmenter-section-dark.webp"><img alt="../../_images/segmenter-section-dark.webp" class="theme-img dark-img content-img" src="../../_images/segmenter-section-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/segmenter-section-light.webp"><img alt="../../_images/segmenter-section-light.webp" class="theme-img light-img content-img" src="../../_images/segmenter-section-light.webp" style="width: 600px;" /></a>
+<img alt="../../_images/translocation-tutorial-dark-segmenter-section.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-dark-segmenter-section.webp" />
+<img alt="../../_images/translocation-tutorial-light-segmenter-section.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-light-segmenter-section.webp" />
+<div class="tutorial-caption docutils">
+<p>Switching the Learning Task to Segmentation.</p>
 </div>
-</br>
-</br>
 <ul class="simple">
-<li><p>Click on “+ LOAD MODEL” and the window will pop up, allowing you to choose a pretrained model.</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Model</span></code> and the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Segmentation</span> <span class="pre">Model</span></code> window will pop up, allowing you to choose a pretrained model.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/load-model-dark.webp"><img alt="../../_images/load-model-dark.webp" class="theme-img dark-img content-img" src="../../_images/load-model-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/load-model-light.webp"><img alt="../../_images/load-model-light.webp" class="theme-img light-img content-img" src="../../_images/load-model-light.webp" style="width: 600px;" /></a>
+<img alt="../../_images/translocation-tutorial-dark-load-model.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-load-model.webp" />
+<img alt="../../_images/translocation-tutorial-light-load-model.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-load-model.webp" />
+<div class="tutorial-caption docutils">
+<p>The Load Segmentation Model window.</p>
 </div>
-</br>
-</br>
 <ul class="simple">
-<li><p>For today’s exercise, select “Cellpose”. More information about the model supported can be found <span class="xref myst">here</span>. Click “Open Segmentation Model” to load your model and select it.</p></li>
+<li><p>For today’s exercise, select <code class="docutils literal notranslate"><span class="pre">Cellpose-SAM</span></code> from the <code class="docutils literal notranslate"><span class="pre">Pre-trained</span> <span class="pre">Models</span></code> list. More information about the models supported can be found <span class="xref myst">here</span>. Click <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Model</span></code> to load your model and select it. The model runs in your browser, so the first load downloads the model files (Cellpose-SAM is about 588 MB and needs a WebGPU-capable browser).</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/open-model-dark.webp"><img alt="../../_images/open-model-dark.webp" class="theme-img dark-img content-img" src="../../_images/open-model-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/open-model-light.webp"><img alt="../../_images/open-model-light.webp" class="theme-img light-img content-img" src="../../_images/open-model-light.webp" style="width: 600px;" /></a>
+<img alt="../../_images/translocation-tutorial-dark-open-model.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-open-model.webp" />
+<img alt="../../_images/translocation-tutorial-light-open-model.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-open-model.webp" />
+<div class="tutorial-caption docutils">
+<p>Choosing Cellpose-SAM from the Pre-trained Models list.</p>
 </div>
-</br>
-</br>
 <ul class="simple">
-<li><p>Finally, click “Predict Model”. You’ll see the prediction progress displayed in the top left corner beneath the Piximi logo.</p></li>
+<li><p>Finally, click <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Segmentation</span></code>. The segmented objects will be added to the project as a new kind, named after the <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">kind</span> <span class="pre">name</span></code> (<code class="docutils literal notranslate"><span class="pre">cellpose_cells</span></code> by default). Piximi shows the progress of the segmentation while it runs.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/predict-dark.webp"><img alt="../../_images/predict-dark.webp" class="theme-img dark-img content-img" src="../../_images/predict-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/predict-light.webp"><img alt="../../_images/predict-light.webp" class="theme-img light-img content-img" src="../../_images/predict-light.webp" style="width: 600px;" /></a>
+<img alt="../../_images/translocation-tutorial-dark-predict.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-predict.webp" />
+<img alt="../../_images/translocation-tutorial-light-predict.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-predict.webp" />
+<div class="tutorial-caption docutils">
+<p>Running the segmentation.</p>
 </div>
-</br>
-</br>
-<p>Please note that the previous steps were performed on your local machine, meaning your images are stored locally. However, Cellpose inference runs in the cloud, which means your images will be uploaded for processing. If your images are highly sensitive, please exercise caution when using cloud-based services.</p>
+<p>Please note that the previous steps were performed on your local machine, meaning your images are stored locally. Cellpose-SAM inference also runs locally in your browser, so your images are never uploaded.</p>
 </section>
 <section id="visualize-segmentation-result-and-fix-the-segmentation-errors">
 <h4>4. <strong>Visualize segmentation result and fix the segmentation errors</strong><a class="headerlink" href="#visualize-segmentation-result-and-fix-the-segmentation-errors" title="Permalink to this heading">#</a></h4>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click on the <strong>CELLPOSE_CELLS</strong> tab to check the individual cells that have been segmented. Select some identified objects or whole images, then click “Annotate” in the top bar to view them in the ImageViewer.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Annotations</span></code> above the image grid and then the <strong>cellpose_cells</strong> tab to check the individual cells that have been segmented.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/image-viewer-dark.webp"><img alt="../../_images/image-viewer-dark.webp" class="theme-img dark-img content-img" src="../../_images/image-viewer-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/image-viewer-light.webp"><img alt="../../_images/image-viewer-light.webp" class="theme-img light-img content-img" src="../../_images/image-viewer-light.webp" style="width: 600px;" /></a>
-<p><em>Viewing the project images in the Image Viewer.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-cellpose-cells.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-cellpose-cells.webp" />
+<img alt="../../_images/translocation-tutorial-light-cellpose-cells.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-cellpose-cells.webp" />
+<div class="tutorial-caption docutils">
+<p>Viewing the cellpose_cells kind.</p>
+</div>
+<ul class="simple">
+<li><p>Select some identified objects or whole images, then click <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Viewer</span></code> in the top bar to view them in the Image Viewer.</p></li>
+</ul>
+<img alt="../../_images/translocation-tutorial-dark-image-viewer.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-image-viewer.webp" />
+<img alt="../../_images/translocation-tutorial-light-image-viewer.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-image-viewer.webp" />
+<div class="tutorial-caption docutils">
+<p>Viewing the segmented cells in the Image Viewer.</p>
 </div>
 <ul class="simple">
 <li><p>Optionally, here you can manually refine the segmentation using the annotator tools. The Piximi annotator provides several options to <strong>add</strong>, <strong>subtract</strong>, or <strong>intersect</strong> annotations. Additionally, the <strong>selection tool</strong> allows you to <strong>resize</strong> or <strong>delete</strong> specific annotations. To begin editing, select specific or all images by clicking the checkbox at the top.</p></li>
@@ -591,133 +593,129 @@ document.write(`
 </ul>
 </section>
 <section id="classify-cells">
-<h4><strong>Classify cells</strong><a class="headerlink" href="#classify-cells" title="Permalink to this heading">#</a></h4>
-<p>Reason for doing this: We want to classify the ‘CELLPOSE_CELLS’ based on GFP distribution (on Nuclei, cytoplasm, or no GFP) without manually labeling all of them. To do this, we can use the classification function in Piximi, which allows us to train a classifier using a small subset of labeled data and then automatically classify the remaining cells.</p>
+<h4>5. <strong>Classify cells</strong><a class="headerlink" href="#classify-cells" title="Permalink to this heading">#</a></h4>
+<p>Reason for doing this: We want to classify the <code class="docutils literal notranslate"><span class="pre">cellpose_cells</span></code> based on GFP distribution (on Nuclei, cytoplasm, or no GFP) without manually labeling all of them. To do this, we can use the classification function in Piximi, which allows us to train a classifier using a small subset of labeled data and then automatically classify the remaining cells.</p>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Go to the <strong>CELLPOSE_CELLS</strong> tab that displays the segmented objects.</p></li>
+<li><p>Go to the <strong>cellpose_cells</strong> tab (in the <code class="docutils literal notranslate"><span class="pre">Annotations</span></code> view) that displays the segmented objects, and click the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> button in the <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> section on the left panel. The categories listed on the left now belong to the cells rather than to the images.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/cellpose_cells-dark.webp"><img alt="../../_images/cellpose_cells-dark.webp" class="theme-img dark-img content-img" src="../../_images/cellpose_cells-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/cellpose_cells-light.webp"><img alt="../../_images/cellpose_cells-light.webp" class="theme-img light-img content-img" src="../../_images/cellpose_cells-light.webp" style="width: 600px;" /></a>
-<p><em>Viewing the cellpose_cells kind.</em></p>
+<div class="fig-float fig-wrap docutils">
+<img alt="../../_images/translocation-tutorial-dark-classifier-section.webp" class="theme-img dark-img content-img fig-315" src="../../_images/translocation-tutorial-dark-classifier-section.webp" />
+<img alt="../../_images/translocation-tutorial-light-classifier-section.webp" class="theme-img light-img content-img fig-315" src="../../_images/translocation-tutorial-light-classifier-section.webp" />
+<div class="tutorial-caption docutils">
+<p>The classification section of the left panel.</p>
+</div>
 </div>
 <ul class="simple">
-<li><p>Click on the <strong>Classification</strong> tab on the left panel.</p></li>
+<li><p>Create new categories by clicking the <code class="docutils literal notranslate"><span class="pre">+</span></code> (New Category) icon next to <code class="docutils literal notranslate"><span class="pre">Categories</span></code>, entering a name in the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Category</span></code> window and clicking <code class="docutils literal notranslate"><span class="pre">Confirm</span></code>. Add three categories: “Cytoplasmic_GFP”, “Nuclear_GFP” and “No_GFP”.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/classifier-section-dark1.webp"><img alt="../../_images/classifier-section-dark1.webp" class="theme-img dark-img content-img" src="../../_images/classifier-section-dark1.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/classifier-section-light1.webp"><img alt="../../_images/classifier-section-light1.webp" class="theme-img light-img content-img" src="../../_images/classifier-section-light1.webp" style="width: 600px;" /></a>
-<p><em>Action Drawer Classifier Section.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-classifier-create-category.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-classifier-create-category.webp" />
+<img alt="../../_images/translocation-tutorial-light-classifier-create-category.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-classifier-create-category.webp" />
+<div class="tutorial-caption docutils">
+<p>Creating a category.</p>
 </div>
 <ul class="simple">
-<li><p>Create new categories by clicking <strong>“+ Category”</strong>. Adding “Cytoplasmatic_GFP”, “Nuclear_GFP”, “No_GFP” three categories.</p></li>
+<li><p>Click on the cells that match your criteria; each click adds a cell to the selection (use the <img alt="deselect-all icon" src="../../_images/icon-dark-deselect-all.webp" /><img alt="deselect-all icon" src="../../_images/icon-light-deselect-all.webp" /> <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> icon to start over). Aim to assign <strong>~20–40 cells per category</strong>. Once selected, click the <img alt="categorize icon" src="../../_images/icon-dark-categorize.webp" /><img alt="categorize icon" src="../../_images/icon-light-categorize.webp" /> <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> icon above the cells and choose the category to assign it to the selected cells.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/classifier-create-category-dark.webp"><img alt="../../_images/classifier-create-category-dark.webp" class="theme-img dark-img content-img" src="../../_images/classifier-create-category-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/classifier-create-category-light.webp"><img alt="../../_images/classifier-create-category-light.webp" class="theme-img light-img content-img" src="../../_images/classifier-create-category-light.webp" style="width: 600px;" /></a>
-<p><em>Create Category Button.</em></p>
-</div>
-<ul class="simple">
-<li><p>Click on the images that match your criteria. You can select multiple cells by holding <strong>Command (⌘)</strong> on Mac or <strong>Shift</strong> on Linux. Aim to assign <strong>~20–40 cells per category</strong>. Once selected, click <strong>“Categorize”</strong> to assign the labels to the selected cells.</p></li>
-</ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/categorize-dark.webp"><img alt="../../_images/categorize-dark.webp" class="theme-img dark-img content-img" src="../../_images/categorize-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/categorize-light.webp"><img alt="../../_images/categorize-light.webp" class="theme-img light-img content-img" src="../../_images/categorize-light.webp" style="width: 600px;" /></a>
-<p><em>Classifying individual cells based on GFP presence and localization.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-categorize.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-categorize.webp" />
+<img alt="../../_images/translocation-tutorial-light-categorize.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-categorize.webp" />
+<div class="tutorial-caption docutils">
+<p>Classifying individual cells based on GFP presence and localization.</p>
 </div>
 </section>
 <section id="train-the-classifier-model">
 <h4>6. <strong>Train the Classifier model</strong><a class="headerlink" href="#train-the-classifier-model" title="Permalink to this heading">#</a></h4>
 <p>🔴 TO DO</p>
 <ul>
-<li><p>Click the ”<a class="reference internal" href="img/tutorial_images/Fit_model.png"><img alt="Fit model icon" src="img/tutorial_images/Fit_model.png" style="width: 20px;" /></a> - Fit Model” icon to open the model hyperparameter settings. For today’s exercise, we’ll adjust a few parameters:</p></li>
-<li><p>Click on “Architecture Settings” and set the Model Architecture to <strong>SimpleCNN</strong>.</p></li>
-<li><p>Update the Input Dimensions to:</p>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Fit</span></code> in the <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> section to open the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> window with the model settings (<code class="docutils literal notranslate"><span class="pre">Hyperparameters</span></code> tab). For today’s exercise, we’ll adjust a few parameters:</p></li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Architecture</span></code> is set to <strong>Simple CNN</strong> (the default).</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Preprocessing</span> <span class="pre">Settings</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Augmentation</span></code>, update the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Shape</span></code> to:</p>
 <ul class="simple">
-<li><p>Input rows: 48</p></li>
-<li><p>Input cols: 48</p></li>
-<li><p>Channels: 3 (since our images are in RGB format)</p></li>
+<li><p>Row: 48</p></li>
+<li><p>Col: 48</p></li>
+<li><p>Ch.: 3 (since our images are in RGB format)</p></li>
 </ul>
 <p>(You can change to other numbers such as 64, 128)</p>
 </li>
-<li><p>In the “Data Partitioning” section, set the Training Percentage to 0.75, which reserves 25% of the labeled data for validation.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Partitioning</span></code>, set the <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Percentage</span></code> to 0.75, which reserves 25% of the labeled data for validation.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/training-settings-dark.webp"><img alt="../../_images/training-settings-dark.webp" class="theme-img dark-img content-img" src="../../_images/training-settings-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/training-settings-light.webp"><img alt="../../_images/training-settings-light.webp" class="theme-img light-img content-img" src="../../_images/training-settings-light.webp" style="width: 600px;" /></a>
-<p><em>Classifier Model Setup.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-training-settings.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-settings.webp" />
+<img alt="../../_images/translocation-tutorial-light-training-settings.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-settings.webp" />
+<div class="tutorial-caption docutils">
+<p>Classifier model setup.</p>
 </div>
 <ul class="simple">
-<li><p>When you click “<strong>Fit Classifier</strong>” in Piximi, two training plots will appear “<strong>Accuracy vs Epochs</strong>” and “<strong>Loss vs Epochs</strong>”. Each plot shows curves for both <strong>training</strong> and <strong>validation</strong> data.</p></li>
+<li><p>When you click <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code> in Piximi, the window switches to the <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Plots</span></code> tab, where two training plots appear, “<strong>Accuracy per Epoch</strong>” and “<strong>Loss per Epoch</strong>”. Each plot shows curves for both <strong>training</strong> and <strong>validation</strong> data.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/training-plots-dark.webp"><img alt="../../_images/training-plots-dark.webp" class="theme-img dark-img content-img" src="../../_images/training-plots-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/training-plots-light.webp"><img alt="../../_images/training-plots-light.webp" class="theme-img light-img content-img" src="../../_images/training-plots-light.webp" style="width: 600px;" /></a>
-<p><em>Training History Plots.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-training-plots.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-plots.webp" />
+<img alt="../../_images/translocation-tutorial-light-training-plots.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-plots.webp" />
+<div class="tutorial-caption docutils">
+<p>Training history plots.</p>
 </div>
 <ul class="simple">
 <li><p>In the <strong>accuracy plot</strong>, you’ll see how well the model is learning. Ideally, both training and validation accuracy should increase and stay close.</p></li>
 <li><p>In the <strong>loss plot</strong>, lower values mean better performance. If validation loss starts rising while training loss keeps dropping, the model might be overfitting.</p></li>
 </ul>
-<p>These plots help you understand how the model is learning and whether adjustments are needed.</p>
+<p>These plots help you understand how the model is learning and whether adjustments are needed. Close the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> window with the <img alt="close" src="../../_images/close-icon.svg" /> in its top right corner when you are done.</p>
 </section>
 <section id="evaluate-model">
 <h4>7. <strong>Evaluate model:</strong><a class="headerlink" href="#evaluate-model" title="Permalink to this heading">#</a></h4>
 <p>🔴 TO DO</p>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/training-eval-dark.webp"><img alt="../../_images/training-eval-dark.webp" class="theme-img dark-img content-img" src="../../_images/training-eval-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/training-eval-light.webp"><img alt="../../_images/training-eval-light.webp" class="theme-img light-img content-img" src="../../_images/training-eval-light.webp" style="width: 600px;" /></a>
-<p><em>Training Run Evaluation.</em></p>
+<ul class="simple">
+<li><p>Click <img alt="chart" src="../../_images/chart-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> to evaluate the model we just trained. The confusion matrix and evaluation metrics compare the model’s predictions on the validation cells to their ground truth labels.</p></li>
+</ul>
+<img alt="../../_images/translocation-tutorial-dark-training-eval.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-eval.webp" />
+<img alt="../../_images/translocation-tutorial-light-training-eval.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-eval.webp" />
+<div class="tutorial-caption docutils">
+<p>Training run evaluation.</p>
 </div>
 <ul class="simple">
-<li><p>Click “<strong>Predict Model</strong>” to apply the model we just trained. This step will generate predictions on the cells we did not annotate.</p></li>
+<li><p>Click <img alt="label" src="../../_images/label-important-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Predict</span></code> to apply the model we just trained. This step will generate predictions on the cells we did not categorize.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/predict-classifier-dark.webp"><img alt="../../_images/predict-classifier-dark.webp" class="theme-img dark-img content-img" src="../../_images/predict-classifier-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/predict-classifier-light.webp"><img alt="../../_images/predict-classifier-light.webp" class="theme-img light-img content-img" src="../../_images/predict-classifier-light.webp" style="width: 600px;" /></a>
-<p><em>Predict Classifier.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-predict-classifier.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-dark-predict-classifier.webp" />
+<img alt="../../_images/translocation-tutorial-light-predict-classifier.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-light-predict-classifier.webp" />
+<div class="tutorial-caption docutils">
+<p>Predict with the classifier.</p>
 </div>
 <ul class="simple">
-<li><p>You can review the predictions in the CELLPOSE_CELLS tab and delete any wrongly assigned categories.</p></li>
-<li><p>Optionally, you can continue using the labels to refine the ground truth and improve the classifier. This process is part of the <strong>Human-in-the-loop classification</strong>, where you iteratively correct and train the model based on human input.</p></li>
-<li><p>Click “<strong>Evaluate Model</strong>” to evaluate the model we just trained. The confusion metrics and evaluation metrics can be compared to the ground truth.</p></li>
-<li><p>Click “Accept Prediction (Hold)”, to assign the predicted labels to all the objects.</p></li>
+<li><p>You can review the predictions in the <strong>cellpose_cells</strong> tab. Predicted categories are only shown, not applied, until you accept them, and <code class="docutils literal notranslate"><span class="pre">Clear</span> <span class="pre">Predictions</span></code> discards them.</p></li>
+<li><p>Optionally, you can continue categorizing cells to refine the ground truth and improve the classifier, then fit and predict again. This process is part of the <strong>Human-in-the-loop classification</strong>, where you iteratively correct and train the model based on human input.</p></li>
+<li><p>Click and hold <img alt="check-icon" src="../../_images/check-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Predictions</span> <span class="pre">(Hold)</span></code> to assign the predicted labels to all the objects.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/accept-predictions-dark.webp"><img alt="../../_images/accept-predictions-dark.webp" class="theme-img dark-img content-img" src="../../_images/accept-predictions-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/accept-predictions-light.webp"><img alt="../../_images/accept-predictions-light.webp" class="theme-img light-img content-img" src="../../_images/accept-predictions-light.webp" style="width: 600px;" /></a>
-<p><em>Accept Predictions.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-accept-predictions.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-accept-predictions.webp" />
+<img alt="../../_images/translocation-tutorial-light-accept-predictions.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-accept-predictions.webp" />
+<div class="tutorial-caption docutils">
+<p>Accept predictions.</p>
 </div>
 </section>
 <section id="measurement">
 <h4>8. <strong>Measurement</strong><a class="headerlink" href="#measurement" title="Permalink to this heading">#</a></h4>
-<p>Once you are satisfied with the classification, we will proceed to measure the objects. The goal of today’s exercise is to determine the minimum concentration of Wortmannin required to block the export of FOXO1A-GFP from the nuclei. To do this, we can measure the total GFP intensity at either the image level or the object level.</p>
+<p>Once you are satisfied with the classification, we will proceed to measure the objects. The goal of today’s exercise is to determine the minimum concentration of Wortmannin required to block the export of FOXO1A-GFP from the nuclei. To do this, we can measure the total GFP intensity at either the image level or the object level. Here we measure the images, which carry the Wortmannin concentration as their category.</p>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click “Measurement” in the top right corner.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Measure</span></code> in the top bar of the Project Viewer.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/nav-measurements-dark.webp"><img alt="../../_images/nav-measurements-dark.webp" class="theme-img dark-img content-img" src="../../_images/nav-measurements-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/nav-measurements-light.webp"><img alt="../../_images/nav-measurements-light.webp" class="theme-img light-img content-img" src="../../_images/nav-measurements-light.webp" style="width: 600px;" /></a>
-<p><em>Navigate to Measurements.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-nav-measurements.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-nav-measurements.webp" />
+<img alt="../../_images/translocation-tutorial-light-nav-measurements.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-nav-measurements.webp" />
+<div class="tutorial-caption docutils">
+<p>Navigate to Measurements.</p>
 </div>
 <ul class="simple">
-<li><p>Click the “<strong>+</strong>” next to “<strong>Tables</strong>” and select “<strong>Image</strong>” and click “<strong>Confirm</strong>”. <em>Note: Preparing the data for the measurement step may take some time to process</em>.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Table</span></code>, keep <code class="docutils literal notranslate"><span class="pre">Images</span></code> as the kind and click <code class="docutils literal notranslate"><span class="pre">Confirm</span></code>. <em>Note: Preparing the data for the measurement step may take some time to process</em>.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/measurements-table-create-dark.webp"><img alt="../../_images/measurements-table-create-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-table-create-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/measurements-table-create-light.webp"><img alt="../../_images/measurements-table-create-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-table-create-light.webp" style="width: 600px;" /></a>
-<p><em>Create “<strong>Image</strong>” measurement table.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-measurements-table-create.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-measurements-table-create.webp" />
+<img alt="../../_images/translocation-tutorial-light-measurements-table-create.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-measurements-table-create.webp" />
+<div class="tutorial-caption docutils">
+<p>Create an “Images” measurement table.</p>
 </div>
 <ul class="simple">
-<li><p>In the “<strong>Splits</strong>” section, click on ‘Category’ to include all categories in the measurement.</p></li>
-<li><p>Under “<strong>Total</strong>”, click on “<strong>Channel 1</strong>” to select the measurement for GFP. You will see the measurement in the “<strong>DATA GRID</strong>” tab. Measurements are presented as either mean or median values, and the full dataset is available upon exporting the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p></li>
+<li><p>In the left panel, expand <code class="docutils literal notranslate"><span class="pre">Intensity</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Total</span></code> and tick <code class="docutils literal notranslate"><span class="pre">Channel-1</span></code> to select the measurement for GFP. You will see the measurement in the data grid.</p></li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Split</span> <span class="pre">Options</span></code>, drag <code class="docutils literal notranslate"><span class="pre">Category</span></code> from <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">Dimensions</span></code> into <code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">Grouping</span></code> to show the measurements for each category (here, each Wortmannin concentration). The grid shows the <code class="docutils literal notranslate"><span class="pre">Count</span></code>, <code class="docutils literal notranslate"><span class="pre">Mean</span></code>, <code class="docutils literal notranslate"><span class="pre">Median</span></code> and <code class="docutils literal notranslate"><span class="pre">Std</span> <span class="pre">Dev</span></code> of each measurement, and the full dataset is available upon exporting the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/measurements-data-grid-dark.webp"><img alt="../../_images/measurements-data-grid-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-data-grid-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/measurements-data-grid-light.webp"><img alt="../../_images/measurements-data-grid-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-data-grid-light.webp" style="width: 600px;" /></a>
-<p><em>Calculated Measurements.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-measurements-data-grid.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-data-grid.webp" />
+<img alt="../../_images/translocation-tutorial-light-measurements-data-grid.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-data-grid.webp" />
+<div class="tutorial-caption docutils">
+<p>Calculated measurements.</p>
 </div>
 </section>
 <section id="visualization">
@@ -725,30 +723,30 @@ document.write(`
 <p>After generating the measurements, you can plot the measurements.</p>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click on “<strong>PLOTS</strong>” to visualize the measurements.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Plot</span> <span class="pre">View</span></code> above the table to visualize the measurements.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/measurements-plot-switch-dark.webp"><img alt="../../_images/measurements-plot-switch-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-plot-switch-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/measurements-plot-switch-light.webp"><img alt="../../_images/measurements-plot-switch-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-plot-switch-light.webp" style="width: 600px;" /></a>
-<p><em>Measurement Plots.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-measurements-plot-switch.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-plot-switch.webp" />
+<img alt="../../_images/translocation-tutorial-light-measurements-plot-switch.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-plot-switch.webp" />
+<div class="tutorial-caption docutils">
+<p>Measurement plots.</p>
 </div>
 <ul class="simple">
-<li><p>Set the plot type to “<strong>Swarm</strong>” and choose a color theme based on your preference.</p></li>
-<li><p>Select “<strong>Y-axis</strong>” as “<strong>intensity-total-channel-1</strong>” and set “<strong>SwarmGroup</strong>” to “<strong>category</strong>”; this will generate a curve showing how GFP intensity varies across different categories.</p></li>
-<li><p>Selecting “<strong>Show Statistics</strong>” will display the mean, as well as the upper and lower confidence boundaries, on the plot.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">Plot</span></code> to <code class="docutils literal notranslate"><span class="pre">Swarm</span></code> and choose a <code class="docutils literal notranslate"><span class="pre">Color</span> <span class="pre">Theme</span></code> based on your preference.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Y-axis</span></code> as <code class="docutils literal notranslate"><span class="pre">total-Channel-1</span></code> and set <code class="docutils literal notranslate"><span class="pre">SwarmGroup</span></code> to <code class="docutils literal notranslate"><span class="pre">category</span></code>; this will show how GFP intensity varies across the different categories.</p></li>
+<li><p>Selecting <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Statistics</span></code> will overlay box plots on the swarms, displaying the median, the upper and lower quartiles, and the minimum and maximum of each category.</p></li>
 <li><p>Optionally, you can experiment with different plot types and axes to see if the data reveals additional insights.</p></li>
 </ul>
-<div class="centered-stack">
-<a class="theme-img dark-img content-img reference internal image-reference" href="../../_images/measurements-swarm-plot-dark.webp"><img alt="../../_images/measurements-swarm-plot-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-swarm-plot-dark.webp" style="width: 600px;" /></a>
-<a class="theme-img light-img content-img reference internal image-reference" href="../../_images/measurements-swarm-plot-light.webp"><img alt="../../_images/measurements-swarm-plot-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-swarm-plot-light.webp" style="width: 600px;" /></a>
-<p><em>Calculated Measurements.</em></p>
+<img alt="../../_images/translocation-tutorial-dark-measurements-swarm-plot.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-swarm-plot.webp" />
+<img alt="../../_images/translocation-tutorial-light-measurements-swarm-plot.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-swarm-plot.webp" />
+<div class="tutorial-caption docutils">
+<p>Swarm plot of the total GFP intensity per category.</p>
 </div>
 </section>
 <section id="export-results-and-save-the-project">
 <h4>10. <strong>Export results and save the project</strong><a class="headerlink" href="#export-results-and-save-the-project" title="Permalink to this heading">#</a></h4>
 <p>🔴 TO DO</p>
 <ul class="simple">
-<li><p>Click “SAVE” in the top left corner to save the entire project. You’ll see the Piximi logo animation as the save progresses <a class="reference internal" href="../../_images/Piximi_Progress_logo.png"><img alt="../../_images/Piximi_Progress_logo.png" src="../../_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Save</span></code> in the top left corner to save the entire project. You’ll see the Piximi logo animation as the save progresses <a class="reference internal" href="../../_images/Piximi_Progress_logo.png"><img alt="../../_images/Piximi_Progress_logo.png" src="../../_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
 </ul>
 </section>
 <section id="supporting-information">
@@ -834,7 +832,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-loaded-images-and-explore-the-piximi-interface">2. <strong>Check the loaded images and explore the Piximi interface</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#segment-cells-find-out-the-cells-from-the-background">3. <strong>Segment Cells - Find out the cells from the background</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-segmentation-result-and-fix-the-segmentation-errors">4. <strong>Visualize segmentation result and fix the segmentation errors</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells"><strong>Classify cells</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-cells">5. <strong>Classify cells</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#train-the-classifier-model">6. <strong>Train the Classifier model</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-model">7. <strong>Evaluate model:</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">8. <strong>Measurement</strong></a></li>

@@ -431,17 +431,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-selection">Task Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-i-o">Model I/O</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-description">Model Description</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-operations">Model Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit">Fit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-settings">Model Settings</a></li>
 </ul>
             </nav>
         </div>
@@ -456,67 +447,59 @@ document.write(`
   <section id="segmentation">
 <h1>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this heading">#</a></h1>
 <p>The image segmentation module allows researchers to quickly identify cells or nuclei by selecting pre-trained segmentation models. Users can choose a model from the available options and apply it to images that are opened and selected.</p>
-<div class="warning admonition">
-<p class="admonition-title">Cellpose: Remote Computation</p>
-<p>All of the models run locally on your own device <strong>EXCEPT</strong> the Cellpose model. This has to do with the difficulty converting the Cellpose model, which utilized many custom functions, to a usable TFJS model. To get around this, we connect to the <a class="reference external" href="https://aicell.io/project/bioengine/">BioEngine</a>, maintained by the <a class="reference external" href="https://aicell.io/">AICell Lab</a>, server to run this model. It is possible that the server may stop responding and you will get an error during inference. If this happens you may just need to wait a little while for the server to reboot and try again.</p>
+<div class="note admonition">
+<p class="admonition-title">Models run on your device</p>
+<p>All of the segmentation models run locally in your browser, so your images are never sent to a server. The model files are downloaded the first time you load a model, and cached afterwards. Cellpose-SAM is a large model (about 588 MB) and requires a browser with WebGPU support (Chrome 135 or later, or Safari 17.4 or later), so its first load can take a while.</p>
 </div>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/segmentation-section-dark.webp" class="theme-img dark-img content-img" src="../../_images/segmentation-section-dark.webp" />
-<img alt="../../_images/segmentation-section-light.webp" class="theme-img light-img content-img" src="../../_images/segmentation-section-light.webp" />
-<br/>
-<br/>
+<img alt="../../_images/segmenter-dark-section.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/segmenter-dark-section.webp" />
+<img alt="../../_images/segmenter-light-section.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/segmenter-light-section.webp" />
 <ol class="arabic simple">
-<li><p>Task Selection</p></li>
-<li><p>Model I/O</p></li>
-<li><p>Model Description</p></li>
-<li><p>Model Operations</p></li>
+<li><p><strong>Model Selection and Operations</strong>: Choose a model, and run it on the selected images.</p></li>
 </ol>
 </section>
 <section id="task-selection">
 <h2>Task Selection<a class="headerlink" href="#task-selection" title="Permalink to this heading">#</a></h2>
 <p>Switch between classification and segmentation tasks. The tasks will operate on the currently displayed Kind.</p>
 </section>
-<section id="model-i-o">
-<h2>Model I/O<a class="headerlink" href="#model-i-o" title="Permalink to this heading">#</a></h2>
 <section id="model-selection">
-<h3>Model Selection<a class="headerlink" href="#model-selection" title="Permalink to this heading">#</a></h3>
-<img alt="../../_images/load-seg-dark.webp" class="theme-img dark-img content-img" src="../../_images/load-seg-dark.webp" />
-<img alt="../../_images/load-seg-light.webp" class="theme-img light-img content-img" src="../../_images/load-seg-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Model Selection</strong></p>
+<h2>Model Selection<a class="headerlink" href="#model-selection" title="Permalink to this heading">#</a></h2>
+<p>Click <strong>Select Model</strong> to choose a pre-trained model.</p>
+<img alt="../../_images/segmenter-dark-load-model-selected.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/segmenter-dark-load-model-selected.webp" />
+<img alt="../../_images/segmenter-light-load-model-selected.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/segmenter-light-load-model-selected.webp" />
+<p><strong>Pre-trained Models</strong></p>
 <p>Piximi provides several segmentation models to choose from:</p>
 <ul class="simple">
-<li><p>Cellpose (remote)</p></li>
-<li><p>Stardist (fluo, VHE)</p></li>
+<li><p>Cellpose-SAM</p></li>
+<li><p>Stardist (Versatile) Fluorescence Nuclei</p></li>
+<li><p>Stardist (Versatile) H&amp;E Nuclei</p></li>
 <li><p>Gland Segmentation</p></li>
 <li><p>COCO-SSD</p></li>
 </ul>
-<p>More information about the models can be found in the <span class="xref myst">Segmentation Tutorial</span>.</p>
-<p><strong>2. Model Details</strong></p>
-<p>Displays information about the model, its sources, the Kind output, and a potential use-case.</p>
+<p>More information about the models can be found in the <a class="reference internal" href="../tutorial/segmentation-tutorial.html"><span class="doc std std-doc">Segmentation Tutorial</span></a>.</p>
+<p><strong>Model Details</strong></p>
+<p>Displays information about the model, its sources, the Kind it outputs, and a potential use-case.</p>
 </section>
-</section>
-<section id="model-description">
-<h2>Model Description<a class="headerlink" href="#model-description" title="Permalink to this heading">#</a></h2>
-<p>Display the name of the currently selected model, as well as the name of the Kind of object it identifies.</p>
-</section>
-<section id="model-operations">
-<h2>Model Operations<a class="headerlink" href="#model-operations" title="Permalink to this heading">#</a></h2>
-<section id="fit">
-<h3>Fit<a class="headerlink" href="#fit" title="Permalink to this heading">#</a></h3>
-<p>We are currently working on support for training a segmentation model.</p>
-</section>
-<section id="predict">
-<h3>Predict<a class="headerlink" href="#predict" title="Permalink to this heading">#</a></h3>
-<p>Clicking the <em>Predict</em> button will begin running inference on the images/object of the displayed Kind, using the selected model. A new Kind will be created and populated with the identified objects.</p>
-</section>
-<section id="evaluate">
-<h3>Evaluate<a class="headerlink" href="#evaluate" title="Permalink to this heading">#</a></h3>
-<p>Since we do not support segmentation model training at this time, there is nothing to evaluate.</p>
-<p>See our <span class="xref myst">Segmentation Tutorial</span> for usage information.</p>
-</section>
+<section id="model-settings">
+<h2>Model Settings<a class="headerlink" href="#model-settings" title="Permalink to this heading">#</a></h2>
+<p>Once a model is loaded, its settings appear in the drawer.</p>
+<img alt="../../_images/segmenter-dark-settings.webp" class="theme-img dark-img content-img fig-315 fig-float" src="../../_images/segmenter-dark-settings.webp" />
+<img alt="../../_images/segmenter-light-settings.webp" class="theme-img light-img content-img fig-315 fig-float" src="../../_images/segmenter-light-settings.webp" />
+<ol class="arabic">
+<li><p><strong>Run Segmentation</strong>: Click this button to run the selected model on the images/objects of the displayed Kind. A new Kind will be created and populated with the identified objects. The name of the loaded model is shown to the left of the button. The button is disabled while a segmentation is already running, or if there is a problem with the current settings; hover over it to see the reason.</p></li>
+<li><p><strong>Output Kind Name</strong>: The name of the Kind the model will create for the objects it identifies. Click the pencil icon to rename it. Models that detect a fixed set of object classes (such as COCO-SSD) create one Kind per class, so their names cannot be edited.</p></li>
+<li><p><strong>Channel Mapping</strong>: Choose which channels of your image are handed to the model, in the order it receives them. Use the <strong>Image Source</strong> of each row to pick a channel. Every channel in the project is available, and the same channel can be sent to more than one input, which is useful when a model expects more channels than your image has. Some models accept a variable number of channels; use <strong>+ Add channel</strong> to add another. For Cellpose-SAM, the <em>Channel Mode</em> option also lives here: <strong>Pass through</strong> (recommended) sends the selected channels as-is, whereas <strong>Legacy (chan / chan2)</strong> exposes the primary/secondary channel mapping of earlier Cellpose versions.</p></li>
+<li><p><strong>Additional Settings</strong>: Some models have extra settings. For example, Cellpose-SAM has:</p>
+<ul class="simple">
+<li><p><em>Cell Diameter</em>: The typical diameter of a cell in pixels. Leave it empty (<em>Auto</em>) to segment at the image’s native resolution, or set it when your cells are much larger or smaller than the model expects.</p></li>
+<li><p><em>Cell Probability Threshold</em>: The cutoff used to decide which pixels belong to a cell. Lower values give more and larger masks; higher values give fewer and smaller masks. The default of 0 is a good place to start.</p></li>
+<li><p><em>Resample</em>: Run the flow dynamics at the image’s source resolution for smoother mask outlines, at the cost of extra computation. Only has an effect when a cell diameter is set.</p></li>
+</ul>
+<p>Click <strong>Restore defaults</strong> at any time to reset the model’s settings.</p>
+</li>
+</ol>
+<p>See our <a class="reference internal" href="../tutorial/segmentation-tutorial.html"><span class="doc std std-doc">Segmentation Tutorial</span></a> for usage information.</p>
 </section>
 </section>
 
@@ -585,17 +568,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-selection">Task Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-i-o">Model I/O</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-description">Model Description</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-operations">Model Operations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit">Fit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-settings">Model Settings</a></li>
 </ul>
   </nav></div>
 

@@ -465,28 +465,61 @@ document.write(`
 <section id="if-piximi-crashes-how-can-i-recover-my-project">
 <span id="if-piximi-crashes"></span><h2>If Piximi crashes, how can I recover my project?<a class="headerlink" href="#if-piximi-crashes-how-can-i-recover-my-project" title="Permalink to this heading">#</a></h2>
 <p>Currently, there is no mechanism to auto-save work. It is highly recommended to manually save work periodically as you go.</p>
-<p>The “Save project” option will save the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not including the trained model weights.</p>
-<p><img alt="Save Project Option" src="../../_images/save_project_1.png" /></p>
-<p><img alt="Save Project Dialog" src="../../_images/save_project_2.png" /></p>
-<p>To save the trained model weights, use the “Save classifier” option.</p>
-<p><img alt="Save Classifier Option" src="../../_images/save_classifier_1.png" /></p>
-<p><img alt="Save Classifier Dialog" src="../../_images/save_classifier_2.png" /></p>
-<p>If Piximi crashes, reload your work by using the “Open project” option to load images and project settings.</p>
-<p><img alt="Open Project Option" src="../../_images/open_project_1.png" /></p>
-<p><img alt="Open Project Location" src="../../_images/open_project_2.png" /></p>
-<p>Use the “Open classifier” option to load a trained model and its parameters.</p>
-<p><img alt="Open Classifier Option" src="../../_images/open_classifier_1.png" /></p>
-<p>Make sure to select both the weights (model paramaters) bin file and json (model architecture) file.</p>
-<p><img alt="Open Classifier Dialog" src="../../_images/open_classifier_2.png" /></p>
-<p><img alt="Open Classifier Location" src="../../_images/open_classifier_3.png" /></p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Save</span></code> in the top bar of the Project Viewer to save the project.</p>
+<img alt="../../_images/technical-faq-dark-save-project.webp" class="theme-img dark-img content-img" src="../../_images/technical-faq-dark-save-project.webp" />
+<img alt="../../_images/technical-faq-light-save-project.webp" class="theme-img light-img content-img" src="../../_images/technical-faq-light-save-project.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Save</span></code> button in the Project Viewer.</p>
+</div>
+<p>Enter a name in the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Project</span></code> window and click <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Project</span></code>. Piximi downloads the project as a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file.</p>
+<img alt="../../_images/technical-faq-dark-save-project-dialog.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/technical-faq-dark-save-project-dialog.webp" />
+<img alt="../../_images/technical-faq-light-save-project-dialog.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/technical-faq-light-save-project-dialog.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Project</span></code> window.</p>
+</div>
+<p>The saved project contains the entire state of the project, including all images and annotations made on them, and model settings (preprocessing, architecture, optimization, and dataset settings), but not the trained model weights.</p>
+<p>To save the trained model weights, select the model under <code class="docutils literal notranslate"><span class="pre">Selected</span> <span class="pre">Model</span></code> in the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> section of the <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> panel and click <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Model</span></code> under <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">I/O</span></code>.</p>
+<img alt="../../_images/technical-faq-dark-model-io.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/technical-faq-dark-model-io.webp" />
+<img alt="../../_images/technical-faq-light-model-io.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/technical-faq-light-model-io.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Model</span></code> and <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Model</span></code> buttons in the Classification section.</p>
+</div>
+<p>Enter a name in the <code class="docutils literal notranslate"><span class="pre">Save</span></code> window and click <code class="docutils literal notranslate"><span class="pre">Save</span></code>. Piximi downloads a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file with the model topology (<code class="docutils literal notranslate"><span class="pre">.json</span></code>), the model weights (<code class="docutils literal notranslate"><span class="pre">.bin</span></code>), the history of its training runs, and a manifest file that lets Piximi find them again.</p>
+<img alt="../../_images/technical-faq-dark-save-model-dialog.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/technical-faq-dark-save-model-dialog.webp" />
+<img alt="../../_images/technical-faq-light-save-model-dialog.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/technical-faq-light-save-model-dialog.webp" />
+<div class="tutorial-caption docutils">
+<p>The window for saving a model.</p>
+</div>
+<p>If Piximi crashes, reload your work through <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">.zip</span></code> (or <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">.zarr</span></code>) to load the images and project settings. Your computer’s file picker opens, where you choose the project file. If a project is already open, Piximi first asks you to confirm that it should be replaced. The same menu offers <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Example</span></code> for the example projects.</p>
+<img alt="../../_images/technical-faq-dark-open-menu.webp" class="theme-img dark-img content-img" src="../../_images/technical-faq-dark-open-menu.webp" />
+<img alt="../../_images/technical-faq-light-open-menu.webp" class="theme-img light-img content-img" src="../../_images/technical-faq-light-open-menu.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Open</span></code> menu.</p>
+</div>
+<img alt="../../_images/technical-faq-dark-open-project-menu.webp" class="theme-img dark-img content-img" src="../../_images/technical-faq-dark-open-project-menu.webp" />
+<img alt="../../_images/technical-faq-light-open-project-menu.webp" class="theme-img light-img content-img" src="../../_images/technical-faq-light-open-project-menu.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Project</span></code> submenu of the <code class="docutils literal notranslate"><span class="pre">Open</span></code> menu.</p>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Model</span></code> in the same <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">I/O</span></code> section to load a trained model and its parameters.</p>
+<img alt="../../_images/technical-faq-dark-load-model-dialog.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/technical-faq-dark-load-model-dialog.webp" />
+<img alt="../../_images/technical-faq-light-load-model-dialog.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/technical-faq-light-load-model-dialog.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Classification</span> <span class="pre">Model</span></code> window.</p>
+</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">Local</span></code> tab, click <code class="docutils literal notranslate"><span class="pre">Upload</span> <span class="pre">Model</span></code> and select either the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> saved by Piximi, or the individual files. When selecting individual files, make sure to select both the weights (<code class="docutils literal notranslate"><span class="pre">.bin</span></code>) file and the model topology (<code class="docutils literal notranslate"><span class="pre">.json</span></code>) file; the manifest and the training runs <code class="docutils literal notranslate"><span class="pre">.json</span></code> files are optional. Once the model is uploaded, Piximi shows a summary of it and selects it as the active model.</p>
+<img alt="../../_images/technical-faq-dark-load-model-uploaded.webp" class="theme-img dark-img content-img" src="../../_images/technical-faq-dark-load-model-uploaded.webp" />
+<img alt="../../_images/technical-faq-light-load-model-uploaded.webp" class="theme-img light-img content-img" src="../../_images/technical-faq-light-load-model-uploaded.webp" />
+<div class="tutorial-caption docutils">
+<p>A model that has been uploaded successfully.</p>
+</div>
 </section>
 <section id="can-i-run-piximi-offline">
 <span id="id1"></span><h2>Can I run Piximi offline?<a class="headerlink" href="#can-i-run-piximi-offline" title="Permalink to this heading">#</a></h2>
 <p>Yes. Once you visit the application, there is no need for an internet connection so long as you do not close or refresh the tab. If you close or refresh the tab, you will need an internet connection to reload Piximi.</p>
 <p>You can also serve the application locally using Docker. The instructions to do this are on the <a class="reference external" href="https://github.com/piximi/piximi#docker">main Piximi repo README</a>. After downloading the source code, no internet connection is necessary for serving locally and using the app.</p>
 <p>No internet connection is necessary to save or load projects and classifier models.
-Segmentation models do require an internet connection and certain segmentation models, e.g. Cellpose, do transmit data over the internet.
-Segmentation models that transmit data over the internet are clearly indicated.</p>
+Segmentation models run in your browser, and your images are never transmitted over the internet. An internet connection is only needed to download a model the first time you load it (for example, Cellpose-SAM is downloaded from HuggingFace); it is cached by your browser afterwards.</p>
 </section>
 <section id="is-there-logging">
 <span id="id2"></span><h2>Is there logging?<a class="headerlink" href="#is-there-logging" title="Permalink to this heading">#</a></h2>
@@ -508,17 +541,30 @@ Segmentation models that transmit data over the internet are clearly indicated.<
 </section>
 <section id="is-it-possible-to-see-a-training-summary">
 <span id="see-a-training-summary"></span><h2>Is it possible to see a training summary?<a class="headerlink" href="#is-it-possible-to-see-a-training-summary" title="Permalink to this heading">#</a></h2>
-<p>Yes. The model summary, accuracy and loss are displayed in the Classifier dialog, and will remain there even if you leave the dialog and re-enter.</p>
-<p><img alt="Training Plots" src="../../_images/training_plots.png" /></p>
-<p>Additional metrics are available via the Evaluation dialog.</p>
-<p><img alt="Evaluate Option" src="../../_images/evaluate_option.png" /></p>
-<p><img alt="Evaluate Dialog" src="../../_images/evaluate_dialog.png" /></p>
-<p>If a new model is trained however, or if the current model is re-trained, these will be lost. To avoid this, save the current model before performing any additional training.</p>
+<p>Yes. The model summary, accuracy and loss are displayed in the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> window, in the <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Summary</span></code> and <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Plots</span></code> tabs, and will remain there even if you leave the window and re-enter.</p>
+<img alt="../../_images/classifier-dark-fit-training-plots.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-fit-training-plots.webp" />
+<img alt="../../_images/classifier-light-fit-training-plots.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-fit-training-plots.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Plots</span></code> tab of the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> window.</p>
+</div>
+<p>Additional metrics are available via <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> in the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> section, which shows the evaluation of the model’s most recent training run.</p>
+<img alt="../../_images/classifier-dark-section.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/classifier-dark-section.webp" />
+<img alt="../../_images/classifier-light-section.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/classifier-light-section.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> button is among the model operations of the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> section.</p>
+</div>
+<img alt="../../_images/classifier-dark-evaluate.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-evaluate.webp" />
+<img alt="../../_images/classifier-light-evaluate.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-evaluate.webp" />
+<div class="tutorial-caption docutils">
+<p>The <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> window.</p>
+</div>
+<p>If the current model is re-trained, or if a new model is trained, the summary and evaluation shown are those of the new training run. To avoid losing the results, save the current model before performing any additional training; the saved <code class="docutils literal notranslate"><span class="pre">.zip</span></code> includes the history of its training runs.</p>
 </section>
 <section id="does-piximi-use-a-gpu">
 <span id="id4"></span><h2>Does Piximi use a GPU?<a class="headerlink" href="#does-piximi-use-a-gpu" title="Permalink to this heading">#</a></h2>
 <p>Yes. Piximi uses Tensorflow.js which in turn uses <a class="reference external" href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>.</p>
 <p>If using Chrome, users will need to enable GPU use by going into preferences -&gt; advanced -&gt; system, and enabling the “Use hardware acceleration when available” option.</p>
+<p>Some segmentation models, such as Cellpose-SAM, additionally require a browser with <a class="reference external" href="https://en.wikipedia.org/wiki/WebGPU">WebGPU</a> support.</p>
 </section>
 <section id="if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results">
 <span id="run-model-multiple-times"></span><h2>If I run the same model multiple times, why do I get different training results?<a class="headerlink" href="#if-i-run-the-same-model-multiple-times-why-do-i-get-different-training-results" title="Permalink to this heading">#</a></h2>

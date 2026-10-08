@@ -449,37 +449,53 @@ document.write(`
 <h1>Image Classification<a class="headerlink" href="#image-classification" title="Permalink to this heading">#</a></h1>
 <section id="load-images">
 <h2>1. Load images<a class="headerlink" href="#load-images" title="Permalink to this heading">#</a></h2>
-<p>To begin, we will load the images from an example dataset included in Piximi by pressing <img alt="open" src="../../_images/open-folder-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span></code> in the top left. Select <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Human</span> <span class="pre">U2OS-cells</span> <span class="pre">example</span> <span class="pre">project</span></code> to get started. Alternatively, if you would like to load your own images, go to <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Image</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Image</span></code>.</p>
+<p>To begin, we will load the images from an example dataset included in Piximi. On the start screen, click <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Example</span> <span class="pre">Project</span></code> and select <code class="docutils literal notranslate"><span class="pre">Human</span> <span class="pre">U2OS-cells</span> <span class="pre">example</span> <span class="pre">project</span></code>. If you already have a project open, you can reach the same list through <img alt="open" src="../../_images/open-folder-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Example</span></code>. Alternatively, if you would like to load your own images, go to <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Image</span></code>.</p>
 <p>The images correspond to U2OS cells co-expressing arrestin-GFP and an orphan GPCR. Upon receptor stimulation arrestin-GFP is recruited to the plasma membrane and eventually endocytosed resulting in vesicle like structures.</p>
-<figure class="align-default" id="open-img">
-<img alt="../../_images/load-example-light.webp" src="../../_images/load-example-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Open the U2OS example dataset</span><a class="headerlink" href="#open-img" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<img alt="../../_images/eukaryotic-classification-dark-open-example.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-open-example.webp" />
+<img alt="../../_images/eukaryotic-classification-light-open-example.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-open-example.webp" />
+<div class="tutorial-caption docutils">
+<p>Open the U2OS example dataset</p>
+</div>
 </section>
 <section id="categorize-images">
 <h2>2. Categorize images<a class="headerlink" href="#categorize-images" title="Permalink to this heading">#</a></h2>
-<p>In the <code class="docutils literal notranslate"><span class="pre">Categories</span></code> sub-menu on the left hand side you can see that there are already 3 classes defined for the U2OS example project. To turn on/off the display of images under a given label, click on the <img alt="filters" src="../../_images/filter-icon.svg" /> filters icon on the right hand panel, and toggle the label of interest under <code class="docutils literal notranslate"><span class="pre">By</span> <span class="pre">category</span></code>. The classes are:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Categories</span></code> list on the left hand side shows that there are already 3 classes defined for the U2OS example project, along with the number of images in each. A handful of images have already been categorized for you; the rest are still <code class="docutils literal notranslate"><span class="pre">Unknown</span></code>. The classes are:</p>
 <ul class="simple">
 <li><p>Unknown</p>
 <ul>
 <li><p>This represents the uncategorized images. Piximi will predict which class these images belong to later</p></li>
 </ul>
 </li>
-<li><p>Positive Control (vesicular GFP)</p></li>
-<li><p>Negative Control (cytoplasmic GFP)</p></li>
+<li><p>Positive Control (GRK)</p>
+<ul>
+<li><p>Images in which the GFP forms vesicle-like structures</p></li>
 </ul>
-<figure class="align-default" id="u2os-labels">
-<img alt="../../_images/human-u20s-category-light.webp" src="../../_images/human-u20s-category-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Explore the category menu. Turn on/off (<img alt="label" src="../../_images/label-icon.svg" />/<img alt="label" src="../../_images/label-off-icon.svg" />) a particular category to show/hide only those images.</span><a class="headerlink" href="#u2os-labels" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<!-- ```{margin}
-**Terminology**: We categorize into classes
-``` -->
-<p>Ensure no images are currently selected by clicking the <img alt="deselect" src="../../_images/deselect-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> icon. Then, single-click to select 2-3 images from the unknown category that best fit the <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span></code> category. Once selected, click <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> in the top right and select <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span></code>. Do the same for 2-3 <code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">Control</span></code> images.</p>
+</li>
+<li><p>Negative Control (Untreated)</p>
+<ul>
+<li><p>Images in which the GFP is spread throughout the cytoplasm</p></li>
+</ul>
+</li>
+</ul>
+<div class="fig-float fig-wrap docutils">
+<img alt="../../_images/eukaryotic-classification-dark-categories.webp" class="theme-img dark-img content-img fig-315" src="../../_images/eukaryotic-classification-dark-categories.webp" />
+<img alt="../../_images/eukaryotic-classification-light-categories.webp" class="theme-img light-img content-img fig-315" src="../../_images/eukaryotic-classification-light-categories.webp" />
+<div class="tutorial-caption docutils">
+<p>Explore the Categories list. The number next to each category is how many images it holds.</p>
+</div>
+</div>
+<p>To turn on/off the display of images under a given label, click on the <img alt="sort-filter icon" src="../../_images/icon-dark-sort-filter.webp" /><img alt="sort-filter icon" src="../../_images/icon-light-sort-filter.webp" /> <code class="docutils literal notranslate"><span class="pre">Sort</span> <span class="pre">|</span> <span class="pre">Filter</span></code> icon above the images, open <code class="docutils literal notranslate"><span class="pre">Category</span> <span class="pre">Filters</span></code>, and click a category to move it between <code class="docutils literal notranslate"><span class="pre">Visible</span></code> and <code class="docutils literal notranslate"><span class="pre">Filtered</span></code>. Categories in the <code class="docutils literal notranslate"><span class="pre">Filtered</span></code> box are hidden from the grid; click the ✕ on its chip to show it once more.</p>
+<img alt="../../_images/eukaryotic-classification-dark-category-filters.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-category-filters.webp" />
+<img alt="../../_images/eukaryotic-classification-light-category-filters.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-category-filters.webp" />
+<div class="tutorial-caption docutils">
+<p>Hide the Unknown images by moving the Unknown category to Filtered.</p>
+</div>
+<p>Ensure no images are currently selected by clicking the <img alt="deselect-all icon" src="../../_images/icon-dark-deselect-all.webp" /><img alt="deselect-all icon" src="../../_images/icon-light-deselect-all.webp" /> <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> icon. Then, single-click to select 2-3 images from the unknown category that best fit the <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span> <span class="pre">(Untreated)</span></code> category. Once selected, click the <img alt="categorize icon" src="../../_images/icon-dark-categorize.webp" /><img alt="categorize icon" src="../../_images/icon-light-categorize.webp" /> <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> icon in the top right of the image grid and select <code class="docutils literal notranslate"><span class="pre">Negative</span> <span class="pre">Control</span> <span class="pre">(Untreated)</span></code>. Do the same for 2-3 <code class="docutils literal notranslate"><span class="pre">Positive</span> <span class="pre">Control</span> <span class="pre">(GRK)</span></code> images.</p>
+<img alt="../../_images/eukaryotic-classification-dark-categorize.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-categorize.webp" />
+<img alt="../../_images/eukaryotic-classification-light-categorize.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-categorize.webp" />
+<div class="tutorial-caption docutils">
+<p>Select a few images, then choose the category to assign them to.</p>
+</div>
 <!-- ```{admonition} How many images should I categorize?
 :class: tip, dropdown
 Should this info be added? Something like:
@@ -488,27 +504,24 @@ Click here for considerations when categorizing your images and deciding on how 
 </section>
 <section id="train-model">
 <h2>3. Train model<a class="headerlink" href="#train-model" title="Permalink to this heading">#</a></h2>
-<p>Click on the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> button under <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> then proceed to customize the settings for model fitting by clicking the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> button. Within the menu that opens, you can select various parameters to adjust model training. Open the <code class="docutils literal notranslate"><span class="pre">Dataset</span> <span class="pre">Settings</span></code> menu to find the <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">percentage</span></code> field. This value controls what fraction of the images you have annotated will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.</p>
-<figure class="align-default" id="u2os-fit-settings">
-<img alt="../../_images/human-u20s-fit-button-light.webp" src="../../_images/human-u20s-fit-button-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Open the classifier settings.</span><a class="headerlink" href="#u2os-fit-settings" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In the top right, click the <img alt="play-button" src="../../_images/play-button-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code> button to begin training. Piximi will now look at the <strong>training</strong> subset of the images you have annotated and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the <strong>validation</strong> subset of images and compare the models answers to the image class.</p>
-<figure class="align-default" id="fit-settings">
-<img alt="../../_images/human-u20s-fit-dialog-fit-light.webp" src="../../_images/human-u20s-fit-dialog-fit-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Explore classifier settings and then press <img alt="play-button" src="../../_images/play-button-icon.svg" /> to begin training.</span><a class="headerlink" href="#fit-settings" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>At the bottom of the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> settings page you will see two graphs update as Piximi trains the model; these show the accuracy and loss of the model over incrementing epochs.</p>
-<figure class="align-default" id="epoch-accuracy-plot">
-<img alt="../../_images/user-guide-accuracy-plot.webp" src="../../_images/user-guide-accuracy-plot.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Training history of a successful classifier model for the U2OS example dataset.</span><a class="headerlink" href="#epoch-accuracy-plot" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> button under <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> then proceed to customize the settings for model fitting by clicking the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> button. Within the dialog that opens, you can select various parameters to adjust model training. Under <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Preprocessing</span> <span class="pre">Settings</span></code>, the <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Percentage</span></code> field (found under <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Partitioning</span></code>) controls what fraction of the images you have categorized will be used to train the model in Piximi. The remainder will be used to test how well Piximi can classify images not previously seen. We will use the default for now.</p>
+<img alt="../../_images/eukaryotic-classification-dark-fit-button.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/eukaryotic-classification-dark-fit-button.webp" />
+<img alt="../../_images/eukaryotic-classification-light-fit-button.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/eukaryotic-classification-light-fit-button.webp" />
+<div class="tutorial-caption docutils">
+<p>Select the Classification task and open the classifier settings with Fit.</p>
+</div>
+<p>In the bottom right, click the <img alt="play-button" src="../../_images/play-button-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code> button to begin training. Piximi will now look at the <strong>training</strong> subset of the images you have categorized and try to learn what links the input image to a particular class. Then, Piximi will apply what it has learned by examining the <strong>validation</strong> subset of images and compare the models answers to the image class.</p>
+<img alt="../../_images/eukaryotic-classification-dark-fit-dialog.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-fit-dialog.webp" />
+<img alt="../../_images/eukaryotic-classification-light-fit-dialog.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-fit-dialog.webp" />
+<div class="tutorial-caption docutils">
+<p>Explore classifier settings and then press Fit Classifier to begin training.</p>
+</div>
+<p>While Piximi trains the model, the dialog switches to the <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Plots</span></code> tab, where two graphs update to show the accuracy and loss of the model over incrementing epochs.</p>
+<img alt="../../_images/eukaryotic-classification-dark-training-plots.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-training-plots.webp" />
+<img alt="../../_images/eukaryotic-classification-light-training-plots.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-training-plots.webp" />
+<div class="tutorial-caption docutils">
+<p>Training history of a classifier model for the U2OS example dataset.</p>
+</div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">What is an epoch?</p>
 <p>An epoch is a measure of how many times the entire training subset is studied by the deep learning model. As the number of epochs increases, the model optimizes itself to improve classification performance.</p>
@@ -525,13 +538,12 @@ Click here for considerations when categorizing your images and deciding on how 
 <p>This is a result of <strong>overfitting</strong> as your model begins to pick up features within your image, such as noise, that are not relevant to classification. In essence, overfitting is when the model memorizes the answer to a specific question, rather than determining the answer from scratch itself.</p>
 </div>
 <p>Loss is another metric that is calculated on the training and validation subsets of data and are depicted as loss and validation loss, respectively. Loss represents a summation of the errors the model has made during classification.</p>
-<p>You can now exit the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> settings by clicking the <img alt="close" src="../../_images/close-icon.svg" /> in the top left of the dialog.</p>
-<figure class="align-default" id="fit-exit">
-<img alt="../../_images/human-u20s-fit-dialog-exit-light.webp" src="../../_images/human-u20s-fit-dialog-exit-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Exit the fit settings menu.</span><a class="headerlink" href="#fit-exit" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p>The dialog also has a <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Summary</span></code> tab, describing the layers of the trained model, and a <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Runs</span> <span class="pre">Summary</span></code> tab, which compares the runs you have trained. You can now exit the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> dialog by clicking the <img alt="close" src="../../_images/close-icon.svg" /> in the top right of the dialog.</p>
+<img alt="../../_images/eukaryotic-classification-dark-fit-exit.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-fit-exit.webp" />
+<img alt="../../_images/eukaryotic-classification-light-fit-exit.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-fit-exit.webp" />
+<div class="tutorial-caption docutils">
+<p>Exit the fit settings dialog.</p>
+</div>
 <!-- ```{margin} An optional title
 Diagnosing model underfitting and overfitting: https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
 
@@ -542,27 +554,18 @@ Piximi does not currently have a hold-out test-like set.
 </section>
 <section id="predict-classes-for-unlabelled-data">
 <h2>4. Predict classes for unlabelled data<a class="headerlink" href="#predict-classes-for-unlabelled-data" title="Permalink to this heading">#</a></h2>
-<p>Once your model has been trained you can click <img alt="chart" src="../../_images/chart-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> to see in-depth metrics on how well the model performed. You can then click <img alt="label" src="../../_images/label-important-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Predict</span></code> to run the trained model on the unannotated data. Once an image has been classified you will see the <img alt="label" src="../../_images/label-icon.svg" /> color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding <img alt="check-icon" src="../../_images/check-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Predictions</span></code>or reject them by clicking <img alt="close" src="../../_images/close-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Clear</span> <span class="pre">Predictions</span></code>. Depending on the performance of the model, annotating further images based on the predictions and/or adjusting the <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> settings may be desired.</p>
-<figure class="align-default" id="run-predict">
-<img alt="../../_images/human-u20s-predict-light.webp" src="../../_images/human-u20s-predict-light.webp" />
-<figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Predict the class of unknown images using your trained model.</span><a class="headerlink" href="#run-predict" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<!-- ```{figure} ../../img/eukaryotic-classification/user-guide-evaluate.webp
-
-## name: evaluate
-
-TBC
-
-```{admonition} See also
-:class: seealso
-Link to our on guide, or a guide somewhere else. eg:
-
-For further information on the evaluation metrics, see our evaluating a model guide.
-```
-
-````-->
+<p>Once your model has been trained you can click <img alt="chart" src="../../_images/chart-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> to see in-depth metrics on how well the model performed, including a confusion matrix of the model’s predictions against the true categories.</p>
+<img alt="../../_images/eukaryotic-classification-dark-evaluate.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-evaluate.webp" />
+<img alt="../../_images/eukaryotic-classification-light-evaluate.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-evaluate.webp" />
+<div class="tutorial-caption docutils">
+<p>Evaluate the trained model.</p>
+</div>
+<p>You can then click <img alt="label" src="../../_images/label-important-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Predict</span></code> to run the trained model on the uncategorized data. Once an image has been classified you will see the <img alt="label" src="../../_images/label-icon.svg" /> color on the image thumbnail update to that particular class. At this stage, you may inspect the predicted classes and either accept the predictions by clicking and holding <img alt="check-icon" src="../../_images/check-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Predictions</span> <span class="pre">(Hold)</span></code> or reject them by clicking <img alt="close" src="../../_images/close-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Clear</span> <span class="pre">Predictions</span></code>. Depending on the performance of the model, categorizing further images based on the predictions and/or adjusting the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> settings may be desired.</p>
+<img alt="../../_images/eukaryotic-classification-dark-predict.webp" class="theme-img dark-img content-img" src="../../_images/eukaryotic-classification-dark-predict.webp" />
+<img alt="../../_images/eukaryotic-classification-light-predict.webp" class="theme-img light-img content-img" src="../../_images/eukaryotic-classification-light-predict.webp" />
+<div class="tutorial-caption docutils">
+<p>Predict the class of unknown images using your trained model.</p>
+</div>
 <div class="seealso admonition">
 <p class="admonition-title">Copyright</p>
 <p>The <a class="reference external" href="https://bbbc.broadinstitute.org/BBBC016">BBBC016</a> images used here are licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> by Ilya Ravkin.</p>

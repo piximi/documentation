@@ -429,30 +429,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-appbar">Top Appbar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-name">1. Project Name</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">2. Sort</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-item-size">3. Grid Item Size</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-deselect-delete">4. Select/Deselect/Delete</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-images-objects">5. Categorize Images/Objects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-image-viewer">6. Navigate to Image Viewer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-measurements-viewer">7. Navigate to Measurements Viewer</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-drawer">Action Drawer</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-drawer">Project Drawer</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">1. File I/O</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-task">2. Learning Task</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">3. Categories</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-controls">4. App Controls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-object-grid">Image/Object Grid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kind-tabs">1. Kind Tabs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-show-kinds">2. Create/Show Kinds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-objects">3. Images/Objects</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-bar">Info Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-object-grid">Image/Object Grid</a></li>
 </ul>
             </nav>
         </div>
@@ -468,120 +453,52 @@ document.write(`
 <h1>Project Viewer<a class="headerlink" href="#project-viewer" title="Permalink to this heading">#</a></h1>
 <p>The Project Viewer is where you can create <strong>New</strong> projects, <strong>open</strong> previous projects and images or example projects, and <strong>save</strong> your current project.</p>
 <p>This view is also where you can <strong>categorize</strong> your images and perform <strong>classification</strong> and <strong>segmentation</strong> tasks.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <img alt="../../_images/project-viewer-dark-annotated.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-annotated.webp" />
 <img alt="../../_images/project-viewer-light-annotated.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-annotated.webp" />
-<br/>
-<br/>
 <ol class="arabic simple">
-<li><p>Top Appbar</p></li>
-<li><p>Action Drawer</p></li>
-<li><p>Image/Object Grid</p></li>
-<li><p>Info Bar</p></li>
+<li><p><strong>Project Name</strong> - Update the name of your project. Saved filenames will default to the project name.</p></li>
+<li><p><strong>Navigate to Image Viewer / Measurements</strong>:</p>
+<ul class="simple">
+<li><p><strong>Image Viewer</strong>: After selecting images or objects, navigate to the Image Viewer to view, annotate, or adjust the selected images. Selecting an object, or objects, and navigating to the Image Viewer will load the image the object belongs to, and highlight the object(s).</p></li>
+<li><p><strong>Measure</strong>: The Measurements View operates on all images/objects in the project, so no selection is necessary.</p></li>
+</ul>
+</li>
+<li><p><strong>Project Drawer</strong>: This is where you perform tasks like loading and saving projects, run machine learning models (classification or segmentation) and create/edit/delete categories.</p></li>
+<li><p><strong>Image / Annotation Grid</strong>: Switch between viewing the images or annotations in the project.</p></li>
 </ol>
-<section id="top-appbar">
-<h2>Top Appbar<a class="headerlink" href="#top-appbar" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/project-viewer-dark-appbar.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-appbar.webp" />
-<img alt="../../_images/project-viewer-light-appbar.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-appbar.webp" />
-<br/>
-<br/>
-<section id="project-name">
-<h3>1. Project Name<a class="headerlink" href="#project-name" title="Permalink to this heading">#</a></h3>
-<p>Update the name of your project. Saved filenames will default to the project name.</p>
 </section>
-<section id="sort">
-<h3>2. Sort<a class="headerlink" href="#sort" title="Permalink to this heading">#</a></h3>
-<p>Choose the order in which your images/Objects appear in the image grid. Options are by:</p>
-<ul class="simple">
-<li><p>File Name</p></li>
-<li><p>Category</p></li>
-<li><p>Random</p></li>
-<li><p>Image Name (Image name may be be updated by the user. Default is file name)</p></li>
-</ul>
-</section>
-<section id="grid-item-size">
-<h3>3. Grid Item Size<a class="headerlink" href="#grid-item-size" title="Permalink to this heading">#</a></h3>
-<p>Adjust the size of the images/objects displayed in the grid</p>
-</section>
-<section id="select-deselect-delete">
-<h3>4. Select/Deselect/Delete<a class="headerlink" href="#select-deselect-delete" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Select all images/objects</p></li>
-<li><p>Deselect all images/objects</p></li>
-<li><p>Delete selected images/objects</p></li>
-</ul>
-<p>The number of selected images will be shown near the “Select All” button.</p>
-<div class="warning admonition">
-<p class="admonition-title">Image Deletion</p>
-<p>In the case that an image has associated annotations, deleting the image will also delete the annotations.</p>
-</div>
-</section>
-<section id="categorize-images-objects">
-<h3>5. Categorize Images/Objects<a class="headerlink" href="#categorize-images-objects" title="Permalink to this heading">#</a></h3>
-<p>After selecting a subset of images/objects, you can use this dropdown menu to select an available category to apply to the selected images.</p>
-</section>
-<section id="navigate-to-image-viewer">
-<h3>6. Navigate to Image Viewer<a class="headerlink" href="#navigate-to-image-viewer" title="Permalink to this heading">#</a></h3>
-<p>After selecting images or objects, navigate to the Image Viewer to view, annotate, or adjust the selected images. Selecting an object, or objects, and navigating to the Image Viewer will load the image the object belongs to, and highlight the object(s).</p>
-</section>
-<section id="navigate-to-measurements-viewer">
-<h3>7. Navigate to Measurements Viewer<a class="headerlink" href="#navigate-to-measurements-viewer" title="Permalink to this heading">#</a></h3>
-<p>The Measurements View operates on all images/objects in the project, so no selection is necessary.</p>
-</section>
-</section>
-<section id="action-drawer">
-<h2>Action Drawer<a class="headerlink" href="#action-drawer" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/project-viewer-dark-actionbar.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-actionbar.webp" />
-<img alt="../../_images/project-viewer-light-actionbar.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-actionbar.webp" />
-<br/>
-<br/>
+<section id="project-drawer">
+<h2>Project Drawer<a class="headerlink" href="#project-drawer" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/project-viewer-dark-projectdrawer.webp" class="theme-img dark-img content-img img-float-left" src="../../_images/project-viewer-dark-projectdrawer.webp" />
+<img alt="../../_images/project-viewer-light-projectdrawer.webp" class="theme-img light-img content-img img-float-left" src="../../_images/project-viewer-light-projectdrawer.webp" />
 <section id="file-i-o">
 <h3>1. File I/O<a class="headerlink" href="#file-i-o" title="Permalink to this heading">#</a></h3>
-<p><strong>Project Creation</strong></p>
-<p>You can start a new project by clicking the <strong>New</strong> button. You will be prompted to input a new project name, and the current project will be replaced with a blank one.</p>
-<p><strong>Open a Project</strong></p>
-<p>You can load a previously saved project from either the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file or the <code class="docutils literal notranslate"><span class="pre">.zarr</span></code> file. As with creating a new project, the current project will be replaced.</p>
-<p>You can also choose to load one of our example projects. These are:</p>
 <ul class="simple">
-<li><p>MNIST – Small subset of the MNIST database of handwritten digits</p></li>
-<li><p>C. elegans – Images of transgenic C. elegans expressing the promoter of gene clec-60 fused to GFP.</p></li>
-<li><p>Human U2OS-cells – “This image set is of a Transfluor assay where an orphan GPCR is stably integrated into the b-arrestin GFP expressing U2OS cell line.</p></li>
-<li><p>Human U2OS-cells Cytoplasm Crops – Images of cytoplasm to nucleus translocation of the Forkhead (FKHR-EGFP) fusion protein in stably transfected human osteosarcoma cells.</p></li>
-<li><p>Human PLP1 Localization – Human HeLa cells expressing the disease-associated variant of PLP1 protein, which localizes differently than the healthy version.</p></li>
-<li><p>Malaria Infected Human Blood Smears – Blood cells infected by P. vivax (malaria) and stained with Giemsa reagent.</p></li>
-<li><p>U2OS Cell-Painting Experiment – U2OS cells treated with an RNAi reagent and stained.</p></li>
+<li><p><strong>Project Creation</strong>: Clicking <strong>NEW</strong> opens a new project. You will be prompted to input a new project name, and the current project will be replaced with a blank one.</p></li>
+<li><p><strong>Open a Project</strong>: Clicking <strong>OPEN</strong> opens a menu which allows you to:</p>
+<ul>
+<li><p>Open a previously saved project (<code class="docutils literal notranslate"><span class="pre">.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">.zarr</span></code>)</p></li>
+<li><p>Open one of Piximi’s provided example projects (see <a class="reference internal" href="../technical/example-datasets.html"><span class="doc std std-doc">here</span></a> for information about the datasets)</p></li>
+<li><p>Open a new image (PNG, JPEG, TIFF, DICOM, BMP, or HEIF formats). <span style="color: var(--pst-color-warning)"> Piximi requires all image in the project to have the same number of channels</span></p></li>
 </ul>
-<p><strong>Upload Images</strong></p>
-<p>Open a file picker to select images you want to upload, or drag and drop them into the image grid. Piximi supports a variety of file types:</p>
-<ul class="simple">
-<li><p>PNG</p></li>
-<li><p>JPEG</p></li>
-<li><p>TIFF</p></li>
-<li><p>DICOM</p></li>
-<li><p>BMP</p></li>
+</li>
+<li><p><strong>Save Project</strong>: Clicking <strong>SAVE</strong> saves the project as a compressed <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file containing a <code class="docutils literal notranslate"><span class="pre">.zarr</span></code> directory with the project data as well as any trained classifiers used in the project.</p></li>
 </ul>
-<div class="warning admonition">
-<p class="admonition-title">Image Channels</p>
-<p>Currently, Piximi requires all images in a project to contain the same number of channels. In the case of 3D <code class="docutils literal notranslate"><span class="pre">.tiff</span></code> images, Piximi will load the file under the assumption that the number of channels equals that of the images in the project and will calculate the number of planes based off of that assumption.</p>
-</div>
-<p><strong>Save Project</strong></p>
-<p>Save your current project. Piximi saves the project as a compressed <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file containing a <code class="docutils literal notranslate"><span class="pre">.zarr</span></code> file with the project data (images, objects, categories, measurements) as well as any trained classifiers used in the project.</p>
 </section>
 <section id="learning-task">
 <h3>2. Learning Task<a class="headerlink" href="#learning-task" title="Permalink to this heading">#</a></h3>
-<p>This section contains the deep learning functionality of piximi (Classification and Segmentation). From this section, users can upload and train classification models, select pretrained segmentation models, perform inference on the images and objects in the project, evaluate the performance of the classification models, and save trained models.</p>
-<p>More information about classification and segmentation can be viewed in their respective chapters.</p>
+<p>This section contains the deep learning functionality of piximi (Classification and Segmentation), and is explained in detail in the <a class="reference internal" href="projectviewer-classification.html"><span class="doc std std-doc">classification</span></a> and <a class="reference internal" href="projectviewer-segmentation.html"><span class="doc std std-doc">segmentation</span></a> pages.</p>
 </section>
 <section id="categories">
 <h3>3. Categories<a class="headerlink" href="#categories" title="Permalink to this heading">#</a></h3>
-<p>This section contains the per-Kind categories in the project. You can create, edit, and delete categories here.</p>
-<p>When creating a new category, the category names must be unique within each kind, and you can select a category color from a pre-populated list.</p>
-<p>Each kind will contain an “Unknown” category which loaded images will default to.</p>
-<p>Deleting a category will recategorize the associated images as “Unknown”.</p>
-<p>In addition to the “Categorize” button in the <strong>Top App Bar</strong> users can recategorize selected images by holding down the <code class="docutils literal notranslate"><span class="pre">shift</span></code> key, entering the index of the desired category (0, 1, 2, etc.) then releasing the <code class="docutils literal notranslate"><span class="pre">shift</span></code> key.</p>
+<p>This section contains the categories for the items in the currently viewed grid. You can create, edit, and delete categories here.</p>
+<p>The images along with each kind are associated with an “Unknown” category. This is the default category of newly loaded images as well as segmented objects. Deleting a category will recategorize the associated items as “Unknown”.</p>
 </section>
 <section id="app-controls">
 <h3>4. App Controls<a class="headerlink" href="#app-controls" title="Permalink to this heading">#</a></h3>
-<p>This sections contains the app settings, functionality to report issues within the app to the GitHub project repo, and activation of the in-app help context.</p>
+<p>Pinned to the bottom of the drawer, this section contains the app settings, functionality to report issues within the app to the GitHub project repo, and activation of the in-app help context.</p>
 <p><strong>App Settings</strong></p>
 <ul class="simple">
 <li><p>Light/Dark Mode</p></li>
@@ -595,53 +512,95 @@ document.write(`
 </section>
 <section id="image-object-grid">
 <h2>Image/Object Grid<a class="headerlink" href="#image-object-grid" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/project-viewer-dark-maingrid.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-maingrid.webp" />
-<img alt="../../_images/project-viewer-light-maingrid.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-maingrid.webp" />
-<br/>
-<br/>
-<section id="kind-tabs">
-<h3>1. Kind Tabs<a class="headerlink" href="#kind-tabs" title="Permalink to this heading">#</a></h3>
-<p>Piximi groups the project data into what we cal “Kinds”. Kinds are essentially a <strong>supercategory</strong>. Each project will have an “Image” kind which refers to whole images and cannot be deleted or edited.</p>
-<p>Additional kinds can be created, edited and deleted, and each kind has it own set of associated categories.</p>
-<p>For example, a project will contain a set of whole images (belonging to the “Image” kind). An image then may contain objects, such as “Nuclei” and “Cell Membrane” objects. In this example the project has three kinds – “Image”, “Nuclei”, and “Cell Membrane”. The object can then be grouped by category, for example the objects of kind “Nuclei” can be categorized as “Healthy” or “Infected”.</p>
+<p>The grid has two views, toggled at the top: <strong>Images</strong> and <strong>Annotations</strong>.</p>
+<div class="side-by-side docutils">
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-maingrid-images.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-maingrid-images.webp" />
+<img alt="../../_images/project-viewer-light-maingrid-images.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-maingrid-images.webp" />
+<p><strong>Images view</strong> – shows whole images.</p>
+</div>
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-maingrid-annotations.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-dark-maingrid-annotations.webp" />
+<img alt="../../_images/project-viewer-light-maingrid-annotations.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-light-maingrid-annotations.webp" />
+<p><strong>Annotations view</strong> – once a project has annotations, this view splits the grid by Kind Tabs (see below).</p>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>View Toggle</strong>: Switches the items in the grid between images and annotations. The <strong>Annotations</strong> toggle is disabled unless the project has at least one annotation/object.</p></li>
+<li><p><strong>Grid Actions</strong>: Control what you see in the grid and act on selected items.</p>
+<ul class="simple">
+<li><p><img alt="sort-filter icon" src="../../_images/icon-dark-sort-filter.webp" /><img alt="sort-filter icon" src="../../_images/icon-light-sort-filter.webp" /> <strong>Sort | Filter</strong> – Choose the order in which your images/objects appear in the grid, and filter which items are shown. Sort options are by:</p>
+<ul>
+<li><p>File Name</p></li>
+<li><p>Category</p></li>
+<li><p>Random</p></li>
+<li><p>Image Name (the image name may be updated by the user; the default is the file name)</p></li>
+</ul>
+</li>
+<li><p><img alt="select-all icon" src="../../_images/icon-dark-select-all.webp" /><img alt="select-all icon" src="../../_images/icon-light-select-all.webp" /> <strong>Select all</strong> – Select every image/object. The number of selected items is shown in a badge on the button.</p></li>
+<li><p><img alt="deselect-all icon" src="../../_images/icon-dark-deselect-all.webp" /><img alt="deselect-all icon" src="../../_images/icon-light-deselect-all.webp" /> <strong>Deselect all</strong> – Clear the current selection.</p></li>
+<li><p><img alt="categorize icon" src="../../_images/icon-dark-categorize.webp" /><img alt="categorize icon" src="../../_images/icon-light-categorize.webp" /> <strong>Categorize</strong> – After selecting a subset of images/objects, use this control to apply an available category to the selection.</p></li>
+<li><p><img alt="delete-selected icon" src="../../_images/icon-dark-delete-selected.webp" /><img alt="delete-selected icon" src="../../_images/icon-light-delete-selected.webp" /> <strong>Delete selected</strong> – Delete the selected images/objects.</p></li>
+<li><p><img alt="grid-zoom icon" src="../../_images/icon-dark-grid-zoom.webp" /><img alt="grid-zoom icon" src="../../_images/icon-light-grid-zoom.webp" /> <strong>Zoom</strong> – Change the size of the items in the grid.</p></li>
+</ul>
+</li>
+</ol>
+<p>The <strong>Sort | Filter</strong> and <strong>Categorize</strong> popovers look slightly different in each view, since the available options depend on what is being shown:</p>
+<div class="popover-grid docutils">
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-sortfilter-images.webp" class="theme-img dark-img content-img fig-315" src="../../_images/project-viewer-dark-sortfilter-images.webp" />
+<img alt="../../_images/project-viewer-light-sortfilter-images.webp" class="theme-img light-img content-img fig-315" src="../../_images/project-viewer-light-sortfilter-images.webp" />
+<p><strong>Images view</strong>: Images can be filtered on whether they contain segmented objects or not</p>
+</div>
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-sortfilter-annotations.webp" class="theme-img dark-img content-img fig-315" src="../../_images/project-viewer-dark-sortfilter-annotations.webp" />
+<img alt="../../_images/project-viewer-light-sortfilter-annotations.webp" class="theme-img light-img content-img fig-315" src="../../_images/project-viewer-light-sortfilter-annotations.webp" />
+<p><strong>Annotations view</strong>: Annotations can be filtered on images selected in the “Images view”</p>
+</div>
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-categorize-images.webp" class="theme-img dark-img content-img fig-118" src="../../_images/project-viewer-dark-categorize-images.webp" />
+<img alt="../../_images/project-viewer-light-categorize-images.webp" class="theme-img light-img content-img fig-118" src="../../_images/project-viewer-light-categorize-images.webp" />
+<p><strong>Images view</strong>: Select from a list of image categories</p>
+</div>
+<div class="docutils">
+<img alt="../../_images/project-viewer-dark-categorize-annotations.webp" class="theme-img dark-img content-img fig-154" src="../../_images/project-viewer-dark-categorize-annotations.webp" />
+<img alt="../../_images/project-viewer-light-categorize-annotations.webp" class="theme-img light-img content-img fig-154" src="../../_images/project-viewer-light-categorize-annotations.webp" />
+<p><strong>Annotations view</strong>: Annotations can be categorized across Kinds. Select a Kind from the drop-down then select a category from the list. The annotation’s Kind will be updated as well.</p>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Kind Tabs</strong></p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Only in the Annotations view</p>
+<p>Kind Tabs only appear once you switch to the <strong>Annotations</strong> view above – they aren’t part of the Images view.</p>
+</div>
+<p>Piximi groups the objects into what we call “Kinds”. Kinds are essentially a <strong>supercategory</strong>. Like categories there is a default <strong>Unknown</strong> kind which exists to hold annotations which have been disassociated with a specific kind. This would occur if for instance an object’s kind was deleted by the user.</p>
+<p>Additional kinds can be created, edited and deleted, and each kind has its own set of associated categories.</p>
+<p>For example, an image may contain “Nuclei” and “Cell Membrane” objects. In this example the project has two kinds – “Nuclei”, and “Cell Membrane”. The object can then be grouped by category, for example the objects of kind “Nuclei” can be categorized as “Healthy” or “Infected”.</p>
 <p>A simple structure could look like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kinds</span><span class="p">:{</span>
-    <span class="n">Image</span><span class="p">:{</span>
-        <span class="n">data</span><span class="p">:[</span><span class="o">...</span><span class="p">]</span>
-        <span class="n">categories</span><span class="p">:[</span><span class="o">...</span><span class="p">]</span>
-    <span class="p">},</span>
     <span class="n">Nuclei</span><span class="p">:{</span>
-        <span class="n">data</span><span class="p">:[</span><span class="o">...</span><span class="p">],</span>
         <span class="n">categories</span><span class="p">:[</span><span class="n">Healthy</span><span class="p">,</span> <span class="n">Infected</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
     <span class="p">},</span>
+    <span class="n">Cell</span> <span class="n">Membrane</span><span class="p">:{</span>
+        <span class="n">categories</span><span class="p">:[</span><span class="o">...</span><span class="p">]</span>
+    <span class="p">}</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Each Kind tab contains functionality for editing the kind name, minimizing the kind (removing the kind from the visible tabs) and deleting the kind.</p>
-<div class="warning admonition">
-<p class="admonition-title">Deleting Kinds</p>
-<p>Deleting a Kind will also delete all associated objects or images.</p>
-</div>
-</section>
-<section id="create-show-kinds">
-<h3>2. Create/Show Kinds<a class="headerlink" href="#create-show-kinds" title="Permalink to this heading">#</a></h3>
-<p>Use the “+” button to create new kinds. Additionally, any kind that was previously hidden can be restored from the dropdown menu that appears upon clicking the button.</p>
-</section>
-<section id="images-objects">
-<h3>3. Images/Objects<a class="headerlink" href="#images-objects" title="Permalink to this heading">#</a></h3>
-<p>The main image grid displays all of the images or objects in a project. You can click on an image to select it, as well as view its category and some brief info.</p>
-</section>
-</section>
-<section id="info-bar">
-<h2>Info Bar<a class="headerlink" href="#info-bar" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/project-viewer-infobar-dark.webp" class="theme-img dark-img content-img" src="../../_images/project-viewer-infobar-dark.webp" />
-<img alt="../../_images/project-viewer-infobar-light.webp" class="theme-img light-img content-img" src="../../_images/project-viewer-infobar-light.webp" />
-<br/>
-<br/>
-<ol class="arabic simple">
-<li><p>Filter by category/training partition</p></li>
-<li><p>View image/object details</p></li>
+<ol class="arabic simple" start="4">
+<li><p><strong>Kind Actions</strong>: Hovering over a Kind’s tab shows the actions that can be performed on the Kind:</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Edit</strong> – Change the name of the Kind.</p></li>
+<li><p><strong>Minimize</strong> – Remove the Kind’s tab from the view</p></li>
+<li><p><strong>Delete</strong> – Delete the Kind</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p><strong>Add/Restore Kinds</strong>: The <img alt="add-kind icon" src="../../_images/icon-dark-add-kind.webp" /><img alt="add-kind icon" src="../../_images/icon-light-add-kind.webp" /> button allows you to create a new Kind, or restore a previously minimized Kind.</p></li>
 </ol>
 </section>
 <div class="toctree-wrapper compound">
@@ -711,30 +670,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-appbar">Top Appbar</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-name">1. Project Name</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">2. Sort</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-item-size">3. Grid Item Size</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-deselect-delete">4. Select/Deselect/Delete</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-images-objects">5. Categorize Images/Objects</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-image-viewer">6. Navigate to Image Viewer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-measurements-viewer">7. Navigate to Measurements Viewer</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-drawer">Action Drawer</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-drawer">Project Drawer</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">1. File I/O</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-task">2. Learning Task</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories">3. Categories</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-controls">4. App Controls</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-object-grid">Image/Object Grid</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kind-tabs">1. Kind Tabs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-show-kinds">2. Create/Show Kinds</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images-objects">3. Images/Objects</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-bar">Info Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-object-grid">Image/Object Grid</a></li>
 </ul>
   </nav></div>
 

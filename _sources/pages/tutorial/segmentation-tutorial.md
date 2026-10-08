@@ -4,77 +4,91 @@ The image segmentation module allows researchers to quickly identify cells or nu
 
 ## 1. Load images
 
-To begin, loading the images from an example dataset included in Piximi by pressing ![open](../../icons/open-folder-icon.svg) `Open` in the top left. Select `Image` > `example image` > `U2OS cell-painting experiment ` to get started. Alternatively, if you would like to load your own images, press ![upload](../../icons/cloud-upload-icon.svg) `Open image` in the top right.
+To begin, we will load the images from an example dataset included in Piximi. On the start screen, click `Open Example Project`, switch to the `Image and Object Sets` tab and select `U2OS cell-painting experiment`. If you already have a project open, you can reach the same list through ![open](../../img/icons/open-folder-icon.svg) `Open` > `Project` > `Load Example`. Alternatively, if you would like to load your own images, go to `Open` > `Image`.
 
-The images correspond to U2OS cells U2OS cells treated with an RNAi reagent
-(https://portals.broadinstitute.org/gpp/public/clone/details?cloneld=TRCN0000195467) and stained for a cell-painting experiment.
+The images correspond to U2OS cells treated with an RNAi reagent ([clone TRCN0000195467](https://portals.broadinstitute.org/gpp/public/clone/details?cloneId=TRCN0000195467)) and stained for a cell-painting experiment. The project contains a single image, and already includes two kinds of objects (`Cell membrane` and `Cell nucleus`) that you can look at in the `Annotations` view.
+
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-open-example.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-open-example.webp>
+
+```{div} tutorial-caption
+Open the U2OS cell-painting example project from the `Image and Object Sets` tab
+```
 
 ## 2. Load Models
 
-Currently, the annotator provides five pre-trained models, each designed for specific segmentation tasks:
+Piximi provides five pre-trained segmentation models, each designed for specific segmentation tasks:
 
-- **Cellpose**: A generalist algorithm for cellular segmentation and trained on fluorecence images
-- **Stardistfluo**: Trained on fluorecence images, ideal for identifying objects with star-convex shapes
-- **StardistVHE**: To identify nuclei in hematoxylin and eosin (H&E) stained image.
-- StardistFluo
+- **Cellpose-SAM**: A generalist algorithm for segmenting cells and nuclei, which runs in your browser using WebGPU
+- **StardistFluo**: Trained on fluorescence images, ideal for identifying nuclei with star-convex shapes
+- **StardistVHE**: To identify nuclei in hematoxylin and eosin (H&E) stained images
 - **COCO-SSD**: To identify objects in “natural images” (or photographs) of 80 different classes (such as humans and kites) using the COCO format
-- **GlandSegmentation**: To segment intestinal glands trained on the Gland Segmentation in Colon Histology Images Challenge Contest (GlaS)29
+- **GlandSegmentation**: To segment intestinal glands, trained on the Gland Segmentation in Colon Histology Images Challenge Contest (GlaS)
 
-In the 'Learning task' sub-menu on the left-hand side, click the 'Segmentation' button to switch the classification to cell segmentation.
+In the `Learning Task` section on the left-hand side, click the `Segmentation` button to switch from classification to segmentation.
 
-<div align="center">
+<img  class="theme-img dark-img content-img fig-315 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-section.webp>
+<img  class="theme-img light-img content-img fig-315 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-section.webp>
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-dark.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-light.webp>
+```{div} tutorial-caption
+Switch the Learning Task to segmentation, then choose a model
+```
 
-_Segmentation interface_
+Then click `Select Model` to open the `Load Segmentation Model` dialog.
 
-</div>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-select-model.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-select-model.webp>
 
-Then, click the '+ Load Model' button to select a model. Currently, only the pre-trained model is available for selection.
+```{div} tutorial-caption
+The model selection dialog
+```
 
-<div align="center">
+Open the `Pre-trained Models` list to see the available models. In this example, we will use `Cellpose-SAM`.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-dark.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-load-light.webp>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-list.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-list.webp>
 
-_Segmentation model selection_
+```{div} tutorial-caption
+The pre-trained models
+```
 
-</div>
+Once a model is chosen, the dialog describes what it is for and where it comes from. Click `Load Model` to load it.
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-dark.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-models-light.webp>
+<img  class="theme-img dark-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-model-selected.webp>
+<img  class="theme-img light-img content-img fig-600 fig-center" src=../../img/segmentation-tutorial/segmentation-tutorial-light-model-selected.webp>
 
-<br/>
+```{div} tutorial-caption
+Details of the selected model
+```
 
-Note: Cellpose is currently unique in that it runs on the AI4Life project’s BioEngine30 server while StarDist, like other Piximi models, runs client-only in the user’s own browser without data leaving their machine.
-
-Stay tuned for 'upload local' and fetch 'remote feaure'!
+```{note}
+All Piximi segmentation models, including Cellpose-SAM and StarDist, run in your own browser, and your data never leaves your machine. The model files are downloaded the first time a model is loaded. Cellpose-SAM is about 588 MB and needs a browser that supports WebGPU (for example a recent version of Chrome or Safari).
+```
 
 ## 3. Run the model
 
-click on ![alt text](../../icons/label-icon.svg) 'predict model' to run the model you selected for the image selected for segmentation
+Once the model is loaded, the `Learning Task` section shows its settings. Piximi segments the images that are currently selected, or every image if none is selected, so click the image in the grid to select it.
 
-<div align="center">
+The `Output kind name` is the name of the new kind that will hold the segmented objects. For Cellpose-SAM it is `cellpose_cells` by default, and you can rename it with the pencil icon next to it. The other settings are described in the [Segmentation section of the Project Viewer](../detail/projectviewer-segmentation.md).
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-dark.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-segmentation-predict-light.webp>
+Click `Run Segmentation` to run the model on the selected image. Piximi shows the progress of the segmentation while it runs, which can take a little while.
 
-_Model prediction_
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-run.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-run.webp>
 
-</div>
+```{div} tutorial-caption
+Select the image, then run the segmentation
+```
 
 ## 4. Segmentation output
 
-In this example, we use the Cellpose-Cell model to segment cells in the image. To view the segmented cells, switch the channels from 'Image' to 'Cellpose-Cell' ![alt text](../../icons/cloud-upload-icon.svg) at the top center of the interface.
+The segmented objects are added to the project as a new kind. To view them, click `Annotations` above the image grid to switch to the Annotations view, then click the kind tab named after the output (`cellpose_cells` in this example). Each tile shows one segmented cell.
 
-<div align="center">
+<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-dark-results.webp>
+<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/segmentation-tutorial-light-results.webp>
 
-<img  class="theme-img dark-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-dark.webp>
-<img  class="theme-img light-img content-img" src=../../img/segmentation-tutorial/u20s-cellpose-results-light.webp>
- 
-_Examples of segmentation output_
+```{div} tutorial-caption
+The objects found by Cellpose-SAM
+```
 
-</div>
-
-The outputs of the segmented objects can be used for downstream analysis, including annotations, measurements, and classifications.
+The segmented objects can be used for downstream analysis, including annotations, measurements, and classifications.

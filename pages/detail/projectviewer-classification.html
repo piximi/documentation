@@ -436,11 +436,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-model-loading">Remote Model Loading</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-operations">Model Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit">Fit</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters">Hyperparameters</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-plots">History Plots</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-plots">Training Plots</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-summary">Model Summary</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-runs-summary">Model Runs Summary</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>
@@ -460,22 +462,19 @@ document.write(`
                   
   <section id="classification">
 <h1>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">#</a></h1>
-<p>Using Piximi, you can classify your images with either a pretrained classification model you upload, or from a model you trained from scratch using Piximi. Our goal is to make classification as easy ass possibly while exposing enough settings so that you can get precise and repeatable results.</p>
+<p>Using Piximi, you can classify your images with either a pretrained classification model you upload, or from a model you trained from scratch using Piximi. Our goal is to make classification as easy as possible while exposing enough settings so that you can get precise and repeatable results.</p>
 <div class="warning admonition">
 <p class="admonition-title">Uploaded Models</p>
 <p>Piximi uses TensorFlowJS under the hood for all DL tasks. Any model you upload must be a TFJS Saved Model.</p>
 </div>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/classifier-section-dark.webp" class="theme-img dark-img content-img" src="../../_images/classifier-section-dark.webp" />
-<img alt="../../_images/classifier-section-light.webp" class="theme-img light-img content-img" src="../../_images/classifier-section-light.webp" />
-<br/>
-<br/>
+<img alt="../../_images/classifier-dark-section.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/classifier-dark-section.webp" />
+<img alt="../../_images/classifier-light-section.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/classifier-light-section.webp" />
 <ol class="arabic simple">
-<li><p>Task Selection</p></li>
-<li><p>Model I/O</p></li>
-<li><p>Model Selection</p></li>
-<li><p>Model Operations</p></li>
+<li><p><strong>Model I/O</strong>: Load a model, or save the selected model.</p></li>
+<li><p><strong>Model Selection</strong>: Choose which model to use, or delete the selected model.</p></li>
+<li><p><strong>Model Operations</strong>: Fit, Predict and Evaluate the selected model.</p></li>
 </ol>
 </section>
 <section id="task-selection">
@@ -484,131 +483,126 @@ document.write(`
 </section>
 <section id="model-i-o">
 <h2>Model I/O<a class="headerlink" href="#model-i-o" title="Permalink to this heading">#</a></h2>
+<p>Click <strong>Load Model</strong> to open the model loading dialog, or <strong>Save Model</strong> to save the selected model (this is only enabled once a model has been selected or trained). Saved models are also included whenever you save the project.</p>
+<img alt="../../_images/classifier-dark-load-model.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/classifier-dark-load-model.webp" />
+<img alt="../../_images/classifier-light-load-model.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/classifier-light-load-model.webp" />
 <section id="local-model-loading">
 <h3>Local Model Loading<a class="headerlink" href="#local-model-loading" title="Permalink to this heading">#</a></h3>
-<img alt="../../_images/load-local-class-dark.webp" class="theme-img dark-img content-img" src="../../_images/load-local-class-dark.webp" />
-<img alt="../../_images/load-local-class-light.webp" class="theme-img light-img content-img" src="../../_images/load-local-class-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Model Types</strong></p>
+<p><strong>Model Types</strong></p>
 <p>Tensorflow models can have either a Layers framework or a Graph framework. We need to know which your model is in order to upload it correctly.</p>
-<p><strong>2. File Picker</strong></p>
-<p>Open a file picker and select the model files you want to upload. Piximi requires a <code class="docutils literal notranslate"><span class="pre">[model].json</span></code> description file as well as one or more <code class="docutils literal notranslate"><span class="pre">[model].weights.bin</span></code> files(s).</p>
-<p>Onces you’ve confirmed the type and selected the files, click “Open Classification Model” to upload it.</p>
+<p><strong>File Picker</strong></p>
+<p>Open a file picker and select the model files you want to upload. Piximi requires a <code class="docutils literal notranslate"><span class="pre">[model].json</span></code> description file as well as one or more <code class="docutils literal notranslate"><span class="pre">[model].weights.bin</span></code> file(s).</p>
+<p>Once you’ve confirmed the type and selected the files, click “Open Classification Model” to upload it.</p>
 </section>
 <section id="remote-model-loading">
 <h3>Remote Model Loading<a class="headerlink" href="#remote-model-loading" title="Permalink to this heading">#</a></h3>
-<img alt="../../_images/load-remote-class-dark.webp" class="theme-img dark-img content-img" src="../../_images/load-remote-class-dark.webp" />
-<img alt="../../_images/load-remote-class-light.webp" class="theme-img light-img content-img" src="../../_images/load-remote-class-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Model Types</strong></p>
-<p>Tensorflow models can have either a Layers framework or a Graph framework. We need to know which your model is in order to upload it correctly.</p>
-<p><strong>2. File Picker</strong></p>
-<p>Enter the url access point for the remote model. If the model comes from TFHub (now absorbed into Kaggle), you must check the “From TFHub” box.</p>
-<p>Onces youve confirmed the type and selected the files, click “Open Classification Model” to upload it.</p>
+<p><strong>Model Types</strong></p>
+<p>As above, choose whether the model uses the Layers or the Graph framework.</p>
+<p><strong>Model URL</strong></p>
+<p>Enter the URL access point for the remote model. If the model comes from TFHub (now absorbed into Kaggle), you must check the “From TFHub” box.</p>
+<p>Once you’ve confirmed the type and entered the URL, click “Open Classification Model” to upload it.</p>
 </section>
+</section>
+<section id="model-selection">
+<h2>Model Selection<a class="headerlink" href="#model-selection" title="Permalink to this heading">#</a></h2>
+<p>The drop-down lists the models available for the current Kind, along with <strong>New Model</strong>, which lets you train a model from scratch. Use the trash button to delete the selected model.</p>
 </section>
 <section id="model-operations">
 <h2>Model Operations<a class="headerlink" href="#model-operations" title="Permalink to this heading">#</a></h2>
 <section id="fit">
 <h3>Fit<a class="headerlink" href="#fit" title="Permalink to this heading">#</a></h3>
-<p>Clicking the <em>Fit</em> button will open up a dialog displaying the configurable model settings.</p>
-<img alt="../../_images/fit-classifier-dark.webp" class="theme-img dark-img content-img" src="../../_images/fit-classifier-dark.webp" />
-<img alt="../../_images/fit-classifier-light.webp" class="theme-img light-img content-img" src="../../_images/fit-classifier-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Error Info</strong></p>
-<p>This error icon will appear to alert you of any issues that are currently blocking classification. You can view the issue by hovering over the icon.</p>
-<p><strong>2. Fit Classifier Button</strong></p>
-<p>When you are ready to train the clasifier, click this. The button will be replaces with a progress indicator depicting the number of epochs completed.</p>
+<p>Clicking the <em>Fit</em> button will open up a dialog displaying the configurable model settings. It has four tabs: <strong>Hyperparameters</strong>, <strong>Training Plots</strong>, <strong>Model Summary</strong> and <strong>Model Runs Summary</strong>.</p>
+<img alt="../../_images/classifier-dark-fit-hyperparameters.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-fit-hyperparameters.webp" />
+<img alt="../../_images/classifier-light-fit-hyperparameters.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-fit-hyperparameters.webp" />
 <section id="hyperparameters">
 <h4>Hyperparameters<a class="headerlink" href="#hyperparameters" title="Permalink to this heading">#</a></h4>
-<p><strong>3. Model Architecture</strong></p>
+<ol class="arabic">
+<li><p><strong>Dialog Tabs</strong>: Switch between the settings, the training plots, the model summary and the summary of previous runs.</p></li>
+<li><p><strong>Model Architecture and Name</strong></p>
 <p>Piximi offers training a model using two different architectures:</p>
 <ul class="simple">
 <li><p><em>SimpleCNN</em>: A simple convolutional neural-network consisting of a handful of processing layers.</p></li>
 <li><p><em>MobileNet</em>: Uses the popular MobileNet backbone for training the model.</p></li>
 </ul>
-<p><strong>4. Model Name</strong></p>
-<p>You can choose to change the name of the model before training. The name entered here will be the default filename when you save the classifier or the hyperparameters.</p>
-<p><strong>5. Hyperparameters</strong></p>
-<p>These settings control how your model learns from and infers on your data. Once a model is trained, these settings can no longer be updated in order to maintain reliability in the model.</p>
-<p>For a detailed description of each hyperparameter and how they affect training, go to the <a class="reference internal" href="../technical/hyperparameters.html"><span class="doc std std-doc">Hyperparameters</span></a> section of this documentation.</p>
-<p><em>Data Processing Settings</em></p>
-<p>These settings control how your data is processed prior to both their use in training and inference. These can be split into two groups of operations: <em>Image Augmentation</em> and <em>Data Partitioning</em>.</p>
+<p>You can also change the name of the model before training. The name entered here will be the default filename when you save the classifier or the hyperparameters.</p>
+</li>
+<li><p><strong>Data Preprocessing Settings</strong></p>
+<p>These settings control how your data is processed prior to both their use in training and inference. They can be split into two groups of operations: <em>Image Augmentation</em> and <em>Data Partitioning</em>.</p>
 <ul class="simple">
 <li><p>Image Augmentation: These settings control the size and shape of the images you want to feed to the model, as well as defining if or how you would like to crop them.</p></li>
 <li><p>Data Partitioning: These settings control how your data is split between training and validation for model training purposes.</p></li>
 </ul>
-<p><em>Optimization Settings</em></p>
-<p>These settings dictate how the model will learn while it is being trained on your data, as well as the length of the training. It is broken up into two more sections: <em>Training Strategy</em> and <em>Optimization</em>.</p>
+</li>
+<li><p><strong>Optimization Settings</strong></p>
+<p>These settings dictate how the model will learn while it is being trained on your data, as well as the length of the training. They are broken up into two sections: <em>Training Strategy</em> and <em>Optimization</em>.</p>
 <ul class="simple">
-<li><p>Training Strategy: This section will defint how long to train, and how many images will be in each batch for training.</p></li>
-<li><p>Optimization: This section defined how the model calculates loss, how it corrects itself, and how often it checks.</p></li>
+<li><p>Training Strategy: This section defines how long to train, and how many images will be in each batch for training.</p></li>
+<li><p>Optimization: This section defines how the model calculates loss, how it corrects itself, and how often it checks.</p></li>
 </ul>
-<p><strong>6. Export Hyperparameters</strong></p>
-<p>Click on the <strong>Export Hyperparameters</strong> button to download a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file with the model’s settings.</p>
+<p>Once a model is trained, these settings can no longer be updated, in order to maintain reliability in the model. Use <strong>Show Advanced</strong> to reveal the remaining settings. For a detailed description of each hyperparameter and how they affect training, go to the <a class="reference internal" href="../technical/hyperparameters.html"><span class="doc std std-doc">Hyperparameters</span></a> section of this documentation.</p>
+</li>
+<li><p><strong>Export Hyperparameters</strong>: Click on the <strong>Export Hyperparameters</strong> button to download a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file with the model’s settings.</p></li>
+<li><p><strong>Fit Classifier</strong>: When you are ready to train the classifier, click this button. It will be replaced with a progress indicator depicting the number of epochs completed. A warning icon next to the button alerts you to any issues that are currently blocking training; hover over it to see the issue.</p></li>
+</ol>
 </section>
-<section id="history-plots">
-<h4>History Plots<a class="headerlink" href="#history-plots" title="Permalink to this heading">#</a></h4>
+<section id="training-plots">
+<h4>Training Plots<a class="headerlink" href="#training-plots" title="Permalink to this heading">#</a></h4>
 <p>Displays the model’s performance from epoch to epoch. Monitoring the training history can help identify common model fitting difficulties such as overfitting.</p>
-<img alt="../../_images/history-plots-dark.webp" class="theme-img dark-img content-img" src="../../_images/history-plots-dark.webp" />
-<img alt="../../_images/history-plots-light.webp" class="theme-img light-img content-img" src="../../_images/history-plots-light.webp" />
-<br/>
-<p><strong>1. Accuracy Plot</strong></p>
-<p>This shows the change in accuracy for the <em>training</em> and <em>validation</em> sets per epoch. Generally, higher is better.</p>
-<p><strong>2. Loss Plots</strong></p>
-<p>Shows the change in training loss for the <em>training</em> and <em>validation</em> sets. Generally, lower is better.</p>
+<img alt="../../_images/classifier-dark-fit-training-plots.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-fit-training-plots.webp" />
+<img alt="../../_images/classifier-light-fit-training-plots.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-fit-training-plots.webp" />
+<ul class="simple">
+<li><p><strong>Accuracy Plot</strong>: The change in accuracy for the <em>training</em> and <em>validation</em> sets per epoch. Generally, higher is better.</p></li>
+<li><p><strong>Loss Plot</strong>: The change in loss for the <em>training</em> and <em>validation</em> sets. Generally, lower is better.</p></li>
+</ul>
 </section>
 <section id="model-summary">
 <h4>Model Summary<a class="headerlink" href="#model-summary" title="Permalink to this heading">#</a></h4>
-<p>Displays the model’s summary, detailing each layer and a way to export this information.</p>
-<img alt="../../_images/summary-dark.webp" class="theme-img dark-img content-img" src="../../_images/summary-dark.webp" />
-<img alt="../../_images/summary-light.webp" class="theme-img light-img content-img" src="../../_images/summary-light.webp" />
-<br/>
-<p><strong>1. Summary Table</strong></p>
-<p>For each layer in the model, displays:</p>
+<p>Displays the model’s summary, detailing each layer, and a way to export this information.</p>
+<img alt="../../_images/classifier-dark-fit-model-summary.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-fit-model-summary.webp" />
+<img alt="../../_images/classifier-light-fit-model-summary.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-fit-model-summary.webp" />
 <ul class="simple">
-<li><p>Output shape</p></li>
-<li><p>Number of parameters</p></li>
-<li><p>Whether its frozen (not trainable)</p></li>
+<li><p><strong>Summary Table</strong>: For each layer in the model, displays its output shape, number of parameters, and whether it is trainable (not frozen).</p></li>
+<li><p><strong>Export Model Summary</strong>: Exports the model summary as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p></li>
 </ul>
-<p><strong>2. Export Summary</strong></p>
-<p>Exports the model summary as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
+</section>
+<section id="model-runs-summary">
+<h4>Model Runs Summary<a class="headerlink" href="#model-runs-summary" title="Permalink to this heading">#</a></h4>
+<p>Lists every training run of the selected model.</p>
+<img alt="../../_images/classifier-dark-fit-runs-summary.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-fit-runs-summary.webp" />
+<img alt="../../_images/classifier-light-fit-runs-summary.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-fit-runs-summary.webp" />
+<ul class="simple">
+<li><p><strong>Run table</strong>: For each run, shows when it started, what triggered it (e.g. a fresh model or continued training), the random seed, the number of epochs and the final loss and accuracy. Click <strong>View</strong> to see the hyperparameters used for that run.</p></li>
+<li><p><strong>Export Runs Summary</strong>: Exports the table of runs.</p></li>
+</ul>
 </section>
 </section>
 <section id="predict">
 <h3>Predict<a class="headerlink" href="#predict" title="Permalink to this heading">#</a></h3>
-<p>Clicking the <em>Predict</em> button will begin running inference on the images/object of the displayed Kind, using the selected model.</p>
-<img alt="../../_images/predict-options-dark.webp" class="theme-img dark-img content-img" src="../../_images/predict-options-dark.webp" />
-<img alt="../../_images/predict-options-light.webp" class="theme-img light-img content-img" src="../../_images/predict-options-light.webp" />
-<br/>
-<p><strong>1. Hide Labeled Images</strong></p>
-<p>This will hid all of the manually categorized images so that you only so the predictions.</p>
-<p><strong>2. Clear Predictions</strong></p>
-<p>Reset the project to before the predition were made.</p>
-<p><strong>3. Accept Predictions</strong></p>
-<p>confirm the predicted categories. Once accepted you wont be able to revert to a state before they were categorized, so to prevent accidental acceptance we require users to press and hold the button.</p>
+<p>Clicking the <em>Predict</em> button will begin running inference on the unlabeled images/objects of the displayed Kind, using the selected model. Predicted categories are shown in the grid but are not applied until you accept them.</p>
+<img alt="../../_images/classifier-dark-predict-options.webp" class="theme-img dark-img content-img fig-315 fig-float" src="../../_images/classifier-dark-predict-options.webp" />
+<img alt="../../_images/classifier-light-predict-options.webp" class="theme-img light-img content-img fig-315 fig-float" src="../../_images/classifier-light-predict-options.webp" />
+<p><strong>Clear Predictions</strong></p>
+<p>Reset the project to before the predictions were made.</p>
+<p><strong>Accept Predictions</strong></p>
+<p>Confirm the predicted categories. Once accepted you won’t be able to revert to a state before they were categorized, so to prevent accidental acceptance we require users to press and hold the button.</p>
 </section>
 <section id="evaluate">
 <h3>Evaluate<a class="headerlink" href="#evaluate" title="Permalink to this heading">#</a></h3>
 <p>Clicking the <em>Evaluate</em> button will open a dialog with the evaluation result of the current run, along with the previous runs for which evaluation has been done.</p>
-<img alt="../../_images/eval-dark.webp" class="theme-img dark-img content-img" src="../../_images/eval-dark.webp" />
-<img alt="../../_images/eval-light.webp" class="theme-img light-img content-img" src="../../_images/eval-light.webp" />
-<br/>
-<p><strong>1. Select Run</strong></p>
-<p>View the current evaluated run, or select a previously evaluated run to view</p>
-<p><strong>2. Confusion Matrix</strong></p>
-<p>Displays the result of the valitation set predictions. Ideally you want the it to resemble an <em>identity metrix</em> where the values on the diagonal are maximized and the surrounding values are zero. This would meant that the model accurately predicted the classes of the inference set.</p>
-<p><strong>3. Evaluation Metrics</strong></p>
+<img alt="../../_images/classifier-dark-evaluate.webp" class="theme-img dark-img content-img" src="../../_images/classifier-dark-evaluate.webp" />
+<img alt="../../_images/classifier-light-evaluate.webp" class="theme-img light-img content-img" src="../../_images/classifier-light-evaluate.webp" />
+<p><strong>Select Run</strong></p>
+<p>Use the pager at the top right of the dialog to view the current evaluated run, or select a previously evaluated run. A warning icon appears when a run’s validation set differs from the previous run’s, since differences in the metrics may then reflect the data rather than the model.</p>
+<p><strong>Confusion Matrix</strong></p>
+<p>Displays the result of the validation set predictions. Ideally you want it to resemble an <em>identity matrix</em> where the values on the diagonal are maximized and the surrounding values are zero. This would mean that the model accurately predicted the classes of the validation set.</p>
+<p><strong>Evaluation Metrics</strong></p>
 <p>Displays some averaged evaluation metrics for the run:</p>
 <ul class="simple">
 <li><p>Accuracy</p></li>
 <li><p>Cross Entropy</p></li>
 <li><p>Precision</p></li>
 <li><p>Recall</p></li>
-<li><p>F-1 Score</p></li>
+<li><p>F1-Score</p></li>
 </ul>
 <p>See our <span class="xref myst">image classification tutorial</span>
 and <span class="xref myst">object classification tutorial</span> for usage information.</p>
@@ -686,11 +680,13 @@ and <span class="xref myst">object classification tutorial</span> for usage info
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-model-loading">Remote Model Loading</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">Model Selection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-operations">Model Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fit">Fit</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameters">Hyperparameters</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-plots">History Plots</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-plots">Training Plots</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-summary">Model Summary</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-runs-summary">Model Runs Summary</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predict">Predict</a></li>

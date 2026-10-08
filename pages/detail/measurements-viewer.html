@@ -430,8 +430,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-creation-and-measurement-selection">Table Creation and Measurement Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-data-grid">Measurements Data Grid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-plots">Measurements Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-view">Table View</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-options">Split Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-view">Plot View</a></li>
 </ul>
             </nav>
         </div>
@@ -445,82 +448,86 @@ document.write(`
                   
   <section id="measurements-viewer">
 <h1>Measurements Viewer<a class="headerlink" href="#measurements-viewer" title="Permalink to this heading">#</a></h1>
-<p>The annotator in Piximi can quickly create annotations for your <strong>multichannel</strong> and <strong>multiplane</strong> images. Below is a showcase of some of the different annotation tools that Piximi offers.</p>
+<p>The Measurements Viewer lets you measure the images and objects in your project, summarize the results in tables, and visualize them in plots. It operates on every image/object of the chosen <strong>Kind</strong>, so no selection is needed in the Project Viewer: click <strong>Measure</strong> at the top of the Project Viewer to open it.</p>
 <section id="table-creation-and-measurement-selection">
 <h2>Table Creation and Measurement Selection<a class="headerlink" href="#table-creation-and-measurement-selection" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/measurements-viewer-actionbar-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-actionbar-dark.webp" />
-<img alt="../../_images/measurements-viewer-actionbar-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-actionbar-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Table Creation</strong></p>
-<p>Click in the “+” button to create a new measurement group based on one of the Kinds in the project.</p>
-<p><strong>2. Split Selection</strong></p>
-<p>Select the splits you want to use for the measurements. The splits dictate how the measurements are grouped for statistical analysis (i.e. calculating the mean intensity over all the images in the <strong>training</strong> partition).</p>
-<p><strong>3. Measurement Selection</strong></p>
-<p>Measurements are separated into two sections; <strong>Intensity</strong> and <strong>Object Geometry</strong>.</p>
-<p><em>Intensity Measurements</em></p>
-<p>These measurements are performed for whole images, as well as image crops for annotated objects and include:</p>
-<ul class="simple">
-<li><p><em>Total Intensity</em>: Cummulative sum of the intensity values of each pixel.</p></li>
-<li><p><em>Mean Intensity</em>: The mean of the pixel intensities.</p></li>
-<li><p><em>Standard Deviation</em>: The std of the pixel intensities.</p></li>
-<li><p><em>MAD</em>: The median adjusted deviation of the pixel intensities of the image.</p></li>
-<li><p><em>Minimum Intensity</em>: The minimum intensity of the pixels in the image.</p></li>
-<li><p><em>Maximum Intensity</em>: The maximum intensity of the pixels in the image.</p></li>
-<li><p><em>Lower Quartile</em>: The value of the intensity for which 25% of the pixel intensities are lower.</p></li>
-<li><p><em>Upper Quartile</em>: The value of the intensity for which 75% of the pixel intensities are lower.</p></li>
-</ul>
-<p><em>Object Geometry Measurements</em></p>
-<p>These measurements are perfomres on the object masks, and are not available for the <strong>Image</strong> Kind.</p>
+<img alt="../../_images/measurements-viewer-dark-drawer.webp" class="theme-img dark-img content-img fig-315 fig-float" src="../../_images/measurements-viewer-dark-drawer.webp" />
+<img alt="../../_images/measurements-viewer-light-drawer.webp" class="theme-img light-img content-img fig-315 fig-float" src="../../_images/measurements-viewer-light-drawer.webp" />
+<p><strong>1. Create Table</strong></p>
+<p>Click <strong>Add Table</strong>, then choose one of the project’s Kinds. Each table measures all of the items belonging to that Kind (the <strong>Image</strong> kind measures whole images). Tables appear as tabs along the top of the viewer, and can be renamed or deleted from their tab.</p>
+<p><strong>2. Object Measurements</strong></p>
+<p>Geometry measurements performed on the object masks. They are not available for the <strong>Image</strong> Kind.</p>
 <ul class="simple">
 <li><p><em>Area</em>: The area of the annotation mask.</p></li>
-<li><p><em>Bounding-Box Area</em>:the area of the annotation’s bounding-box</p></li>
+<li><p><em>Bounding-Box Area</em>: The area of the annotation’s bounding box.</p></li>
 <li><p><em>Perimeter</em>: The perimeter of the annotation mask.</p></li>
-<li><p><em>Extent</em>: The ratio of bounding-box area to mask area.</p></li>
-<li><p><em>Equivalent Diameter</em>: The diameter of a perfect circle whose area is equivalent to the area of the annotation.</p></li>
-<li><p><em>Diameter of Equal Perimeter (PED)</em>: The diameter of a circle whose perimeter is equal to that of the annotation’s.</p></li>
-<li><p><em>Sphericity</em>: The extent to which an annotation is perfectly spherical. Ranges from 0 (irregularly shaped) to 1 (spherical)
-= <em>Compactness</em>: The degree to which objects are compact. Circles will be the most compact with a value of 1, with the value increasing with increasing shape irregularity.</p></li>
+<li><p><em>Extent</em>: The ratio of mask area to bounding-box area.</p></li>
+<li><p><em>Equivalent Diameter</em>: The diameter of a circle whose area is equal to the area of the annotation.</p></li>
+<li><p><em>Diameter of Equal Perimeter (PED)</em>: The diameter of a circle whose perimeter is equal to that of the annotation.</p></li>
+<li><p><em>Radius</em>: The radius of the annotation.</p></li>
+<li><p><em>Sphericity</em>: How close the annotation is to a perfect circle. Ranges from 0 (irregular) to 1 (circular).</p></li>
+<li><p><em>Compactness</em>: How compact the object is. A circle is the most compact, with a value of 1; the value increases as the shape becomes more irregular.</p></li>
+<li><p><em>Center of Mass (X, Y)</em>: The coordinates of the object’s center of mass.</p></li>
 </ul>
-</section>
-<section id="measurements-data-grid">
-<h2>Measurements Data Grid<a class="headerlink" href="#measurements-data-grid" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/measurements-viewer-table-tab-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-table-tab-dark.webp" />
-<img alt="../../_images/measurements-viewer-table-tab-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-table-tab-light.webp" />
-<br/>
-<br/>
-<p><strong>1. Display Tabs</strong></p>
-<p>Switch views between the data grid and the measurement plots.</p>
-<p><strong>2. Data Grid</strong></p>
+<p><strong>3. Intensity Measurements</strong></p>
+<p>Performed on whole images, as well as on the image crops of annotated objects:</p>
 <ul class="simple">
-<li><p><em>Measurement Name</em>: Name of the measurement.</p></li>
-<li><p><em>Split</em>: The split which the measurement results are analysed over.</p></li>
-<li><p><em>Mean</em>: The mean values over all the measurement values in the split.</p></li>
-<li><p><em>Median</em>: The median values over all the measurement values in the split.</p></li>
-<li><p><em>Standard Deviation</em>:The standard deviation over all the measurement values in the split.</p></li>
+<li><p><em>Total</em>: The cumulative sum of the pixel intensities.</p></li>
+<li><p><em>Mean</em> and <em>Median</em>: The mean and median pixel intensity.</p></li>
+<li><p><em>Std</em>: The standard deviation of the pixel intensities.</p></li>
+<li><p><em>MAD</em>: The median absolute deviation of the pixel intensities.</p></li>
+<li><p><em>Min Value</em> and <em>Max Value</em>: The lowest and highest pixel intensity.</p></li>
+<li><p><em>Lower Quartile</em> and <em>Upper Quartile</em>: The intensities below which 25% and 75% of the pixels fall.</p></li>
 </ul>
+<p>Tick a group to select all of its measurements, or expand it to pick individual ones.</p>
 </section>
-<section id="measurements-plots">
-<h2>Measurements Plots<a class="headerlink" href="#measurements-plots" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/measurements-viewer-plot-tab-dark.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-plot-tab-dark.webp" />
-<img alt="../../_images/measurements-viewer-plot-tab-light.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-plot-tab-light.webp" />
-<br/>
-<br/>
+<section id="table-view">
+<h2>Table View<a class="headerlink" href="#table-view" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/measurements-viewer-dark-table-tab.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-dark-table-tab.webp" />
+<img alt="../../_images/measurements-viewer-light-table-tab.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-light-table-tab.webp" />
+<ol class="arabic simple">
+<li><p><strong>Table Tabs</strong>: Switch between the measurement tables you have created.</p></li>
+<li><p><strong>Table | Plot View</strong>: Switch between the data grid and the measurement plots.</p></li>
+<li><p><strong>Export</strong>: Download the table as a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file (or, in the plot view, save the plot as a <code class="docutils literal notranslate"><span class="pre">.png</span></code>).</p></li>
+<li><p><strong>Split Options</strong>: Choose how the measurements are grouped (see below).</p></li>
+<li><p><strong>Data Grid</strong>: One row per measurement, with:</p>
+<ul class="simple">
+<li><p><em>Count</em>: The number of items measured.</p></li>
+<li><p><em>Mean</em>, <em>Median</em> and <em>Std Dev</em>: Statistics over those items.</p></li>
+</ul>
+</li>
+</ol>
+<section id="split-options">
+<h3>Split Options<a class="headerlink" href="#split-options" title="Permalink to this heading">#</a></h3>
+<p>By default the statistics are computed over every item in the Kind. Use the <strong>Split Options</strong> to break them down by one or more dimensions:</p>
+<ul class="simple">
+<li><p><strong>Category</strong>: The category of each item.</p></li>
+<li><p><strong>Partition</strong>: The training partition of each item (training, validation, or unassigned).</p></li>
+<li><p><strong>Image</strong>: The image an object belongs to (for object Kinds).</p></li>
+</ul>
+<p>Drag a dimension from <strong>Available Dimensions</strong> into <strong>Column Grouping</strong> to create a pivot table with one set of columns per value. The order of the dimensions matters: the first dimension is the outermost grouping. Drag a dimension back to remove it.</p>
+<img alt="../../_images/measurements-viewer-dark-table-pivot.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-dark-table-pivot.webp" />
+<img alt="../../_images/measurements-viewer-light-table-pivot.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-light-table-pivot.webp" />
+</section>
+</section>
+<section id="plot-view">
+<h2>Plot View<a class="headerlink" href="#plot-view" title="Permalink to this heading">#</a></h2>
+<img alt="../../_images/measurements-viewer-dark-plot-tab.webp" class="theme-img dark-img content-img" src="../../_images/measurements-viewer-dark-plot-tab.webp" />
+<img alt="../../_images/measurements-viewer-light-plot-tab.webp" class="theme-img light-img content-img" src="../../_images/measurements-viewer-light-plot-tab.webp" />
 <p><strong>1. Plot Controls</strong></p>
 <ul class="simple">
-<li><p><em>Plot Type</em>: The type of plot to use: Histogram, Scatter, Beeswarm</p></li>
-<li><p><em>Color Scheme</em>: The color scheme of the plot.</p></li>
-<li><p><em>x-Axis</em>: The measurement used for the x-axis.</p></li>
-<li><p><em>y-Axis</em>: The measurement used for the y-axis.</p></li>
-<li><p><em>Size</em>: The measurement used for the size mapping.</p></li>
-<li><p><em>Color</em>: The split type used for color mapping (by-category or by-partition)</p></li>
-<li><p><em>Number of Bins</em>: Number of binds to use in the histogram plot.</p></li>
-<li><p><em>Swarm Group</em>: The split type used for swarm grouping (by-category or by-partition)</p></li>
+<li><p><em>Plot</em>: The type of plot: Histogram, Scatter, or Beeswarm.</p></li>
+<li><p><em>Color Theme</em>: The color scheme of the plot.</p></li>
+<li><p><em>X-axis</em> / <em>Y-axis</em>: The measurements used for each axis.</p></li>
+<li><p><em>Size</em>: The measurement used for the size of the marks.</p></li>
+<li><p><em>Color</em>: The split (category or partition) used to color the marks.</p></li>
+<li><p><em>Number of Bins</em> and <em>Show Bin Label</em>: Histogram options.</p></li>
+<li><p><em>Swarm Group</em>: The split (category or partition) used to group a beeswarm plot.</p></li>
 </ul>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Plot Name</p></th>
-<th class="head"><p>Color Scheme</p></th>
+<th class="head"><p>Color Theme</p></th>
 <th class="head"><p>x-Axis</p></th>
 <th class="head"><p>y-Axis</p></th>
 <th class="head"><p>Size</p></th>
@@ -552,21 +559,19 @@ document.write(`
 <td><p>Configurable</p></td>
 <td><p>N/A</p></td>
 <td><p>Configurable</p></td>
-<td><p>N/A</p></td>
+<td><p>Configurable</p></td>
 <td><p>N/A</p></td>
 <td><p>N/A</p></td>
 <td><p>Configurable</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>2. Plot Container</strong></p>
+<p><strong>2. Plot</strong></p>
 <p>Displays the current plot.</p>
 <p><strong>3. Plot Tabs</strong></p>
-<p>Switch between multiple active plots. Click on the tab title to update the name of the plot, or click on the “X” button to remove the plot.</p>
-<p><strong>4. Create New Plot</strong></p>
-<p>Create a new plot</p>
-<p><strong>5. Save Plot</strong></p>
-<p>Save the currently viewed plot as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> file.</p>
+<p>Switch between multiple plots. Click the <strong>+</strong> at the end of the tab bar to create a new plot, click a tab’s title to rename it, and use the <strong>x</strong> to remove it.</p>
+<p><strong>4. Save Plot</strong></p>
+<p>Save the current plot as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> file.</p>
 </section>
 </section>
 
@@ -634,8 +639,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-creation-and-measurement-selection">Table Creation and Measurement Selection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-data-grid">Measurements Data Grid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurements-plots">Measurements Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-view">Table View</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-options">Split Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-view">Plot View</a></li>
 </ul>
   </nav></div>
 
