@@ -432,13 +432,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informacion-general"><strong>Información general:</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-piximi"><strong>¿Qué es Piximi?</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-ejercicio"><strong>Objetivo del ejercicio</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-experimento-de-muestra"><strong>Contexto del experimento de muestra</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-experimento-de-ejemplo"><strong>Contexto del experimento de ejemplo</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-necesarios-para-este-ejercicio"><strong>Materiales necesarios para este ejercicio</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-para-el-ejercicio"><strong>Instrucciones para el ejercicio</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-el-proyecto-piximi">1. <strong>Cargar el proyecto Piximi</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compruebe-las-imagenes-cargadas-y-explore-la-interfaz-piximi">2. <strong>Compruebe las imágenes cargadas y explore la interfaz Piximi</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprueba-las-imagenes-cargadas-y-explore-la-interfaz-piximi">2. <strong>Comprueba las imágenes cargadas y explore la interfaz Piximi</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentar-celulas-diferenciar-las-celulas-del-background">3. <strong>Segmentar Células - diferenciar las células del <em>background</em></strong>.</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualice-el-resultado-de-la-segmentacion-y-corrija-los-errores-de-segmentacion">4. <strong>Visualice el resultado de la segmentación y corrija los errores de segmentación</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualiza-el-resultado-de-la-segmentacion-y-corrije-los-errores-de-segmentacion">4. <strong>Visualiza el resultado de la segmentación y corrije los errores de segmentación</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-celulas">5. <strong>Clasificar células</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-el-modelo-clasificador">6. <strong>Entrenar el modelo clasificador</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-modelo">7. <strong>Evaluar el modelo:</strong></a></li>
@@ -472,17 +472,17 @@ document.write(`
 <h2><strong>Información general:</strong><a class="headerlink" href="#informacion-general" title="Permalink to this heading">#</a></h2>
 <section id="que-es-piximi">
 <h3><strong>¿Qué es Piximi?</strong><a class="headerlink" href="#que-es-piximi" title="Permalink to this heading">#</a></h3>
-<p>Piximi es una herramienta moderna de análisis de imágenes tomando ventaja de varios métodos de <em>deep learning</em>, sin requerir conocimientos de programación. Implementado como una aplicación web en <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi no requiere instalación y se puede acceder desde cualquier navegador web moderno. Su arquitectura de cliente único preserva la seguridad de los datos del investigador ejecutando todos los cálculos localmente.</p>
-<p>Piximi es interoperable con herramientas y flujos de trabajo existentes, ya que admite la importación y exportación formatos de datos y modelos comunes. La interfaz intuitiva y el fácil acceso a Piximi permiten a los biólogos obtener información sobre las imágenes en tan sólo unos minutos. Piximi tiene como objetivo llevar el análisis de imágenes basado en <em>deep learning</em> a una comunidad más amplia mediante la eliminación de las barreras de entrada.</p>
+<p>Piximi es una herramienta moderna de análisis de imágenes que toma ventaja de varios métodos de <em>deep learning</em>, sin requerir conocimientos de programación. Implementado como una aplicación web en <a class="reference external" href="https://piximi.app/">https://piximi.app/</a>, Piximi no requiere instalación y se puede acceder a ella desde cualquier navegador web moderno. Su arquitectura de cliente único preserva la seguridad de los datos del investigador ejecutando todos los cálculos localmente.</p>
+<p>Piximi es interoperable con herramientas y flujos de trabajo existentes, ya que admite la importación y exportación de formatos de datos y modelos comunes. La interfaz intuitiva y el fácil acceso a Piximi permiten a los biólogos obtener información sobre las imágenes en tan sólo unos minutos. Piximi tiene como objetivo llevar el análisis de imágenes basado en <em>deep learning</em> a una comunidad más amplia mediante la eliminación de las barreras de entrada.</p>
 <p>Funciones básicas: <strong>Anotador, Segmentador, Clasificador, Mediciones.</strong></p>
 </section>
 <section id="objetivo-del-ejercicio">
 <h3><strong>Objetivo del ejercicio</strong><a class="headerlink" href="#objetivo-del-ejercicio" title="Permalink to this heading">#</a></h3>
-<p>En este ejercicio, se familiarizará con las principales funcionalidades de Piximi de anotación, segmentación, clasificación, medición y visualización y lo utilizará para analizar un conjunto de imágenes de muestra de un experimento de translocación. El objetivo de este experimento es determinar la <strong>dosis efectiva más baja</strong> de Wortmannin requerida para inducir la localización nuclear de FOXO1A etiquetada con GFP (Figura 31). Segmentará las imágenes utilizando uno de los modelos de <em>deep learning</em> disponibles en Piximi. Comprobará y curará la segmentación y luego entrenará un clasificador de imágenes para clasificar las células individuales como teniendo «GFP nuclear», «GFP citoplasmática» o «sin GFP». Por último, realizará mediciones y las representará gráficamente para responder a la pregunta biológica.</p>
+<p>En este ejercicio, se familiarizarás con las principales funcionalidades de Piximi de anotación, segmentación, clasificación, medición y visualización y las utilizarás para analizar un conjunto de imágenes de muestra de un experimento de translocación. El objetivo de este experimento es determinar la <strong>dosis efectiva más baja</strong> de Wortmannin requerida para inducir la localización nuclear de FOXO1A etiquetada con GFP (Figura 31). Segmentarás las imágenes utilizando uno de los modelos de <em>deep learning</em> disponibles en Piximi. Comprobarás y curarás la segmentación y luego entrenarás un clasificador de imágenes para clasificar las células individuales como según presenten <code class="docutils literal notranslate"><span class="pre">GFP</span> <span class="pre">nuclear</span></code>, <code class="docutils literal notranslate"><span class="pre">GFP</span> <span class="pre">citoplasmática</span></code> o <code class="docutils literal notranslate"><span class="pre">sin</span> <span class="pre">GFP</span></code>. Por último, realizarás mediciones y las representarás gráficamente para responder a la pregunta biológica.</p>
 </section>
-<section id="contexto-del-experimento-de-muestra">
-<h3><strong>Contexto del experimento de muestra</strong><a class="headerlink" href="#contexto-del-experimento-de-muestra" title="Permalink to this heading">#</a></h3>
-<p>En este experimento, los investigadores tomaron imágenes de células U2OS de osteosarcoma (cáncer de hueso) fijadas que expresaban una proteína de fusión FOXO1A-GFP y tiñeron con DAPI para marcar los núcleos. FOXO1 es un factor de transcripción que desempeña un papel clave en la regulación de la gluconeogénesis y la glicogenólisis a través de la señalización de insulina. FOXO1A se desplaza dinámicamente entre el citoplasma y el núcleo en respuesta a diversos estímulos. Wortmannin, un inhibidor de PI3K, puede bloquear la exportación nuclear, lo que resulta en la acumulación de FOXO1A en el núcleo.</p>
+<section id="contexto-del-experimento-de-ejemplo">
+<h3><strong>Contexto del experimento de ejemplo</strong><a class="headerlink" href="#contexto-del-experimento-de-ejemplo" title="Permalink to this heading">#</a></h3>
+<p>En este experimento, los investigadores tomaron imágenes de células U2OS de osteosarcoma (cáncer de hueso) fijadas que expresaban una proteína de fusión FOXO1A-GFP y tiñeron con DAPI para marcar los núcleos. FOXO1A es un factor de transcripción que desempeña un papel clave en la regulación de la gluconeogénesis y la glicogenólisis a través de la señalización de insulina. FOXO1A se desplaza dinámicamente entre el citoplasma y el núcleo en respuesta a diversos estímulos. Wortmannin, un inhibidor de PI3K, puede bloquear la exportación nuclear, lo que resulta en la acumulación de FOXO1A en el núcleo.</p>
 <a class="content-img fig-center fig-single reference internal image-reference" href="../../_images/f0x01a.png"><img alt="../../_images/f0x01a.png" class="content-img fig-center fig-single" src="../../_images/f0x01a.png" style="width: 300px;" /></a>
 <div class="tutorial-caption docutils">
 <p>Representación esquemática del mecanismo de acción de FOXO1A.</p>
@@ -490,17 +490,17 @@ document.write(`
 </section>
 <section id="materiales-necesarios-para-este-ejercicio">
 <h3><strong>Materiales necesarios para este ejercicio</strong><a class="headerlink" href="#materiales-necesarios-para-este-ejercicio" title="Permalink to this heading">#</a></h3>
-<p>No es necesario descargar nada: las imágenes están incluidas en Piximi como un proyecto de ejemplo llamado <strong>Translocation Tutorial</strong>. Contiene todas las imágenes, ya etiquetadas con el tratamiento correspondiente (concentración de Wortmannin o Control).</p>
+<p>No es necesario descargar nada: las imágenes están incluidas en Piximi como un proyecto de ejemplo llamado <strong>Translocation Tutorial</strong>. Dicho proyecto ontiene todas las imágenes, ya etiquetadas con el tratamiento correspondiente (concentración de Wortmannin o Control).</p>
 </section>
 <section id="instrucciones-para-el-ejercicio">
 <h3><strong>Instrucciones para el ejercicio</strong><a class="headerlink" href="#instrucciones-para-el-ejercicio" title="Permalink to this heading">#</a></h3>
-<p>Lea los pasos que se indican a continuación y siga las instrucciones donde se indican. Los pasos en los que debe averiguar una solución están marcados con 🔴 PARA HACER.</p>
+<p>Lee los pasos que se indican a continuación y sigue las instrucciones donde se indican. Los pasos en los que debes averiguar una solución están marcados con 🔴 PARA HACER.</p>
 <section id="cargar-el-proyecto-piximi">
 <h4>1. <strong>Cargar el proyecto Piximi</strong><a class="headerlink" href="#cargar-el-proyecto-piximi" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
 <li><p>Inicia Piximi en:<a class="reference external" href="https://piximi.app/">https://piximi.app/</a></p></li>
-<li><p>Cargar el proyecto de ejemplo: En la pantalla de inicio, haga clic en «Open Example Project» y seleccione «Translocation Tutorial». Si ya tiene un proyecto abierto, puede llegar a la misma lista a través de «Open» &gt; «Project» &gt; «Load Example». Opcionalmente puede cambiar el nombre del proyecto en el panel superior izquierdo, como «Ejercicio Piximi». A medida que se carga, se puede ver la progresión en la esquina superior izquierda logotipo <a class="reference internal" href="../../_images/Piximi_logo.png"><img alt="../../_images/Piximi_logo.png" src="../../_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
+<li><p>Carga el proyecto de ejemplo: En la pantalla de inicio, haga clic en <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Example</span> <span class="pre">Project</span></code> y selecciona <code class="docutils literal notranslate"><span class="pre">Translocation</span> <span class="pre">Tutorial</span></code>. Si ya tienes un proyecto abierto, puedes llegar a la misma lista a través de <code class="docutils literal notranslate"><span class="pre">Open</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Project</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Example</span></code>. Opcionalmente puedes cambiar el nombre del proyecto en el panel superior izquierdo, como <code class="docutils literal notranslate"><span class="pre">Ejercicio</span> <span class="pre">Piximi</span></code>. A medida que se carga el proyecto, se puede ver la progresión en la esquina superior izquierda logotipo <a class="reference internal" href="../../_images/Piximi_logo.png"><img alt="../../_images/Piximi_logo.png" src="../../_images/Piximi_logo.png" style="width: 80px;" /></a>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-open-example.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-open-example.webp" />
 <img alt="../../_images/translocation-tutorial-light-open-example.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-open-example.webp" />
@@ -508,22 +508,22 @@ document.write(`
 <p>Cargando el proyecto de ejemplo Translocation Tutorial.</p>
 </div>
 </section>
-<section id="compruebe-las-imagenes-cargadas-y-explore-la-interfaz-piximi">
-<h4>2. <strong>Compruebe las imágenes cargadas y explore la interfaz Piximi</strong><a class="headerlink" href="#compruebe-las-imagenes-cargadas-y-explore-la-interfaz-piximi" title="Permalink to this heading">#</a></h4>
+<section id="comprueba-las-imagenes-cargadas-y-explore-la-interfaz-piximi">
+<h4>2. <strong>Comprueba las imágenes cargadas y explore la interfaz Piximi</strong><a class="headerlink" href="#comprueba-las-imagenes-cargadas-y-explore-la-interfaz-piximi" title="Permalink to this heading">#</a></h4>
 <img alt="../../_images/translocation-tutorial-dark-project-images.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-project-images.webp" />
 <img alt="../../_images/translocation-tutorial-light-project-images.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-project-images.webp" />
 <div class="tutorial-caption docutils">
 <p>Visualización de las imágenes del proyecto.</p>
 </div>
 <p>Estas 17 imágenes representan tratamientos con Wortmannin a diez concentraciones diferentes (expresadas en nM), así como tratamientos con sólo vehículo (0 nM). Observe que el canal DAPI (Núcleos) se muestra en magenta y que el canal GFP (FOXOA1) se muestra en verde.</p>
-<p>Las etiquetas de color en la esquina superior izquierda de cada imagen, y la lista «Categories» de la izquierda, proceden de los metadatos guardados con el proyecto de ejemplo. En este tutorial, las etiquetas de diferentes colores indican la concentración de Wortmannin, mientras que los números de la lista representan el número de imágenes en cada categoría.</p>
-<p>Opcionalmente, puede etiquetar las imágenes manualmente haciendo clic en el icono «+» (New Category) junto a «Categories» e introduciendo un nombre, y luego seleccionando imágenes en la cuadrícula y haciendo clic en el icono «Categorize» situado encima para asignar una categoría. En este tutorial, nos saltaremos este paso ya que las etiquetas ya forman parte del proyecto. Puede encontrar más información en la sección <a class="reference internal" href="../detail/projectviewer.html"><span class="doc std std-doc">Visor de proyectos</span></a> de los documentos.</p>
+<p>Las etiquetas de color en la esquina superior izquierda de cada imagen, y la lista <code class="docutils literal notranslate"><span class="pre">Categories</span></code> de la izquierda, proceden de los metadatos guardados con el proyecto de ejemplo. En este tutorial, las etiquetas de diferentes colores indican la concentración de Wortmannin, mientras que los números de la lista representan el número de imágenes en cada categoría.</p>
+<p>Opcionalmente, puede etiquetar las imágenes manualmente haciendo clic en el icono <code class="docutils literal notranslate"><span class="pre">+</span></code> (New Category) junto a <code class="docutils literal notranslate"><span class="pre">Categories</span></code> e introduciendo un nombre, y luego seleccionando imágenes en la cuadrícula y haciendo clic en el icono <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> situado encima para asignar una categoría. En este tutorial, nos saltaremos este paso ya que las etiquetas ya forman parte del proyecto. Puedes encontrar más información en la sección <a class="reference internal" href="../detail/projectviewer.html"><span class="doc std std-doc">Visor de proyectos</span></a> de los documentos.</p>
 </section>
 <section id="segmentar-celulas-diferenciar-las-celulas-del-background">
 <h4>3. <strong>Segmentar Células - diferenciar las células del <em>background</em></strong>.<a class="headerlink" href="#segmentar-celulas-diferenciar-las-celulas-del-background" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Para iniciar la predicción en todas las imágenes, haga clic en el icono «Select all» situado encima de las imágenes.</p></li>
+<li><p>Para iniciar la predicción en todas las imágenes, haz clic en el icono <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">all</span></code> situado encima de las imágenes.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-select-all.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-select-all.webp" />
 <img alt="../../_images/translocation-tutorial-light-select-all.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-select-all.webp" />
@@ -531,65 +531,65 @@ document.write(`
 <p>Seleccionando todas las imágenes.</p>
 </div>
 <ul class="simple">
-<li><p>En la sección «Learning Task», cambie la tarea a «Segmentation».</p></li>
+<li><p>En la sección <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code>, cambie la tarea a <code class="docutils literal notranslate"><span class="pre">Segmentation</span></code>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-segmenter-section.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-dark-segmenter-section.webp" />
 <img alt="../../_images/translocation-tutorial-light-segmenter-section.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-light-segmenter-section.webp" />
 <div class="tutorial-caption docutils">
-<p>Cambiando la tarea a «Segmentation».</p>
+<p>Cambiando la tarea a <code class="docutils literal notranslate"><span class="pre">Segmentation</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>Haga clic en «Select Model» y aparecerá la ventana «Load Segmentation Model», que le permite elegir un modelo pre-entrenado.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Model</span></code> y aparecerá la ventana <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Segmentation</span> <span class="pre">Model</span></code>, que te permite elegir un modelo pre-entrenado.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-load-model.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-load-model.webp" />
 <img alt="../../_images/translocation-tutorial-light-load-model.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-load-model.webp" />
 <div class="tutorial-caption docutils">
-<p>La ventana «Load Segmentation Model».</p>
+<p>La ventana <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Segmentation</span> <span class="pre">Model</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>Para el ejercicio de hoy, seleccione «Cellpose-SAM» de la lista «Pre-trained Models». Puede encontrar más información sobre los modelos admitidos <span class="xref myst">aquí</span>. Haga clic en «Load Model» para cargar su modelo y seleccionarlo. El modelo se ejecuta en su navegador, por lo que la primera carga descarga los archivos del modelo (Cellpose-SAM ocupa unos 588 MB y requiere un navegador compatible con WebGPU).</p></li>
+<li><p>Para el ejercicio de hoy, selecciona <code class="docutils literal notranslate"><span class="pre">Cellpose-SAM</span></code> de la lista <code class="docutils literal notranslate"><span class="pre">Pre-trained</span> <span class="pre">Models</span></code>. Puedes encontrar más información sobre los modelos admitidos <span class="xref myst">aquí</span>. Haz clic en <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Model</span></code> para cargar su modelo y seleccionarlo. El modelo se ejecuta en tu navegador, por lo que la primera vez descarga los archivos del modelo (Cellpose-SAM ocupa unos 588 MB y requiere un navegador compatible con WebGPU).</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-open-model.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-open-model.webp" />
 <img alt="../../_images/translocation-tutorial-light-open-model.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-open-model.webp" />
 <div class="tutorial-caption docutils">
-<p>Eligiendo «Cellpose-SAM» de la lista «Pre-trained Models».</p>
+<p>Eligiendo <code class="docutils literal notranslate"><span class="pre">Cellpose-SAM</span></code> de la lista <code class="docutils literal notranslate"><span class="pre">Pre-trained</span> <span class="pre">Models</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>Por último, haga clic en «Run Segmentation». Los objetos segmentados se añadirán al proyecto como un nuevo tipo (<em>kind</em>), con el nombre indicado en «Output kind name» («cellpose_cells» por defecto). Piximi muestra el progreso de la segmentación mientras se ejecuta.</p></li>
+<li><p>Por último, haz clic en <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Segmentation</span></code>. Los objetos segmentados se añadirán al proyecto como un nuevo tipo (<em>kind</em>), con el nombre indicado en <code class="docutils literal notranslate"><span class="pre">Output</span> <span class="pre">kind</span> <span class="pre">name</span></code> (<code class="docutils literal notranslate"><span class="pre">cellpose_cells</span></code> por defecto). Piximi muestra el progreso de la segmentación mientras se ejecuta.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-predict.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-predict.webp" />
 <img alt="../../_images/translocation-tutorial-light-predict.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-predict.webp" />
 <div class="tutorial-caption docutils">
 <p>Ejecutando la segmentación.</p>
 </div>
-<p>Tenga en cuenta que los pasos anteriores se realizaron en su computadora local, lo que significa que sus imágenes se almacenan localmente. La inferencia de Cellpose-SAM también se ejecuta localmente en su navegador, por lo que sus imágenes nunca se cargan.</p>
+<p>Ten en cuenta que los pasos anteriores se realizaron en tu computadora local, lo que significa que tus imágenes se almacenan localmente. La inferencia de Cellpose-SAM también se ejecuta localmente en tu navegador, por lo que tus imágenes nunca se cargan.</p>
 </section>
-<section id="visualice-el-resultado-de-la-segmentacion-y-corrija-los-errores-de-segmentacion">
-<h4>4. <strong>Visualice el resultado de la segmentación y corrija los errores de segmentación</strong><a class="headerlink" href="#visualice-el-resultado-de-la-segmentacion-y-corrija-los-errores-de-segmentacion" title="Permalink to this heading">#</a></h4>
+<section id="visualiza-el-resultado-de-la-segmentacion-y-corrije-los-errores-de-segmentacion">
+<h4>4. <strong>Visualiza el resultado de la segmentación y corrije los errores de segmentación</strong><a class="headerlink" href="#visualiza-el-resultado-de-la-segmentacion-y-corrije-los-errores-de-segmentacion" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Haga clic en «Annotations» encima de la cuadrícula de imágenes y luego en la pestaña <strong>cellpose_cells</strong> para comprobar las células individuales que se han segmentado.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Annotations</span></code> encima de la cuadrícula de imágenes y luego en la pestaña <strong>cellpose_cells</strong> para comprobar las células individuales que se han segmentado.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-cellpose-cells.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-cellpose-cells.webp" />
 <img alt="../../_images/translocation-tutorial-light-cellpose-cells.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-cellpose-cells.webp" />
 <div class="tutorial-caption docutils">
-<p>Visualización del tipo «cellpose_cells».</p>
+<p>Visualización del tipo <code class="docutils literal notranslate"><span class="pre">cellpose_cells</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>Seleccione algunos objetos identificados o imágenes completas, luego haga clic en «Image Viewer» en la barra superior para verlos en el Visor de imágenes.</p></li>
+<li><p>Selecciona algunos objetos identificados o imágenes completas, luego haz clic en <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Viewer</span></code> en la barra superior para verlos en el Visor de Imágenes.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-image-viewer.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-image-viewer.webp" />
 <img alt="../../_images/translocation-tutorial-light-image-viewer.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-image-viewer.webp" />
 <div class="tutorial-caption docutils">
-<p>Visualización de las células segmentadas en el Visor de imágenes.</p>
+<p>Visualización de las células segmentadas en el Visor de Imágenes.</p>
 </div>
 <ul class="simple">
-<li><p>Opcionalmente, aquí puede refinar manualmente la segmentación utilizando las herramientas del anotador. El anotador de Piximi ofrece varias opciones para <strong>añadir</strong>, <strong>restar</strong> o <strong>interseccionar</strong> anotaciones. Además, la <strong>herramienta de selección</strong> le permite <strong>redimensionar</strong> o <strong>eliminar</strong> anotaciones específicas. Para empezar a editar, seleccione imágenes específicas, o todas las imágenes, haciendo clic en la casilla de verificación de la parte superior.</p></li>
-<li><p>Opcionalmente, puede ajustar los canales: Aunque hay dos canales en este experimento, la señal de los núcleos se duplicó en los canales rojo y verde. Este diseño está pensado para ser <strong>color-blind friendly</strong> y para producir un <strong>color magenta</strong> para los núcleos. El <strong>canal verde</strong> también incluye señales citoplasmáticas.</p></li>
+<li><p>Opcionalmente, aquí puedes refinar manualmente la segmentación utilizando las herramientas del anotador. El anotador de Piximi ofrece varias opciones para <strong>añadir</strong>, <strong>restar</strong> o <strong>interseccionar</strong> anotaciones. Además, la <strong>herramienta de selección</strong> te permite <strong>redimensionar</strong> o <strong>eliminar</strong> anotaciones específicas. Para empezar a editar, selecciona imágenes específicas, o todas las imágenes, haciendo clic en la casilla de verificación de la parte superior.</p></li>
+<li><p>Opcionalmente, puedes ajustar los canales: Aunque hay dos canales en este experimento, la señal de los núcleos se duplicó en los canales rojo y verde. Este diseño está pensado para ser <strong>accesible a daltonismo</strong> (<em>color-blind friendly</em>) y para producir un <strong>color magenta</strong> para los núcleos. El <strong>canal verde</strong> también incluye señales citoplasmáticas.</p></li>
 </ul>
 <p>Otra razón para duplicar los canales es que algunos modelos (como <strong>Cellpose</strong> que usamos hoy) requieren que las imágenes de entrada tengan <strong>tres canales</strong>.</p>
 <ul class="simple">
-<li><p>Puede optar por segmentar manualmente las células para generar máscaras para los datos de ‘verdad de referencia’ (<em>ground truth</em>).</p></li>
+<li><p>Puedes optar por segmentar manualmente las células para generar máscaras para la ‘verdad de referencia’ (<em>ground truth</em>).</p></li>
 </ul>
 </section>
 <section id="clasificar-celulas">
@@ -597,7 +597,7 @@ document.write(`
 <p>Razón para hacer esto: Queremos clasificar las “cellpose_cells” basándonos en la distribución de la GFP (en Núcleos, citoplasma, o sin GFP) sin etiquetarlas todas y cada una manualmente. Para ello, podemos utilizar la función de clasificación en Piximi, que nos permite entrenar un clasificador utilizando un pequeño subconjunto de datos etiquetados y luego clasificar automáticamente las células restantes.</p>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Ir a la pestaña <strong>cellpose_cells</strong> (en la vista «Annotations») que muestra los objetos segmentados, y hacer clic en el botón «Classification» de la sección «Learning Task» del panel izquierdo. Las categorías que aparecen a la izquierda pertenecen ahora a las células y no a las imágenes.</p></li>
+<li><p>Ir a la pestaña <strong>cellpose_cells</strong> (en la vista <code class="docutils literal notranslate"><span class="pre">Annotations</span></code>) que muestra los objetos segmentados, y hacer clic en el botón <code class="docutils literal notranslate"><span class="pre">Classification</span></code> de la sección <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> del panel izquierdo. Las categorías que aparecen a la izquierda pertenecen ahora a las células y no a las imágenes.</p></li>
 </ul>
 <div class="fig-float fig-wrap docutils">
 <img alt="../../_images/translocation-tutorial-dark-classifier-section.webp" class="theme-img dark-img content-img fig-315" src="../../_images/translocation-tutorial-dark-classifier-section.webp" />
@@ -607,7 +607,7 @@ document.write(`
 </div>
 </div>
 <ul class="simple">
-<li><p>Cree nuevas categorías haciendo clic en el icono «+» (New Category) junto a «Categories», introduciendo un nombre en la ventana «Create Category» y haciendo clic en «Confirm». Añadir «Cytoplasmic_GFP», «Nuclear_GFP», «No_GFP» tres categorías.</p></li>
+<li><p>Crea nuevas categorías haciendo clic en el icono <code class="docutils literal notranslate"><span class="pre">+</span></code> (<em>New Category</em>) junto a <code class="docutils literal notranslate"><span class="pre">Categories</span></code>, introduciendo un nombre en la ventana <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Category</span></code> y haciendo clic en <code class="docutils literal notranslate"><span class="pre">Confirm</span></code>. Añadir tres categorías: <code class="docutils literal notranslate"><span class="pre">GFP_Cytoplasmatico</span></code>, <code class="docutils literal notranslate"><span class="pre">GFP_Nucleae</span></code>, <code class="docutils literal notranslate"><span class="pre">Sin_GFP</span></code>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-classifier-create-category.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-classifier-create-category.webp" />
 <img alt="../../_images/translocation-tutorial-light-classifier-create-category.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-classifier-create-category.webp" />
@@ -615,7 +615,7 @@ document.write(`
 <p>Creando una categoría.</p>
 </div>
 <ul class="simple">
-<li><p>Haga clic en las células que coincidan con sus criterios; cada clic añade una célula a la selección (utilice el icono <img alt="deselect-all icon" src="../../_images/icon-dark-deselect-all.webp" /><img alt="deselect-all icon" src="../../_images/icon-light-deselect-all.webp" /> «Deselect» para empezar de nuevo). Intenta asignar <strong>~20-40 células por categoría</strong>. Una vez seleccionadas, haz clic en el icono <img alt="categorize icon" src="../../_images/icon-dark-categorize.webp" /><img alt="categorize icon" src="../../_images/icon-light-categorize.webp" /> «Categorize» situado encima de las células y elige la categoría para asignarla a las células seleccionadas.</p></li>
+<li><p>Haz clic en las células que coincidan con sus criterios; cada clic añade una célula a la selección (utiliza el icono <img alt="deselect-all icon" src="../../_images/icon-dark-deselect-all.webp" /><img alt="deselect-all icon" src="../../_images/icon-light-deselect-all.webp" /> <code class="docutils literal notranslate"><span class="pre">Deselect</span></code> para empezar de nuevo). Intenta asignar <strong>~20-40 células por categoría</strong>. Una vez seleccionadas, haz clic en el icono <img alt="categorize icon" src="../../_images/icon-dark-categorize.webp" /><img alt="categorize icon" src="../../_images/icon-light-categorize.webp" /> <code class="docutils literal notranslate"><span class="pre">Categorize</span></code> situado encima de las células y elige la categoría para asignarla a las células seleccionadas.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-categorize.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-categorize.webp" />
 <img alt="../../_images/translocation-tutorial-light-categorize.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-categorize.webp" />
@@ -627,17 +627,17 @@ document.write(`
 <h4>6. <strong>Entrenar el modelo clasificador</strong><a class="headerlink" href="#entrenar-el-modelo-clasificador" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul>
-<li><p>Haz clic en «Fit» en la sección «Learning Task» para abrir la ventana «Fit Model» con la configuración del modelo (pestaña «Hyperparameters»). Para el ejercicio de hoy, ajustaremos algunos parámetros:</p></li>
-<li><p>Compruebe que la «Model Architecture» esté establecida en <strong>Simple CNN</strong> (el valor por defecto).</p></li>
-<li><p>En «Data Preprocessing Settings» &gt; «Image Augmentation», actualice el «Input Shape» a:</p>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Fit</span></code> en la sección <code class="docutils literal notranslate"><span class="pre">Learning</span> <span class="pre">Task</span></code> para abrir la ventana <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> con la configuración del modelo (pestaña <code class="docutils literal notranslate"><span class="pre">Hyperparameters</span></code>). Para el ejercicio de hoy, ajustaremos algunos parámetros:</p></li>
+<li><p>Comprueba que la <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Architecture</span></code> esté establecida en <strong>Simple CNN</strong> (el valor por defecto).</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Preprocessing</span> <span class="pre">Settings</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Augmentation</span></code>, actualiza el <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Shape</span></code> a:</p>
 <ul class="simple">
 <li><p>Row: 48</p></li>
 <li><p>Col: 48</p></li>
 <li><p>Ch.: 3 (ya que nuestras imágenes están en formato RGB)</p></li>
 </ul>
-<p>(Puede cambiar a otros números como 64, 128)</p>
+<p>(Puedes cambiar a otros números como 64, 128)</p>
 </li>
-<li><p>En la sección «Data Partitioning», establezca el «Training Percentage» (porcentaje de entrenamiento) en 0,75, que reserva el 25% de los datos etiquetados para la validación.</p></li>
+<li><p>En la sección <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Partitioning</span></code>, establece el <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Percentage</span></code> (porcentaje de entrenamiento) en 0,75, que reserva el 25% de los datos etiquetados para la validación.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-training-settings.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-settings.webp" />
 <img alt="../../_images/translocation-tutorial-light-training-settings.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-settings.webp" />
@@ -645,7 +645,7 @@ document.write(`
 <p>Configuración del modelo clasificador.</p>
 </div>
 <ul class="simple">
-<li><p>Cuando haga clic en «Fit Classifier» en Piximi, la ventana cambia a la pestaña «Training Plots», donde aparecen dos gráficos de entrenamiento “<strong>Precisión por época</strong>” y “<strong>Pérdida por época</strong>”. Cada gráfico muestra curvas para datos de <strong>entrenamiento</strong> y <strong>validación</strong>.</p></li>
+<li><p>Cuando hagas clic en <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Classifier</span></code> en Piximi, la ventana cambia a la pestaña <code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">Plots</span></code>, donde aparecen dos gráficos de entrenamiento “<strong>Precisión por Epoch</strong>” y “<strong>Pérdida por Epoch</strong>”. Cada gráfico muestra curvas para datos de <strong>entrenamiento</strong> y <strong>validación</strong>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-training-plots.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-plots.webp" />
 <img alt="../../_images/translocation-tutorial-light-training-plots.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-plots.webp" />
@@ -654,15 +654,15 @@ document.write(`
 </div>
 <ul class="simple">
 <li><p>En el gráfico de <strong>precisión</strong>, verás lo bien que está aprendiendo el modelo. Lo ideal es que tanto la precisión de entrenamiento como la de validación aumenten y se mantengan cercanas.</p></li>
-<li><p>En el gráfico de pérdidas, los valores más bajos significan un mejor rendimiento. Si la pérdida de validación empieza a aumentar mientras la pérdida de entrenamiento sigue cayendo, el modelo podría estar sobreajustándose.</p></li>
+<li><p>En el gráfico de <strong>pérdida</strong>, los valores más bajos significan un mejor rendimiento. Si la pérdida de validación empieza a aumentar mientras la pérdida de entrenamiento sigue cayendo, el modelo podría estar sobreajustándose.</p></li>
 </ul>
-<p>Estos gráficos le ayudan a comprender cómo está aprendiendo el modelo y si es necesario realizar ajustes. Cierre la ventana «Fit Model» con el icono <img alt="close" src="../../_images/close-icon.svg" /> de su esquina superior derecha cuando haya terminado.</p>
+<p>Estos gráficos le ayudan a comprender cómo está aprendiendo el modelo y si es necesario realizar ajustes. Cierra la ventana <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">Model</span></code> con el icono <img alt="close" src="../../_images/close-icon.svg" /> de su esquina superior derecha cuando hayas terminado.</p>
 </section>
 <section id="evaluar-el-modelo">
 <h4>7. <strong>Evaluar el modelo:</strong><a class="headerlink" href="#evaluar-el-modelo" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Haga clic en <img alt="chart" src="../../_images/chart-icon.svg" /> «Evaluate» para evaluar el modelo que acabamos de entrenar. La matriz de confusión y las métricas de evaluación comparan las predicciones del modelo sobre las células de validación con sus etiquetas de verdad de referencia (<em>ground truth</em>).</p></li>
+<li><p>Haz clic en <img alt="chart" src="../../_images/chart-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Evaluate</span></code> para evaluar el modelo que acabamos de entrenar. La matriz de confusión y las métricas de evaluación comparan las predicciones del modelo sobre las células de validación con sus etiquetas de verdad de referencia (<em>ground truth</em>).</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-training-eval.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-training-eval.webp" />
 <img alt="../../_images/translocation-tutorial-light-training-eval.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-training-eval.webp" />
@@ -670,7 +670,7 @@ document.write(`
 <p>Evaluación de la ejecución de entrenamiento.</p>
 </div>
 <ul class="simple">
-<li><p>Haga clic en <img alt="label" src="../../_images/label-important-icon.svg" /> «Predict» para aplicar el modelo que acabamos de entrenar. Este paso generará predicciones en las células que no hemos categorizado.</p></li>
+<li><p>Haz clic en <img alt="label" src="../../_images/label-important-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Predict</span></code> para aplicar el modelo que acabamos de entrenar. Este paso generará predicciones en las células que no hemos categorizado.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-predict-classifier.webp" class="theme-img dark-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-dark-predict-classifier.webp" />
 <img alt="../../_images/translocation-tutorial-light-predict-classifier.webp" class="theme-img light-img content-img fig-315 fig-center" src="../../_images/translocation-tutorial-light-predict-classifier.webp" />
@@ -678,9 +678,9 @@ document.write(`
 <p>Predecir clasificador.</p>
 </div>
 <ul class="simple">
-<li><p>Puede revisar las predicciones en la pestaña <strong>cellpose_cells</strong>. Las categorías predichas solo se muestran, no se aplican, hasta que las acepte, y «Clear Predictions» las descarta.</p></li>
-<li><p>Opcionalmente, puede seguir categorizando células para refinar la verdad de referencia (<em>ground truth</em>) y mejorar el clasificador, y luego volver a entrenar y predecir. Este proceso es parte de la clasificación <strong>Human-in-the-loop</strong>, donde se corrige iterativamente y entrenar el modelo basado en la entrada humana.</p></li>
-<li><p>Haga clic y mantenga presionado <img alt="check-icon" src="../../_images/check-icon.svg" /> «Accept Predictions (Hold)» para asignar las etiquetas predichas a todos los objetos.</p></li>
+<li><p>Puedes revisar las predicciones en la pestaña <strong>cellpose_cells</strong>. Las categorías predichas solo se muestran, no se aplican, hasta que las aceptes, y <code class="docutils literal notranslate"><span class="pre">Clear</span> <span class="pre">Predictions</span></code> las descarta.</p></li>
+<li><p>Opcionalmente, puedes seguir categorizando células para refinar la verdad de referencia (<em>ground truth</em>) y mejorar el clasificador, y luego volver a entrenar y predecir. Este proceso es parte de la clasificación <strong>Human-in-the-loop</strong>, donde se corrige iterativamente y entrenar el modelo basado en la entrada humana.</p></li>
+<li><p>Haz clic y mantén presionado <img alt="check-icon" src="../../_images/check-icon.svg" /> <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Predictions</span> <span class="pre">(Hold)</span></code> para asignar las etiquetas predichas a todos los objetos.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-accept-predictions.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-accept-predictions.webp" />
 <img alt="../../_images/translocation-tutorial-light-accept-predictions.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-accept-predictions.webp" />
@@ -690,10 +690,10 @@ document.write(`
 </section>
 <section id="medicion">
 <h4>8. <strong>Medición</strong><a class="headerlink" href="#medicion" title="Permalink to this heading">#</a></h4>
-<p>Una vez que esté satisfecho con la clasificación, procederemos a medir los objetos. El objetivo del ejercicio de hoy es determinar la concentración mínima de Wortmannin necesaria para bloquear la exportación de FOXO1A-GFP desde los núcleos. Para ello, podemos medir la intensidad total de GFP a nivel de imagen o a nivel de objeto. Aquí medimos las imágenes, que tienen la concentración de Wortmannin como categoría.</p>
+<p>Una vez que estés satisfecho con la clasificación, procederemos a medir los objetos. El objetivo del ejercicio de hoy es determinar la concentración mínima de Wortmannin necesaria para bloquear la exportación de FOXO1A-GFP desde los núcleos. Para ello, podemos medir la intensidad total de GFP a nivel de imagen o a nivel de objeto. Aquí medimos las imágenes, que tienen la concentración de Wortmannin como categoría.</p>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Haga clic en «Measure» en la barra superior del Visor de proyectos.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Measure</span></code> en la barra superior del Visor de proyectos.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-nav-measurements.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-nav-measurements.webp" />
 <img alt="../../_images/translocation-tutorial-light-nav-measurements.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-nav-measurements.webp" />
@@ -701,16 +701,16 @@ document.write(`
 <p>Navegar a Medidas.</p>
 </div>
 <ul class="simple">
-<li><p>Haga clic en «Add Table», mantenga «Images» como tipo (<em>kind</em>) y haga clic en «Confirm». <em>Nota: La preparación de los datos para la medición puede tardar un tiempo</em>.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Table</span></code>, mantenga <code class="docutils literal notranslate"><span class="pre">Images</span></code> como tipo (<em>kind</em>) y haz clic en <code class="docutils literal notranslate"><span class="pre">Confirm</span></code>. <em>Nota: La preparación de los datos para la medición puede tardar un tiempo</em>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-measurements-table-create.webp" class="theme-img dark-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-dark-measurements-table-create.webp" />
 <img alt="../../_images/translocation-tutorial-light-measurements-table-create.webp" class="theme-img light-img content-img fig-600 fig-center" src="../../_images/translocation-tutorial-light-measurements-table-create.webp" />
 <div class="tutorial-caption docutils">
-<p>Crear tabla de medidas «Images».</p>
+<p>Crear tabla de medidas <code class="docutils literal notranslate"><span class="pre">Images</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>En el panel izquierdo, despliegue «Intensity» &gt; «Total» y marque «Channel-1» para seleccionar la medición para GFP. Verá la medición en la cuadrícula de datos.</p></li>
-<li><p>En «Split Options», arrastre «Category» desde «Available Dimensions» hasta «Column Grouping» para mostrar las mediciones de cada categoría (aquí, cada concentración de Wortmannin). La cuadrícula muestra «Count», «Mean», «Median» y «Std Dev» de cada medición, y el conjunto de datos completo está disponible al exportar el archivo <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p></li>
+<li><p>En el panel izquierdo, despliega <code class="docutils literal notranslate"><span class="pre">Intensity</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Total</span></code> y marca <code class="docutils literal notranslate"><span class="pre">Channel-1</span></code> para seleccionar la medición para GFP. Verás la medición en la tabla de datos.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">Split</span> <span class="pre">Options</span></code>, arrastra <code class="docutils literal notranslate"><span class="pre">Category</span></code> desde <code class="docutils literal notranslate"><span class="pre">Available</span> <span class="pre">Dimensions</span></code> hasta <code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">Grouping</span></code> para mostrar las mediciones de cada categoría (aquí, cada concentración de Wortmannin). La tabla muestra <code class="docutils literal notranslate"><span class="pre">Count</span></code>, <code class="docutils literal notranslate"><span class="pre">Mean</span></code>, <code class="docutils literal notranslate"><span class="pre">Median</span></code> y <code class="docutils literal notranslate"><span class="pre">Std</span> <span class="pre">Dev</span></code> de cada medición, y el conjunto de datos completo está disponible al exportar el archivo <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-measurements-data-grid.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-data-grid.webp" />
 <img alt="../../_images/translocation-tutorial-light-measurements-data-grid.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-data-grid.webp" />
@@ -720,21 +720,21 @@ document.write(`
 </section>
 <section id="visualizacion">
 <h4>9. <strong>Visualización</strong><a class="headerlink" href="#visualizacion" title="Permalink to this heading">#</a></h4>
-<p>Después de generar las mediciones, puede trazar las mediciones.</p>
+<p>Después de generar las mediciones, puedes graficar las mediciones.</p>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Haga clic en «Plot View» encima de la tabla para visualizar las mediciones.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Plot</span> <span class="pre">View</span></code> encima de la tabla para visualizar las mediciones.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-measurements-plot-switch.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-plot-switch.webp" />
 <img alt="../../_images/translocation-tutorial-light-measurements-plot-switch.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-plot-switch.webp" />
 <div class="tutorial-caption docutils">
-<p>Parcelas de medición.</p>
+<p>Tabla de mediciones.</p>
 </div>
 <ul class="simple">
-<li><p>Establezca «Plot» en “<strong>Swarm</strong>” y elija un «Color Theme» basado en su preferencia.</p></li>
-<li><p>Seleccione «Y-axis» como “<strong>total-Channel-1</strong>” y establezca “<strong>SwarmGroup</strong>” como “<strong>category</strong>”; esto mostrará cómo varía la intensidad de GFP a través de diferentes categorías.</p></li>
-<li><p>Seleccionando «Show Statistics» se superpondrán diagramas de caja sobre los enjambres (<em>swarms</em>), mostrando la mediana, los cuartiles superior e inferior, y el mínimo y el máximo de cada categoría.</p></li>
-<li><p>Opcionalmente, puede experimentar con diferentes tipos de gráficos y ejes para ver si los datos revelan información adicional.</p></li>
+<li><p>Establece <code class="docutils literal notranslate"><span class="pre">Plot</span></code> en “<strong>Swarm</strong>” y elije el <code class="docutils literal notranslate"><span class="pre">Color</span> <span class="pre">Theme</span></code> que prefieras.</p></li>
+<li><p>Selecciona <code class="docutils literal notranslate"><span class="pre">Y-axis</span></code> como “<strong>total-Channel-1</strong>” y establece “<strong>SwarmGroup</strong>” como “<strong>category</strong>”; esto mostrará cómo varía la intensidad de GFP a través de diferentes categorías.</p></li>
+<li><p>Seleccionando <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Statistics</span></code> se superpondrán diagramas de caja sobre los enjambres (<em>swarms</em>), mostrando la mediana, los cuartiles superior e inferior, y el mínimo y el máximo de cada categoría.</p></li>
+<li><p>Opcionalmente, puedes experimentar con diferentes tipos de gráficos y ejes para ver si los datos revelan información adicional.</p></li>
 </ul>
 <img alt="../../_images/translocation-tutorial-dark-measurements-swarm-plot.webp" class="theme-img dark-img content-img" src="../../_images/translocation-tutorial-dark-measurements-swarm-plot.webp" />
 <img alt="../../_images/translocation-tutorial-light-measurements-swarm-plot.webp" class="theme-img light-img content-img" src="../../_images/translocation-tutorial-light-measurements-swarm-plot.webp" />
@@ -746,7 +746,7 @@ document.write(`
 <h4>10. <strong>Exportar los resultados y guardar el proyecto</strong><a class="headerlink" href="#exportar-los-resultados-y-guardar-el-proyecto" title="Permalink to this heading">#</a></h4>
 <p>🔴 PARA HACER</p>
 <ul class="simple">
-<li><p>Haz clic en «Save» en la esquina superior izquierda para guardar todo el proyecto. Verás la animación del logo de Piximi a medida que avanza el guardado <a class="reference internal" href="../../_images/Piximi_Progress_logo.png"><img alt="../../_images/Piximi_Progress_logo.png" src="../../_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
+<li><p>Haz clic en <code class="docutils literal notranslate"><span class="pre">Save</span></code> en la esquina superior izquierda para guardar todo el proyecto. Verás la animación del logo de Piximi a medida que avanza el guardado <a class="reference internal" href="../../_images/Piximi_Progress_logo.png"><img alt="../../_images/Piximi_Progress_logo.png" src="../../_images/Piximi_Progress_logo.png" style="width: 140px;" /></a>.</p></li>
 </ul>
 </section>
 <section id="informacion-adicional">
@@ -825,13 +825,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#informacion-general"><strong>Información general:</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-piximi"><strong>¿Qué es Piximi?</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-ejercicio"><strong>Objetivo del ejercicio</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-experimento-de-muestra"><strong>Contexto del experimento de muestra</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexto-del-experimento-de-ejemplo"><strong>Contexto del experimento de ejemplo</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-necesarios-para-este-ejercicio"><strong>Materiales necesarios para este ejercicio</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-para-el-ejercicio"><strong>Instrucciones para el ejercicio</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cargar-el-proyecto-piximi">1. <strong>Cargar el proyecto Piximi</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compruebe-las-imagenes-cargadas-y-explore-la-interfaz-piximi">2. <strong>Compruebe las imágenes cargadas y explore la interfaz Piximi</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comprueba-las-imagenes-cargadas-y-explore-la-interfaz-piximi">2. <strong>Comprueba las imágenes cargadas y explore la interfaz Piximi</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentar-celulas-diferenciar-las-celulas-del-background">3. <strong>Segmentar Células - diferenciar las células del <em>background</em></strong>.</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualice-el-resultado-de-la-segmentacion-y-corrija-los-errores-de-segmentacion">4. <strong>Visualice el resultado de la segmentación y corrija los errores de segmentación</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualiza-el-resultado-de-la-segmentacion-y-corrije-los-errores-de-segmentacion">4. <strong>Visualiza el resultado de la segmentación y corrije los errores de segmentación</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-celulas">5. <strong>Clasificar células</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-el-modelo-clasificador">6. <strong>Entrenar el modelo clasificador</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-modelo">7. <strong>Evaluar el modelo:</strong></a></li>
