@@ -27,11 +27,11 @@ This view is also where you can **categorize** your images and perform **classif
 - **Project Creation**: Clicking **NEW** opens a new project. You will be prompted to input a new project name, and the current project will be replaced with a blank one.
 
 - **Open a Project**: Clicking **OPEN** opens a menu which allows you to:
-  - Open a previously saved project (`.zip` or `.zarr`)
+  - Open a previously saved `.piximi` project file. (or `.zip` / `.zarr` from previous piximi versions)
   - Open one of Piximi's provided example projects (see [here](../technical/example-datasets.md) for information about the datasets)
   - Open a new image (PNG, JPEG, TIFF, DICOM, BMP, or HEIF formats). <span style="color: var(--pst-color-warning)"> Piximi requires all image in the project to have the same number of channels</span>
 
-- **Save Project**: Clicking **SAVE** saves the project as a compressed `.zip` file containing a `.zarr` directory with the project data as well as any trained classifiers used in the project.
+- **Save Project**: Clicking **SAVE** saves the project to a `.piximi` file with the project data as well as any trained classifiers used in the project.
 
 ### 2. Learning Task
 
@@ -78,7 +78,7 @@ The grid has two views, toggled at the top: **Images** and **Annotations**.
 ```
 ````
 
-```{tip} 
+```{tip}
 **Want to change the colors or display settings used on the images?**
 
 You can do so by selecting one or more images and then opening them in the [Image Viewer](imageviewer.md)
